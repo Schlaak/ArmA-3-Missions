@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=106;
+		nextID=120;
 	};
 	class Camera
 	{
@@ -9149,7 +9149,7 @@ class Mission
 							};
 							id=220;
 							type="cwr3_Flag_USSR";
-							atlOffset=7.8777161;
+							atlOffset=7.877655;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -45548,7 +45548,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={6795.2393,265.57999,6125.0405};
-			angle=0.049655896;
+			angle=0.049655892;
 			class Attributes
 			{
 				sizeA=111.31787;
@@ -45573,7 +45573,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7311.5645,281.72,6692.4814};
-			angle=3.7148464;
+			angle=3.7148461;
 			class Attributes
 			{
 				sizeA=111.31787;
@@ -45597,7 +45597,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={6371.6479,243.20483,5580.0303};
-			angle=0.049655896;
+			angle=0.049655892;
 			class Attributes
 			{
 				sizeA=124.42886;
@@ -45613,7 +45613,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6332.0093,247.89,5469.5444};
-				angles[]={-0,2.6179941,0};
+				angles[]={0,2.6179941,0};
 			};
 			id=1971;
 			type="grad_civs_common_PopulationZone";
@@ -45622,7 +45622,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={6223.3921,202.65698,4648.0425};
-			angle=3.7148461;
+			angle=3.7148457;
 			class Attributes
 			{
 				sizeA=82.435669;
@@ -45647,7 +45647,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={5736.3145,237.33,4323.7407};
-			angle=3.7148457;
+			angle=3.7148454;
 			class Attributes
 			{
 				sizeA=200.0601;
@@ -45698,7 +45698,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={4374.4688,175.44702,2806.8384};
-			angle=3.7148457;
+			angle=3.7148454;
 			class Attributes
 			{
 				sizeA=114.18107;
@@ -45748,7 +45748,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7643.4927,372.61975,9590.874};
-			angle=2.8421814;
+			angle=2.8421812;
 			class Attributes
 			{
 				sizeA=67.418594;
@@ -45773,7 +45773,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7553.0244,387.15381,10217.896};
-			angle=3.7148454;
+			angle=3.7148452;
 			class Attributes
 			{
 				sizeA=82.435669;
@@ -45816,7 +45816,7 @@ class Mission
 			};
 			id=1987;
 			type="grad_civs_common_PopulationZone";
-			atlOffset=6.3110046;
+			atlOffset=6.3109436;
 		};
 		class Item44
 		{
@@ -45873,7 +45873,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9382.1328,489.17899,9713.543};
-			angle=3.7148454;
+			angle=3.7148452;
 			class Attributes
 			{
 				sizeA=378.47589;

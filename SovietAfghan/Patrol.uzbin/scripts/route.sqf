@@ -28,10 +28,6 @@ Patrouillenaufgabe = false;
 waitUntil {Patrouillenaufgabe};
 _chooseroute = selectrandom [1,2,3,4,5]; // wähle route aus
 _event = selectrandom [1,2,3,4,5];
-//TODO make random group number, foreach select random size
-_grpsize1 = selectrandom [1,2,3];
-_grpsize2 = selectrandom [1,2,3];
-_grpsize3 = selectrandom [1,2,3];
 
 //route definitions
 _route1mrks = ["WProute1", "WProute1_1", "WProute1_2","WProute1_3","WProute1_4","WProute1_5","WProute1_6","WProute1_7","WProute1_8","WProute1_9","WProute1_10","WProute1_11","WProute1_12","WProute1_13"];
@@ -44,6 +40,7 @@ _route5mrks = ["WProute5", "WProute5_1", "WProute5_2", "WProute5_3" ,"WProute5_4
 //find safe position in 150m radius
 _getSafePos = {
 	params ["_centerPos","_2Param"];
+	diag_log [_centerPos];
 	_pos = [
 		_centerPos, //position
 		1,	//min distance
@@ -59,6 +56,7 @@ _getSafePos = {
 		systemChat "failed to find position";
 		diag_log ["failed to find position for ", _centerPos]; 
 	};
+	//isNil
 	_pos //return
 };
 
@@ -120,9 +118,9 @@ for "_i" from 0 to _amountEnemyGroups do {
 	_grpSize = selectRandom [1,2,3]; //predefine size indentifier
 	//get position
 	//select random from available positions along route (predefined, hardcoded)
-	_spawnPos = [selectRandom _availableSpawnPosMarkers] call _getSafePos;
+	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getSafePos;
 
-	if (isNull _spawnPos) then 	{
+	if (isNil "_spawnPos") then 	{
 		hint "get safe spawnpos failed";
 	};
 	//spawn group with random size
