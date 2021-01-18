@@ -8,9 +8,10 @@ while{true}do{
 
     _n=abs(wind select 0)+abs(wind select 1)+abs(wind select 2);
     _velocity = (wind vectorMultiply 2);
-   _color= missionNamespace getVariable["GoonDust_color",[0.86,0.82,0.55]];
-   _alpha = missionNamespace getVariable ["GoonDust_alpha",0.06];
-
+      _color= missionNamespace getVariable["GoonDust_color",[0.86,0.82,0.55]];
+     // _alpha = missionNamespace getVariable ["GoonDust_alpha",0.06];
+      _alpha = 0.1 + 0.6 * (vectorMagnitude wind) * 0.0364;
+      missionNamespace setVariable ["GoonDust_alpha",_alpha,true];
       if (_alpha == 0) then {
       waitUntil {
         sleep 10;
