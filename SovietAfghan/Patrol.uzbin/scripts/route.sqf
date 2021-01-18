@@ -59,7 +59,7 @@ _getSafePos = {
 		systemChat "failed to find position";
 		diag_log ["failed to find position for ", _centerPos]; 
 	};
-	_pos; //return
+	_pos //return
 };
 
 //_mySafePos = [[1,2,3],"mein stringt"] call _getSafePos;
@@ -121,6 +121,10 @@ for "_i" from 0 to _amountEnemyGroups do {
 	//get position
 	//select random from available positions along route (predefined, hardcoded)
 	_spawnPos = [selectRandom _availableSpawnPosMarkers] call _getSafePos;
+
+	if (isNull _spawnPos) then 	{
+		hint "get safe spawnpos failed";
+	};
 	//spawn group with random size
 	_grpComposition = [];
 	switch (_grpSize) do {
