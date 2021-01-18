@@ -1,6 +1,14 @@
-if (isserver) then
-{
-	/* code */
+/*
+TODO:
+1: get rid of position based spawns. use getpos!
+2: Dynamic Notifications via ["Benachrichtigung",["Feindtruppen aus X."], "BIS_fnc_showNotification"] remoteExec ["BIS_fnc_showNotification", 0, true];
+		_azimuth = player getDir tank;
+
+
+
+*/
+if (!isserver) exitWith {};
+
 DefendUniform = true;
 _spawnsuniform = [UniformE,UniformN,UniformNE,UniformNW];
 _spawnsvictor = [VictorSW,VictorSE,VictorS,VictorNE,VictorE];
@@ -13,25 +21,25 @@ switch (_spawnpos) do
 	{
 		//["Benachrichtigung", ["Feindtruppen aus OST."]] call BIS_fnc_showNotification;
 		["Benachrichtigung",["Feindtruppen aus OST."], "BIS_fnc_showNotification"] remoteExec ["BIS_fnc_showNotification", 0, true];
-		WestHQ sideradio "Es kommen Feindtruppen aus Osten auf Ihre Position zu. Halten Sie Sich bereit!";
+
 	};
 	case UniformN:
 	{
 		//["Benachrichtigung", ["Feindtruppen aus NORD."]] call BIS_fnc_showNotification;
 		["Benachrichtigung",["Feindtruppen aus NORD."], "BIS_fnc_showNotification"] remoteExec ["BIS_fnc_showNotification", 0, true];
-		WestHQ sideradio "Feind nähert sich aus Norden auf Ihre Position!";
+
 	};
 	case UniformNE:
 	{
 		//["Benachrichtigung", ["Feindtruppen aus NORD-OST."]] call BIS_fnc_showNotification;
 		["Benachrichtigung",["Feindtruppen aus NORD-OST."], "BIS_fnc_showNotification"] remoteExec ["BIS_fnc_showNotification", 0, true];
-		WestHQ sideradio "Aufklärung meldet Feintruppen aus Nord-Osten!";
+
 	};
 	case UniformNW:
 	{
 		//["Benachrichtigung", ["Feindtruppen aus NORD-WEST."]] call BIS_fnc_showNotification;
 		["Benachrichtigung",["Feindtruppen aus NORD-WEST."], "BIS_fnc_showNotification"] remoteExec ["BIS_fnc_showNotification", 0, true];
-		WestHQ sideradio "Feind bewegt sich aus Nord-West auf Ihre!";
+
 	};
 };
 for [{_i=0}, {_i<3}, {_i=_i+1}] do
@@ -102,5 +110,4 @@ switch (_spawnpos) do
 		//["Benachrichtigung", ["Feindtruppen aus NORD-WEST."]] call BIS_fnc_showNotification;
 		["Benachrichtigung",["Feindtruppen aus NORD-WEST."], "BIS_fnc_showNotification"] remoteExec ["BIS_fnc_showNotification", 0, true];
 	};
-};
 };
