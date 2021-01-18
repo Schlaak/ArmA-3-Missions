@@ -3,6 +3,11 @@ _wp = (group _this) addWaypoint [position player, 0];
 _wp setWaypointType "destroy";
 _wp waypointAttachVehicle vehicle player;
 
+
+//HELLO I AM A CHANGE TO A FILE 
+
+
+
 //requirements:
 //freshly placed sniper unit, direct line of sight to target
 _this reveal [player,4]; 
