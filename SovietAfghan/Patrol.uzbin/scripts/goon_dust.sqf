@@ -1,23 +1,20 @@
+if (isDedicated) exitWith {};
 
-sleep 5;
-_variable = missionNamespace getVariable["GoonDust_alpha",["not defined"]];
-[]spawn{
+[] spawn{
 while{true}do{
 
     	_obj=(vehicle player);
     	_pos= getposASL _obj;
 
     _n=abs(wind select 0)+abs(wind select 1)+abs(wind select 2);
-    _velocity = wind;
-    _color= [0.36,0.18,0];
-    _alpha = 0.05;
-//    _color= (missionNamespace getVariable["GoonDust_alpha",[[0.4,0.6,0],0]]) select 0;
-//    _alpha = (missionNamespace getVariable["GoonDust_alpha",[[1,1,1],0]]) select 1 + random 0.12;
+    _velocity = (wind vectorMultiply 2);
+   _color= missionNamespace getVariable["GoonDust_color",[0.86,0.82,0.55]];
+   _alpha = missionNamespace getVariable ["GoonDust_alpha",0.06];
 
       if (_alpha == 0) then {
       waitUntil {
-        sleep 60;
-        _alpha =( missionNamespace getVariable["GoonDust_alpha",[[0.5,0.5,0.5],0]]) select 1;
+        sleep 10;
+        _alpha =( missionNamespace getVariable["GoonDust_alpha",0]) select 1;
        (_alpha > 0)
       };
     };
@@ -52,3 +49,4 @@ while{true}do{
 
   };
 };
+
