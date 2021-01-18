@@ -88,7 +88,7 @@ force ace_switchunits_switchToIndependent = false;
 force ace_switchunits_switchToWest = false;
 
 // ACE Erweiterte Ausdauer
-force force ace_advanced_fatigue_enabled = true;
+force force ace_advanced_fatigue_enabled = false;
 force force ace_advanced_fatigue_enableStaminaBar = true;
 force force ace_advanced_fatigue_fadeStaminaBar = true;
 force force ace_advanced_fatigue_loadFactor = 1;

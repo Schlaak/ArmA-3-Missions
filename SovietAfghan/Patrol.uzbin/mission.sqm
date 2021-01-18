@@ -16,7 +16,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
+<<<<<<< HEAD
 		nextID=162;
+=======
+		nextID=120;
+>>>>>>> 7fad849d5e42e6f1cf20611edd2ea61c08ad0d31
 	};
 	class Camera
 	{
@@ -9148,7 +9152,7 @@ class Mission
 							};
 							id=220;
 							type="cwr3_Flag_USSR";
-							atlOffset=7.8777161;
+							atlOffset=7.877655;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -45736,7 +45740,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7311.5645,281.72,6692.4814};
+<<<<<<< HEAD
 			angle=3.7148445;
+=======
+			angle=3.7148461;
+>>>>>>> 7fad849d5e42e6f1cf20611edd2ea61c08ad0d31
 			class Attributes
 			{
 				sizeA=111.31787;
@@ -45785,7 +45793,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={6223.3921,202.65698,4648.0425};
+<<<<<<< HEAD
 			angle=3.7148442;
+=======
+			angle=3.7148457;
+>>>>>>> 7fad849d5e42e6f1cf20611edd2ea61c08ad0d31
 			class Attributes
 			{
 				sizeA=82.435669;
@@ -45810,7 +45822,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={5736.3145,237.33,4323.7407};
+<<<<<<< HEAD
 			angle=3.714844;
+=======
+			angle=3.7148454;
+>>>>>>> 7fad849d5e42e6f1cf20611edd2ea61c08ad0d31
 			class Attributes
 			{
 				sizeA=200.0601;
@@ -45861,7 +45877,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={4374.4688,175.44702,2806.8384};
+<<<<<<< HEAD
 			angle=3.714844;
+=======
+			angle=3.7148454;
+>>>>>>> 7fad849d5e42e6f1cf20611edd2ea61c08ad0d31
 			class Attributes
 			{
 				sizeA=114.18107;
@@ -45936,7 +45956,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7553.0244,387.15381,10217.896};
+<<<<<<< HEAD
 			angle=3.7148438;
+=======
+			angle=3.7148452;
+>>>>>>> 7fad849d5e42e6f1cf20611edd2ea61c08ad0d31
 			class Attributes
 			{
 				sizeA=82.435669;
@@ -46036,7 +46060,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9382.1328,489.17899,9713.543};
+<<<<<<< HEAD
 			angle=3.7148438;
+=======
+			angle=3.7148452;
+>>>>>>> 7fad849d5e42e6f1cf20611edd2ea61c08ad0d31
 			class Attributes
 			{
 				sizeA=378.47589;
