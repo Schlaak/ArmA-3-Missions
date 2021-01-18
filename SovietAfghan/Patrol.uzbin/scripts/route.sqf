@@ -28,173 +28,149 @@ Patrouillenaufgabe = false;
 waitUntil {Patrouillenaufgabe};
 _chooseroute = selectrandom [1,2,3,4,5]; // wähle route aus
 _event = selectrandom [1,2,3,4,5];
+//TODO make random group number, foreach select random size
 _grpsize1 = selectrandom [1,2,3];
 _grpsize2 = selectrandom [1,2,3];
 _grpsize3 = selectrandom [1,2,3];
+
+//route definitions
 _route1mrks = ["WProute1", "WProute1_1", "WProute1_2","WProute1_3","WProute1_4","WProute1_5","WProute1_6","WProute1_7","WProute1_8","WProute1_9","WProute1_10","WProute1_11","WProute1_12","WProute1_13"];
 _route2mrks = ["WProute2", "WProute2_1", "WProute2_2","WProute2_3","WProute2_4","WProute2_5","WProute2_6","WProute2_7","WProute2_8","WProute2_9","WProute2_10","WProute2_11","WProute2_12","WProute2_13"];
 _route3mrks = ["WProute3", "WProute3_1", "WProute3_2","WProute3_3","WProute3_4","WProute3_5","WProute3_6","WProute3_7","WProute3_8","WProute3_9","WProute3_10","WProute3_11","WProute3_12","WProute3_13"];
 _route4mrks = ["WProute4", "WProute4_1", "WProute4_2","WProute4_3","WProute4_4","WProute4_5","WProute4_6","WProute4_7","WProute4_8","WProute4_9","WProute4_10","WProute4_11","WProute4_12","WProute4_13"];
-_route5mrks = ["WProute5","WProute5_1","WProute5_2","WProute5_3","WProute5_4","WProute5_5","WProute5_6","WProute5_7","WProute5_8","WProute5_9","WProute5_10","WProute5_11","WProute5_12","WProute5_13"];
+_route5mrks = ["WProute5", "WProute5_1", "WProute5_2", "WProute5_3" ,"WProute5_4" ,"WProute5_5" ,"WProute5_6" ,"WProute5_7" ,"WProute5_8" ,"WProute5_9" ,"WProute5_10" ,"WProute5_11" ,"WProute5_12","WProute5_13"];
 
+//local function:
+//find safe position in 150m radius
+_getSafePos = {
+	params ["_centerPos","_2Param"];
+	_pos = [
+		_centerPos, //position
+		1,	//min distance
+		150, //max distance
+		20, //min object distance
+		0, //water mode 0 = not in water
+		0.5, //max gradient, 0.5 ca 30°
+		0, //shoreMode does not have to be shore
+		[], //blackList
+		[0,0,0] //default pos, returned if fails
+	] call BIS_fnc_findSafePos;
+	if (_pos isEqualTo [0,0,0]) then {
+		systemChat "failed to find position";
+		diag_log ["failed to find position for ", _centerPos]; 
+	};
+	_pos; //return
+};
 
+//_mySafePos = [[1,2,3],"mein stringt"] call _getSafePos;
+_availableSpawnPosMarkers = [];
 switch (_chooseroute) do
 {
 	case 1:
 	{
+		//route anzeigen/sichtbar
 		{ _x setmarkeralpha 1; } foreach _route1mrks;
+		//globale var auf true
 		Route1 = true;
-		_Hostilegrpdest1mrk = getmarkerpos (selectrandom _route1mrks);
-		_Hostilegrpdest2mrk = getmarkerpos (selectrandom _route1mrks);
-		_Hostilegrpdest3mrk = getmarkerpos (selectrandom _route1mrks);
-		Hostilegrpdest3 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest3mrk;
-		Hostilegrpdest3 hideObjectGlobal true;
-		Hostilegrpdest2 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest2mrk;
-		Hostilegrpdest2 hideObjectGlobal true;
-		Hostilegrpdest1 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest1mrk;
-		Hostilegrpdest1 hideObjectGlobal true;
+		//routeneigene spawn pos finden
+		_availableSpawnPosMarkers = _route1mrks;
 	};
 	case 2:
 	{
 		{ _x setmarkeralpha 1; } foreach _route2mrks;
 		Route2 = true;
-		_Hostilegrpdest1mrk = getmarkerpos (selectrandom _route2mrks);
-		_Hostilegrpdest2mrk = getmarkerpos (selectrandom _route2mrks);
-		_Hostilegrpdest3mrk = getmarkerpos (selectrandom _route2mrks);
-		Hostilegrpdest3 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest3mrk;
-		Hostilegrpdest3 hideObjectGlobal true;
-		Hostilegrpdest2 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest2mrk;
-		Hostilegrpdest2 hideObjectGlobal true;
-		Hostilegrpdest1 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest1mrk;
-		Hostilegrpdest1 hideObjectGlobal true;
+		_availableSpawnPosMarkers = _route2mrks;
 	};
 	case 3:
 	{
 		{ _x setmarkeralpha 1; } foreach _route3mrks;
 		Route3 = true;
-		_Hostilegrpdest1mrk = getmarkerpos (selectrandom _route3mrks);
-		_Hostilegrpdest2mrk = getmarkerpos (selectrandom _route3mrks);
-		_Hostilegrpdest3mrk = getmarkerpos (selectrandom _route3mrks);
-		Hostilegrpdest3 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest3mrk;
-		Hostilegrpdest3 hideObjectGlobal true;
-		Hostilegrpdest2 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest2mrk;
-		Hostilegrpdest2 hideObjectGlobal true;
-		Hostilegrpdest1 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest1mrk;
-		Hostilegrpdest1 hideObjectGlobal true;
+		_availableSpawnPosMarkers = _route3mrks;
 	};
 	case 4:
 	{
 		{ _x setmarkeralpha 1; } foreach _route4mrks;
 		Route4 = true;
-		_Hostilegrpdest1mrk = getmarkerpos (selectrandom _route4mrks);
-		_Hostilegrpdest2mrk = getmarkerpos (selectrandom _route4mrks);
-		_Hostilegrpdest3mrk = getmarkerpos (selectrandom _route4mrks);
-		Hostilegrpdest3 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest3mrk;
-		Hostilegrpdest3 hideObjectGlobal true;
-		Hostilegrpdest2 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest2mrk;
-		Hostilegrpdest2 hideObjectGlobal true;
-		Hostilegrpdest1 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest1mrk;
-		Hostilegrpdest1 hideObjectGlobal true;
+		_availableSpawnPosMarkers = _route4mrks;
 	};
 	case 5:
 	{
 		{ _x setmarkeralpha 1; } foreach _route5mrks;
 		Route5 = true;
-		_Hostilegrpdest1mrk = getmarkerpos (selectrandom _route5mrks);
-		_Hostilegrpdest2mrk = getmarkerpos (selectrandom _route5mrks);
-		_Hostilegrpdest3mrk = getmarkerpos (selectrandom _route5mrks);
-		Hostilegrpdest3 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest3mrk;
-		Hostilegrpdest3 hideObjectGlobal true;
-		Hostilegrpdest2 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest2mrk;
-		Hostilegrpdest2 hideObjectGlobal true;
-		Hostilegrpdest1 = "Sign_Sphere200cm_F" createVehicleLocal _Hostilegrpdest1mrk;
-		Hostilegrpdest1 hideObjectGlobal true;
+		_availableSpawnPosMarkers = _route5mrks;
 	};
 
 };
 
-
+//gegner konfigurieren
 _tl = "CUP_I_TK_GUE_Soldier_TL"; // WIP
 _grunt = "CUP_I_TK_GUE_Soldier"; // WIP
+//spezialisten wählen CHOOSE YOUR FIGHTER
 _soldier1 = selectrandom ["CUP_I_TK_GUE_Demo","CUP_I_TK_GUE_Soldier_AA","CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Guerilla_Medic","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Sniper","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT"]; // WIP
 _soldier2 = selectrandom ["CUP_I_TK_GUE_Demo","CUP_I_TK_GUE_Soldier_AA","CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Guerilla_Medic","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Sniper","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT"]; // WIP
 _soldier3 = selectrandom ["CUP_I_TK_GUE_Demo","CUP_I_TK_GUE_Soldier_AA","CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Guerilla_Medic","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Sniper","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT"]; // WIP
 _side = west;
 sleep 10;
-/*
-		Hostilegrpdest1 = selectrandom (missionnamespace getvariable "Route1dest");
-		Hostilegrpdest2 = selectrandom (missionnamespace getvariable "Route1dest2");
-		Hostilegrpdest3 = selectrandom (missionnamespace getvariable "Route1dest3");
-*/
-switch (_grpsize1) do
-{
-	case 1:
-	{
-		_centerPos1 = (Hostilegrpdest1 getPos [(random 500), (random 360)]);
-		_pos1 = [_centerPos1, 1, 100, 20, 0, 0.5, 0] call BIS_fnc_findSafePos;
-		hostilesgrp1 = [_pos1, _side, [_tl, _grunt, _grunt, _soldier1],[],[],[],[],[],180] call BIS_fnc_spawnGroup;
-	};
-	case 2:
-	{
-		_centerPos1 = (Hostilegrpdest1 getPos [(random 500), (random 360)]);
-		_pos1 = [_centerPos1, 1, 100, 20, 0, 0.5, 0] call BIS_fnc_findSafePos;
-		hostilesgrp1 = [_pos1, _side, [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt],[],[],[],[],[],180] call BIS_fnc_spawnGroup;
-	};
-	case 3:
-	{
-		_centerPos1 = (Hostilegrpdest1 getPos [(random 500), (random 360)]);
-		_pos1 = [_centerPos1, 1, 100, 20, 0, 0.5, 0] call BIS_fnc_findSafePos;
-		hostilesgrp1 = [_pos1, _side, [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt, _soldier2, _soldier3, _grunt, _soldier1],[],[],[],[],[],180] call BIS_fnc_spawnGroup;
-	};
-};
-switch (_grpsize2) do
-{
-	case 1:
-	{
-		_centerPos2 = (Hostilegrpdest2 getPos [(random 500), (random 360)]);
-		_pos2 = [_centerPos2, 1, 100, 20, 0, 0.5, 0] call BIS_fnc_findSafePos;
-		hostilesgrp2 = [_pos2, _side, [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt, _soldier2, _soldier3, _grunt, _soldier1],[],[],[],[],[],180] call BIS_fnc_spawnGroup;
-	};
-	case 2:
-	{
-		_centerPos2 = (Hostilegrpdest2 getPos [(random 500), (random 360)]);
-		_pos2 = [_centerPos2, 1, 100, 20, 0, 0.5, 0] call BIS_fnc_findSafePos;
-		hostilesgrp2 = [_pos2, _side, [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt, _soldier2, _soldier3, _grunt, _soldier1],[],[],[],[],[],180] call BIS_fnc_spawnGroup;
-	};
-	case 3:
-	{
-		_centerPos2 = (Hostilegrpdest2 getPos [(random 500), (random 360)]);
-		_pos2 = [_centerPos2, 1, 100, 20, 0, 0.5, 0] call BIS_fnc_findSafePos;
-		hostilesgrp2 = [_pos, _side, [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt, _soldier2, _soldier3, _grunt, _soldier1],[],[],[],[],[],180] call BIS_fnc_spawnGroup;
-	};
-};
-switch (_grpsize3) do
-{
-	case 1:
-	{
-		_centerPos3 = (Hostilegrpdest3 getPos [(random 500), (random 360)]);
-		_pos3 = [_centerPos3, 1, 100, 20, 0, 0.5, 0] call BIS_fnc_findSafePos;
-		hostilesgrp3 = [_pos3, _side, [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt, _soldier2, _soldier3, _grunt, _soldier1],[],[],[],[],[],180] call BIS_fnc_spawnGroup;
 
+//create enemy groups
+_amountEnemyGroups = random 3 + 3; //3..6
+_enemyGroups = [];
+for "_i" from 0 to _amountEnemyGroups do {
+	//define group size
+	_grpSize = selectRandom [1,2,3]; //predefine size indentifier
+	//get position
+	//select random from available positions along route (predefined, hardcoded)
+	_spawnPos = [selectRandom _availableSpawnPosMarkers] call _getSafePos;
+	//spawn group with random size
+	_grpComposition = [];
+	switch (_grpSize) do {
+		case 1:
+		{
+			_grpComposition = [_tl, _grunt, _grunt, _soldier1];
+		};
+		case 2:
+		{
+			_grpComposition = [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt];
+		};
+		case 3:
+		{		
+			_grpComposition = [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt, _soldier2, _soldier3, _grunt, _soldier1];
+		};
+		default
+		{
+			diag_log ["encountered unknow group size:",_grpsize];
+		};
 	};
-	case 2:
+	_thisGroup = [_spawnPos, _side, _grpComposition,[],[],[],[],[],180] call BIS_fnc_spawnGroup;
+	_enemyGroups pushBack _thisGroup;
+	
+	//set lambs task/group beschäftigung
+	_lambsTsk = selectrandom [1,2,3,4];
+	switch (_lambsTsk) do
 	{
-		_centerPos3 = (Hostilegrpdest3 getPos [(random 500), (random 360)]);
-		_pos3 = [_centerPos3, 1, 100, 20, 0, 0.5, 0] call BIS_fnc_findSafePos;
-		hostilesgrp3 = [_pos3, _side, [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt, _soldier2, _soldier3, _grunt, _soldier1],[],[],[],[],[],180] call BIS_fnc_spawnGroup;
-
+		case 1:
+		{
+			[(leader _thisGroup), getPos (leader _thisGroup), 100, true, true] call lambs_wp_fnc_taskCamp;
+		};
+		case 2:
+		{
+			[(leader _thisGroup), (leader _thisGroup), 1000] spawn lambs_wp_fnc_taskPatrol;
+		};
+		case 3:
+		{
+			[group (leader _thisGroup), 1000] spawn lambs_wp_fnc_taskHunt;
+		};
+		case 4:
+		{
+			[(leader _thisGroup), 1500] spawn lambs_wp_fnc_taskCreep;
+		};
 	};
-	case 3:
-	{
-		_centerPos3 = (Hostilegrpdest3 getPos [(random 500), (random 360)]);
-		_pos3 = [_centerPos3, 1, 100, 20, 0, 0.5, 0] call BIS_fnc_findSafePos;
-		hostilesgrp3 = [_pos3, _side, [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt, _soldier2, _soldier3, _grunt, _soldier1],[],[],[],[],[],180] call BIS_fnc_spawnGroup;
 
-	};
+	//for all groups execute dushman scripts on units 
+	{[_x] execvm "scripts\dushman.sqf";} forEach units _thisGroup;
 };
 
-
-
+//preplaced events usage: on trigger condition: Route1 && event3 //FIXME
 switch (_event) do
 {
 	case 1:
@@ -223,80 +199,4 @@ switch (_event) do
 	};
 };
 
-// Define soldiers here
-/*
-_tl = "CUP_I_TK_GUE_Soldier_TL"; // WIP
-_grunt = "CUP_I_TK_GUE_Soldier"; // WIP
-_soldier1 = selectrandom ["CUP_I_TK_GUE_Demo","CUP_I_TK_GUE_Soldier_AA","CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Guerilla_Medic","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Sniper","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT"]; // WIP
-_soldier2 = selectrandom ["CUP_I_TK_GUE_Demo","CUP_I_TK_GUE_Soldier_AA","CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Guerilla_Medic","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Sniper","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT"]; // WIP
-_soldier3 = selectrandom ["CUP_I_TK_GUE_Demo","CUP_I_TK_GUE_Soldier_AA","CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Guerilla_Medic","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Sniper","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT"]; // WIP
-_side = west;
-*/
 
- {[_x] execvm "scripts\dushman.sqf";} forEach units (hostilesgrp1);
- {[_x] execvm "scripts\dushman.sqf";} forEach units (hostilesgrp2);
- {[_x] execvm "scripts\dushman.sqf";} forEach units (hostilesgrp3);
-
-_LambsTskZuweisung1 = selectrandom [1,2,3,4];
-_LambsTskZuweisung2 = selectrandom [1,2,3,4];
-_LambsTskZuweisung3 = selectrandom [1,2,3,4];
-
-
-
-switch (_LambsTskZuweisung1) do
-{
-	case 1:
-	{
-		[(leader hostilesgrp1), getPos (leader hostilesgrp1), 100, true, true] call lambs_wp_fnc_taskCamp;
-	};
-	case 2:
-	{
-		[(leader hostilesgrp1), (leader hostilesgrp1), 1000] spawn lambs_wp_fnc_taskPatrol;
-	};
-	case 3:
-	{
-		[group (leader hostilesgrp1), 1000] spawn lambs_wp_fnc_taskHunt;
-	};
-	case 4:
-	{
-		[(leader hostilesgrp1), 1500] spawn lambs_wp_fnc_taskCreep;
-	};
-};
-switch (_LambsTskZuweisung2) do
-{
-	case 1:
-	{
-		[(leader hostilesgrp2), getPos (leader hostilesgrp2), 100, true, true] call lambs_wp_fnc_taskCamp;
-	};
-	case 2:
-	{
-		[(leader hostilesgrp2), (leader hostilesgrp2), 1000] spawn lambs_wp_fnc_taskPatrol;
-	};
-	case 3:
-	{
-		[group (leader hostilesgrp2), 1000] spawn lambs_wp_fnc_taskHunt;
-	};
-	case 4:
-	{
-		[(leader hostilesgrp2), 1500] spawn lambs_wp_fnc_taskCreep;
-	};
-};
-switch (_LambsTskZuweisung3) do
-{
-	case 1:
-	{
-		[(leader hostilesgrp3), getPos (leader hostilesgrp3), 100, true, true] call lambs_wp_fnc_taskCamp;
-	};
-	case 2:
-	{
-		[(leader hostilesgrp3), (leader hostilesgrp3), 1000] spawn lambs_wp_fnc_taskPatrol;
-	};
-	case 3:
-	{
-		[group (leader hostilesgrp3), 1000] spawn lambs_wp_fnc_taskHunt;
-	};
-	case 4:
-	{
-		[(leader hostilesgrp3), 1500] spawn lambs_wp_fnc_taskCreep;
-	};
-};
