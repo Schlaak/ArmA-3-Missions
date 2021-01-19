@@ -11,6 +11,7 @@ X	Name respawns
 X	ural trucks explodieren bei spawn...
 X	offroad script debug ist auf server stehts sichtbar... why?
 	briefing
+	Evtl tweak ai to spot better
 
 	todo less priority
 	notifications for acomplished tasks

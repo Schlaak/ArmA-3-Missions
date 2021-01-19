@@ -23,18 +23,23 @@ so do these positions for all 3 routes. can be as many as needed.
 Goto line 111 and define hostile side and units
 */
 if (!isserver) exitwith {};
-
+RndEvent = false;
+Event1 = false;
+Event2 = false;
+Event3 = false;
+Event4 = false;
+Event5 = false;
 Patrouillenaufgabe = false;
 waitUntil {Patrouillenaufgabe};
 _chooseroute = selectrandom [1,2,3,4,5]; // wähle route aus
 _event = selectrandom [1,2,3,4,5];
 
 //route definitions
-_route1mrks = ["WProute1", "WProute1_1", "WProute1_2","WProute1_3","WProute1_4","WProute1_5","WProute1_6","WProute1_7","WProute1_8","WProute1_9","WProute1_10","WProute1_11","WProute1_12","WProute1_13"];
-_route2mrks = ["WProute2", "WProute2_1", "WProute2_2","WProute2_3","WProute2_4","WProute2_5","WProute2_6","WProute2_7","WProute2_8","WProute2_9","WProute2_10","WProute2_11","WProute2_12","WProute2_13"];
-_route3mrks = ["WProute3", "WProute3_1", "WProute3_2","WProute3_3","WProute3_4","WProute3_5","WProute3_6","WProute3_7","WProute3_8","WProute3_9","WProute3_10","WProute3_11","WProute3_12","WProute3_13"];
-_route4mrks = ["WProute4", "WProute4_1", "WProute4_2","WProute4_3","WProute4_4","WProute4_5","WProute4_6","WProute4_7","WProute4_8","WProute4_9","WProute4_10","WProute4_11","WProute4_12","WProute4_13"];
-_route5mrks = ["WProute5", "WProute5_1", "WProute5_2", "WProute5_3" ,"WProute5_4" ,"WProute5_5" ,"WProute5_6" ,"WProute5_7" ,"WProute5_8" ,"WProute5_9" ,"WProute5_10" ,"WProute5_11" ,"WProute5_12","WProute5_13"];
+_route1mrks = ["Route1to3start","WProute1", "WProute1_1", "WProute1_2","WProute1_3","WProute1_4","WProute1_5","WProute1_6","WProute1_7","WProute1_8","WProute1_9","WProute1_10","WProute1_11","WProute1_12","WProute1_13"];
+_route2mrks = ["Route1to3start","WProute2", "WProute2_1", "WProute2_2","WProute2_3","WProute2_4","WProute2_5","WProute2_6","WProute2_7","WProute2_8","WProute2_9","WProute2_10","WProute2_11","WProute2_12","WProute2_13"];
+_route3mrks = ["Route1to3start","WProute3", "WProute3_1", "WProute3_2","WProute3_3","WProute3_4","WProute3_5","WProute3_6","WProute3_7","WProute3_8","WProute3_9","WProute3_10","WProute3_11","WProute3_12","WProute3_13"];
+_route4mrks = ["Route4to5start","WProute4", "WProute4_1", "WProute4_2","WProute4_3","WProute4_4","WProute4_5","WProute4_6","WProute4_7","WProute4_8","WProute4_9","WProute4_10","WProute4_11","WProute4_12","WProute4_13"];
+_route5mrks = ["Route4to5start","WProute5", "WProute5_1", "WProute5_2", "WProute5_3" ,"WProute5_4" ,"WProute5_5" ,"WProute5_6" ,"WProute5_7" ,"WProute5_8" ,"WProute5_9" ,"WProute5_10" ,"WProute5_11" ,"WProute5_12","WProute5_13"];
 
 //local function:
 //find safe position in 150m radius
@@ -200,6 +205,59 @@ switch (_event) do
 		event1 = true;
 	};
 };
+_rndeventcalc = selectrandom [1,2];
+switch (_rndeventcalc) do
+{
+	case 1:
+	{
+		RndEvent = true;
+	};
+
+	case 2:
+	{
+		RndEvent = false;
+	};
+};
+
+
+_getcachePos = {
+	params ["_centerPos","_2Param"];
+	diag_log [_centerPos];
+	_pos = [
+		_centerPos, //position
+		1,	//min distance
+		150, //max distance
+		5, //min object distance
+		0, //water mode 0 = not in water
+		0.7, //max gradient, 0.5 ca 30°
+		0, //shoreMode does not have to be shore
+		[], //blackList
+		[0,0,0] //default pos, returned if fails
+	] call BIS_fnc_findSafePos;
+	if (_pos isEqualTo [0,0,0]) then {
+		systemChat "failed to find position";
+		diag_log ["failed to find position for ", _centerPos];
+	};
+	//isNil
+	_pos //return
+};
+
+for "_i" from 0 to (3 + (random 9)) do {
+_cache = selectrandom [[11749.2,12240.7,0],[11851.4,12243.7,0],[11954,12246.8,0],[11750.6,12145,0],[11852.9,12133.3,0],[11951.2,12146.3,0],[11952.3,12052.3,0],[11850.9,12049,0],[11750.8,12048.8,0]];
+_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
+nul = [_cache,_spawnPos,50] execvm "scripts\shk_moveobjects.sqf";
+
+_marker1 = createMarker [(str time), _spawnPos];
+_marker1 setMarkerType "hd_warning";
+_marker1 setMarkerText "Cache!!!";
+};
+
+
+
+
+
+
+
 
 
 // Spawn goats;
@@ -229,9 +287,7 @@ _GoatComposition = [];
 };
 /*
 _GoatGroup = [_spawnPos, civilian, _GoatComposition,[],[],[],[],[],180] call BIS_fnc_spawnGroup;
-_marker1 = createMarker [(str time), _spawnPos];
-_marker1 setMarkerType "hd_warning";
-_marker1 setMarkerText "SCHEISSE FEINDLICHE ZIEGEN!!!";
+
 diag_log [_GoatComposition,_spawnPos,_goatgroup];
 
 
