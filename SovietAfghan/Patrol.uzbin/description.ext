@@ -54,3 +54,67 @@ class Extended_PreInit_EventHandlers {
         init = "call compile preprocessFileLineNumbers 'furniture\XEH_preInit.sqf'";
     };
 };
+
+
+class Params
+{
+	class AISkill
+	{
+		title = "AI Faehigkeit"; // Param name visible in the list
+		values[] = {0,1,2}; // Values; must be integers; has to have the same number of elements as 'texts'
+		texts[] = {"Recruit","Regular","Veteran"}; // Description of each selectable item
+		default = 1; // Default value; must be listed in 'values' array, otherwise 0 is used
+		// Default values that are not whole numbers do not work. Param will default to 0 (or 1 if defined)
+	};
+	class uselessparam
+	{
+		title = "Uselessparam";
+		texts[] = {"what","ever","param","is","useless"};
+		values[] = {6,12,13,16,18,0};
+		default = 6;
+	};
+	class DateY
+	{
+		title = "Jahr";
+		texts[] = {"Morgen","Mittag","Nachmittag","Abend","Nacht - NEIN!"};
+		values[] = {1986, 1987, 1988, 1989};
+		default = 1986;
+
+	};
+	class DateM
+	{
+		title = "Monat";
+		texts[] = {"Mai","Juni","Juli","August","September"};
+		values[] = {5, 6, 7, 8, 9};
+		default = 6;
+	};
+
+	class DateD
+	{
+		title = "Tag";
+		texts[] = {"1","4","7","10","13","16","19","21","24","27"};
+		values[] = {1, 4, 7, 10, 13, 16,19, 21, 24, 27};
+		default = 13;
+	};
+		class DateH
+	{
+		title = "Stunde";
+		texts[] = {"1","4","7","10","13","16","19","21","24"};
+		values[] = {1, 4, 7, 10, 13, 16,19, 21, 24, 0};
+		default = 16;
+	};
+		class WindX
+	{
+		title = "Wind Nord Sued";
+		texts[] = {"1", "2", "3" ,"4" ,"7" ,"10" ,"13" ,"16" ,"19" ,"21" ,"24" ,"27"};
+		values[] = {1, 2, 3 ,4 ,7 ,10 ,13 ,16 ,19 ,21 ,24 ,27};
+		default = 4;
+	};
+		class WindY
+	{
+		title = "Wind Ost West";
+		texts[] = {"1", "2", "3" ,"4" ,"7" ,"10" ,"13" ,"16" ,"19" ,"21" ,"24" ,"27"};
+		values[] = {1, 2, 3 ,4 ,7 ,10 ,13 ,16 ,19 ,21 ,24 ,27};
+		default = 3;
+	};
+};

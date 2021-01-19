@@ -32,7 +32,7 @@ format ["%1-%2-%3 %4 Std. %5 Min.", date select 0,date select 1,date select 2,da
 ,"<t align = 'right' shadow = '1' size = '1.0' font='EtelkaMonospaceProBold' color='#00FF00' >%1</t><br/>",8],
   [
 
-format ["Wind: %1 m/s", wind]
+format ["Wind: %1-NS %2-OW m/s", floor (wind select 0), floor (wind select 1)]
 
 ,"<t align = 'right' shadow = '1' size = '1.0' font='EtelkaMonospaceProBold' color='#00FF00' >%1</t>",35]
  ] ,(safeZoneX +1.1), (safeZoneY +1)
