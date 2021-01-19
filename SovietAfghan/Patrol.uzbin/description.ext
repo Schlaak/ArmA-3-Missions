@@ -1,6 +1,6 @@
 author			= "Schlaak";
 onLoadName		= "Afghan patrol";
-onLoadMission	= "Afghan... Afghan...";
+onLoadMission	= "Наше сердце безмолвно...";
 loadScreen		= "title.jpg";
 
 class Header

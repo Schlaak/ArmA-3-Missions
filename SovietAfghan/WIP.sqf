@@ -13,6 +13,7 @@ X	offroad script debug ist auf server stehts sichtbar... why?
 X	briefing
 	Evtl tweak ai to spot better
 	gegnerischer mörser rnd placed.
+	Ziegen sind unsichtbar!!! mit ziegen (tier-) modul und dann setpos getpos sollte es funktionieren
 
 	todo less priority
 	notifications for acomplished tasks
