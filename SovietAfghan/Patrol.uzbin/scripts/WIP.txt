@@ -1,1 +1,3 @@
 for loops script aufräumen
+
+beim verlassen der basis loadout speichern für respawn.

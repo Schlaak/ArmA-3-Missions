@@ -1,7 +1,62 @@
+//[this] execVM "scripts\sniper.sqf";
+params ["_sniper"];
+systemChat ("sniper: " + str _sniper);
+while {alive _sniper} do {
+    {
+        (group _sniper) forgetTarget _x;
+        _sniper reveal [_x,4];
+    } forEach allPlayers
+    _sniper doTarget (selectRandom allPlayers);
+    sleep 5;
+    systemChat ("revealing players to sniper at " + str time);
+};
+systemChat "rip snep boi :(";
+
+
+
+
+if (true) exitWith {systemChat "finished sniper"};
+//---------------------------------------------------------
+//JUNKYARD
+
 _this reveal [player,4];
 _wp = (group _this) addWaypoint [position player, 0];
 _wp setWaypointType "destroy";
 _wp waypointAttachVehicle vehicle player;
+
+//MP
+systemChat "sniper: " + str _this;
+_handle = [_this] spawn {
+    systemChat "spawned."
+    params ["_sniper"];
+    systemChat ("sniper: " + str _sniper);
+    while {alive _sniper} do {
+        {
+            group _sniper forgetTarget _x;
+            _sniper reveal [_x,4];
+        } forEach allPlayers
+        _sniper doTarget (selectRandom allPlayers);
+        sleep 5;
+        systemChat ("revealing players to sniper at " + str time);
+    };
+    systemChat "rip snep boi :(";
+};
+
+
+systemChat "sniper: " + str _this;
+_handle = [_this] spawn {
+    systemChat "spawned."
+    params ["_sniper"];
+    systemChat ("sniper: " + str _sniper);
+    while {alive _sniper} do {
+        _sniper doTarget (selectRandom allPlayers);
+        sleep 5;
+        systemChat ("revealing players to sniper at " + str time);
+    };
+    systemChat "rip snep boi :(";
+};
+
+
 
 //requirements:
 //freshly placed sniper unit, direct line of sight to target
