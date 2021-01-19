@@ -54,7 +54,7 @@ _getSafePos = {
 	] call BIS_fnc_findSafePos;
 	if (_pos isEqualTo [0,0,0]) then {
 		systemChat "failed to find position";
-		diag_log ["failed to find position for ", _centerPos]; 
+		diag_log ["failed to find position for ", _centerPos];
 	};
 	//isNil
 	_pos //return
@@ -135,7 +135,7 @@ for "_i" from 0 to _amountEnemyGroups do {
 			_grpComposition = [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt];
 		};
 		case 3:
-		{		
+		{
 			_grpComposition = [_tl, _grunt, _grunt, _soldier1, _grunt, _grunt, _soldier2, _soldier3, _grunt, _soldier1];
 		};
 		default
@@ -145,7 +145,7 @@ for "_i" from 0 to _amountEnemyGroups do {
 	};
 	_thisGroup = [_spawnPos, _side, _grpComposition,[],[],[],[],[],180] call BIS_fnc_spawnGroup;
 	_enemyGroups pushBack _thisGroup;
-	
+
 	//set lambs task/group beschäftigung
 	_lambsTsk = selectrandom [1,2,3,4];
 	switch (_lambsTsk) do
@@ -168,7 +168,7 @@ for "_i" from 0 to _amountEnemyGroups do {
 		};
 	};
 
-	//for all groups execute dushman scripts on units 
+	//for all groups execute dushman scripts on units
 	{[_x] execvm "scripts\dushman.sqf";} forEach units _thisGroup;
 };
 
@@ -202,3 +202,46 @@ switch (_event) do
 };
 
 
+// Spawn goats;
+_amountHostileGoatGroups = random 4 + 5;
+
+for "_i" from 0 to _amountHostileGoatGroups do {
+_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getSafePos;
+_GoatComposition = [];
+
+
+	for "_i" from 0 to (random 8) do {
+ 	_goat = "Goat_random_F";
+ 	_GoatComposition pushback _goat;
+ 	_ggroup = createGroup Civilian;
+ 	diag_log [_goat,_GoatComposition, _ggroup,_spawnPos];
+ 	_goater = _ggroup createUnit ["Goat_random_F", ([_spawnPos, (random 15)+5,random 360] call BIS_fnc_relPos),[],0,"NONE"];
+	0 = [_goater] spawn
+	{
+		params ["_goater"];
+		while {alive _goater} do {
+			sleep 15 + (random 20);
+			gopos = [_goater, (random 25)+10,random 360] call BIS_fnc_relPos;
+			_goater doMove gopos;
+		};
+	};
+	};
+};
+/*
+_GoatGroup = [_spawnPos, civilian, _GoatComposition,[],[],[],[],[],180] call BIS_fnc_spawnGroup;
+_marker1 = createMarker [(str time), _spawnPos];
+_marker1 setMarkerType "hd_warning";
+_marker1 setMarkerText "SCHEISSE FEINDLICHE ZIEGEN!!!";
+diag_log [_GoatComposition,_spawnPos,_goatgroup];
+
+
+{0 = [_x] spawn {
+ 	while {alive (_this select 0)} do {
+ 		sleep 15 + (random 20);
+ 		_gopos = [(_this select 0), (random 25)+10,random 360] call BIS_fnc_relPos;
+ 		(_this select 0) doMove _gopos;
+ 	};
+ }} foreach units _GoatGroup;
+
+
+};
