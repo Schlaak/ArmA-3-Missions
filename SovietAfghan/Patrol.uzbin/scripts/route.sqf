@@ -176,7 +176,7 @@ for "_i" from 0 to _amountEnemyGroups do {
 	//for all groups execute dushman scripts on units
 	{[_x] execvm "scripts\dushman.sqf";} forEach units _thisGroup;
 };
-
+//comment
 //preplaced events usage: on trigger condition: Route1 && event3 //FIXME
 switch (_event) do
 {
@@ -241,15 +241,27 @@ _getcachePos = {
 	//isNil
 	_pos //return
 };
+//position of templates to be teleported to desired pos.
+_cacheTemplates = [[11749.2,12240.7,0],[11851.4,12243.7,0],[11954,12246.8,0],[11750.6,12145,0],[11852.9,12133.3,0],[11951.2,12146.3,0],[11952.3,12052.3,0],[11850.9,12049,0],[11750.8,12048.8,0]];
+_cacheAmount = 3 + random 9;
+diag_log ["placing",_cacheAmount,"caches"];
 
-for "_i" from 0 to (3 + (random 9)) do {
-_cache = selectrandom [[11749.2,12240.7,0],[11851.4,12243.7,0],[11954,12246.8,0],[11750.6,12145,0],[11852.9,12133.3,0],[11951.2,12146.3,0],[11952.3,12052.3,0],[11850.9,12049,0],[11750.8,12048.8,0]];
-_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
-nul = [_cache,_spawnPos,50] execvm "scripts\shk_moveobjects.sqf";
+for "_i" from 0 to _cacheAmount do {
+	//template
+	if (count _cacheTemplates == 0) exitWith {
+		diag_log ["weapon cache placement failed, no available templates left"];
+	};
+	_cache = selectrandom _cacheTemplates;
+	_cacheTemplates = _cacheTemplates - [_cache];
 
-_marker1 = createMarker [(str time), _spawnPos];
-_marker1 setMarkerType "hd_warning";
-_marker1 setMarkerText "Cache!!!";
+	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
+	[_cache,_spawnPos,50] execvm "scripts\shk_moveobjects.sqf";
+
+	diag_log ["placed cache from ",_cache," remaining templates: ",_cacheTemplates, " at spawnpos ",_spawnPos];
+
+	_marker1 = createMarker ["cache" + str time, _spawnPos];
+	_marker1 setMarkerType "hd_warning";
+	_marker1 setMarkerText "Cache!!!";
 };
 
 
