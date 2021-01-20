@@ -1,9 +1,10 @@
 //[this] execVM "scripts\sniper.sqf";
 params ["_sniper"];
-waitUntil {time > 10};
-_sniper setUnitPos "down";
-sleep  1200; //20 min wait until sniper becomes active
 if (!isServer) exitWith {};
+
+_sniper setUnitPos "down";
+waitUntil {sleep 10; time > 1200};
+
 //debug marker
 _handle = [_sniper] spawn {
     params ["_sniper"];

@@ -3,13 +3,14 @@
 //[_dude, true] execvm "scripts\US.sqf";
 //[_dude, true] execvm "scripts\US.sqf";
 //[_dude] execvm "scripts\dushman.sqf";
-if (!isserver) exitWith {};
+diag_log ["dushmaan.sqf called with", _this];
+if (!isserver) exitWith {
+	diag_log ["not server"];
+};
 
 private ["_items","_dude","_uniform"];
 
 _dude = _this select 0;
-if (_dude isKindOf "CUP_I_TK_GUE_Soldier") then
-{
 
 _uniform = selectRandom ["U_C_HunterBody_grn","U_Marshal","U_C_Man_casual_2_F","U_C_Man_casual_3_F","U_C_Man_casual_1_F","U_I_C_Soldier_Para_2_F","U_I_C_Soldier_Para_4_F","U_I_C_Soldier_Para_3_F","U_I_C_Soldier_Para_5_F","U_I_C_Soldier_Para_1_F","U_BG_Guerilla2_3","U_BG_Guerilla2_1","U_C_Man_casual_5_F","U_C_Man_casual_6_F","U_C_Man_casual_4_F","U_C_Mechanic_01_F","U_C_Mechanic_01_F","CUP_U_O_TK_MixedCamo","CUP_U_C_Profiteer_04","CUP_U_C_Profiteer_01","CUP_U_C_Profiteer_03","CUP_I_B_PMC_Unit_43","CUP_O_TKI_Khet_Partug_03","CUP_O_TKI_Khet_Partug_03","CUP_O_TKI_Khet_Partug_06","CUP_O_TKI_Khet_Partug_06","CUP_O_TKI_Khet_Partug_05","CUP_O_TKI_Khet_Partug_05","CUP_O_TKI_Khet_Partug_08","CUP_O_TKI_Khet_Partug_08","CUP_O_TKI_Khet_Partug_07","CUP_O_TKI_Khet_Partug_07","CUP_O_TKI_Khet_Partug_01","CUP_O_TKI_Khet_Partug_01","CUP_O_TKI_Khet_Partug_02","CUP_O_TKI_Khet_Partug_02","CUP_O_TKI_Khet_Partug_04","CUP_O_TKI_Khet_Partug_04","CUP_O_TKI_Khet_Jeans_03","CUP_O_TKI_Khet_Jeans_03","CUP_O_TKI_Khet_Jeans_01","CUP_O_TKI_Khet_Jeans_01","CUP_O_TKI_Khet_Jeans_01","CUP_O_TKI_Khet_Jeans_01","CUP_O_TKI_Khet_Jeans_02","CUP_O_TKI_Khet_Jeans_02","CUP_O_TKI_Khet_Jeans_04","CUP_O_TKI_Khet_Jeans_04"];
 _vest = selectRandom ["V_HarnessO_brn","V_HarnessO_gry","V_HarnessOGL_gry","V_BandollierB_cbr","V_BandollierB_khk","V_BandollierB_blk","V_TacVest_oli","V_I_G_resistanceLeader_F","V_LegStrapBag_coyote_F","V_LegStrapBag_olive_F","V_Pocketed_coyote_F","V_Pocketed_olive_F","V_Pocketed_black_F","cwr3_o_vest_6b2_ak74","cwr3_o_vest_6b2_chicom_ak74","cwr3_o_vest_6b2_chicom_light_ak74","cwr3_o_vest_6b2_mg","cwr3_o_vest_6b2_sapper","cwr3_o_vest_officer_jacket","cwr3_b_vest_alice","cwr3_b_vest_alice_medic","cwr3_b_vest_alice_mg","cwr3_b_vest_alice_officer","cwr3_i_vest_anite_blk","cwr3_i_vest_anite_khk","cwr3_b_vest_anite","cwr3_o_vest_chicom_ak74","cwr3_o_vest_chicom_ak74","cwr3_o_vest_chicom_ak74","cwr3_o_vest_chicom_ak74","cwr3_o_vest_chicom_ak74","cwr3_o_vest_chicom_ak74","cwr3_o_vest_chicom_beltkit_ak74","cwr3_o_vest_chicom_beltkit_light_ak74","cwr3_i_vest_chicom","cwr3_i_vest_lbv","cwr3_i_vest_lbv_mg","cwr3_i_vest_lbv_mg_olive","cwr3_i_vest_lbv_olive","cwr3_o_vest_harness_ak74","cwr3_o_vest_harness_ak74","cwr3_i_vest_chicom","cwr3_i_vest_lbv","cwr3_i_vest_lbv_mg","cwr3_i_vest_lbv_mg_olive","cwr3_i_vest_lbv_olive","cwr3_o_vest_harness_medic","cwr3_b_vest_pasgt_alice_woodland_medic","CUP_V_B_PASGT_no_bags_desert","CUP_V_B_PASGT_no_bags_OD","CUP_V_RUS_Smersh_1","CUP_V_RUS_Smersh_2","CUP_V_OI_TKI_Jacket1_04","CUP_V_OI_TKI_Jacket1_06","CUP_V_OI_TKI_Jacket1_01","CUP_V_OI_TKI_Jacket1_05","CUP_V_OI_TKI_Jacket1_02","CUP_V_OI_TKI_Jacket1_03","CUP_V_OI_TKI_Jacket1_03","CUP_V_OI_TKI_Jacket4_04","CUP_V_OI_TKI_Jacket4_05","CUP_V_OI_TKI_Jacket4_02","CUP_V_OI_TKI_Jacket4_06","CUP_V_OI_TKI_Jacket4_03","CUP_V_OI_TKI_Jacket4_01","CUP_V_OI_TKI_Jacket5_04","CUP_V_OI_TKI_Jacket5_05","CUP_V_OI_TKI_Jacket5_02","CUP_V_OI_TKI_Jacket5_06","CUP_V_OI_TKI_Jacket5_03","CUP_V_OI_TKI_Jacket5_01","CUP_V_OI_TKI_Jacket3_04","CUP_V_OI_TKI_Jacket3_02","CUP_V_OI_TKI_Jacket3_03","CUP_V_OI_TKI_Jacket3_05","CUP_V_OI_TKI_Jacket3_06","CUP_V_OI_TKI_Jacket3_01","CUP_V_OI_TKI_Jacket6_04","CUP_V_OI_TKI_Jacket6_05","CUP_V_OI_TKI_Jacket6_02","CUP_V_OI_TKI_Jacket6_06","CUP_V_OI_TKI_Jacket6_03","CUP_V_OI_TKI_Jacket6_01","CUP_V_OI_TKI_Jacket2_04","CUP_V_OI_TKI_Jacket2_06","CUP_V_OI_TKI_Jacket2_03","CUP_V_OI_TKI_Jacket2_02","CUP_V_OI_TKI_Jacket2_05","CUP_V_OI_TKI_Jacket2_01"];
@@ -23,20 +24,12 @@ _weapon = selectrandom ["CUP_arifle_AK74_Early","CUP_arifle_AK74_GL_Early","CUP_
 _mg = selectrandom ["CUP_lmg_UK59","CUP_lmg_PKM","CUP_lmg_M60","CUP_lmg_M60E4_norail","CUP_glaunch_M79","CUP_lmg_PKM","CUP_lmg_FNMAG","CUP_lmg_PKM","CUP_lmg_PKM","CUP_lmg_PKM","CUP_lmg_PKMN","CUP_arifle_RPK74","CUP_arifle_RPK74_45"];
 _mgbackpack = selectrandom ["CUP_B_AlicePack_Bedroll","CUP_B_AlicePack_Khaki","CUP_B_AlicePack_OD","cwr3_o_backpack_rd54","cwr3_o_backpack_harness_roll","cwr3_i_backpack","cwr3_b_backpack_alice","CUP_B_SLA_Medicbag"];
 
-sleep (1 + (random 3));
-
-
-//if (!isPlayer _dude ) then {
 _items = uniformItems _dude;
 sleep 0.5;
 removeUniform _dude;
 
-//_dude addWeapon "arifle_SUD_AK74";
-//_dude addPrimaryWeaponItem "SUD_30Rnd_545x39_AK";
-if (!(_dude getVariable ["isSetup", false])) then {
-_dude setVariable ["isSetup", true];
-
-
+if ((_dude getVariable ["isSetup", false])) exitWith {diag_log ["dushmaan already set up"]};
+_dude setVariable ["isSetup", true,true];
 
 removeAllWeapons _dude;
 removeAllItems _dude;
@@ -47,17 +40,17 @@ removeBackpack _dude;
 removeHeadgear _dude;
 removeGoggles _dude;
 
-
-
 _dude forceAddUniform _uniform;
-{_dude addItemToUniform _x} foreach _items;
+{
+	_dude addItemToUniform _x
+} foreach _items;
 _dude addGoggles _goggles;
 _dude addHeadgear _helmet;
 _dude addvest _vest;
 _case = selectrandom [0,0,0,0,0,0,1,1,1,2,2,0,0];
 
-	switch (_case) do
-	{
+switch (_case) do
+{
 	case 0:
 	{
 		_dude addweapon _weapon;
@@ -94,8 +87,33 @@ _case = selectrandom [0,0,0,0,0,0,1,1,1,2,2,0,0];
 		_dude addmagazine (_magazines select 0);
 		_dude addmagazine (_magazines select 0);
 	};
-	};
 };
+
+//set voice and name
+_firstNames = [
+	"Aabid ",
+	"Abdullah ",
+	"Hamzah ",
+	"Eachan ",
+	"Ector ",
+	"Mohammed ",
+	"Ayran "
+];
+_lastNames = [
+	"Safran",
+	"Abdullah",
+	"bin Bong",
+	"al Dente",
+	"Sayüt"
+];
+[
+	_dude, (selectRandom _firstNames) + (selectRandom _lastNames)
+] remoteExec ["setName",0,_dude];
+_voices = [
+	"Male01PER",
+	"Male02PER",
+	"Male03PER"
+];
+[_dude, selectRandom _voices] remoteExec ["setSpeaker", 0, _dude];
 //};
 	//END FIRST IF
-};
