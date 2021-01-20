@@ -12,6 +12,7 @@ diag_log ["#################################### spawn eventhandler init called"]
 	if (faction _dude == "BLU_G_F") then {
 		//make sniper
 		//systemChat "faction is FIA, make sniper";
+		[_dude] execVM "scripts\dushman.sqf";
 		removeAllWeapons _dude;
 		removeAllItems _dude;
 		removeAllAssignedItems _dude;
