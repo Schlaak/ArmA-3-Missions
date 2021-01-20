@@ -90,7 +90,6 @@ if (hasInterface) then //check if running machine == player
 			_skip = !offroad_enable;
 
 			if (!_skip) then {
-				//_isoffroad = ((vehicle player) isKindOf "car" && !(isOnRoad (vehicle player)) && !((surfaceType getpos player) in _surfacearray) && (vehicle player != player) &&((speed (vehicle player) >= 3) OR (speed (vehicle player) < -3)) && (vehicle player) isKindOf "car" );
 				_isoffroad = (vehicle player) isKindOf "car" && !isOnRoad (getPos vehicle player) &&( abs speed (vehicle player) >= 5);
 				if (_isoffroad) then {
 					_enableCamShake = true;
@@ -100,7 +99,6 @@ if (hasInterface) then //check if running machine == player
 					_camshakefreq = 0.14 * _speed; //value = 10 for 70 kmh
 					enableCamShake true;
 					addCamShake [_camshakepower, 8, _camshakefreq];
-				//	addCamShake [10, 2, 10];	//no matter duration, lasts max ~2 seconds
 					if (offroad_debug) then {
 						hint ("off road: " + str round _camshakepower + "|" + str round _coeff + " on: " + surfaceType getpos player);
 					};
@@ -110,8 +108,6 @@ if (hasInterface) then //check if running machine == player
 						hint ("on road: " + surfaceType getpos player);
 					};
 				}
-			} else {
-				//enableCamShake false; //TODO does this conflict with other wobble mods?
 			};
 			_i = _i + 1;
 			if (offroad_debug && (_i mod 10) == 0 ) then {
