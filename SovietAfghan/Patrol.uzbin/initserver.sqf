@@ -42,6 +42,10 @@ sleep 3;
 1 setLightnings 0;
 forceweatherchange;
 
+
+sleep 10;
+[] execvm "scripts\loudspeaker.sqf";
+[] execvm "scripts\music.sqf";
 //0 setOvercast
 
 //_wind = selectrandom [1,2,3,4];
