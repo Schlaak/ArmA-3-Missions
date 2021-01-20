@@ -3,8 +3,11 @@ params ["_sniper"];
 if (!isServer) exitWith {};
 
 _sniper setUnitPos "down";
-waitUntil {sleep 10; time > 1200};
-
+waitUntil {sleep 10; 
+((time > 1200) OR missionnamespace getVariable ["sn_go",false])
+};
+missionNamespace setVariable ["sn_go",true,true];
+systemChat "sniper go!";
 //debug marker
 _handle = [_sniper] spawn {
     params ["_sniper"];
