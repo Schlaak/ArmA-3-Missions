@@ -8,11 +8,7 @@ class EditorData
 	toggles=1057;
 	class ItemIDProvider
 	{
-<<<<<<< HEAD
-		nextID=2387;
-=======
 		nextID=2615;
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 	};
 	class MarkerIDProvider
 	{
@@ -20,16 +16,6 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-<<<<<<< HEAD
-		nextID=226;
-	};
-	class Camera
-	{
-		pos[]={8876.8184,486.68637,9108.7744};
-		dir[]={-0.0057592746,-0.31365761,0.94952887};
-		up[]={-0.0019023489,0.94953322,0.31365353};
-		aside[]={0.9999882,1.3872341e-007,0.006065323};
-=======
 		nextID=283;
 	};
 	class Camera
@@ -38,7 +24,6 @@ class EditorData
 		dir[]={-0.5433799,-0.4283931,-0.72197801};
 		up[]={-0.25761133,0.9035871,-0.34228432};
 		aside[]={-0.79900265,5.6438148e-007,0.60134935};
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 	};
 };
 binarizationWanted=0;
@@ -141,22 +126,14 @@ addons[]=
 	"CUP_Weapons_Put",
 	"ace_explosives",
 	"grad_civs_common",
-<<<<<<< HEAD
-	"CUP_Creatures_Military_Chedaki"
-=======
 	"A3_Modules_F_Curator_Animals",
 	"A3_Modules_F_Sites"
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 };
 class AddonsMetaData
 {
 	class List
 	{
-<<<<<<< HEAD
-		items=75;
-=======
 		items=80;
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -657,11 +634,6 @@ class AddonsMetaData
 			name="common";
 			author="AUTHOR";
 		};
-		class Item74
-		{
-			className="CUP_Creatures_Military_Chedaki";
-			name="CUP_Creatures_Military_Chedaki";
-		};
 	};
 };
 randomSeed=14823625;
@@ -721,11 +693,7 @@ class Mission
 	};
 	class Entities
 	{
-<<<<<<< HEAD
-		items=37;
-=======
 		items=34;
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 		class Item0
 		{
 			dataType="Layer";
@@ -44312,25 +44280,7 @@ class Mission
 							{
 								class data
 								{
-<<<<<<< HEAD
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={4379.3604,179.08713,2817.9556};
-										angles[]={0,0.87266457,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										disableSimulation=1;
-									};
-									id=1794;
-									type="cwr3_o_ural_reammo";
-									class CustomAttributes
-=======
 									class type
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 									{
 										type[]=
 										{
@@ -44614,25 +44564,7 @@ class Mission
 							{
 								class data
 								{
-<<<<<<< HEAD
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={4373.3784,176.93216,2852.4778};
-										angles[]={0,0.34906584,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										disableSimulation=1;
-									};
-									id=2255;
-									type="Mass_grave";
-									class CustomAttributes
-=======
 									class type
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 									{
 										type[]=
 										{
@@ -44672,25 +44604,7 @@ class Mission
 							{
 								class data
 								{
-<<<<<<< HEAD
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={4373.3755,176.93216,2846.2661};
-										angles[]={0,5.410521,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										disableSimulation=1;
-									};
-									id=2256;
-									type="Mass_grave";
-									class CustomAttributes
-=======
 									class type
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 									{
 										type[]=
 										{
@@ -44730,25 +44644,7 @@ class Mission
 							{
 								class data
 								{
-<<<<<<< HEAD
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={4377.0908,177.18422,2844.072};
-										angles[]={0,1.0471976,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										disableSimulation=1;
-									};
-									id=2257;
-									type="CraterLong";
-									class CustomAttributes
-=======
 									class type
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 									{
 										type[]=
 										{
@@ -44789,25 +44685,7 @@ class Mission
 							{
 								class data
 								{
-<<<<<<< HEAD
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={4377.875,177.16496,2853.8545};
-										angles[]={0,5.410521,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										disableSimulation=1;
-									};
-									id=2258;
-									type="CraterLong_small";
-									class CustomAttributes
-=======
 									class type
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 									{
 										type[]=
 										{
@@ -44847,25 +44725,7 @@ class Mission
 							{
 								class data
 								{
-<<<<<<< HEAD
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={4370.3032,177.16496,2849.3247};
-										angles[]={0,0.17453337,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										disableSimulation=1;
-									};
-									id=2259;
-									type="CraterLong_small";
-									class CustomAttributes
-=======
 									class type
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 									{
 										type[]=
 										{
@@ -44908,15 +44768,10 @@ class Mission
 								{
 									class type
 									{
-<<<<<<< HEAD
-										position[]={4370.0049,177.16496,2845.6189};
-										angles[]={0,2.5307279,0};
-=======
 										type[]=
 										{
 											"BOOL"
 										};
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 									};
 									value=0;
 								};
@@ -66562,10 +66417,6 @@ class Mission
 			};
 			class Item236
 			{
-<<<<<<< HEAD
-				position[]={121.30789,6.4001055,822.83447};
-				angles[]={0,0,0.003311686};
-=======
 				linkID=236;
 				item0=2432;
 				item1=2425;
@@ -66573,7 +66424,6 @@ class Mission
 				{
 					type="RandomStart";
 				};
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 			};
 			class Item237
 			{
@@ -66587,10 +66437,6 @@ class Mission
 			};
 			class Item238
 			{
-<<<<<<< HEAD
-				position[]={120.26443,6.3966312,821.526};
-				angles[]={0,4.4505897,0.003311686};
-=======
 				linkID=238;
 				item0=2434;
 				item1=2425;
@@ -66598,7 +66444,6 @@ class Mission
 				{
 					type="RandomStart";
 				};
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 			};
 			class Item239
 			{
@@ -66612,10 +66457,6 @@ class Mission
 			};
 			class Item240
 			{
-<<<<<<< HEAD
-				position[]={122.11055,6.4027815,821.24786};
-				angles[]={0,2.3561945,0.003311686};
-=======
 				linkID=240;
 				item0=2436;
 				item1=2425;
@@ -66623,7 +66464,6 @@ class Mission
 				{
 					type="RandomStart";
 				};
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 			};
 			class Item241
 			{
@@ -66655,833 +66495,7 @@ class Mission
 					type="RandomStart";
 				};
 			};
-<<<<<<< HEAD
-			id=2253;
-			type="Misc_TyreHeapEP1";
-			atlOffset=0.2680006;
-		};
-		class Item26
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8755.5781,467.25055,8380.3018};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2362;
-					type="CUP_O_INS_Sniper";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2365;
-		};
-		class Item27
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8216.9473,372.01819,9176.9893};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2368;
-					type="CUP_O_INS_Sniper";
-					atlOffset=3.0517578e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2367;
-			atlOffset=3.0517578e-005;
-		};
-		class Item28
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8485.3965,367.54233,10079.325};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2370;
-					type="CUP_O_INS_Sniper";
-					atlOffset=3.0517578e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2369;
-			atlOffset=3.0517578e-005;
-		};
-		class Item29
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={9086.376,393.88705,10418.784};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2372;
-					type="CUP_O_INS_Sniper";
-					atlOffset=3.0517578e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2371;
-			atlOffset=3.0517578e-005;
-		};
-		class Item30
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={9631.9326,479.18695,10344.311};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2374;
-					type="CUP_O_INS_Sniper";
-					atlOffset=3.0517578e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2373;
-			atlOffset=3.0517578e-005;
-		};
-		class Item31
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={9612.8828,442.38596,10763.438};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2376;
-					type="CUP_O_INS_Sniper";
-					atlOffset=3.0517578e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2375;
-			atlOffset=3.0517578e-005;
-		};
-		class Item32
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={9997.3691,518.78186,10385.877};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2378;
-					type="CUP_O_INS_Sniper";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2377;
-		};
-		class Item33
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={10236.377,551.15393,10228.271};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2380;
-					type="CUP_O_INS_Sniper";
-					atlOffset=6.1035156e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2379;
-			atlOffset=6.1035156e-005;
-		};
-		class Item34
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={10111.678,537.11487,9764.1143};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2382;
-					type="CUP_O_INS_Sniper";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2381;
-		};
-		class Item35
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={9713.335,490.85501,9149.2793};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2384;
-					type="CUP_O_INS_Sniper";
-					atlOffset=3.0517578e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2383;
-			atlOffset=3.0517578e-005;
-		};
-		class Item36
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={9249.1777,490.15723,8931.0566};
-						angles[]={0,0.69813156,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="call{[this] execVM ""scripts\sniper.sqf"";}";
-					};
-					id=2386;
-					type="CUP_O_INS_Sniper";
-					atlOffset=3.0517578e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02RUS";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2385;
-			atlOffset=3.0517578e-005;
-		};
-	};
-	class Connections
-	{
-		class LinkIDProvider
-		{
-			nextID=134;
-		};
-		class Links
-		{
-			items=134;
-			class Item0
-=======
 			class Item244
->>>>>>> 4badc20c1febeb99f6c189663e1f5fad60ed2040
 			{
 				linkID=244;
 				item0=2438;
