@@ -50,7 +50,7 @@ while {alive _sniper} do {
         _snPos = [_snPos select 0, _snPos select 1, 1];
         _snPos = AGLToASL _snPos;
         _lineBlocked = lineIntersectsSurfaces [_snPos,eyePos _x,_sniper,_x];
-        _hasLOS = (((getPos _sniper distance getPos _x) < 1000) && (count _lineBlocked == 0));
+        _hasLOS = (((getPos _sniper distance getPos _x) < 800) && (count _lineBlocked == 0));
        // ["terrain:",terrainIntersect [eyePos _sniper, eyePos _x],"objects:",lineIntersects [eyePos _sniper, eyePos _x, _x, _sniper],"hasLOS:",_hasLOS, " snpos ", _snPos] call _debugMssg;
         if (_hasLOS) exitWith {
             _sniper doTarget _x;
