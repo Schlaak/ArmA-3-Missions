@@ -174,7 +174,12 @@ for "_i" from 0 to _amountEnemyGroups do {
 	};
 
 	//for all groups execute dushman scripts on units
-	{[_x] execvm "scripts\dushman.sqf";} forEach units _thisGroup;
+	{
+		if (_dude isKindOf "CUP_I_TK_GUE_Soldier") then
+		{
+			[_x] execvm "scripts\dushman.sqf";
+		}
+	} forEach units _thisGroup;
 };
 //comment
 //preplaced events usage: on trigger condition: Route1 && event3 //FIXME

@@ -24,6 +24,9 @@ if (isServer) then
 	forceweatherchange;
 };
 [] execvm "ambienteflyby.sqf";
+//TODO spawn eventhandler
+[] execVM "scripts\spawn_EH.sqf";
+
 
 { _x setmarkeralpha 0; } foreach ["Route1to3start","Route4to5start", "WProute1", "WProute1_1", "WProute1_2","WProute1_3","WProute1_4","WProute1_5","WProute1_6","WProute1_7","WProute1_8","WProute1_9","WProute1_10","WProute1_11","WProute1_12","WProute1_13","WProute2", "WProute2_1", "WProute2_2","WProute2_3","WProute2_4","WProute2_5","WProute2_6","WProute2_7","WProute2_8","WProute2_9","WProute2_10","WProute2_11","WProute2_12","WProute2_13","WProute3", "WProute3_1", "WProute3_2","WProute3_3","WProute3_4","WProute3_5","WProute3_6","WProute3_7","WProute3_8","WProute3_9","WProute3_10","WProute3_11","WProute3_12","WProute3_13","WProute4", "WProute4_1", "WProute4_2","WProute4_3","WProute4_4","WProute4_5","WProute4_6","WProute4_7","WProute4_8","WProute4_9","WProute4_10","WProute4_11","WProute4_12","WProute4_13","WProute5","WProute5_1","WProute5_2","WProute5_3","WProute5_4","WProute5_5","WProute5_6","WProute5_7","WProute5_8","WProute5_9","WProute5_10","WProute5_11","WProute5_12","WProute5_13"];
 
