@@ -8,7 +8,7 @@ class EditorData
 	toggles=1569;
 	class ItemIDProvider
 	{
-		nextID=2361;
+		nextID=2415;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=203;
+		nextID=226;
 	};
 	class Camera
 	{
-		pos[]={146.2056,31.3846,834.2337};
-		dir[]={0.2485615,-0.34601483,0.90470922};
-		up[]={0.091668673,0.93822646,0.33365437};
-		aside[]={0.96427345,2.1411688e-007,-0.26492566};
+		pos[]={8720.4502,454.37582,10398.294};
+		dir[]={0.90743101,-0.42019817,-0.0079591069};
+		up[]={0.42020503,0.90741122,-0.0036852632};
+		aside[]={-0.0087700337,1.8859851e-008,-0.99998474};
 	};
 };
 binarizationWanted=0;
@@ -116,13 +116,21 @@ addons[]=
 	"A3_Structures_F_Civ_Camping",
 	"CUP_Weapons_Put",
 	"ace_explosives",
-	"grad_civs_common"
+	"grad_civs_common",
+	"A3_Characters_F",
+	"CUP_Creatures_Military_SLA",
+	"CUP_Creatures_Military_ACR",
+	"CUP_Weapons_LeeEnfield",
+	"CUP_Weapons_West_Attachments",
+	"CUP_Weapons_Phantom",
+	"A3_Weapons_F_Acc",
+	"CUP_Weapons_Items"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=74;
+		items=80;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -584,6 +592,36 @@ class AddonsMetaData
 			name="common";
 			author="AUTHOR";
 		};
+		class Item74
+		{
+			className="CUP_Creatures_Military_SLA";
+			name="CUP_Creatures_Military_SLA";
+		};
+		class Item75
+		{
+			className="CUP_Creatures_Military_ACR";
+			name="CUP_Creatures_Military_ACR";
+		};
+		class Item76
+		{
+			className="CUP_Weapons_LeeEnfield";
+			name="CUP_Weapons_LeeEnfield";
+		};
+		class Item77
+		{
+			className="CUP_Weapons_West_Attachments";
+			name="CUP_Weapons_West_Attachments";
+		};
+		class Item78
+		{
+			className="CUP_Weapons_Phantom";
+			name="CUP_Weapons_Phantom";
+		};
+		class Item79
+		{
+			className="CUP_Weapons_Items";
+			name="CUP_Weapons_Items";
+		};
 	};
 };
 randomSeed=14823625;
@@ -624,8 +662,10 @@ class Mission
 	{
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
+		startWeather=0.11877325;
 		startWind=0.1;
 		startWaves=0.1;
+		forecastWeather=0.055235427;
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
@@ -643,7 +683,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=26;
+		items=41;
 		class Item0
 		{
 			dataType="Layer";
@@ -44661,7 +44701,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={4379.3604,179.08713,2817.9556};
-										angles[]={-0,0.87266457,0};
+										angles[]={0,0.87266457,0};
 									};
 									side="Empty";
 									flags=4;
@@ -45034,7 +45074,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={4373.3784,176.93216,2852.4778};
-										angles[]={-0,0.34906584,0};
+										angles[]={0,0.34906584,0};
 									};
 									side="Empty";
 									flags=4;
@@ -45093,7 +45133,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={4373.3755,176.93216,2846.2661};
-										angles[]={-0,5.410521,0};
+										angles[]={0,5.410521,0};
 									};
 									side="Empty";
 									flags=4;
@@ -45152,7 +45192,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={4377.0908,177.18422,2844.072};
-										angles[]={-0,1.0471976,0};
+										angles[]={0,1.0471976,0};
 									};
 									side="Empty";
 									flags=4;
@@ -45211,7 +45251,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={4377.875,177.16496,2853.8545};
-										angles[]={-0,5.410521,0};
+										angles[]={0,5.410521,0};
 									};
 									side="Empty";
 									flags=4;
@@ -45270,7 +45310,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={4370.3032,177.16496,2849.3247};
-										angles[]={-0,0.17453337,0};
+										angles[]={0,0.17453337,0};
 									};
 									side="Empty";
 									flags=4;
@@ -45329,7 +45369,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={4370.0049,177.16496,2845.6189};
-										angles[]={-0,2.5307279,0};
+										angles[]={0,2.5307279,0};
 									};
 									side="Empty";
 									flags=4;
@@ -53099,7 +53139,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={121.30789,6.4001055,822.83447};
-				angles[]={-0,0,0.003311686};
+				angles[]={0,0,0.003311686};
 			};
 			side="Empty";
 			flags=4;
@@ -53116,7 +53156,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={120.26443,6.3966312,821.526};
-				angles[]={-0,4.4505897,0.003311686};
+				angles[]={0,4.4505897,0.003311686};
 			};
 			side="Empty";
 			flags=4;
@@ -53133,7 +53173,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={122.11055,6.4027815,821.24786};
-				angles[]={-0,2.3561945,0.003311686};
+				angles[]={0,2.3561945,0.003311686};
 			};
 			side="Empty";
 			flags=4;
@@ -53161,6 +53201,2141 @@ class Mission
 			id=2253;
 			type="Misc_TyreHeapEP1";
 			atlOffset=0.2680006;
+		};
+		class Item26
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=9;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8904.2871,382.74948,10370.46};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=2366;
+					type="O_Soldier_TL_F";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8909.0869,382.72495,10356.518};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=2368;
+					type="CUP_O_sla_Soldier_MG_desert";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8912.0869,382.92139,10351.518};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=2369;
+					type="CUP_O_sla_Soldier_GL_desert";
+					atlOffset=3.0517578e-005;
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8914.0869,383.03583,10351.518};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=2370;
+					type="CUP_O_sla_soldier_desert";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8916.0869,383.14261,10351.518};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=2371;
+					type="CUP_O_sla_soldier_desert";
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8935.1279,384.17282,10399.645};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=2373;
+					type="CUP_O_sla_Soldier_MG_desert";
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8938.1279,383.88489,10394.645};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=2374;
+					type="CUP_O_sla_Soldier_GL_desert";
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8940.1279,383.91196,10394.645};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=2375;
+					type="CUP_O_sla_soldier_desert";
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8942.1279,383.93381,10394.645};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=2376;
+					type="CUP_O_sla_soldier_desert";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2365;
+		};
+		class Item27
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8317.167,502.80408,10900.556};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2362;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2361;
+		};
+		class Item28
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8352.9336,482.31711,11137.741};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2390;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2389;
+		};
+		class Item29
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8854.7969,459.4115,11220.151};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2392;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2391;
+		};
+		class Item30
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8974.2734,480.91293,11317.45};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2394;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2393;
+		};
+		class Item31
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9619.4082,432.51251,11299.509};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2396;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2395;
+		};
+		class Item32
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9942.4063,504.24066,11152.251};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2398;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2397;
+		};
+		class Item33
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10238.922,521.73907,10989.695};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2400;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2399;
+		};
+		class Item34
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10032.364,513.86713,10459.122};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2402;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2401;
+		};
+		class Item35
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8787.2422,414.43616,9757.6523};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2404;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2403;
+		};
+		class Item36
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8408.2402,363.90405,9763.6455};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2406;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2405;
+		};
+		class Item37
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8505.8525,408.83835,9349.0801};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2408;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2407;
+		};
+		class Item38
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8158.959,387.52136,9866.5576};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2410;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2409;
+		};
+		class Item39
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8146.8403,458.64609,10604.81};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2412;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2411;
+		};
+		class Item40
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7860.0645,443.78528,10167.683};
+						angles[]={0,2.4434609,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[this] execVM ""scripts\sniper.sqf"";}";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_srifle_LeeEnfield_rail";
+								optics="CUP_optic_LeupoldMk4";
+								class primaryMuzzleMag
+								{
+									name="CUP_10x_303_M";
+									ammoLeft=10;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_Phantom_Flashlight_snds";
+								muzzle="muzzle_snds_L";
+								flashlight="CUP_acc_CZ_M3X";
+								class primaryMuzzleMag
+								{
+									name="CUP_18Rnd_9x19_Phantom";
+									ammoLeft=18;
+								};
+							};
+							class binocular
+							{
+								name="CUP_Vector21Nite";
+							};
+							class uniform
+							{
+								typeName="U_C_HunterBody_grn";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="CUP_18Rnd_9x19_Phantom";
+										count=1;
+										ammoLeft=18;
+									};
+									class Item2
+									{
+										name="CUP_10x_303_M";
+										count=2;
+										ammoLeft=10;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_ShemagOpen_tan";
+						};
+					};
+					id=2414;
+					type="CUP_B_CZ_Sniper_DES";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="CUP_D_Male03_CZ_ACR";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2413;
 		};
 	};
 	class Connections
