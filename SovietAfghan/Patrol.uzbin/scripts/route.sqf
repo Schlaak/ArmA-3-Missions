@@ -273,30 +273,13 @@ for "_i" from 0 to _cacheAmount do {
 
 
 // Spawn goats;
-_amountHostileGoatGroups = random 4 + 5;
-
+_amountHostileGoatGroups = (random 8) + 5;
+_goatpos = selectrandom [[158.656,11690.2,0],[187.046,11693.9,0],[217.538,11696.9,0],[245.625,11698.6,0],[164.926,11657.4,0],[193.316,11661.1,0],[223.808,11664,3.05176e-005],[251.895,11665.8,6.10352e-005],[170.463,11621.1,0],[198.853,11624.8,0],[229.345,11627.8,-3.05176e-005],[257.432,11629.5,0]];
 for "_i" from 0 to _amountHostileGoatGroups do {
-_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getSafePos;
-_GoatComposition = [];
-
-
-	for "_i" from 0 to (random 8) do {
- 	_goat = "Goat_random_F";
- 	_GoatComposition pushback _goat;
- 	_ggroup = createGroup Civilian;
- 	diag_log [_goat,_GoatComposition, _ggroup,_spawnPos];
- 	_goater = _ggroup createUnit ["Goat_random_F", ([_spawnPos, (random 15)+5,random 360] call BIS_fnc_relPos),[],0,"NONE"];
-	0 = [_goater] spawn
-	{
-		params ["_goater"];
-		while {alive _goater} do {
-			sleep 15 + (random 20);
-			gopos = [_goater, (random 25)+10,random 360] call BIS_fnc_relPos;
-			_goater doMove gopos;
-		};
-	};
-	};
+_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
+[_goatpos,_spawnPos,10] execvm "scripts\shk_moveobjects.sqf";
 };
+
 /*
 _GoatGroup = [_spawnPos, civilian, _GoatComposition,[],[],[],[],[],180] call BIS_fnc_spawnGroup;
 
