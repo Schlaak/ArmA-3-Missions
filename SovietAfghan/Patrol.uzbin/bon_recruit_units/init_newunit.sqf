@@ -11,6 +11,13 @@ if(isServer) then{
 	publicVariable "bon_recruit_newunit";
 };
 
+
+
+
+/*****************************************************************
+	Client Stuff
+******************************************************************/
+_unit addAction ["<t color='#949494'>Dismiss</t>",BON_RECRUIT_PATH+"dismiss.sqf",[],-10,false,true,""];
 if (_unit isKindOf "cwr3_o_soldier_backpack") then
 {
 if (!local _unit) exitWith {};
@@ -92,9 +99,3 @@ _unit linkItem "ItemWatch";
 _unit linkItem "ItemRadio";
 removeBackpack _unit;
 };
-
-
-/*****************************************************************
-	Client Stuff
-******************************************************************/
-_unit addAction ["<t color='#949494'>Dismiss</t>",BON_RECRUIT_PATH+"dismiss.sqf",[],-10,false,true,""];

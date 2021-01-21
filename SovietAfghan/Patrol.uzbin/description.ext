@@ -218,109 +218,109 @@ class CfgSounds
 				class a1
 	{
 		name = "a1";
-		sound[] = { "Sound\announce\a1.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a1.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 					class a2
 	{
 		name = "a2";
-		sound[] = { "Sound\announce\a2.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a2.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 					class a3
 	{
 		name = "a3";
-		sound[] = { "Sound\announce\a3.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a3.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 					class a4
 	{
 		name = "a4";
-		sound[] = { "Sound\announce\a4.ogg", 1, 1,300 };
+		sound[] = { "Sound\announce\a4.ogg", 1, 1,500 };
 		titles[] = {1,""};
 	};
 					class a5
 	{
 		name = "a5";
-		sound[] = { "Sound\announce\a5.ogg", 1, 1,300 };
+		sound[] = { "Sound\announce\a5.ogg", 1, 1,500 };
 		titles[] = {1,""};
 	};
 					class a6
 	{
 		name = "a6";
-		sound[] = { "Sound\announce\a6.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a6.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 					class a7
 	{
 		name = "a7";
-		sound[] = { "Sound\announce\a7.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a7.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 					class a8
 	{
 		name = "a8";
-		sound[] = { "Sound\announce\a8.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a8.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 					class a9
 	{
 		name = "a9";
-		sound[] = { "Sound\announce\a9.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a9.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 					class a10
 	{
 		name = "a10";
-		sound[] = { "Sound\announce\a10.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a10.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 					class a11
 	{
 		name = "a11";
-		sound[] = { "Sound\announce\a11.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a11.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 					class a12
 	{
 		name = "a12";
-		sound[] = { "Sound\announce\a12.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a12.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 					class a13
 	{
 		name = "a13";
-		sound[] = { "Sound\announce\a13.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\a13.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 						class t1
 	{
 		name = "t1";
-		sound[] = { "Sound\announce\t1.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\t1.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 						class t2
 	{
 		name = "t2";
-		sound[] = { "Sound\announce\t2.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\t2.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 						class t3
 	{
 		name = "t3";
-		sound[] = { "Sound\announce\t3.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\t3.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 						class t4
 	{
 		name = "t4";
-		sound[] = { "Sound\announce\t4.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\t4.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 							class t5
 	{
 		name = "t5";
-		sound[] = { "Sound\announce\t5.ogg", 1, 1 ,300};
+		sound[] = { "Sound\announce\t5.ogg", 1, 1 ,500};
 		titles[] = {1,""};
 	};
 		class rus_stoj
@@ -360,7 +360,7 @@ class CfgNotifications
 	class Benachrichtigung
 	{
 		title = "BENACHRICHTIGUNG";				// Title displayed as text on black background. Filled by arguments.
-		iconPicture = "/textures/icon.paa";		// Small icon displayed in left part. Colored by "color", filled by arguments.
+		iconPicture = "Textures\icon.paa";		// Small icon displayed in left part. Colored by "color", filled by arguments.
 		iconText = "";			// Short text displayed over the icon. Colored by "color", filled by arguments.
 		description = "%1";		// Brief description displayed as structured text. Colored by "color", filled by arguments.
 		color[] = {1,1,1,1};	// Icon and text color

@@ -1,3 +1,6 @@
+
+
+
 if (player isKindOf "") then
 {
 
@@ -83,3 +86,5 @@ player linkItem "ItemRadio";
 //[player,"WhiteHead_04","male01rus"] call BIS_fnc_setIdentity;
 
 };
+if !(vehicleVarName player in JWC_CASarray) exitWith {};
+[JWC_MaxD, JWC_lock, JWC_num] execVM "JWC_CASFS\addAction.sqf";
