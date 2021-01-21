@@ -123,7 +123,7 @@ _lastNames = [
 ];
 _name = (selectRandom _firstNames) + (selectRandom _lastNames);
 [_dude, _name] call _setNameACE;
-systemChat( "set name for " + _name);
+//systemChat( "set name for " + _name);
 
 _voices = [
 	"Male01PER",
