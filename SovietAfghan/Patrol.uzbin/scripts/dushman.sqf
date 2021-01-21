@@ -49,45 +49,38 @@ _dude addHeadgear _helmet;
 _dude addvest _vest;
 _case = selectrandom [0,0,0,0,0,0,1,1,1,2,2,0,0];
 
+_amountMags = 4;
+_magType = (getArray (configFile >> "CfgWeapons" >> primaryWeapon _dude >> "magazines")) select 0;;
 switch (_case) do
 {
-	case 0:
+	case 0: //standard guy
 	{
-		_dude addWeaponGlobal _weapon;
-		_dude addBackPackGlobal _bckpck;
-		_magazines = getArray (configFile >> "CfgWeapons" >> primaryWeapon _dude >> "magazines");
-		_dude addMagazineGlobal (_magazines select 0);
-		_dude addMagazineGlobal (_magazines select 0);
-		_dude addMagazineGlobal (_magazines select 0);
-		_dude addMagazineGlobal (_magazines select 0);
-	};
-	case 1:
-	{
-		_dude addWeaponGlobal _mg;
-		_dude addBackPackGlobal _mgbackpack;
-		_magazines = getArray (configFile >> "CfgWeapons" >> primaryWeapon _dude >> "magazines");
-		_dude addMagazineGlobal (_magazines select 0);
-		_dude addMagazineGlobal (_magazines select 0);
-		_dude addMagazineGlobal (_magazines select 0);
-		_dude addMagazineGlobal (_magazines select 0);
 
 	};
-	case 2:
+	case 1: //mg
 	{
-		_dude addWeaponGlobal _weapon;
-		_dude addBackPackGlobal _rpgpack;
+		_weapon = _mg;
+		_bckpck = _mgbackpack;
+	};
+	case 2: //rpg dude
+	{
+		_bckpck = _rpgpack;
 		_dude addWeaponGlobal _rpg;
-		_magazines = getArray (configFile >> "CfgWeapons" >> primaryWeapon _dude >> "magazines");
-		_magazines2 = getArray (configFile >> "CfgWeapons" >> secondaryWeapon _dude >> "magazines");
-		_dude addMagazineGlobal (_magazines select 0);
-		_dude addMagazineGlobal (_magazines2 select 0);
-		_dude addMagazineGlobal (_magazines2 select 0);
-		_dude addMagazineGlobal (_magazines2 select 0);
-		_dude addMagazineGlobal (_magazines select 0);
-		_dude addMagazineGlobal (_magazines select 0);
-		_dude addMagazineGlobal (_magazines select 0);
+		_magazines2 = (getArray (configFile >> "CfgWeapons" >> secondaryWeapon _dude >> "magazines")) select 0;
+		for "_i" from 0 to 2 do {
+			_dude addMagazineGlobal _magazines2;
+		};
 	};
 };
+
+//add weaponAccessories
+
+//add magazines
+for "_i" from 0 to _amountMags do {
+	_dude addMagazineGlobal _amountMags;
+};
+
+
 _setNameACE = {
 	params ["_unit","_name"];
 	diag_log ["setting ace name for ", _unit,_name];
