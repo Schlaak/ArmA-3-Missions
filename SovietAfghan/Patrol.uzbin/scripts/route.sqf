@@ -264,9 +264,9 @@ for "_i" from 0 to _cacheAmount do {
 
 	diag_log ["placed cache from ",_cache," remaining templates: ",_cacheTemplates, " at spawnpos ",_spawnPos];
 
-	_marker1 = createMarker ["cache" + str time, _spawnPos];
-	_marker1 setMarkerType "hd_warning";
-	_marker1 setMarkerText "Cache!!!";
+//	_marker1 = createMarker ["cache" + str time, _spawnPos];
+//	_marker1 setMarkerType "hd_warning";
+//	_marker1 setMarkerText "Cache!!!";
 };
 
 
