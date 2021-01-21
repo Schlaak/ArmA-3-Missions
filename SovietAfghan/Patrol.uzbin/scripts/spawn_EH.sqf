@@ -13,6 +13,8 @@ diag_log ["#################################### spawn eventhandler init called"]
 		//make sniper
 		//systemChat "faction is FIA, make sniper";
 		[_dude] execVM "scripts\dushman.sqf";
+		//insert sniper outfit script here
+		
 		[_dude] spawn {
 			params ["_dude"];
 			sleep 2;
@@ -21,11 +23,11 @@ diag_log ["#################################### spawn eventhandler init called"]
 			removeAllAssignedItems _dude;
 			removeUniform _dude;
 			removeVest _dude;
-			removeBackpack _dude;
+			removeBackPackGlobal _dude;
 			removeHeadgear _dude;
 			removeGoggles _dude;
 
-			_dude addWeapon "CUP_srifle_SVD";
+			_dude addWeaponGlobal "CUP_srifle_SVD";
 			_dude addPrimaryWeaponItem "CUP_optic_PSO_3";
 			_dude addPrimaryWeaponItem "CUP_10Rnd_762x54_SVD_M";
 
@@ -43,7 +45,6 @@ diag_log ["#################################### spawn eventhandler init called"]
 			_dude linkItem "ItemCompass";
 			_dude linkItem "ItemWatch";
 		};
-
 
 		[_dude] execVM "scripts\sniper.sqf";
 	}
