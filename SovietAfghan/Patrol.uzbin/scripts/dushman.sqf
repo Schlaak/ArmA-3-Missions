@@ -31,14 +31,14 @@ removeUniform _dude;
 if ((_dude getVariable ["isSetup", false])) exitWith {diag_log ["dushmaan already set up"]};
 _dude setVariable ["isSetup", true,true];
 
-removeAllWeapons _dude;
-removeAllItems _dude;
-removeAllAssignedItems _dude;
-removeUniform _dude;
-removeVest _dude;
-removeBackpack _dude;
-removeHeadgear _dude;
-removeGoggles _dude;
+removeAllWeapons _dude; //gl
+removeAllItems _dude; //gl
+removeAllAssignedItems _dude; //gl
+removeUniform _dude; //gl
+removeVest _dude; //gl
+removeBackPackGlobal _dude;
+removeHeadgear _dude; //gl
+removeGoggles _dude; //gl
 
 _dude forceAddUniform _uniform;
 {
@@ -53,42 +53,57 @@ switch (_case) do
 {
 	case 0:
 	{
-		_dude addweapon _weapon;
-		_dude addBackpack _bckpck;
+		_dude addWeaponGlobal _weapon;
+		_dude addBackPackGlobal _bckpck;
 		_magazines = getArray (configFile >> "CfgWeapons" >> primaryWeapon _dude >> "magazines");
-		_dude addmagazine (_magazines select 0);
-		_dude addmagazine (_magazines select 0);
-		_dude addmagazine (_magazines select 0);
-		_dude addmagazine (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
 	};
 	case 1:
 	{
-		_dude addweapon _mg;
-		_dude addBackpack _mgbackpack;
+		_dude addWeaponGlobal _mg;
+		_dude addBackPackGlobal _mgbackpack;
 		_magazines = getArray (configFile >> "CfgWeapons" >> primaryWeapon _dude >> "magazines");
-		_dude addmagazine (_magazines select 0);
-		_dude addmagazine (_magazines select 0);
-		_dude addmagazine (_magazines select 0);
-		_dude addmagazine (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
 
 	};
 	case 2:
 	{
-		_dude addweapon _weapon;
-		_dude addBackpack _rpgpack;
-		_dude addweapon _rpg;
+		_dude addWeaponGlobal _weapon;
+		_dude addBackPackGlobal _rpgpack;
+		_dude addWeaponGlobal _rpg;
 		_magazines = getArray (configFile >> "CfgWeapons" >> primaryWeapon _dude >> "magazines");
 		_magazines2 = getArray (configFile >> "CfgWeapons" >> secondaryWeapon _dude >> "magazines");
-		_dude addmagazine (_magazines select 0);
-		_dude addmagazine (_magazines2 select 0);
-		_dude addmagazine (_magazines2 select 0);
-		_dude addmagazine (_magazines2 select 0);
-		_dude addmagazine (_magazines select 0);
-		_dude addmagazine (_magazines select 0);
-		_dude addmagazine (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
+		_dude addMagazineGlobal (_magazines2 select 0);
+		_dude addMagazineGlobal (_magazines2 select 0);
+		_dude addMagazineGlobal (_magazines2 select 0);
+		_dude addMagazineGlobal (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
+		_dude addMagazineGlobal (_magazines select 0);
 	};
 };
+_setNameACE = {
+	params ["_unit","_name"];
+	diag_log ["setting ace name for ", _unit,_name];
 
+	if (isNull _unit || {!alive _unit}) exitWith {};
+
+	if (_unit isKindOf "CAManBase") then {
+	//	private _sanitizedName = [_name, true] call FUNC(sanitizeString);
+	//	private _rawName = [_name, false] call FUNC(sanitizeString);
+	//	diag_log ["raw",_rawName,"sanitized",_sanitizedName];
+		_unit setVariable ["ACE_Name", _name, true];
+		_unit setVariable ["ACE_NameRaw", _name, true];
+	}; 
+
+	[_unit, _name] remoteExec ["setName",0,_unit];
+};
 //set voice and name
 _firstNames = [
 	"Aabid ",
@@ -106,9 +121,10 @@ _lastNames = [
 	"al Dente",
 	"Sayüt"
 ];
-[
-	_dude, (selectRandom _firstNames) + (selectRandom _lastNames)
-] remoteExec ["setName",0,_dude];
+_name = (selectRandom _firstNames) + (selectRandom _lastNames);
+[_dude, _name] call _setNameACE;
+systemChat( "set name for " + _name);
+
 _voices = [
 	"Male01PER",
 	"Male02PER",
@@ -117,3 +133,6 @@ _voices = [
 [_dude, selectRandom _voices] remoteExec ["setSpeaker", 0, _dude];
 //};
 	//END FIRST IF
+
+
+
