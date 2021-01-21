@@ -24,7 +24,7 @@ _loc = visiblePosition _lockobj;
 
 _dir = random 360;
 _dis = 4000;
-_ranPos = [(_loc select 0) + _dis * sin _dir, (_loc select 1) + _dis * cos _dir, 550];
+_ranPos = [(_loc select 0) + _dis * sin _dir, (_loc select 1) + _dis * cos _dir, +850];
 
 _sound1 = selectRandom ["Call1","Call2","Call3","Call4","Call5"];
 _sound2 = selectRandom ["CPu1","CPu2","CPu3","CPu4","CPu5","CPu6","CPu7"];
@@ -56,27 +56,34 @@ sleep 10;
 //sleep 120 + (random 30);
 
 _grp = createGroup east;
-_buzz = createVehicle ["cwr3_o_su25_lgb", _ranPos, [], 0, "FLY"];
+//_buzz = createVehicle ["cwr3_o_su25_lgb", _ranPos, [], 0, "FLY"];
+_buzz = [_ranPos, east, ["cwr3_o_su25_lgb"],[],[],[],[],[],_dir] call BIS_fnc_spawnGroup;
+_buzz allowdamage false;
 //sleep 0.5;
 //_tmpbuzzpos = [(getpos _ranPos select 0),(getpos _ranPos select 1),450];
-_buzz setpos [(_ranPos select 0),(_ranPos select 1),450];
+//_buzz setpos [(_ranPos select 0),(_ranPos select 1),850];
 
 [_buzz] execVM "JWC_CASFS\track.sqf";
 _buzz setVectorDir [(_loc select 0)-(getPos _buzz select 0),(_loc select 1)-(getPos _buzz select 1),0];
 sleep 0.2;
 _dir = getDir _buzz;
 _buzz setVelocity [sin(_dir)*200,cos(_dir)*200,0];
-_pilot = _grp createUnit ["cwr3_o_soldier_pilot_jet", _ranPos, [], 0, "FORM"];
+
+/*
+_pilot = createvehicle ["cwr3_o_soldier_pilot_jet", _ranPos, [], 0, "FORM"];
+_pilot allowdamage false;
 _pilot setVariable ["lambs_danger_disableAI",true];
 _pilot joinSilent _grp;
 _pilot moveinDriver _buzz;
-
+_pilot assignAsDriver _buzz;
+[_pilot] orderGetIn true;
+*/
 
 //_buzz setCaptive true;
 _buzz allowDamage false;
 
 //(leader _grp) sideChat "Cordinates recieved, CAS inbound";
-_pilot sideChat "координаты получены в пути.";
+_buzz sideChat "координаты получены в пути.";
 _grp setBehaviour "STEALTH";
 _grp setSpeedMode "FULL";
 _grp setCombatMode "BLUE";

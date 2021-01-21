@@ -42,7 +42,7 @@ format ["Wind: %1-NS %2-OW m/s", floor (wind select 0), floor (wind select 1)]
 sleep 15;
 
 
-
+/*
 
 if (vehicleVarName player in JWC_CASarray && (headgear player) iskindof "cwr3_o_headgear_officer_cap_field") then
 {

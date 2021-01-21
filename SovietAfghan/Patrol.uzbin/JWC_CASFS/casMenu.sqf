@@ -3,8 +3,8 @@ _caller = _this select 1;
 _id     = _this select 2;
 _argArr = _this select 3;
 
-JWC_maxDisReq   = _argArr select 0;
-_lockToOwner = _argArr select 1;
+JWC_maxDisReq   =  JWC_MaxD; // _argArr select 0;
+_lockToOwner = JWC_lock; // _argArr select 1;
 _num = _argArr select 2;
 
 if ((_lockToOwner) && (_caller != _owner) && (vehicle _owner isKindOf "Man")) exitWith {titleText["You are not authorized to access the CAS Field System!","PLAIN DOWN"]};
@@ -122,7 +122,7 @@ while {dialog && alive _caller && alive _owner} do
   {
     isClicked = true;
     _exit = false;
-    {    
+    {
       if ((whatIsChecked == 0) && (_x == 'JDAM')) exitWith
       {
         _button ctrlEnable false;
@@ -152,7 +152,7 @@ while {dialog && alive _caller && alive _owner} do
 
       _inRestrictedZone = [_x, 'JWC_CAS_TARGET'] call BIS_fnc_inTrigger;
       if (_inRestrictedZone) exitWith {playSound 'cantDo'; hintSilent 'The selected target position is in a restricted zone!'; _button ctrlEnable false; deleteMarker 'JWC_CAS_TARGET'; _exit = true};
-    
+
     } forEach JWC_restrictedZones;
     if (_exit) exitWith {};
     _button ctrlEnable true;
