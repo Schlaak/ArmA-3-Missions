@@ -134,6 +134,20 @@
 {_x hideObjectGlobal false;} foreach (synchronizedObjects thisTrigger);  {_x enableSimulationGlobal true;} foreach (synchronizedObjects thisTrigger);
 
 
+//hiddenobjects per script
+{_x hideobjectglobal false } foreach (synchronizedObjects GAMELOGIC);
+
+{_x enableDynamicSimulation true;} foreach (synchronizedObjects GAMELOGIC);
+{_x enableSimulationGlobal true;_x enableDynamicSimulation true;_x hideobjectglobal false} foreach (synchronizedObjects GAMELOGIC);
+
+// hide multiple markers with for loop
+X = 0;
+for "X" from 0 to 10 do {
+format ["R1_%1", X] setmarkeralpha 0;
+}
+
+
+
 //soundsource
 _soundSource = createSoundSource ["club", getposatl this, [], 0];
 
