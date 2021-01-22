@@ -299,6 +299,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="01_Systeme";
+			state=1;
 			class Entities
 			{
 				items=4;
@@ -320,16 +321,16 @@ class Mission
 				class Item1
 				{
 					dataType="Trigger";
-					position[]={7602.4697,28.095268,11620.463};
+					position[]={7489.0151,28.095268,12624.1};
 					class Attributes
 					{
-						sizeA=7467.4551;
-						sizeB=3758.3633;
+						sizeA=6708.1821;
+						sizeB=2754.7271;
 						isRectangle=1;
 					};
 					id=522;
 					type="EmptyDetectorAreaR250";
-					atlOffset=6.3152676;
+					atlOffset=-21.534077;
 				};
 				class Item2
 				{
@@ -434,7 +435,7 @@ class Mission
 				};
 			};
 			id=17;
-			atlOffset=-1.8037643;
+			atlOffset=-3.1000462;
 		};
 		class Item1
 		{

@@ -35,8 +35,14 @@ switch (_eighterOR) do
 		sleep 300;
 		{_x action ["SitDown", _x]} foreach units _gruppe;
 		sleep 30;
-		["ScoreAdded",["Kriegsgefangene gemacht!",(count (units _gruppe))]] call BIS_fnc_showNotification;	//reward for takeing captives
-		{_x addScore (count (units _gruppe))} foreach allplayers;
+		if ((count (units _gruppe))>0) then
+		{
+			["ScoreAdded",["Kriegsgefangene gemacht!",(count (units _gruppe))]] call BIS_fnc_showNotification;	//reward for takeing captives
+			//{_x addScore (count (units _gruppe))} foreach allplayers;
+			west addScoreSide (count (units _gruppe));
+		};
+
+
 		{deletevehicle _x} foreach units _gruppe;
 
 	};
@@ -47,8 +53,12 @@ switch (_eighterOR) do
 		[leader _gruppe, _Retreatpoint, true] spawn lambs_wp_fnc_taskAssault;
 
 		sleep 150;
-		["ScoreAdded",["Gnade mit fliehendem Fein gehabt!",((count (units _gruppe))*0.5)]] call BIS_fnc_showNotification;	//reward for mercy
-		{_x addScore ((count (units _gruppe))*0.5)} foreach allplayers;
+		if (((count (units _gruppe))*0.5)>0) then
+		{
+			["ScoreAdded",["Gnade mit fliehendem Feind gehabt!",((count (units _gruppe))*0.5)]] call BIS_fnc_showNotification;	//reward for mercy
+			//{_x addScore ((count (units _gruppe))*0.5)} foreach allplayers;
+			west addScoreSide ((count (units _gruppe))*0.5);
+		};
 		{deletevehicle _x} foreach units _gruppe;
 
 	};
