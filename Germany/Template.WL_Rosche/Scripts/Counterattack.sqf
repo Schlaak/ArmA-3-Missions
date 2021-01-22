@@ -7,9 +7,10 @@ params
 2	distance from the center [NUMBER]
 3	Number of waves [NUMBER]
 
-[getmarkerpos "town", 0, 1200,O_grpRND,1] execvm "scripts\counterattack.sqf";
+[getmarkerpos "town", 0, 1200,1] execvm "scripts\counterattack.sqf";
 */
 if (!isserver) exitWith {};
+
 
 _pos1 = _this select 0; //center of point to be attacked
 _direction = _this select 1; //direction
@@ -27,7 +28,7 @@ _WPdistance = 250; //distance for Troops to stop before pos1
 _fleethreshold = selectRandom [0.45,0.5,0.3,0.2];
 _fleecaptive = selectRandom [true,False];
 
-
+for "_i" from 0 to _waves do {
 _pos2 = [ _pos1, _distance, _direction ] call BIS_fnc_relPos; //find position 1200m from center
 _safepos = [_pos2, 1, 200, _objDist, 0, 0.1, 0] call BIS_fnc_findSafePos; //find a safe pos from pos2 to spawn units at
 
@@ -47,6 +48,9 @@ _WP = _EnemyGroup addWaypoint [_WPpos, 0];	//give wp
 
 {[_x] execvm "scripts\combatmodevehicle.sqf";
 } forEach units _EnemyGroup;
+sleep 30;
+};
 
 
-["Benachrichtigung",[format ["Feindtruppen aus %1°.",_direction]]] remoteExec ["BIS_fnc_showNotification", 0, true]; //show notification
+
+["Benachrichtigung",[format ["Feindtruppen aus %1°.",round _direction]]] remoteExec ["BIS_fnc_showNotification", 0, true]; //show notification
