@@ -53,4 +53,4 @@ sleep 30;
 
 
 
-["Benachrichtigung",[format ["Feindtruppen aus %1°.",round _direction]]] remoteExec ["BIS_fnc_showNotification", 0, true]; //show notification
+["Benachrichtigung",[format ["Feindtruppen auf %2 aus %1°.",round _direction, mapGridPosition _pos1]]] remoteExec ["BIS_fnc_showNotification", 0, true]; //show notification

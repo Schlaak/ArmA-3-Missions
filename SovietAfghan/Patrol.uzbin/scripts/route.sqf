@@ -23,16 +23,11 @@ so do these positions for all 3 routes. can be as many as needed.
 Goto line 111 and define hostile side and units
 */
 if (!isserver) exitwith {};
-RndEvent = false;
-Event1 = false;
-Event2 = false;
-Event3 = false;
-Event4 = false;
-Event5 = false;
+
 Patrouillenaufgabe = false;
 waitUntil {Patrouillenaufgabe};
 _chooseroute = selectrandom [1,2,3,4,5]; // wähle route aus
-_event = selectrandom [1,2,3,4,5];
+
 
 //route definitions
 _route1mrks = ["Route1to3start","WProute1", "WProute1_1", "WProute1_2","WProute1_3","WProute1_4","WProute1_5","WProute1_6","WProute1_7","WProute1_8","WProute1_9","WProute1_10","WProute1_11","WProute1_12","WProute1_13"];
@@ -67,6 +62,7 @@ _getSafePos = {
 
 //_mySafePos = [[1,2,3],"mein stringt"] call _getSafePos;
 _availableSpawnPosMarkers = [];
+
 switch (_chooseroute) do
 {
 	case 1:
@@ -183,46 +179,9 @@ for "_i" from 0 to _amountEnemyGroups do {
 };
 //comment
 //preplaced events usage: on trigger condition: Route1 && event3 //FIXME
-switch (_event) do
-{
-	case 1:
-	{
-		event1 = true;
-	};
-		case 2:
-	{
-		event2 = true;
-	};
-		case 3:
-	{
-		event3 = true;
-	};
-		case 4:
-	{
-		event4 = true;
-	};
-		case 5:
-	{
-		event5 = true;
-	};
-	default
-	{
-		event1 = true;
-	};
-};
-_rndeventcalc = selectrandom [1,2];
-switch (_rndeventcalc) do
-{
-	case 1:
-	{
-		RndEvent = true;
-	};
 
-	case 2:
-	{
-		RndEvent = false;
-	};
-};
+#include "routeevents.sqf"
+
 
 
 _getcachePos = {

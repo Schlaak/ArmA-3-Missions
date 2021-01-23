@@ -8,7 +8,7 @@ class EditorData
 	toggles=1057;
 	class ItemIDProvider
 	{
-		nextID=523;
+		nextID=527;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7337.938,28.101452,10711.241};
-		dir[]={0.36002001,-0.33841541,0.86940563};
-		up[]={0.12947592,0.94099712,0.31266895};
-		aside[]={0.9239192,3.1664968e-008,-0.38259417};
+		pos[]={7573.3247,54.091835,10916.711};
+		dir[]={0.37806064,-0.74783808,0.54585505};
+		up[]={0.42579114,0.66388464,0.61477125};
+		aside[]={0.82213849,-9.930227e-007,-0.56941384};
 	};
 };
 binarizationWanted=0;
@@ -62,7 +62,7 @@ addons[]=
 	"A3_Ui_F",
 	"cwr3_soldiers_us",
 	"A3_Props_F_Orange_Civilian_InfoBoards",
-	"cwr3_vehicle_m1a1"
+	"cwr3_vehicle_m60a3"
 };
 class AddonsMetaData
 {
@@ -256,8 +256,8 @@ class AddonsMetaData
 		};
 		class Item28
 		{
-			className="cwr3_vehicle_m1a1";
-			name="cwr3_vehicle_m1a1";
+			className="cwr3_vehicle_m60a3";
+			name="cwr3_vehicle_m60a3";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
@@ -17236,51 +17236,46 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7347.7974,16.45562,10722.313};
-						angles[]={0,0,6.278502};
+						position[]={7599.8032,18.221437,10945.379};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 					};
-					id=518;
+					id=524;
 					type="cwr3_b_soldier_crew";
-					atlOffset=1.9073486e-006;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7347.8081,18.867897,10722.313};
-						angles[]={0,0,6.278502};
+						position[]={7599.8032,18.221437,10945.379};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 					};
-					id=519;
+					id=525;
 					type="cwr3_b_soldier_crew";
-					atlOffset=2.4123306;
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7347.8081,18.867897,10722.313};
-						angles[]={0,0,6.278502};
+						position[]={7599.8032,18.221437,10945.379};
 					};
 					side="West";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 						isPlayer=1;
 					};
-					id=520;
+					id=526;
 					type="cwr3_b_soldier_crew";
-					atlOffset=2.4123306;
 				};
 			};
 			class Attributes
@@ -17298,8 +17293,8 @@ class Mission
 					class Item0
 					{
 						linkID=0;
-						item0=518;
-						item1=517;
+						item0=524;
+						item1=523;
 						class CustomData
 						{
 							role=1;
@@ -17308,8 +17303,8 @@ class Mission
 					class Item1
 					{
 						linkID=1;
-						item0=519;
-						item1=517;
+						item0=525;
+						item1=523;
 						class CustomData
 						{
 							role=2;
@@ -17319,8 +17314,8 @@ class Mission
 					class Item2
 					{
 						linkID=2;
-						item0=520;
-						item1=517;
+						item0=526;
+						item1=523;
 						class CustomData
 						{
 							role=2;
@@ -17330,24 +17325,44 @@ class Mission
 				};
 			};
 			id=516;
-			atlOffset=1.9073486e-006;
 		};
 		class Item17
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7347.8081,18.866459,10722.264};
-				angles[]={0,0,6.278502};
+				position[]={7599.8032,20.924526,10945.329};
 			};
 			side="West";
 			flags=6;
 			class Attributes
 			{
 			};
-			id=517;
-			type="cwr3_b_m1a1";
-			atlOffset=1.9073486e-006;
+			id=523;
+			type="cwr3_b_m60a3";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[""ToolKit""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
