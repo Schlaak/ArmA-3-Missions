@@ -1,5 +1,5 @@
 author			= "Schlaak";
-onLoadName		= "Afghan patrol";
+onLoadName		= "Afghan patrol 2";
 onLoadMission	= "Наше сердце безмолвно...";
 loadScreen		= "title.jpg";
 
@@ -13,7 +13,7 @@ class Header
 onLoadIntro = "Bereit machen!";
 onLoadMissionTime = 1;
 onLoadIntroTime = 1;
-briefingName = "Afghan Patrol";
+briefingName = "Afghan Patrol 2";
 
 
 disabledAI = 1;
