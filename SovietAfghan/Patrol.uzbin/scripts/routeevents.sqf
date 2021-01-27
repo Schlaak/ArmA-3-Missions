@@ -5,6 +5,11 @@ Event3 = false;
 Event4 = false;
 Event5 = false;
 _event = selectrandom [1,2,3,4,5];
+
+/*
+{_x enableSimulationGlobal true;_x enableDynamicSimulation true;_x hideobjectglobal false} foreach (synchronizedObjects GAMELOGIC);
+*/
+
 switch (_event) do
 {
 	case 1:

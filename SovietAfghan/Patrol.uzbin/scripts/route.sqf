@@ -30,6 +30,15 @@ _chooseroute = selectrandom [1,2,3,4,5]; // wähle route aus
 
 
 //route definitions
+
+// SCHLAAK 
+// TODO - 2021-01-27:
+// Hardcoded markerlist ersetzen durch:
+/*for "X" from 0 to 10 do {
+format ["R1_%1", X] setmarkeralpha 0;
+
+oder pushback.
+}*/
 _route1mrks = ["Route1to3start","WProute1", "WProute1_1", "WProute1_2","WProute1_3","WProute1_4","WProute1_5","WProute1_6","WProute1_7","WProute1_8","WProute1_9","WProute1_10","WProute1_11","WProute1_12","WProute1_13"];
 _route2mrks = ["Route1to3start","WProute2", "WProute2_1", "WProute2_2","WProute2_3","WProute2_4","WProute2_5","WProute2_6","WProute2_7","WProute2_8","WProute2_9","WProute2_10","WProute2_11","WProute2_12","WProute2_13"];
 _route3mrks = ["Route1to3start","WProute3", "WProute3_1", "WProute3_2","WProute3_3","WProute3_4","WProute3_5","WProute3_6","WProute3_7","WProute3_8","WProute3_9","WProute3_10","WProute3_11","WProute3_12","WProute3_13"];
@@ -102,6 +111,8 @@ switch (_chooseroute) do
 };
 
 //gegner konfigurieren
+// TODO
+// FÜR DIE ZUKUNFT: Sobald das counterattack.sqf hinenbezogen wird können wir die Troopabfragen aus der definetroops.sqf beziehen.
 _tl = "CUP_I_TK_GUE_Soldier_TL"; // WIP
 _grunt = "CUP_I_TK_GUE_Soldier"; // WIP
 //spezialisten wählen CHOOSE YOUR FIGHTER
@@ -170,6 +181,8 @@ for "_i" from 0 to _amountEnemyGroups do {
 	};
 
 	//for all groups execute dushman scripts on units
+	// TODO
+	// Fucking low priority... dushman per parameter (sollen gegner umgerüstet werden? ja nein?)
 	{
 		if (_dude isKindOf "CUP_I_TK_GUE_Soldier") then
 		{
@@ -180,83 +193,9 @@ for "_i" from 0 to _amountEnemyGroups do {
 //comment
 //preplaced events usage: on trigger condition: Route1 && event3 //FIXME
 
-#include "routeevents.sqf"
 
-
-
-_getcachePos = {
-	params ["_centerPos","_2Param"];
-	diag_log [_centerPos];
-	_pos = [
-		_centerPos, //position
-		1,	//min distance
-		150, //max distance
-		5, //min object distance
-		0, //water mode 0 = not in water
-		0.7, //max gradient, 0.5 ca 30°
-		0, //shoreMode does not have to be shore
-		[], //blackList
-		[0,0,0] //default pos, returned if fails
-	] call BIS_fnc_findSafePos;
-	if (_pos isEqualTo [0,0,0]) then {
-		systemChat "failed to find position";
-		diag_log ["failed to find position for ", _centerPos];
-	};
-	//isNil
-	_pos //return
-};
-//position of templates to be teleported to desired pos.
-_cacheTemplates = [[11749.2,12240.7,0],[11851.4,12243.7,0],[11954,12246.8,0],[11750.6,12145,0],[11852.9,12133.3,0],[11951.2,12146.3,0],[11952.3,12052.3,0],[11850.9,12049,0],[11750.8,12048.8,0]];
-_cacheAmount = 3 + random 9;
-diag_log ["placing",_cacheAmount,"caches"];
-
-for "_i" from 0 to _cacheAmount do {
-	//template
-	if (count _cacheTemplates == 0) exitWith {
-		diag_log ["weapon cache placement failed, no available templates left"];
-	};
-	_cache = selectrandom _cacheTemplates;
-	_cacheTemplates = _cacheTemplates - [_cache];
-
-	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
-	[_cache,_spawnPos,50] execvm "scripts\shk_moveobjects.sqf";
-
-	diag_log ["placed cache from ",_cache," remaining templates: ",_cacheTemplates, " at spawnpos ",_spawnPos];
-
-//	_marker1 = createMarker ["cache" + str time, _spawnPos];
-//	_marker1 setMarkerType "hd_warning";
-//	_marker1 setMarkerText "Cache!!!";
-};
-
-
-
-
-
-
-
-
-
-// Spawn goats;
-_amountHostileGoatGroups = (random 8) + 5;
-_goatpos = selectrandom [[158.656,11690.2,0],[187.046,11693.9,0],[217.538,11696.9,0],[245.625,11698.6,0],[164.926,11657.4,0],[193.316,11661.1,0],[223.808,11664,3.05176e-005],[251.895,11665.8,6.10352e-005],[170.463,11621.1,0],[198.853,11624.8,0],[229.345,11627.8,-3.05176e-005],[257.432,11629.5,0]];
-for "_i" from 0 to _amountHostileGoatGroups do {
-_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
-[_goatpos,_spawnPos,10] execvm "scripts\shk_moveobjects.sqf";
-};
-
-/*
-_GoatGroup = [_spawnPos, civilian, _GoatComposition,[],[],[],[],[],180] call BIS_fnc_spawnGroup;
-
-diag_log [_GoatComposition,_spawnPos,_goatgroup];
-
-
-{0 = [_x] spawn {
- 	while {alive (_this select 0)} do {
- 		sleep 15 + (random 20);
- 		_gopos = [(_this select 0), (random 25)+10,random 360] call BIS_fnc_relPos;
- 		(_this select 0) doMove _gopos;
- 	};
- }} foreach units _GoatGroup;
-
-
-};
+// TODO
+// #include scripts vielleicht per if abfrage für andere Szenarien modularisieren | EIN- / AUSSCHALTBAR machen.
+#include "routeevents.sqf" // Script will spawn preplaced events along the route.
+#include "RouteCaches.sqf" // Script will move the weaponcaches along the route.
+#include "RouteGoats.sqf" // Script will spawn goats along the route.
