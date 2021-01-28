@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1476;
+		nextID=1535;
 	};
 	class Camera
 	{
-		pos[]={11954.548,640.40375,12237.782};
-		dir[]={-0.012695264,-0.49482033,0.8689186};
-		up[]={-0.0072288001,0.86898947,0.49477884};
-		aside[]={0.99990672,-3.145251e-007,0.01460905};
+		pos[]={11954.548,660.4032,12237.782};
+		dir[]={-0.83198023,-0.2200624,-0.50932264};
+		up[]={-0.18770067,0.9754824,-0.11490669};
+		aside[]={-0.52212149,-2.9336661e-007,0.85288715};
 	};
 };
 binarizationWanted=0;
@@ -26869,7 +26869,7 @@ class Mission
 									};
 									id=6613;
 									type="cwr3_Flag_USSR";
-									atlOffset=8.4295044;
+									atlOffset=8.4295654;
 									class CustomAttributes
 									{
 										class Attribute0

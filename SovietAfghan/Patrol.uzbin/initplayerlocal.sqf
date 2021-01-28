@@ -20,6 +20,7 @@ PP_colorI ppEffectCommit 0;
 // [[true,100,[0.02,0.02,0.47,0.47]],[false,200,[0.21,-0.09,true]],[false,300,[1,0.2,0.2,1,1,1,1,0.05,0.01,0.05,0.01,0.1,0.1,0.2,0.2]],[true,1500,[1,1.26,0,[0.23,-0.04,-0.11,0.15],[1,1,1,1],[0.33,0.33,0.33,0],[0,0,0,0,0,0,4]]],[true,500,[0.25]],[false,2000,[0.2,1,1,0.5,0.5,true]],[true,2500,[0.02,0.04,0.04]]]
 //execvm "amb_combat_sound.sqf";
 [] execvm "briefing.sqf";
+[] execvm "scripts\Briefinggenerator.sqf";
 execvm "scripts\antioffroad.sqf";
 sleep 25;
 
