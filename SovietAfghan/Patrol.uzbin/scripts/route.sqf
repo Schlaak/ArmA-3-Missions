@@ -164,7 +164,7 @@ for "_i" from 0 to _amountEnemyGroups do {
 	{
 		case 1:
 		{
-			[(leader _thisGroup), getPos (leader _thisGroup), 100, true, true] call lambs_wp_fnc_taskCamp;
+			[(leader _thisGroup), getPos (leader _thisGroup), 100, [], true, true] call lambs_wp_fnc_taskCamp;
 		};
 		case 2:
 		{
