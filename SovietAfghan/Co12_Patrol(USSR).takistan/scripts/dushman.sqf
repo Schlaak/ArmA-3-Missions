@@ -39,7 +39,9 @@ removeVest _dude; //gl
 removeBackPackGlobal _dude;
 removeHeadgear _dude; //gl
 removeGoggles _dude; //gl
-
+_dude unlinkItem "itemmap";
+_dude unlinkItem "itemradio";
+_dude removeitem "ACRE_PRC343";
 _dude forceAddUniform _uniform;
 {
 	_dude addItemToUniform _x
@@ -124,6 +126,11 @@ _voices = [
 	"Male03PER"
 ];
 [_dude, selectRandom _voices] remoteExec ["setSpeaker", 0, _dude];
+
+
+_dude unlinkItem "itemmap";
+_dude unlinkItem "itemradio";
+_dude removeitem "ACRE_PRC343";
 //};
 	//END FIRST IF
 
