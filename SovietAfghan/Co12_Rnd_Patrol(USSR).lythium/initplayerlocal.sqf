@@ -83,7 +83,7 @@ transportgruppe addWaypoint [position baseOBJ, 15]; {_x domove getpos _x} foreac
 [typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], Call_Transportaction2] call ace_interact_menu_fnc_addActionToClass;
 
 
-sleep 25;
+sleep 60;
 
 
 
