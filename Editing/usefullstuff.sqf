@@ -95,7 +95,23 @@
 [myLeaflet, true] call BIS_fnc_initLeaflet;
 [myLeaflet, "#(argb,8,8,3)color(1,0,1,1)", "This is some Magic Pink"] call BIS_fnc_initInspectable; // Initialize
 
-
+[
+	ukwradio,											// Object the action is attached to
+	"Patrouillenorder",										// Title of the action
+	"\a3\missions_f_oldman\data\img\holdactions\holdAction_talk_ca.paa",	// Idle icon shown on screen
+	"\a3\missions_f_oldman\data\img\holdactions\holdAction_talk_ca.paa",	// Progress icon shown on screen
+	"_this distance _target < 2",						// Condition for the action to be shown
+	"_caller distance _target < 2",						// Condition for the action to progress
+	{},													// Code executed when action starts
+	{},													// Code executed on every progress tick
+	{ (floor random 5) execvm "scripts\route.sqf" },				// Code executed on completion
+	{},													// Code executed on interrupted
+	[],													// Arguments passed to the scripts as _this select 3
+	5,													// Action duration [s]
+	0,													// Priority
+	true,												// Remove on completion
+	false												// Show in unconscious state
+] remoteExec ["BIS_fnc_holdActionAdd", 0, _myLaptop];	// MP compatible implementation
 
 
 

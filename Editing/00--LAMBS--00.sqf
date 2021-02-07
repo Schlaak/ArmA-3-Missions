@@ -75,7 +75,7 @@ Arguments:
 4: Teleport Units to Position <BOOL>
 5: Partial group Patrols the Area <BOOL>
 */
-[this, getPos this, 50, true, true] call lambs_wp_fnc_taskCamp;
+[this, getPos this, 50,[], true, true] call lambs_wp_fnc_taskCamp;
 /*
 taskCQB
 
