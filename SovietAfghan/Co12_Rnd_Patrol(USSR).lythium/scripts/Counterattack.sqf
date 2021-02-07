@@ -40,10 +40,10 @@ _WPpos = [_pos1, _WPdistance ,_direction] call BIS_fnc_relPos; // position for T
 _EnemyGroup = [[((_safepos select 0) + random 10),((_safepos select 1) + random 10),0], _troopsside, _Troops] call BIS_fnc_spawnGroup; //spawn em
 sleep 5;
 [(leader _EnemyGroup),_fleethreshold,_fleecaptive] execvm "scripts\surrenderflee.sqf";	// enable surrender script
-
+{[_x] execvm "scripts\dushman.sqf"} foreach units _EnemyGroup;
 
 _WP = _EnemyGroup addWaypoint [_WPpos, 0];	//give wp
-[leader _EnemyGroup, (getmarkerpos "uniform")] spawn lambs_wp_fnc_taskAssault;	//give assault lambs wp
+[leader _EnemyGroup, getmarkerpos _pos1] spawn lambs_wp_fnc_taskAssault;	//give assault lambs wp
 
 
 {[_x] execvm "scripts\combatmodevehicle.sqf";
@@ -54,4 +54,4 @@ sleep 30;
 
 
 
-["Benachrichtigung",[format ["Feindtruppen kommen auf %2 aus %1°.",round _direction, text nearestLocation [position player, ""];]]] remoteExec ["BIS_fnc_showNotification", 0, true]; //show notification
+["Benachrichtigung",[format ["Feindtruppen kommen auf %2 aus %1°.",round _direction, text nearestLocation [position _safepos]]]] remoteExec ["BIS_fnc_showNotification", 0, true]; //show notification

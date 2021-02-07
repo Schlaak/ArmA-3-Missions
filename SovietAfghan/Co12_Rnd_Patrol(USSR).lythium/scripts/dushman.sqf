@@ -80,10 +80,10 @@ switch (_case) do
 };
 
 //add weaponAccessories
-
+_dude addWeaponGlobal _weapon;
 //add magazines
 for "_i" from 0 to _amountMags do {
-	_dude addMagazineGlobal _amountMags;
+	_dude addMagazineGlobal ((getArray (configFile >> "CfgWeapons" >> primaryWeapon _dude >> "magazines")) select 0); ;
 };
 
 

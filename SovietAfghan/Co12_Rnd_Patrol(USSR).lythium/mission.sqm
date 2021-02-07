@@ -8,7 +8,7 @@ class EditorData
 	toggles=1121;
 	class ItemIDProvider
 	{
-		nextID=1480;
+		nextID=1481;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5349.1631,310.00928,10793.483};
-		dir[]={-0.37132597,-0.46082836,0.80607706};
-		up[]={-0.19281104,0.88748813,0.41855502};
-		aside[]={0.90826565,4.4165063e-009,0.41840002};
+		pos[]={12124.979,366.62445,17377.273};
+		dir[]={-0.72591043,-0.20487198,0.65657145};
+		up[]={-0.15194187,0.97878844,0.13742842};
+		aside[]={0.67079955,6.2980689e-008,0.74164093};
 	};
 };
 binarizationWanted=0;
@@ -544,7 +544,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=18;
+		items=19;
 		class Item0
 		{
 			dataType="Layer";
@@ -692,7 +692,6 @@ class Mission
 					};
 					id=7;
 					type="ModuleCurator_F";
-					atlOffset=0.86743164;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -38224,7 +38223,7 @@ class Mission
 					fillName="DiagGrid";
 					a=25;
 					b=250;
-					angle=104.99996;
+					angle=104.99995;
 					id=1026;
 					atlOffset=-19.402649;
 				};
@@ -38394,7 +38393,7 @@ class Mission
 					fillName="DiagGrid";
 					a=25;
 					b=250;
-					angle=104.99992;
+					angle=104.99991;
 					id=1079;
 				};
 				class Item3
@@ -48501,7 +48500,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Snipers";
-			state=1;
 			class Entities
 			{
 				items=9;
@@ -48649,7 +48647,6 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=1329;
-					atlOffset=-140.66;
 				};
 				class Item2
 				{
@@ -48784,7 +48781,6 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=1331;
-					atlOffset=-140.66;
 				};
 				class Item3
 				{
@@ -48918,7 +48914,6 @@ class Mission
 					{
 					};
 					id=1333;
-					atlOffset=-140.66;
 				};
 				class Item4
 				{
@@ -49052,7 +49047,6 @@ class Mission
 					{
 					};
 					id=1335;
-					atlOffset=-140.66;
 				};
 				class Item5
 				{
@@ -49187,7 +49181,6 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=1337;
-					atlOffset=-140.66;
 				};
 				class Item6
 				{
@@ -49322,7 +49315,6 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=1339;
-					atlOffset=-140.66;
 				};
 				class Item7
 				{
@@ -49456,7 +49448,6 @@ class Mission
 					{
 					};
 					id=1341;
-					atlOffset=-140.66;
 				};
 				class Item8
 				{
@@ -49590,11 +49581,9 @@ class Mission
 					{
 					};
 					id=1343;
-					atlOffset=-140.66;
 				};
 			};
 			id=1327;
-			atlOffset=-139.57227;
 		};
 		class Item11
 		{
@@ -51816,7 +51805,7 @@ class Mission
 						};
 					};
 					id=1456;
-					atlOffset=3.0517578e-005;
+					atlOffset=-140.66;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -52043,6 +52032,7 @@ class Mission
 						};
 					};
 					id=1471;
+					atlOffset=-140.66;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -52169,7 +52159,19 @@ class Mission
 				};
 			};
 			id=1467;
-			atlOffset=-1.6018066;
+			atlOffset=-105.94772;
+		};
+		class Item18
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3145.9231,475.54099,11506.908};
+			};
+			title="TODO:";
+			description="- Dorfälteste" \n "- Events" \n "- Routen kürzer" \n "- Arty" \n "- Civil interaction" \n "- Random assassins" \n "- Afghan Armee" \n "- Exfils" \n "- Airsupport";
+			id=1480;
+			atlOffset=6.1035156e-005;
 		};
 	};
 	class Connections
