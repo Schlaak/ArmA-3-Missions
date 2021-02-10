@@ -2,6 +2,10 @@
 params ["_sniper"];
 if (!isServer) exitWith {};
 
+[_sniper] execVM "scripts\stalkerFSM.sqf";
+
+/*
+
 _sniper setUnitPos "down";
 waitUntil {sleep 10; 
 ((time > 1200) OR missionnamespace getVariable ["sn_go",false])

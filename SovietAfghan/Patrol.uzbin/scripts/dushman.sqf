@@ -52,7 +52,7 @@ _case = selectrandom [0,0,0,0,0,0,1,1,1,2,2,0,0];
 _amountMags = 4;
 _magType = selectRandom (getArray (configFile >> "CfgWeapons" >> _weapon >> "magazines"));
 _dude addWeaponGlobal _weapon; //adds primary weapon.
-diag_log ["####################################","magtypes available to ",_dude,"'s weapon ",_weapon," are ",(getArray (configFile >> "CfgWeapons" >> primaryWeapon _dude >> "magazines"))," chose: ",_magType];
+//diag_log ["####################################","magtypes available to ",_dude,"'s weapon ",_weapon," are ",(getArray (configFile >> "CfgWeapons" >> primaryWeapon _dude >> "magazines"))," chose: ",_magType];
 switch (_case) do
 {
 	case 0: //standard guy
@@ -85,7 +85,7 @@ for "_i" from 0 to _amountMags do {
 
 _setNameACE = {
 	params ["_unit","_name"];
-	diag_log ["setting ace name for ", _unit,_name];
+	//diag_log ["setting ace name for ", _unit,_name];
 
 	if (isNull _unit || {!alive _unit}) exitWith {};
 
