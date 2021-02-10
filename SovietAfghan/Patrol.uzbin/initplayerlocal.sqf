@@ -1,14 +1,14 @@
-PP_radial = ppEffectCreate ["radialBlur",100];
-PP_radial ppEffectEnable true;
-PP_radial ppEffectAdjust [0.02,0.02,0.47,0.47];
-PP_radial ppEffectCommit 0;
+//PP_radial = ppEffectCreate ["radialBlur",100];
+//PP_radial ppEffectEnable true;
+//PP_radial ppEffectAdjust [0.02,0.02,0.47,0.47];
+//PP_radial ppEffectCommit 0;
 //"ColorCorrections" ppEffectEnable true;
 //"ColorCorrections" ppEffectAdjust [0.9, 0.9, 0, [0, 0.1, 0.25, -0.14], [1, 1, 1, 1.26], [0.15, 0.09, 0.09, 0.0]];
 //"ColorCorrections" ppEffectCommit 0;
-PP_dynamic = ppEffectCreate ["DynamicBlur",500];
-PP_dynamic ppEffectEnable true;
-PP_dynamic ppEffectAdjust [0.25];
-PP_dynamic ppEffectCommit 0;
+//PP_dynamic = ppEffectCreate ["DynamicBlur",500];
+//PP_dynamic ppEffectEnable true;
+//PP_dynamic ppEffectAdjust [0.25];
+//PP_dynamic ppEffectCommit 0;
 /*
 PP_colorI = ppEffectCreate ["ColorInversion",2500];
 PP_colorI ppEffectEnable true;

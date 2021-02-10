@@ -23,7 +23,14 @@ _handle = [_sniper] spawn {
             _marker setMarkerAlpha 0;
         };
         _marker setMarkerPos getPos _sniper;
-        _marker setMarkerText "sniper " + (_sniper getVariable ["sn_status","nill"]);
+        _displayText = ("sniper " + (_sniper getVariable ["sn_status","nill"]));
+        if (!simulationEnabled _sniper) then {
+            _displayText += "/frozen";
+        };
+        if (!(_sniper checkAIFeature "MOVE")) then {
+            _displayText += "/noMove";
+        };
+        _marker setMarkerText _displayText
     };
     _marker setMarkerText "dead sniper";
     sleep 60;

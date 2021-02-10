@@ -4,6 +4,7 @@
 - make sure enemy contact at all points of route
 - more events/defensive events
 - add garrison to weapon caches
+- change base names to include translation
 ## Far future
 - punish civilian casualties
 - more civilian interaction (ACIM)
