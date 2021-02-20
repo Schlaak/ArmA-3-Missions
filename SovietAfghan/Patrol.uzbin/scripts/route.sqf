@@ -116,9 +116,10 @@ switch (_chooseroute) do
 _tl = "CUP_I_TK_GUE_Soldier_TL"; // WIP
 _grunt = "CUP_I_TK_GUE_Soldier"; // WIP
 //spezialisten wählen CHOOSE YOUR FIGHTER
-_soldier1 = selectrandom ["CUP_I_TK_GUE_Demo","CUP_I_TK_GUE_Soldier_AA","CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Guerilla_Medic","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Sniper","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT"]; // WIP
-_soldier2 = selectrandom ["CUP_I_TK_GUE_Demo","CUP_I_TK_GUE_Soldier_AA","CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Guerilla_Medic","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Sniper","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT"]; // WIP
-_soldier3 = selectrandom ["CUP_I_TK_GUE_Demo","CUP_I_TK_GUE_Soldier_AA","CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Guerilla_Medic","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Sniper","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT"]; // WIP
+_soldierTypes = ["CUP_I_TK_GUE_Demo","CUP_I_TK_GUE_Soldier_AA","CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Guerilla_Medic","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Sniper","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_LAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AAT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT","CUP_I_TK_GUE_Soldier_AT"]; // WIP
+_soldier1 = selectrandom _soldierTypes;
+_soldier2 = selectrandom _soldierTypes;
+_soldier3 = selectrandom _soldierTypes;
 _side = west;
 sleep 10;
 
@@ -168,7 +169,7 @@ for "_i" from 0 to _amountEnemyGroups do {
 		};
 		case 2:
 		{
-			[(leader _thisGroup), (leader _thisGroup), 1000] spawn lambs_wp_fnc_taskPatrol;
+			[(leader _thisGroup), getPos (leader _thisGroup), 1000] spawn lambs_wp_fnc_taskPatrol;
 		};
 		case 3:
 		{
