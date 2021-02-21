@@ -17,11 +17,12 @@ _spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcac
 
 
 */
+sleep 4;
 _goatsites = (synchronizedObjects RouteGoatLogic);
 
-for [{_i=0}, {_i<8}, {_i=_i+1}] do
+for [{_i=0}, {_i<= 8}, {_i=_i+1}] do
 {
-    //player globalChat format["%1",_i];
+    player globalChat format["goat%1",_i];
 	_site = (_goatsites select _i);
 	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
 	[_site,_spawnPos,2] execvm "scripts\shk_moveobjects.sqf";

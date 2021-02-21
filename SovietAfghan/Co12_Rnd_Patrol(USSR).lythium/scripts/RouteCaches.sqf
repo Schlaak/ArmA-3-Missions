@@ -1,3 +1,4 @@
+sleep 4;
 _getcachePos = {
 	params ["_centerPos","_2Param"];
 	diag_log [_centerPos];
@@ -19,6 +20,7 @@ _getcachePos = {
 	//isNil
 	_pos //return
 };
+
 /*
 //position of templates to be teleported to desired pos.
 _cacheTemplates = [[11749.2,12240.7,0],[11851.4,12243.7,0],[11954,12246.8,0],[11750.6,12145,0],[11852.9,12133.3,0],[11951.2,12146.3,0],[11952.3,12052.3,0],[11850.9,12049,0],[11750.8,12048.8,0]];
@@ -53,5 +55,6 @@ for [{_i=0}, {_i<7}, {_i=_i+1}] do
 	_site = (_cachesites select _i);
 	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
 	[_site,_spawnPos,20] execvm "scripts\shk_moveobjects.sqf";
+	sleep 2;
 };
 //RouteCacheLogic

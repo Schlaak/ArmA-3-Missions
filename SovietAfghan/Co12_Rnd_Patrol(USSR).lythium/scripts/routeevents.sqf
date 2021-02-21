@@ -1,3 +1,4 @@
+sleep 4;
 RndEvent = false;
 Event1 = false;
 Event2 = false;

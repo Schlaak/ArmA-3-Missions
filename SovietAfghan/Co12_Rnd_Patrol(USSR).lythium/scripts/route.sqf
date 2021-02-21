@@ -49,6 +49,10 @@ _route2mrks = [];
 _route3mrks = [];
 _route4mrks = [];
 _route5mrks = [];
+_route6mrks = [];
+_route7mrks = [];
+_route8mrks = [];
+_route9mrks = [];
 for "X" from 1 to 20 do {
 				_route1mrks pushBack ("Route1");
 				_route1mrks pushBack (format ["Route1_%1", X]);
@@ -69,7 +73,22 @@ for "X" from 1 to 20 do {
 				_route5mrks pushBack ("Route5");
 				_route5mrks pushBack (format ["Route5_%1", X]);
 				};
-
+for "X" from 1 to 20 do {
+				_route6mrks pushBack ("Route6");
+				_route6mrks pushBack (format ["Route6_%1", X]);
+				};
+for "X" from 1 to 20 do {
+				_route7mrks pushBack ("Route7");
+				_route7mrks pushBack (format ["Route7_%1", X]);
+				};
+for "X" from 1 to 20 do {
+				_route8mrks pushBack ("Route8");
+				_route8mrks pushBack (format ["Route8_%1", X]);
+				};
+for "X" from 1 to 20 do {
+				_route9mrks pushBack ("Route9");
+				_route9mrks pushBack (format ["Route9_%1", X]);
+				};
 //local function:
 //find safe position in 150m radius
 _getSafePos = {
@@ -209,7 +228,7 @@ for "_i" from 0 to _amountEnemyGroups do {
 	// TODO
 	// Fucking low priority... dushman per parameter (sollen gegner umgerüstet werden? ja nein?)
 	{
-		if (_dude isKindOf "CUP_I_TK_GUE_Soldier") then
+		if (_x isKindOf "CUP_I_TK_GUE_Soldier") then
 		{
 			[_x] execvm "scripts\dushman.sqf";
 		}
@@ -224,4 +243,7 @@ for "_i" from 0 to _amountEnemyGroups do {
 #include "routeevents.sqf" // Script will spawn preplaced events along the route.
 #include "RouteCaches.sqf" // Script will move the weaponcaches along the route.
 #include "RouteGoats.sqf" // Script will spawn goats along the route.
+#include "RouteMuell.sqf"
+#include "RouteInspectZone.sqf"
 #include "RouteSnipers.sqf"
+#include "RouteStatics.sqf"
