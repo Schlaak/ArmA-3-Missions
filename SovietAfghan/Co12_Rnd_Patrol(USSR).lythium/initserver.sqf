@@ -32,7 +32,10 @@ route2mrks = [];
 route3mrks = [];
 route4mrks = [];
 route5mrks = [];
-
+route6mrks = [];
+route7mrks = [];
+route8mrks = [];
+route9mrks = [];
 for "X" from 1 to 20 do {
 				route1mrks pushBack ("Route1");
 				route1mrks pushBack (format ["Route1_%1", X]);
@@ -53,12 +56,31 @@ for "X" from 1 to 20 do {
 				route5mrks pushBack ("Route5");
 				route5mrks pushBack (format ["Route5_%1", X]);
 				};
+for "X" from 1 to 20 do {
+				route6mrks pushBack ("Route6");
+				route6mrks pushBack (format ["Route6_%1", X]);
+				};
+for "X" from 1 to 20 do {
+				route7mrks pushBack ("Route7");
+				route7mrks pushBack (format ["Route7_%1", X]);
+				};
+for "X" from 1 to 20 do {
+				route8mrks pushBack ("Route8");
+				route8mrks pushBack (format ["Route8_%1", X]);
+				};
+for "X" from 1 to 20 do {
+				route9mrks pushBack ("Route9");
+				route9mrks pushBack (format ["Route9_%1", X]);
+				};
 { _x setmarkeralpha 0; } foreach route1mrks;
 { _x setmarkeralpha 0; } foreach route2mrks;
 { _x setmarkeralpha 0; } foreach route3mrks;
 { _x setmarkeralpha 0; } foreach route4mrks;
 { _x setmarkeralpha 0; } foreach route5mrks;
-
+{ _x setmarkeralpha 0; } foreach route6mrks;
+{ _x setmarkeralpha 0; } foreach route7mrks;
+{ _x setmarkeralpha 0; } foreach route8mrks;
+{ _x setmarkeralpha 0; } foreach route9mrks;
 
 
 [east, 5] call BIS_fnc_respawnTickets;
