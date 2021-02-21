@@ -34,3 +34,5 @@ _layerGroups = [_layerGroups, [], {count units _x}, "ASCEND"] call BIS_fnc_sortB
 		systemChat "area defense";
 	};
 } forEach _layerGroups;
+
+
