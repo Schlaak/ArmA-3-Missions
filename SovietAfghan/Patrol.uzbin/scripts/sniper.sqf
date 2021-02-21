@@ -2,6 +2,10 @@
 params ["_sniper"];
 if (!isServer) exitWith {};
 
+[_sniper] execVM "scripts\stalkerFSM.sqf";
+
+/*
+
 _sniper setUnitPos "down";
 waitUntil {sleep 10; 
 ((time > 1200) OR missionnamespace getVariable ["sn_go",false])
@@ -23,7 +27,14 @@ _handle = [_sniper] spawn {
             _marker setMarkerAlpha 0;
         };
         _marker setMarkerPos getPos _sniper;
-        _marker setMarkerText "sniper " + (_sniper getVariable ["sn_status","nill"]);
+        _displayText = ("sniper " + (_sniper getVariable ["sn_status","nill"]));
+        if (!simulationEnabled _sniper) then {
+            _displayText = _displayText + "/frozen";
+        };
+        if (!(_sniper checkAIFeature "MOVE")) then {
+            _displayText = _displayText + "/noMove";
+        };
+        _marker setMarkerText _displayText
     };
     _marker setMarkerText "dead sniper";
     sleep 60;
@@ -51,7 +62,6 @@ while {alive _sniper} do {
         _snPos = AGLToASL _snPos;
         _lineBlocked = lineIntersectsSurfaces [_snPos,eyePos _x,_sniper,_x];
         _hasLOS = (((getPos _sniper distance getPos _x) < 800) && (count _lineBlocked == 0));
-       // ["terrain:",terrainIntersect [eyePos _sniper, eyePos _x],"objects:",lineIntersects [eyePos _sniper, eyePos _x, _x, _sniper],"hasLOS:",_hasLOS, " snpos ", _snPos] call _debugMssg;
         if (_hasLOS) exitWith {
             _sniper doTarget _x;
             _sniper disableAI "path";
@@ -74,7 +84,7 @@ while {alive _sniper} do {
         if ((_closestPlayer distance _sniper) < 3000) then {
            _sniper doMove getPos _closestPlayer;
             [["stalking player ",str _closestPlayer]] call _debugMssg;
-           _sniper setVariable ["sn_status","stalking"];
+           _sniper setVariable ["sn_status","stalking: " + str (50 * (round ((_sniper distance _closestPlayer)/50)))];
            _sniper setUnitPos "middle";
         } else {
             _sniper setVariable ["sn_status","waiting"];
