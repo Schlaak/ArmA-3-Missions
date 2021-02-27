@@ -21,6 +21,7 @@ PP_colorI ppEffectCommit 0;
 //execvm "amb_combat_sound.sqf";
 [] execvm "briefing.sqf";
 [] execvm "scripts\Briefinggenerator.sqf";
+[] execVM "scripts\goon_dust.sqf";
 execvm "scripts\antioffroad.sqf";
 sleep 25;
 
