@@ -111,7 +111,7 @@ _dust setParticleRandom[
   ];
 _dust setParticleCircle[_radius,[0,0,0]];
 _dust setDropInterval 0.019;
-systemChat str["windmulti",_windMulti,"size",_size,"radius",_radius,"rotSpeed",_rotationSpeed,"alpha",_alpha];
+//systemChat str["windmulti",_windMulti,"size",_size,"radius",_radius,"rotSpeed",_rotationSpeed,"alpha",_alpha];
 sleep _lifeTime;
 deletevehicle _dust;
 deleteVehicle _helper;
