@@ -45,15 +45,20 @@ while{!(missionNamespace getVariable ["goon_kill",false])}do{
 
 
 _windStrength = 20 min vectorMagnitude wind; //caps at 20m/s
+
 _windMulti = 0 max ((_windStrength/20) min 1);//[0..1]
-_size = [50,1200,1-_windMulti] call _interpolate;  //size of particle
+_size = [40,1200,1-_windMulti] call _interpolate;  //size of particle
 _height = [40,200,1-_windMulti] call _interpolate;//maximum height of particle above ground
 _donutThickness = [100,800,1-_windMulti] call _interpolate; //radius of cloud around player
 _radius = [10,1600,1-_windMulti] call _interpolate;
 _lifeTime = 5; //lifetime of particle
 _pos = (getPos player) vectorAdd (wind vectorMultiply (-0.5 * _lifeTime)); //offset sourcepos into wind direction * 0.5 lifetime -> particles fully mature when reaching player
 _rotationSpeed = [0.5,10,_windMulti] call _interpolate;
-
+if (vehicle player isKindOf "air") then {
+  _size = [800,1200,1-_windMulti] call _interpolate;  //size of particle
+  _donutThickness = [800,800,1-_windMulti] call _interpolate; //radius of cloud around player
+  _radius = [800,1600,1-_windMulti] call _interpolate;
+};
 //color and alpha params
 _color= missionNamespace getVariable["GoonDust_color",[0.86,0.82,0.55]];
 _alphaMulti = (missionNamespace getVariable ["GoonDust_alphaMulti",50])/100;
@@ -71,8 +76,6 @@ if (_alpha == 0) then {
 
 _dust= "#particlesource" createVehicleLocal _pos; //_pos is overwritten by helper
 _helper = "Land_HelipadEmpty_F" createVehicle _pos;
-_marker = createMarker [str time,_pos];
-_marker setMarkerType "hd_dot";
 _dust setParticleParams[
     ["a3\data_f\ParticleEffects\Universal\Universal.p3d",16,12,8,0],
     "", //adnimationname
@@ -112,6 +115,6 @@ systemChat str["windmulti",_windMulti,"size",_size,"radius",_radius,"rotSpeed",_
 sleep _lifeTime;
 deletevehicle _dust;
 deleteVehicle _helper;
-deleteMarker _marker;
+
 };
 
