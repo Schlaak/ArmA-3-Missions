@@ -22,18 +22,19 @@ PP_colorI ppEffectCommit 0;
 //execvm "amb_combat_sound.sqf";
 [] execvm "briefing.sqf";
 [] execvm "scripts\Briefinggenerator.sqf";
-execvm "scripts\antioffroad.sqf";
+[] execvm "scripts\antioffroad.sqf";
 
-
-player additem "ACE_fieldDressing";
-player additem "ACE_fieldDressing";
-player additem "ACE_fieldDressing";
-
-player additem "ACE_packingBandage";
-player additem "ACE_packingBandage";
-
-player additem "ACE_Canteen";
-player additem "ACE_personalAidKit";
+_items = [
+	["ACE_fieldDressing",5],
+	["ACE_packingBandage",8],
+	["ACE_Canteen",2],
+	["ACE_personalAidKit",1]
+];
+{
+	for "_i" from 0 to (_x select 1) do {
+		player addItem (_x select 0)
+	}
+} forEach _items;
 
 _magazine = (getArray (configFile >> "CfgWeapons" >> primaryWeapon player >> "magazines")) select 0;
 		for "_i" from 0 to 3 do
@@ -41,52 +42,91 @@ _magazine = (getArray (configFile >> "CfgWeapons" >> primaryWeapon player >> "ma
 			player addMagazineGlobal _magazine;
 		};
 
-// Nachhut rufen hinzufügen , braucht karte dafür
-Call_Supportgroupaction = ["Call_Supportgroup", "Nachhut Rufen", "", { Nachhut addWaypoint [position player, 80]; {_x domove getpos _x} foreach units Nachhut;
-[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
-[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
-  }, 
-{ [player, "itemmap"] call BIS_fnc_hasItem 
-   }] call ace_interact_menu_fnc_createAction;
+// --------------------------------------------------------- Nachhut rufen hinzufügen , braucht karte dafür
+Call_Supportgroupaction = [
+	"Call_Supportgroup",
+	"Nachhut Rufen",
+	"",
+	{
+		Nachhut addWaypoint [position player, 80]; {_x domove getpos _x} foreach units Nachhut;
+		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
+  	}, 
+	{
+	 [player, "itemmap"] call BIS_fnc_hasItem 
+   	}
+] call ace_interact_menu_fnc_createAction;
 [typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], Call_Supportgroupaction] call ace_interact_menu_fnc_addActionToClass;
-// transport rufen, braucht Karte dafür
-Call_Transportaction = ["Call_Transport", "Transport Rufen", "", { transportgruppe addWaypoint [position player, 80]; {_x domove getpos _x} foreach units transportgruppe;
-[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
-[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
-  }, 
-{ [player, "itemmap"] call BIS_fnc_hasItem 
-   }] call ace_interact_menu_fnc_createAction;
 
- 
+// --------------------------------------------------------- transport rufen, braucht Karte dafür
+Call_Transportaction = [
+	"Call_Transport",
+	"Transport Rufen",
+	"",
+	{
+		transportgruppe addWaypoint [position player, 80]; {_x domove getpos _x} foreach units transportgruppe;
+		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
+  	}, 
+	{
+		[player, "itemmap"] call BIS_fnc_hasItem 
+	}
+] call ace_interact_menu_fnc_createAction;
 [typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], Call_Transportaction] call ace_interact_menu_fnc_addActionToClass;
-// transport zur base schicken
-Call_Transportaction2 = ["Call_Transport", "Transport zur Base", "", { 
-	for "_i" from count waypoints transportgruppe - 1 to 0 step -1 do
-{
-	deleteWaypoint [transportgruppe, _i];
-};
 
-[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
-[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
-transportgruppe addWaypoint [position baseOBJ, 15]; {_x domove getpos _x} foreach units transportgruppe;
-  }, 
-{ [player, "itemmap"] call BIS_fnc_hasItem 
-   }] call ace_interact_menu_fnc_createAction;
-
- 
+// --------------------------------------------------------- transport zur base schicken
+Call_Transportaction2 = [
+	"Call_Transport",
+	"Transport zur Base",
+	"",
+	{ 
+		for "_i" from count waypoints transportgruppe - 1 to 0 step -1 do
+		{
+			deleteWaypoint [transportgruppe, _i];
+		};
+		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
+		transportgruppe addWaypoint [position baseOBJ, 15]; {_x domove getpos _x} foreach units transportgruppe;
+  	}, 
+	{
+		[player, "itemmap"] call BIS_fnc_hasItem 
+   	}
+] call ace_interact_menu_fnc_createAction;
 [typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], Call_Transportaction2] call ace_interact_menu_fnc_addActionToClass;
 
+// --------------------------------------------------------- Bomber anfordern
+Call_Transportaction2 = [
+	"Request CAS",
+	"Bomber anfordern",
+	"",
+	{ 
+		for "_i" from count waypoints transportgruppe - 1 to 0 step -1 do
+		{
+			deleteWaypoint [transportgruppe, _i];
+		};
+		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
+		[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
+		transportgruppe addWaypoint [position baseOBJ, 15]; {_x domove getpos _x} foreach units transportgruppe;
+  	}, 
+	{
+		[player, "itemmap"] call BIS_fnc_hasItem 
+   	}
+] call ace_interact_menu_fnc_createAction;
+
+[] execVM "initPlayerActions.sqf";
 
 sleep 60;
 
 
-
+//TODO bitte formatieren! absolut unlesbar so
 [
  [
   ["Grenzregion Afghanistan,","<t align = 'right' shadow = '1' size = '1.2' font='EtelkaMonospaceProBold' color='#00FF00'>%1</t><br/>",15],
@@ -104,38 +144,3 @@ format ["Wind: %1-NS %2-OW m/s", floor (wind select 0), floor (wind select 1)]
  ] ,(safeZoneX +1.1), (safeZoneY +1)
 ] spawn BIS_fnc_typeText;
 sleep 15;
-
-
-/*
-
-if (vehicleVarName player in JWC_CASarray && (headgear player) iskindof "cwr3_o_headgear_officer_cap_field") then
-{
-
-	player setVariable ["canCallCAS", true];
-	[JWC_MaxD, JWC_lock, JWC_num] execVM "JWC_CASFS\addAction.sqf";
-};
-
-if (vehicleVarName player in JWC_CASarray) then {
-[player] spawn {
-	while {true} do
-	{
-		sleep 2;
-	if ((player getVariable ["canCallCAS", true])) then
-		{
-	waitUntil {!((headgear player) iskindof "cwr3_o_headgear_officer_cap_field")};
-	player setVariable ["canCallCAS", False];
-	removeallactions player;
-		}
-	else
-		{
-	if (!(player getVariable ["canCallCAS", true])) then
-			{
-				waitUntil {((headgear player) iskindof "cwr3_o_headgear_officer_cap_field")};
-				player setVariable ["canCallCAS", true];
-				[JWC_MaxD, JWC_lock, JWC_num] execVM "JWC_CASFS\addAction.sqf";
-			};
-		};
-	};
-
-};
-};

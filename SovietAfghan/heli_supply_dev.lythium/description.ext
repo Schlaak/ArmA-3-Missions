@@ -1,0 +1,320 @@
+author			= "IRONSIGHT";
+onLoadName		= "Lythium dev box";
+onLoadMission	= "Наше сердце безмолвно...";
+
+class Header
+{
+	gameType =  Coop;	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 12;	// maximum number of players the mission supports
+};
+
+onLoadIntro = "Bereit machen!";
+onLoadMissionTime = 1;
+onLoadIntroTime = 1;
+briefingName = "Lythium dev area - IRONSIGHT";
+
+class CfgSounds
+{
+	sounds[] = {};
+		class Call1
+	{
+		name = "Call1";
+		sound[] = { "Sound\Radio\Call1.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class Call2
+	{
+		name = "Call2";
+		sound[] = { "Sound\Radio\Call2.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class Call3
+	{
+		name = "Call3";
+		sound[] = { "Sound\Radio\Call3.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class Call4
+	{
+		name = "Call4";
+		sound[] = { "Sound\Radio\Call4.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class Call5
+	{
+		name = "Call5";
+		sound[] = { "Sound\Radio\Call5.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+
+
+		class CP1
+	{
+		name = "CP1";
+		sound[] = { "Sound\Radio\CP1.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP2
+	{
+		name = "CP2";
+		sound[] = { "Sound\Radio\CP2.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP3
+	{
+		name = "CP3";
+		sound[] = { "Sound\Radio\CP3.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP4
+	{
+		name = "CP4";
+		sound[] = { "Sound\Radio\CP4.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP5
+	{
+		name = "CP5";
+		sound[] = { "Sound\Radio\CP5.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP6
+	{
+		name = "CP6";
+		sound[] = { "Sound\Radio\CP6.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP7
+	{
+		name = "CP7";
+		sound[] = { "Sound\Radio\CP7.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP8
+	{
+		name = "CP8";
+		sound[] = { "Sound\Radio\CP8.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP9
+	{
+		name = "CP9";
+		sound[] = { "Sound\Radio\CP9.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP10
+	{
+		name = "CP10";
+		sound[] = { "Sound\Radio\CP10.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP11
+	{
+		name = "CP11";
+		sound[] = { "Sound\Radio\CP11.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CP12
+	{
+		name = "CP11";
+		sound[] = { "Sound\Radio\CP12.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+
+		class CPu1
+	{
+		name = "CPu1";
+		sound[] = { "Sound\Radio\CPu1.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CPu2
+	{
+		name = "CPu2";
+		sound[] = { "Sound\Radio\CPu2.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CPu3
+	{
+		name = "CPu3";
+		sound[] = { "Sound\Radio\CPu3.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CPu4
+	{
+		name = "CPu4";
+		sound[] = { "Sound\Radio\CPu4.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CPu5
+	{
+		name = "CPu5";
+		sound[] = { "Sound\Radio\CPu5.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CPu6
+	{
+		name = "CPu6";
+		sound[] = { "Sound\Radio\CPu6.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class CPu7
+	{
+		name = "CPu7";
+		sound[] = { "Sound\Radio\CPu7.ogg", 1, 1 };
+		titles[] = {1,""};
+	};
+		class songaghan
+	{
+		name = "songaghan";
+		sound[] = { "Sound\music\aghan.ogg", 1, 1,40 };
+		titles[] = {1,""};
+	};
+			class songcaravan
+	{
+		name = "songcaravan";
+		sound[] = { "Sound\music\caravan.ogg", 1, 1,40 };
+		titles[] = {1,""};
+	};
+			class songcombatwork
+	{
+		name = "songcombatwork";
+		sound[] = { "Sound\music\combatwork.ogg", 1, 1,40 };
+		titles[] = {1,""};
+	};
+			class songdushman
+	{
+		name = "songdushman";
+		sound[] = { "Sound\music\dushman.ogg", 1, 1,40 };
+		titles[] = {1,""};
+	};
+			class songgruppakrovi
+	{
+		name = "songgruppakrovi";
+		sound[] = { "Sound\music\gruppakrovi.ogg", 1, 1,40 };
+		titles[] = {1,""};
+	};
+
+				class a1
+	{
+		name = "a1";
+		sound[] = { "Sound\announce\a1.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+					class a2
+	{
+		name = "a2";
+		sound[] = { "Sound\announce\a2.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+					class a3
+	{
+		name = "a3";
+		sound[] = { "Sound\announce\a3.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+					class a4
+	{
+		name = "a4";
+		sound[] = { "Sound\announce\a4.ogg", 1, 1,500 };
+		titles[] = {1,""};
+	};
+					class a5
+	{
+		name = "a5";
+		sound[] = { "Sound\announce\a5.ogg", 1, 1,500 };
+		titles[] = {1,""};
+	};
+					class a6
+	{
+		name = "a6";
+		sound[] = { "Sound\announce\a6.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+					class a7
+	{
+		name = "a7";
+		sound[] = { "Sound\announce\a7.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+					class a8
+	{
+		name = "a8";
+		sound[] = { "Sound\announce\a8.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+					class a9
+	{
+		name = "a9";
+		sound[] = { "Sound\announce\a9.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+					class a10
+	{
+		name = "a10";
+		sound[] = { "Sound\announce\a10.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+					class a11
+	{
+		name = "a11";
+		sound[] = { "Sound\announce\a11.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+					class a12
+	{
+		name = "a12";
+		sound[] = { "Sound\announce\a12.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+					class a13
+	{
+		name = "a13";
+		sound[] = { "Sound\announce\a13.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+						class t1
+	{
+		name = "t1";
+		sound[] = { "Sound\announce\t1.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+						class t2
+	{
+		name = "t2";
+		sound[] = { "Sound\announce\t2.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+						class t3
+	{
+		name = "t3";
+		sound[] = { "Sound\announce\t3.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+						class t4
+	{
+		name = "t4";
+		sound[] = { "Sound\announce\t4.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+							class t5
+	{
+		name = "t5";
+		sound[] = { "Sound\announce\t5.ogg", 1, 1 ,500};
+		titles[] = {1,""};
+	};
+		class rus_stoj
+	{
+		name = "rus_stoj";
+		// filename, volume, pitch
+		sound[] = {"Sound\rus_stoj.ogg", db+45, 1};
+		titles[] = {};
+	};
+		class unterhaltung
+	{
+		name = "unterhaltung";
+		// filename, volume, pitch
+		sound[] = {"Sound\unterhaltung.ogg", db+35, 1};
+		titles[] = {};
+	};
+};

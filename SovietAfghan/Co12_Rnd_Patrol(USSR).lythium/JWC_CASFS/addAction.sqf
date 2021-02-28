@@ -5,7 +5,7 @@ _lock = _this select 1;
 _num = _this select 2;
 
 _vehName = vehicleVarName player;
-_variables = varHolder getVariable _vehName;
+_variables = varHolder getVariable _vehName; //what?
 
 
 if (isNil "_variables" && (headgear player) iskindof "cwr3_o_headgear_officer_cap_field") then
