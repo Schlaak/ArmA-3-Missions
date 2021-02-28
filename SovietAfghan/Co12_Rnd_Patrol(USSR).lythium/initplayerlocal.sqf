@@ -1,15 +1,15 @@
-PP_radial = ppEffectCreate ["radialBlur",100];
-PP_radial ppEffectEnable true;
-PP_radial ppEffectAdjust [0.02,0.02,0.47,0.47];
-PP_radial ppEffectCommit 0;
-PP_colorC = ppEffectCreate ["ColorCorrections",1500];
-PP_colorC ppEffectEnable true;
-PP_colorC ppEffectAdjust [1,1.07,0,[2,2,2,-0.04],[-1.8,0.56,1.72,1.06],[0.33,0.33,0.33,0],[0,0,0,0,0,0,4]];
-PP_colorC ppEffectCommit 0;
-PP_dynamic = ppEffectCreate ["DynamicBlur",500];
-PP_dynamic ppEffectEnable true;
-PP_dynamic ppEffectAdjust [0.25];
-PP_dynamic ppEffectCommit 0;
+//PP_radial = ppEffectCreate ["radialBlur",100];
+//PP_radial ppEffectEnable true;
+//PP_radial ppEffectAdjust [0.02,0.02,0.47,0.47];
+//PP_radial ppEffectCommit 0;
+//PP_colorC = ppEffectCreate ["ColorCorrections",1500];
+//PP_colorC ppEffectEnable true;
+//PP_colorC ppEffectAdjust [1,1.07,0,[2,2,2,-0.04],[-1.8,0.56,1.72,1.06],[0.33,0.33,0.33,0],[0,0,0,0,0,0,4]];
+//PP_colorC ppEffectCommit 0;
+//PP_dynamic = ppEffectCreate ["DynamicBlur",500];
+//PP_dynamic ppEffectEnable true;
+//PP_dynamic ppEffectAdjust [0.25];
+//PP_dynamic ppEffectCommit 0;
 /*
 PP_colorI = ppEffectCreate ["ColorInversion",2500];
 PP_colorI ppEffectEnable true;
