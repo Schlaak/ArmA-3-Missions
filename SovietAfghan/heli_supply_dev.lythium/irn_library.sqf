@@ -1,3 +1,5 @@
+//TODO clone loaded ace cargo
+//clones crate. (_crate,_clone(optional)) if no clone give, one is created and placed near the original
 IRN_fnc_cloneCrate = {
 	params ["_crate","_clone"];
 	//crate object clone
