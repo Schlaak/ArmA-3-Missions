@@ -1,4 +1,7 @@
 params ["_pos","_dir"];
+//TODO make into function
+//TODO return reference to plane
+//TODO allow aborting/redirecting strike
 _createDBMarker = {
 	params ["_pos","_name"];
 	//systemChat str ["markerpos",_pos,"markername",_name];

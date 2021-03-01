@@ -121,6 +121,7 @@ Call_Transportaction2 = [
    	}
 ] call ace_interact_menu_fnc_createAction;
 
+[] execVM "irn_library.sqf";
 [] execVM "initPlayerActions.sqf";
 
 sleep 60;

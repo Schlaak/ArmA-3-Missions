@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=26;
+		nextID=28;
 	};
 	class Camera
 	{
-		pos[]={11872.979,56.208496,1682.9927};
-		dir[]={-0.18756424,-0.48016837,0.85689038};
-		up[]={-0.10267273,0.87717593,0.46906322};
-		aside[]={0.9768734,-3.7231075e-008,0.21382718};
+		pos[]={11879.035,44.768414,1750.3275};
+		dir[]={0.034718305,-0.51759899,-0.85492426};
+		up[]={0.021002429,0.85561955,-0.51717663};
+		aside[]={-0.9991827,2.624347e-008,-0.040576965};
 	};
 };
 binarizationWanted=0;
@@ -179,7 +179,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=10;
+		items=11;
 		class Item0
 		{
 			dataType="Group";
@@ -320,6 +320,7 @@ class Mission
 			};
 			id=2;
 			type="ModuleCurator_F";
+			atlOffset=-7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -424,6 +425,7 @@ class Mission
 					};
 					id=4;
 					type="cwr3_o_spetsnaz_akms";
+					atlOffset=7.6293945e-006;
 				};
 				class Item1
 				{
@@ -459,6 +461,7 @@ class Mission
 					};
 					id=6;
 					type="cwr3_o_spetsnaz_akms";
+					atlOffset=-7.6293945e-006;
 				};
 				class Item3
 				{
@@ -485,6 +488,7 @@ class Mission
 				formation="LINE";
 			};
 			id=3;
+			atlOffset=7.6293945e-006;
 		};
 		class Item3
 		{
@@ -779,7 +783,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11880.984,31.600866,1732.0881};
+				position[]={11882.304,31.638975,1730.2501};
 				angles[]={0.0062148157,0,0.020244889};
 			};
 			side="Empty";
@@ -820,6 +824,78 @@ class Mission
 			};
 			id=19;
 			atlOffset=12.638073;
+		};
+		class Item10
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11884.465,31.669886,1732.6025};
+						angles[]={0,3.8000007,0};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=27;
+					type="O_Soldier_A_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=26;
 		};
 	};
 };

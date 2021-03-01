@@ -1,25 +1,7 @@
 //create actions for the players to use during gameplay.
 // --------------------------------------------------------- hilfsfunktionen
 diag_log "initPlayerActions called.";
-//params: talker (unit receiving sound), index: 0 = player talking, 1 opz first (long) answer, 2 opz second (short) answer
-IRN_fnc_sayRandom = {
-	params ["_talker","_index"];
-	//systemChat  str [ "sayRandom:",_talker,_index];
-	_sound = nil;
-	switch (_index) do {
-		case 0: {
-			_sound = selectrandom ["Call1","Call2","Call3","Call4","Call5"];
-		};
-		case 1: {
-			_sound = selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"];
-		};
-		case 2: {
-			_sound = selectRandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"];
-		};
-		default {};
-	};
-	_talker say3D [_sound,50,1,true];
-};
+
 
 // --------------------------------------------------------- Bomber anfordern
 _action = [

@@ -66,44 +66,29 @@ _orderHeloToLZ = {
 
 	//RTB, afterwards land at airport obj.
 	_wp = _grp addWaypoint [getPos _airport,0,3,"RTB"];
-	
-	[_helo,_grp,_wp select 1,_airport] spawn { //delayed landing order at airport
-		params ["_helo","_grp","_wpIdx","_airport"];
-		waitUntil {
-			sleep 5; 
-			_idxCurrent = currentWaypoint _grp;
-			(_wpIdx < _idxCurrent)
-		};	
-		//_handle = [_grp, getPos _airport, _airport] spawn BIS_fnc_wpLand;
-		_helo land "LAND";
-		waitUntil {
-			sleep 5;
-		//	systemChat str ["helo landed: ", (((getPosATL _helo) select 2) < 1)];
-			 (((getPosATL _helo) select 2) < 1)
-		};
-		_helo setVariable ["RTB",true,true];
-	};
+	_wp setWaypointStatements ["true","(vehicle this) land 'LAND'; (vehicle this) setVariable ['RTB',true,true];"];
 };
+
 //-------------------------------------------------------------------------- !method declaration, var declaration
 _helo = supply_helo_01;
 _airport = airport_01;
 //-------------------------------------------------------------------------- !var declaration
-
+sleep 4;
 //flying and transported crate != wanted crate -> helo busy, no supply available.
-if (!((count ropeAttachedObjects _helo == 0 AND _helo getVariable ["RTB",true]) OR _crate in (ropeAttachedObjects _helo))) exitWith {
+if (count ropeAttachedObjects _helo == 0 AND !(_helo getVariable ["RTB",true])) exitWith { //wenn helo nicht bereit, und keine last -> rückweg.
 	systemChat "Keine Versorgung möglich. Helikopter ist nicht verfügbar.";
 	//abort
 };
 //asserted: helo does not have fly order OR the new order is about the same crate.
 
 
-
 _lzObj = [_caller,_precise,_markername] call _getLZ; //will spawn LZ.
 if ((_helo getVariable ["RTB",true]) && count ropeAttachedObjects _helo == 0) then { //only attach crate, if helo doesnt have one yet and is at base.
+	_crate = [_crate] call IRN_fnc_cloneCrate;
 	[] call _prepareHelo; //will attach cargo to helo
 	systemChat "Auftrag erhalten. Helikopter auf dem Weg.";
 } else {
-	systemChat "Neue Landezone wird gesucht."
+	systemChat "Neue Landezone wird gesucht.";
 };
 [_helo,_lzObj] call _orderHeloToLZ;
 _helo setVariable ["RTB",false,true]; //mark as busy
