@@ -16,7 +16,7 @@ _spawnPos =  _helper getRelPos [-10000,_dir]; _spawnPos set [2,150 + (getTerrain
 _despawnPos = _helper getRelPos [10000,_dir];
 
 //plane class:
-_planeClass = "cwr3_o_su25";
+_planeClass = "CUP_B_F35B_USMC";
 _arr =
 [
 	_spawnPos,		//position
@@ -69,7 +69,8 @@ while {alive _plane} do {
 		//	[_x,str _forEachIndex] call _createDBMarker;
 			//systemChat str ["bombpos: ",str _x];
 			_bomb = "Bo_GBU12_LGB" createVehicle (_x vectorAdd [0,0,10]);
-			_bomb setPosASL _x;
+			_bomb setPosASL (_x vectorAdd [0,0,10]);
+			_bomb setVelocity [0,0,-20];
 			{
 				_x addCuratorEditableObjects [[_bomb], true];	
 			} forEach allCurators;
