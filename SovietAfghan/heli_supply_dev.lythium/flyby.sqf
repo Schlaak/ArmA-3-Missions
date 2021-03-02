@@ -2,13 +2,7 @@ params ["_pos","_dir"];
 //TODO make into function
 //TODO return reference to plane
 //TODO allow aborting/redirecting strike
-_createDBMarker = {
-	params ["_pos","_name"];
-	//systemChat str ["markerpos",_pos,"markername",_name];
-	_marker = createMarker [str time + selectRandom ["a","b","c","d","e"],_pos];
-	_marker setMarkerType "hd_dot";
-	_marker setMarkerText _name;
-};
+
 //get spawnpos: _pos - 5000m * dir
 _pos = _pos vectorAdd [-25 + random 50,-25 + random 50,0];
 _helper = "Land_HelipadEmpty_F" createVehicle _pos;
@@ -44,10 +38,6 @@ _plane flyInHeight 150;
 {
 	_x addCuratorEditableObjects [[_plane], true];	
 } forEach allCurators;
-{
-	//systemChat str _x;
-//	_x call _createDBMarker;
-} forEach [[_spawnPos,"spawn"],[_despawnPos,"despawn"]];
 
 //create bomb impact positions
 _bombPosArr = [];
@@ -66,7 +56,6 @@ _nearTarget = false;
 while {alive _plane} do {
 	if (_nearTarget && (_plane distance2D _pos > 200)) exitWith {
 		{
-		//	[_x,str _forEachIndex] call _createDBMarker;
 			//systemChat str ["bombpos: ",str _x];
 			_bomb = "Bo_GBU12_LGB" createVehicle (_x vectorAdd [0,0,10]);
 			_bomb setPosASL (_x vectorAdd [0,0,10]);
