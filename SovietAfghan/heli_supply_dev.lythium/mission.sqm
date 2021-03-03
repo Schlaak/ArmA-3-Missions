@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6098.0703,1581.3481,10775.767};
-		dir[]={-0.31697831,-0.61049861,0.72588116};
-		up[]={-0.24429081,0.79205811,0.55942953};
-		aside[]={0.91647846,2.7886708e-006,0.40020746};
+		pos[]={5716.8262,398.44904,11873.058};
+		dir[]={-0.28689009,-0.54053909,0.7908929};
+		up[]={-0.18432406,0.84131891,0.50814092};
+		aside[]={0.94006324,0,0.34100041};
 	};
 };
 binarizationWanted=0;
@@ -334,7 +334,6 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						isPlayer=1;
 						class Inventory
 						{
 							class primaryWeapon
@@ -3350,14 +3349,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5642.604,226.45383,12080.271};
-						angles[]={0,1.0015601,0};
+						position[]={5642.604,226.45398,12080.27};
+						angles[]={0,1.0015571,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
 						skill=0.40000001;
+						isPlayer=1;
 						class Inventory
 						{
 							class primaryWeapon
@@ -3469,6 +3469,48 @@ class Mission
 					};
 					id=185;
 					type="CUP_B_GER_BW_Soldier";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes
