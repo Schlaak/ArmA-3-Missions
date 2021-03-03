@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=183;
+		nextID=196;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11889.896,38.125278,1733.3883};
-		dir[]={-0.83202791,-0.40633225,-0.3777118};
-		up[]={-0.37000206,0.91371483,-0.16796845};
-		aside[]={-0.41337341,2.7182978e-007,0.91058457};
+		pos[]={5378.2041,337.53195,11905.861};
+		dir[]={-0.73747742,-0.51645625,0.43520096};
+		up[]={-0.44478488,0.85631275,0.26247665};
+		aside[]={0.50822538,1.1466909e-008,0.86122322};
 	};
 };
 binarizationWanted=0;
@@ -57,13 +57,18 @@ addons[]=
 	"CUP_Creatures_Military_SLA",
 	"A3_Ui_F",
 	"A3_Structures_F_Argo_Military_Fortifications",
-	"CUP_Creatures_Military_HIL"
+	"CUP_Creatures_Military_HIL",
+	"CUP_Weapons_G36",
+	"CUP_Weapons_West_Attachments",
+	"A3_Structures_F_Mil_BagFence",
+	"A3_Characters_F_Common",
+	"CUP_AirVehicles_MQ9"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=29;
+		items=32;
 		class Item0
 		{
 			className="cwr3_soldiers_ru";
@@ -244,6 +249,21 @@ class AddonsMetaData
 			className="CUP_Creatures_Military_HIL";
 			name="CUP_Creatures_Military_HIL";
 		};
+		class Item29
+		{
+			className="CUP_Weapons_G36";
+			name="CUP_Weapons_G36";
+		};
+		class Item30
+		{
+			className="CUP_Weapons_West_Attachments";
+			name="CUP_Weapons_West_Attachments";
+		};
+		class Item31
+		{
+			className="CUP_AirVehicles_MQ9";
+			name="CUP_AirVehicles_MQ9";
+		};
 	};
 };
 randomSeed=7004179;
@@ -275,7 +295,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=50;
+		items=58;
 		class Item0
 		{
 			dataType="Group";
@@ -1107,7 +1127,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=4;
+				items=5;
 				class Item0
 				{
 					dataType="Object";
@@ -1279,6 +1299,20 @@ class Mission
 					};
 					id=36;
 					type="CUP_B_GER_BW_Soldier_GL";
+				};
+				class Item4
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={5398.769,265.00897,12002.508};
+					expCond="call{false}";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=183;
+					type="Move";
+					atlOffset=-3.0517578e-005;
 				};
 			};
 			class Attributes
@@ -2219,6 +2253,7 @@ class Mission
 					};
 					id=115;
 					type="CUP_O_sla_soldier_desert";
+					atlOffset=-0.00033569336;
 				};
 				class Item3
 				{
@@ -2604,7 +2639,7 @@ class Mission
 			position[]={5383.3057,262.04266,11987.928};
 			name="marker_0";
 			type="mil_ambush";
-			angle=307.96146;
+			angle=307.9614;
 			id=142;
 			atlOffset=-2.6733704;
 		};
@@ -3050,13 +3085,14 @@ class Mission
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={5374.0571,266.6424,12040.514};
-					type="Hold";
+					position[]={5381.9331,266.44778,12041.232};
+					expCond="call{false}";
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=176;
+					type="Move";
 				};
 			};
 			class Attributes
@@ -3269,6 +3305,340 @@ class Mission
 			{
 			};
 			id=26;
+		};
+		class Item50
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5332.2017,277.70044,11940.265};
+						angles[]={0,1.0015601,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						skill=0.40000001;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_arifle_G36A3";
+								optics="CUP_optic_HensoldtZO_RDS_od";
+								class primaryMuzzleMag
+								{
+									name="CUP_30Rnd_556x45_G36";
+									ammoLeft=30;
+								};
+							};
+							class handgun
+							{
+								name="CUP_hgun_glock17_flashlight";
+								flashlight="CUP_acc_Glock17_Flashlight";
+								class primaryMuzzleMag
+								{
+									name="CUP_17Rnd_9x19_glock17";
+									ammoLeft=17;
+								};
+							};
+							class binocular
+							{
+								name="ACE_Vector";
+							};
+							class uniform
+							{
+								typeName="CUP_U_B_GER_Tropentarn_2";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+									class Item1
+									{
+										name="CUP_NVG_PVS7";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="CUP_V_B_GER_PVest_Trop_RFL";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=5;
+									class Item0
+									{
+										name="CUP_HandGrenade_M67";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="B_IR_Grenade";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="SmokeShellRed";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="CUP_17Rnd_9x19_glock17";
+										count=3;
+										ammoLeft=17;
+									};
+									class Item4
+									{
+										name="CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36_hex";
+										count=10;
+										ammoLeft=30;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							gps="ItemGPS";
+							goggles="CUP_G_PMC_Facewrap_Black_Glasses_Dark";
+							headgear="CUP_H_Ger_M92_Cover_Trop";
+						};
+					};
+					id=185;
+					type="CUP_B_GER_BW_Soldier";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=184;
+		};
+		class Item51
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5333.3848,278.06027,11942.1};
+				angles[]={0.040761877,0.75275606,6.1383343};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=186;
+			type="Land_BagFence_Long_F";
+		};
+		class Item52
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5331.6987,278.13254,11943.118};
+				angles[]={0.081077628,5.4539871,0.024938866};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=187;
+			type="Land_BagFence_Corner_F";
+		};
+		class Item53
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5334.4658,278.17075,11940.628};
+				angles[]={6.1958723,0.77435046,6.1756272};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=188;
+			type="Land_BagFence_Corner_F";
+		};
+		class Item54
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5333.6533,278.3833,11939.359};
+				angles[]={0,2.3114483,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=189;
+			type="Land_SandbagBarricade_01_half_F";
+		};
+		class Item55
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5334.0537,278.4278,11940.959};
+				angles[]={0,0.78293848,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=190;
+			type="Land_SandbagBarricade_01_half_F";
+		};
+		class Item56
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5154.9912,595.06445,11664.382};
+					};
+					side="West";
+					flags=2;
+					class Attributes
+					{
+						name="drone_01D";
+					};
+					id=193;
+					type="B_UAV_AI";
+					atlOffset=328.88028;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5154.9912,595.06445,11664.382};
+					};
+					side="West";
+					class Attributes
+					{
+						name="drone_01G";
+					};
+					id=194;
+					type="B_UAV_AI";
+					atlOffset=328.88028;
+				};
+				class Item2
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={5400.2808,264.77792,11988.636};
+					type="Loiter";
+					expCond="call{false}";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=195;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=193;
+						item1=192;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=194;
+						item1=192;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=191;
+			atlOffset=328.86374;
+		};
+		class Item57
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5155.5654,596.85693,11664.049};
+			};
+			side="West";
+			flags=2;
+			class Attributes
+			{
+				name="drone_01";
+			};
+			id=192;
+			type="CUP_B_USMC_DYN_MQ9";
+			atlOffset=328.86374;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[2]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

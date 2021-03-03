@@ -147,3 +147,9 @@ IRN_fnc_createMarker = {
 	_marker setMarkerText _name;
 	_marker
 };
+
+IRN_fnc_getDir = {
+	params ["_from","_to"];
+	_dir = vectorNormalized (_to vectorDiff _from);
+	_dir
+};
