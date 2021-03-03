@@ -10,7 +10,7 @@ _spawnPos =  _helper getRelPos [-10000,_dir]; _spawnPos set [2,150 + (getTerrain
 _despawnPos = _helper getRelPos [10000,_dir];
 
 //plane class:
-_planeClass = "CUP_B_F35B_USMC";
+_planeClass = "CUP_B_JAS39_HIL";
 _arr =
 [
 	_spawnPos,		//position

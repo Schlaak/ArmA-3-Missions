@@ -87,3 +87,27 @@ _action = [
    	}
 ] call ace_interact_menu_fnc_createAction;
 [typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+
+// --------------------------------------------------------- reaper schlag anfordern
+[drone_01] spawn IRN_fnc_droneCycle;
+_action = [
+	"Request reaper",
+	"Dronenschlag anfordern",
+	"",
+	{ 	//action code
+		[player,0] call IRN_fnc_sayRandom; //player ordering (babble)
+		[player,2] call IRN_fnc_sayRandom; //player ordering (babble)
+		[player,0] call IRN_fnc_sayRandom; //player ordering (babble)
+		[player,1] call IRN_fnc_sayRandom; //opz answers long
+		diag_log ["ace action params",_this];
+		_this spawn {
+			sleep 5;
+			[_this select 0] execVM "drone_support.sqf";
+		};
+  	}, 
+	{
+		true //[player, "itemmap"] call BIS_fnc_hasItem 
+   	}
+] call ace_interact_menu_fnc_createAction;
+[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+diag_log ["init drone and added action"]

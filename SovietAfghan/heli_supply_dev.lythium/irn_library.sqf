@@ -153,3 +153,55 @@ IRN_fnc_getDir = {
 	_dir = vectorNormalized (_to vectorDiff _from);
 	_dir
 };
+
+//will init a loop for given drone
+IRN_fnc_droneCycle = {
+	params ["_drone","_type"];
+	diag_log ["this",_this];
+	if (isNil "_type") then {
+		_type = "init";
+		_hasCycle = _drone getVariable ["irn_dronecyle",false];
+		if (_hasCycle) exitWith {
+			systemChat "drone has cylce already, exitting"
+		};
+	};
+	_drone setVariable ["irn_dronecyle",true,true];
+
+	//delete all old waypoints
+	_grp = group currentPilot _drone;
+	for "_i" from count waypoints _grp - 1 to 0 step -1 do
+	{
+		deleteWaypoint [_grp, _i];
+	};
+	_drone flyInHeightASL [2500,2500,4000];
+
+	if (_type == "init") then {
+		_drone setVariable ["irn_droneAmmo",6];
+		_drone setFuel 1;
+
+		_loiter = _grp addWaypoint [getPos player, 0, 1, "loiter"];
+		_loiter setWaypointType "LOITER";
+		_loiter setWaypointLoiterRadius 1000;
+		_loiter waypointAttachVehicle player;
+		waitUntil {
+			sleep 10;
+			(_drone getVariable ['irn_droneAmmo',6] <= 0 || (fuel _drone < 0.2))
+		};
+		systemChat "drone out of ammo or fuel, calling RTB";
+		[_drone,"RTB"] call IRN_fnc_droneCycle;
+	};
+
+	if (_type == "RTB") then {
+		_rtb = _grp addWaypoint [[0,0,0], 0, 1, "RTB"];
+		_rtb setWaypointCompletionRadius 1000;
+		_rtb setWaypointStatements ["true", "[(vehicle this),'init'] spawn IRN_fnc_droneCycle; systemChat 'RTB successful'"];
+	};
+
+
+
+
+
+	
+
+
+}
