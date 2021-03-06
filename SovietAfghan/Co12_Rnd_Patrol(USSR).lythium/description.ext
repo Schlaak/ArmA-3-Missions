@@ -26,8 +26,6 @@ corpseRemovalMinTime = 60;					// seconds. Default: 10
 corpseLimit = 25; 								// Default: 15
 corpseRemovalMaxTime = 3600; 					// seconds. Default: 3600
 
-#include "JWC_CASFS\casDefine.hpp"
-#include "JWC_CASFS\casMenu.hpp"
 #include "bon_recruit_units\dialog\common.hpp"
 #include "bon_recruit_units\dialog\recruitment.hpp"
 

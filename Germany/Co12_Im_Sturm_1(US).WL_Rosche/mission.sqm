@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.08726646;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1569;
+	toggles=554;
 	class ItemIDProvider
 	{
-		nextID=2865;
+		nextID=2870;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6870.5908,51.189911,12078.262};
-		dir[]={0.026636599,-0.66008258,0.75072062};
-		up[]={0.023405908,0.75119305,0.65966749};
-		aside[]={0.99937117,0,-0.03545906};
+		pos[]={6911.9321,46.895088,12106.741};
+		dir[]={-0.18479449,-0.31936553,-0.92944413};
+		up[]={-0.062278818,0.94762969,-0.31323779};
+		aside[]={-0.98080683,7.6601282e-008,0.1950056};
 	};
 };
 binarizationWanted=0;
@@ -35,13 +35,14 @@ addons[]=
 	"A3_Modules_F_Curator_Misc",
 	"cwr3_soldiers_us",
 	"cwr3_vehicle_m60a3",
-	"cwr3_core"
+	"cwr3_core",
+	"cwr3_vehicle_ural"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			className="cwr3_flags";
@@ -81,6 +82,13 @@ class AddonsMetaData
 		{
 			className="cwr3_core";
 			name="cwr3_core";
+			author="CWR III Modification";
+			url="http://cwr3.arma2.fr";
+		};
+		class Item6
+		{
+			className="cwr3_vehicle_ural";
+			name="cwr3_vehicle_ural";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
@@ -145,7 +153,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=32;
+		items=35;
 		class Item0
 		{
 			dataType="Object";
@@ -265,7 +273,7 @@ class Mission
 			fillName="SolidFull";
 			a=15;
 			b=1258.196;
-			angle=79.999977;
+			angle=79.999969;
 			id=2834;
 			atlOffset=1.2992697;
 		};
@@ -280,7 +288,7 @@ class Mission
 			fillName="SolidFull";
 			a=15;
 			b=942.70398;
-			angle=164.99995;
+			angle=164.99992;
 			id=2835;
 			atlOffset=-8.2548771;
 		};
@@ -691,9 +699,198 @@ class Mission
 			name="respawn_west";
 			type="cwr3_marker_start";
 			colorName="ColorWEST";
-			angle=154.99997;
+			angle=154.99995;
 			id=2864;
 			atlOffset=-0.00012588501;
+		};
+		class Item32
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6936.2363,38.13229,12073.952};
+				angles[]={3.0003538,3.274281,5.049891};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				health=0;
+				ammo=0;
+				fuel=0;
+				disableSimulation=1;
+			};
+			id=2867;
+			type="cwr3_o_ural";
+			atlOffset=-1.7641983;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""CUP_arifle_AK74"",""CUP_launch_RPG7V"",""FirstAidKit"",""Medikit""],[2,1,4,1]],[[""CUP_30Rnd_545x39_AK_M"",""CUP_PG7VL_M"",""CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"",""CUP_HandGrenade_RGD5"",""SmokeShell""],[15,3,5,8,6]],[[""ToolKit""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item33
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6921.8433,37.902615,12107.567};
+				angles[]={0,5.717742,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				health=0;
+				ammo=0;
+				fuel=0;
+				disableSimulation=1;
+			};
+			id=2868;
+			type="cwr3_o_ural";
+			atlOffset=-0.54950714;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""CUP_arifle_AK74"",""CUP_launch_RPG7V"",""FirstAidKit"",""Medikit""],[2,1,4,1]],[[""CUP_30Rnd_545x39_AK_M"",""CUP_PG7VL_M"",""CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"",""CUP_HandGrenade_RGD5"",""SmokeShell""],[15,3,5,8,6]],[[""ToolKit""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item34
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6927.2231,38.334053,12099.755};
+				angles[]={0.027206242,0.14826272,0.070929714};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				health=0;
+				ammo=0;
+				fuel=0;
+				disableSimulation=1;
+			};
+			id=2869;
+			type="cwr3_o_ural";
+			atlOffset=-0.4018898;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""CUP_arifle_AK74"",""CUP_launch_RPG7V"",""FirstAidKit"",""Medikit""],[2,1,4,1]],[[""CUP_30Rnd_545x39_AK_M"",""CUP_PG7VL_M"",""CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"",""CUP_HandGrenade_RGD5"",""SmokeShell""],[15,3,5,8,6]],[[""ToolKit""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 	};
 };
