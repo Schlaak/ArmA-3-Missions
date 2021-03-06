@@ -24,8 +24,9 @@ if (isServer) then
 	forceweatherchange;
 };
 [] execvm "ambienteflyby.sqf";
+
 //TODO spawn eventhandler
-//[] execVM "scripts\spawn_EH.sqf";
+[] execVM "scripts\spawn_EH.sqf";
 
 route1mrks = [];
 route2mrks = [];

@@ -2,13 +2,7 @@ params ["_pos","_dir"];
 //TODO make into function
 //TODO return reference to plane
 //TODO allow aborting/redirecting strike
-_createDBMarker = {
-	params ["_pos","_name"];
-	//systemChat str ["markerpos",_pos,"markername",_name];
-	_marker = createMarker [str time + selectRandom ["a","b","c","d","e"],_pos];
-	_marker setMarkerType "hd_dot";
-	_marker setMarkerText _name;
-};
+
 //get spawnpos: _pos - 5000m * dir
 _pos = _pos vectorAdd [-25 + random 50,-25 + random 50,0];
 _helper = "Land_HelipadEmpty_F" createVehicle _pos;
@@ -16,7 +10,7 @@ _spawnPos =  _helper getRelPos [-10000,_dir]; _spawnPos set [2,150 + (getTerrain
 _despawnPos = _helper getRelPos [10000,_dir];
 
 //plane class:
-_planeClass = "cwr3_o_su25";
+_planeClass = "cwr3_o_su25_lgb";
 _arr =
 [
 	_spawnPos,		//position
@@ -37,17 +31,13 @@ _wp = _grp addWaypoint [_despawnPos,0,3,"despawn"];
 _wp setWaypointSpeed "FULL";
 _wp setWaypointBehaviour "careless";
 _wp setWaypointCombatMode "BLUE";
-_wp setWaypointStatements ["true", "deleteVehicle vehicle this; { deleteVehicle _x } forEach thisList; missionNamespace setVariable ['IRN_bool_casDone',true,true];"]; //sleep (60 * 10); 
+_wp setWaypointStatements ["true", "deleteVehicle vehicle this; { deleteVehicle _x } forEach thisList; missionNamespace setVariable ['IRN_bool_casDone',true,true];"]; //sleep (60 * 10);
 _plane setCaptive true;
 _plane flyInHeight 150;
 //systemChat str ["spawn",_spawnPos,"_despawnPos",_despawnPos,"dir",_dir];
 {
-	_x addCuratorEditableObjects [[_plane], true];	
+	_x addCuratorEditableObjects [[_plane], true];
 } forEach allCurators;
-{
-	//systemChat str _x;
-//	_x call _createDBMarker;
-} forEach [[_spawnPos,"spawn"],[_despawnPos,"despawn"]];
 
 //create bomb impact positions
 _bombPosArr = [];
@@ -66,12 +56,12 @@ _nearTarget = false;
 while {alive _plane} do {
 	if (_nearTarget && (_plane distance2D _pos > 200)) exitWith {
 		{
-		//	[_x,str _forEachIndex] call _createDBMarker;
 			//systemChat str ["bombpos: ",str _x];
 			_bomb = "Bo_GBU12_LGB" createVehicle (_x vectorAdd [0,0,10]);
-			_bomb setPosASL _x;
+			_bomb setPosASL (_x vectorAdd [0,0,10]);
+			_bomb setVelocity [0,0,-20];
 			{
-				_x addCuratorEditableObjects [[_bomb], true];	
+				_x addCuratorEditableObjects [[_bomb], true];
 			} forEach allCurators;
 			sleep random 0.5;
 			//systemChat str _bomb;
@@ -84,4 +74,3 @@ while {alive _plane} do {
 	sleep 0.2;
 };
 
-    

@@ -5,6 +5,14 @@ diag_log ["#################################### spawn eventhandler init called"]
 	//systemChat str _this;
 	diag_log ["spawn EH fired with ",_this,"at",time];
 	_dude = _this select 0;
+	// 2 - 7 % der Zivilisten werden eine AK zücken und uns auf 20 - 120m beschiessen.
+	if (faction _dude == "CUP_C_TK") then {
+		nul = [_dude,"CUP_arifle_AKS74U",(2+random 5),(20+random 120),east,1,1] execVM "scripts\ws_assassins.sqf";
+	};
+
+
+
+
 	if (faction _dude == "BLU_F") then {
 		//systemChat "faction is NATO";
 		[_dude] execvm "scripts\dushman.sqf";

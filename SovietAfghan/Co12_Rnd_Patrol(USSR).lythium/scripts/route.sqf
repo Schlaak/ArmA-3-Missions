@@ -151,7 +151,30 @@ switch (_chooseroute) do
 		Route5 = true;
 		_availableSpawnPosMarkers = _route5mrks;
 	};
-
+	case 6:
+	{
+		{ _x setmarkeralpha 1; } foreach _route6mrks;
+		Route6 = true;
+		_availableSpawnPosMarkers = _route6mrks;
+	};
+		case 7:
+	{
+		{ _x setmarkeralpha 1; } foreach _route7mrks;
+		Route7 = true;
+		_availableSpawnPosMarkers = _route7mrks;
+	};
+		case 8:
+	{
+		{ _x setmarkeralpha 1; } foreach _route8mrks;
+		Route8 = true;
+		_availableSpawnPosMarkers = _route8mrks;
+	};
+		case 9:
+	{
+		{ _x setmarkeralpha 1; } foreach _route9mrks;
+		Route9 = true;
+		_availableSpawnPosMarkers = _route9mrks;
+	};
 };
 
 //gegner konfigurieren

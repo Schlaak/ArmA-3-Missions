@@ -11,3 +11,4 @@ _null = [true, false, true, 45, 70] execvm "injuredai_simplescript\injured.sqf";
 
 
 //setDate [1986, 4, 25, 16, 40];
+call compile preprocessFileLineNumbers "ShoterAnimation\init.sqf";

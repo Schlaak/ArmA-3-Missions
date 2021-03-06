@@ -42,91 +42,16 @@ _magazine = (getArray (configFile >> "CfgWeapons" >> primaryWeapon player >> "ma
 			player addMagazineGlobal _magazine;
 		};
 
-// --------------------------------------------------------- Nachhut rufen hinzufügen , braucht karte dafür
-Call_Supportgroupaction = [
-	"Call_Supportgroup",
-	"Nachhut Rufen",
-	"",
-	{
-		Nachhut addWaypoint [position player, 80]; {_x domove getpos _x} foreach units Nachhut;
-		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
-  	}, 
-	{
-	 [player, "itemmap"] call BIS_fnc_hasItem 
-   	}
-] call ace_interact_menu_fnc_createAction;
-[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], Call_Supportgroupaction] call ace_interact_menu_fnc_addActionToClass;
-
-// --------------------------------------------------------- transport rufen, braucht Karte dafür
-Call_Transportaction = [
-	"Call_Transport",
-	"Transport Rufen",
-	"",
-	{
-		transportgruppe addWaypoint [position player, 80]; {_x domove getpos _x} foreach units transportgruppe;
-		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
-  	}, 
-	{
-		[player, "itemmap"] call BIS_fnc_hasItem 
-	}
-] call ace_interact_menu_fnc_createAction;
-[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], Call_Transportaction] call ace_interact_menu_fnc_addActionToClass;
-
-// --------------------------------------------------------- transport zur base schicken
-Call_Transportaction2 = [
-	"Call_Transport",
-	"Transport zur Base",
-	"",
-	{ 
-		for "_i" from count waypoints transportgruppe - 1 to 0 step -1 do
-		{
-			deleteWaypoint [transportgruppe, _i];
-		};
-		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
-		transportgruppe addWaypoint [position baseOBJ, 15]; {_x domove getpos _x} foreach units transportgruppe;
-  	}, 
-	{
-		[player, "itemmap"] call BIS_fnc_hasItem 
-   	}
-] call ace_interact_menu_fnc_createAction;
-[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], Call_Transportaction2] call ace_interact_menu_fnc_addActionToClass;
-
-// --------------------------------------------------------- Bomber anfordern
-Call_Transportaction2 = [
-	"Request CAS",
-	"Bomber anfordern",
-	"",
-	{ 
-		for "_i" from count waypoints transportgruppe - 1 to 0 step -1 do
-		{
-			deleteWaypoint [transportgruppe, _i];
-		};
-		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["CP1","CP2","CP7","CP8","cp3","cp4","CP5","CP6","CP9","CP10","CP11"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["Call1","Call2","Call3","Call4","Call5"], 100] call CBA_fnc_globalSay3d; 
-		[player, selectrandom ["CPu1","CPu2","CPu7","cpu3","cpu4","CPu5","CPu6"], 100] call CBA_fnc_globalSay3d; 
-		transportgruppe addWaypoint [position baseOBJ, 15]; {_x domove getpos _x} foreach units transportgruppe;
-  	}, 
-	{
-		[player, "itemmap"] call BIS_fnc_hasItem 
-   	}
-] call ace_interact_menu_fnc_createAction;
-
 [] execVM "irn_library.sqf";
 [] execVM "initPlayerActions.sqf";
 
+
+
+
+
+
+
 sleep 60;
-
-
 //TODO bitte formatieren! absolut unlesbar so
 [
  [
