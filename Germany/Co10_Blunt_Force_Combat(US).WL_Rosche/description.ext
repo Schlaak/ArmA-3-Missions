@@ -49,6 +49,7 @@ respawnTemplatesEast[] = { "Tickets","Counter","MenuPosition" };
 
 class CfgFunctions {
   #include "furniture\func.hpp"
+  #include "Schlaak\func.hpp"
 };
 class Extended_PreInit_EventHandlers {
     class tinter_furniture_pre_init {

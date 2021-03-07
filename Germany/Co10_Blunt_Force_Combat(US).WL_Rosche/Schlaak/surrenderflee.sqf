@@ -40,6 +40,7 @@ switch (_eighterOR) do
 			["ScoreAdded",["Kriegsgefangene gemacht!",(count (units _gruppe))]] call BIS_fnc_showNotification;	//reward for takeing captives
 			//{_x addScore (count (units _gruppe))} foreach allplayers;
 			west addScoreSide (count (units _gruppe));
+			Counterattack_defeated = Counterattack_defeated +1;
 		};
 
 
@@ -58,6 +59,7 @@ switch (_eighterOR) do
 			["ScoreAdded",["Gnade mit fliehendem Feind gehabt!",((count (units _gruppe))*0.5)]] call BIS_fnc_showNotification;	//reward for mercy
 			//{_x addScore ((count (units _gruppe))*0.5)} foreach allplayers;
 			west addScoreSide ((count (units _gruppe))*0.5);
+			Counterattack_defeated = Counterattack_defeated +1;
 		};
 		{deletevehicle _x} foreach units _gruppe;
 

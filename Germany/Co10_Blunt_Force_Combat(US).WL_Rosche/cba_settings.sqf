@@ -776,6 +776,7 @@ force force LOG_SET_REARM = true;
 force force LOG_SET_SHOWFPS = true;
 force force LOG_SET_STATICARMT = 300;
 force force LOG_SET_STEALVEH = false;
+force force LOG_SET_SUP = false;
 force force LOG_SET_TANKS = true;
 force force LOG_SET_TEMPOMAT = false;
 force force LOG_SET_UAV = false;

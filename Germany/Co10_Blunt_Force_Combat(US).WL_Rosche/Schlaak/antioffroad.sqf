@@ -90,7 +90,7 @@ if (hasInterface) then //check if running machine == player
 
 			if (!_skip) then {
 				//_isoffroad = ((vehicle player) isKindOf "car" && !(isOnRoad (vehicle player)) && !((surfaceType getpos player) in _surfacearray) && (vehicle player != player) &&((speed (vehicle player) >= 3) OR (speed (vehicle player) < -3)) && (vehicle player) isKindOf "car" );
-				_isoffroad = (vehicle player) isKindOf "car" && !isOnRoad player &&( abs speed (vehicle player) >= 5);
+				_isoffroad = (vehicle player) isKindOf "car" && !isOnRoad (vehicle player) &&( abs speed (vehicle player) >= 5);
 				if (_isoffroad) then {
 					_enableCamShake = true;
 					_speed = abs (speed (vehicle player));

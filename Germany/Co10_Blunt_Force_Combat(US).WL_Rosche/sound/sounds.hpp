@@ -44,6 +44,86 @@
 
 
 
+			class US_Cas_1
+		{
+			name = "US_Cas_1";
+			sound[] = {"sound\radio\US_Cas_1.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_Cas_2
+		{
+			name = "US_Cas_2";
+			sound[] = {"sound\radio\US_Cas_2.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_Cas_3
+		{
+			name = "US_Cas_3";
+			sound[] = {"sound\radio\US_Cas_3.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_Cas_4
+		{
+			name = "US_Cas_4";
+			sound[] = {"sound\radio\US_Cas_4.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_conf_1
+		{
+			name = "US_conf_1";
+			sound[] = {"sound\radio\US_conf_1.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_conf_2
+		{
+			name = "US_conf_2";
+			sound[] = {"sound\radio\US_conf_2.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_conf_3
+		{
+			name = "US_conf_3";
+			sound[] = {"sound\radio\US_conf_3.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_conf_4
+		{
+			name = "US_conf_4";
+			sound[] = {"sound\radio\US_conf_4.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_conf_5
+		{
+			name = "US_conf_5";
+			sound[] = {"sound\radio\US_conf_5.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_conf_6
+		{
+			name = "US_conf_6";
+			sound[] = {"sound\radio\US_conf_6.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_conf_7
+		{
+			name = "US_conf_7";
+			sound[] = {"sound\radio\US_conf_7.ogg", 4, 1};
+			titles[] = {};
+		};
+			class US_conf_8
+		{
+			name = "US_conf_8";
+			sound[] = {"sound\radio\US_conf_8.ogg", 4, 1};
+			titles[] = {};
+		};
+			class 9liner
+		{
+			name = "9liner";
+			sound[] = {"sound\radio\9liner.ogg", 4, 1};
+			titles[] = {};
+		};
+
+
 		class POradio0 {
 	name = "Radiosnd0";
 	sound[] = {"\sound\radio\radio.ogg", db+12, 1, 10};

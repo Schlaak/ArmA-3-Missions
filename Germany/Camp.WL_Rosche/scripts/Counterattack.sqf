@@ -54,4 +54,4 @@ sleep 30;
 
 
 
-["Benachrichtigung",[format ["Feindtruppen kommen auf %2 aus %1°.",round _direction, text nearestLocation [position player, ""];]]] remoteExec ["BIS_fnc_showNotification", 0, true]; //show notification
+["Benachrichtigung",[format ["Feindtruppen kommen auf %2 aus %1°.",round _direction, text nearestLocation [_pos1, ""]]]] remoteExec ["BIS_fnc_showNotification", 0, true]; //show notification
