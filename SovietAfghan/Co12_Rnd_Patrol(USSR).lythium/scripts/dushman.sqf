@@ -89,7 +89,7 @@ for "_i" from 0 to _amountMags do {
 
 _setNameACE = {
 	params ["_unit","_name"];
-	diag_log ["setting ace name for ", _unit,_name];
+//	diag_log ["setting ace name for ", _unit,_name];
 
 	if (isNull _unit || {!alive _unit}) exitWith {};
 

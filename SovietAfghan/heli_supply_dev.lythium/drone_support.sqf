@@ -1,5 +1,5 @@
 params ["_caller"];
-_caller = player;
+_caller = player; //TODO
 _drone = drone_01;
 
 _ammo = _drone getVariable ["irn_droneAmmo",6];

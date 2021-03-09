@@ -46,15 +46,15 @@ for "_i" from 0 to _cacheAmount do {
 };
 */
 
-
-_cachesites = (synchronizedObjects RouteCacheLogic);
-
-for [{_i=0}, {_i<7}, {_i=_i+1}] do
-{
-    player globalChat format["%1",_i];
-	_site = (_cachesites select _i);
-	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
-	[_site,_spawnPos,20] execvm "scripts\shk_moveobjects.sqf";
-	sleep 2;
-};
+//FIXME totally broken
+//_cachesites = (synchronizedObjects RouteCacheLogic);
+//
+//for [{_i=0}, {_i<7}, {_i=_i+1}] do
+//{
+//    player globalChat format["%1",_i];
+//	_site = (_cachesites select _i);
+//	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
+//	[_site,_spawnPos,20] execvm "scripts\shk_moveobjects.sqf"; //TODO no more execVM. only functions.
+//	sleep 2;
+//};
 //RouteCacheLogic

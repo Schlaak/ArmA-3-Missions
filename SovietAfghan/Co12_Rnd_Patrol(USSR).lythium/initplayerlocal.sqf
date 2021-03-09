@@ -42,9 +42,8 @@ _magazine = (getArray (configFile >> "CfgWeapons" >> primaryWeapon player >> "ma
 			player addMagazineGlobal _magazine;
 		};
 
-[] execVM "irn_library.sqf";
-[] execVM "initPlayerActions.sqf";
 
+[] execVM "initPlayerActions.sqf";
 
 
 

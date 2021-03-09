@@ -22,13 +22,13 @@ _getmuellPos = {
 };
 
 
-_muellsites = (synchronizedObjects RouteMuellLog);
-_synchedobjects = count  (synchronizedObjects RouteMuellLog);
-for [{_i=0}, {_i <= _synchedobjects}, {_i=_i+1}] do
-{
-    player globalChat format["Muell%1",_i];
-	_site = (_muellsites select _i);
-	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getmuellPos;
-	[_site,_spawnPos,6] execvm "scripts\shk_moveobjects.sqf";
-	sleep 1;
-};
+//_muellsites = (synchronizedObjects RouteMuellLog);
+//_synchedobjects = count  (synchronizedObjects RouteMuellLog);
+//for [{_i=0}, {_i <= _synchedobjects}, {_i=_i+1}] do
+//{
+//    player globalChat format["Muell%1",_i];
+//	_site = (_muellsites select _i);
+//	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getmuellPos;
+//	[_site,_spawnPos,6] execvm "scripts\shk_moveobjects.sqf";
+//	sleep 1;
+//};

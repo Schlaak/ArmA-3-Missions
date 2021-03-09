@@ -15,16 +15,18 @@ _spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcac
 [_goatpos,_spawnPos,10] execvm "scripts\shk_moveobjects.sqf";
 };
 
-
+//FIXME script wirft fehler.
 */
-sleep 4;
-_goatsites = (synchronizedObjects RouteGoatLogic);
-
-for [{_i=0}, {_i<= 8}, {_i=_i+1}] do
-{
-    player globalChat format["goat%1",_i];
-	_site = (_goatsites select _i);
-	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
-	[_site,_spawnPos,2] execvm "scripts\shk_moveobjects.sqf";
-};
-//hint "worked";
+//sleep 4;
+////TODO make into function : [8 (ziegen),[pos1,pos2,pos3]] call Schlaak_spawn_goatGroups;
+//
+//_goatsites = (synchronizedObjects RouteGoatLogic);
+//
+//for [{_i=0}, {_i<= 8}, {_i=_i+1}] do
+//{
+//    player globalChat format["goat%1",_i];
+//	_site = (_goatsites select _i);
+//	_spawnPos = [getMarkerPos (selectRandom _availableSpawnPosMarkers)] call _getcachePos;
+//	[_site,_spawnPos,2] execvm "scripts\shk_moveobjects.sqf";
+//};
+////hint "worked";

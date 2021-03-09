@@ -2,7 +2,7 @@
 //will set state of sniper to given state. input: state 0,1,2
 params ["_unit"];
 //diag_log ["#################### stalker script active for ",_unit];
-
+//TODO make global array of snipers
 _state = 0;
 _target = objNull;
 _lastCheck = 0;

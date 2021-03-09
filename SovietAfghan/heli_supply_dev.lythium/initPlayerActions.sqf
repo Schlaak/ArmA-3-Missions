@@ -23,18 +23,23 @@ _action = [
 			params ["_markerName"];
 			sleep 4;
 			systemChat ("Markieren Sie die Abwurfzone auf der Karte mit " + _markerName);
-			_marker = nil;
+			_marker = nil; _counter = 0;
 			waitUntil {
 				sleep 1;
+				_counter = _counter + 1;
 				{
 					if (markerText _x isEqualTo _markerName) exitWith {
 						_marker = _x;
 					};
 				} forEach allMapMarkers;
-				(!(isNil "_marker"))
+				(!(isNil "_marker") || _counter >= 60)
 			};
 			[player,2] call IRN_fnc_sayRandom; 
 			[player,1] call IRN_fnc_sayRandom;
+			if (_counter >= 60) exitWith {
+				systemChat "Keine Markierung gefunden, Abbruch.";
+			};
+
 			sleep 3;
 			systemChat "Markierung erhalten, Bomber werden instruiert.";
 			[getMarkerPos _marker,markerDir _marker,2] execVM "bombrun.sqf";
@@ -67,7 +72,8 @@ _action = [
 		[player,1] call IRN_fnc_sayRandom; //opz answers long
 
 		_markerName = ("Unterstützung " + selectRandom ["Anastasia","Annika","Galina","Irina","Katina","Katerine","Khristina","Lada","Lelyah"]);		
-		[player,crate_01,false,_markerName] execVM "order_supply.sqf";
+		[player,crate_01,false,_markerName] remoteExec ["IRN_fnc_orderSupply",2,false];
+		//[player,crate_01,false,_markerName] execVM "order_supply.sqf";
 		if (supply_helo_01 getVariable ["RTB",true]) then {
 			[] spawn {
 			waitUntil {
@@ -109,5 +115,5 @@ _action = [
 		true //[player, "itemmap"] call BIS_fnc_hasItem 
    	}
 ] call ace_interact_menu_fnc_createAction;
-[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+//[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
 diag_log ["init drone and added action"]

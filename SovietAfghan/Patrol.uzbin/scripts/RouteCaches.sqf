@@ -1,6 +1,6 @@
 _getcachePos = {
 	params ["_centerPos","_2Param"];
-	diag_log [_centerPos];
+	//diag_log [_centerPos];
 	_pos = [
 		_centerPos, //position
 		1,	//min distance

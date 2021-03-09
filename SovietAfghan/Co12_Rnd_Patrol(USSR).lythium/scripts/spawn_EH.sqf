@@ -3,12 +3,12 @@
 diag_log ["#################################### spawn eventhandler init called"];
 ["Man", "init", {
 	//systemChat str _this;
-	diag_log ["spawn EH fired with ",_this,"at",time];
+	//diag_log ["spawn EH fired with ",_this,"at",time];
 	_dude = _this select 0;
-	// 2 - 7 % der Zivilisten werden eine AK zücken und uns auf 20 - 120m beschiessen.
-	if (faction _dude == "CUP_C_TK") then {
-		nul = [_dude,"CUP_arifle_AKS74U",(2+random 5),(20+random 120),east,1,1] execVM "scripts\ws_assassins.sqf";
-	};
+	//// 2 - 7 % der Zivilisten werden eine AK zücken und uns auf 20 - 120m beschiessen.
+	//if (faction _dude == "CUP_C_TK") then {
+	//	nul = [_dude,"CUP_arifle_AKS74U",(2+random 5),(20+random 120),east,1,1] execVM "scripts\ws_assassins.sqf";
+	//}; //TODO untest + make function.
 
 
 
@@ -53,7 +53,7 @@ diag_log ["#################################### spawn eventhandler init called"]
 			_dude linkItem "ItemCompass";
 			_dude linkItem "ItemWatch";
 		};
-
+		//TODO make function
 		[_dude] execVM "scripts\sniper.sqf";
 	}
 	}] call CBA_fnc_addClassEventHandler;

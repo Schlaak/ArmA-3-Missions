@@ -23,18 +23,23 @@ _action = [
 			params ["_markerName"];
 			sleep 4;
 			systemChat ("Markieren Sie die Abwurfzone auf der Karte mit " + _markerName);
-			_marker = nil;
+			_marker = nil; _counter = 0;
 			waitUntil {
 				sleep 1;
+				_counter = _counter + 1;
 				{
 					if (markerText _x isEqualTo _markerName) exitWith {
 						_marker = _x;
 					};
 				} forEach allMapMarkers;
-				(!(isNil "_marker"))
+				(!(isNil "_marker") || _counter >= 60)
 			};
 			[player,2] call IRN_fnc_sayRandom; 
 			[player,1] call IRN_fnc_sayRandom;
+			if (_counter >= 60) exitWith {
+				systemChat "Keine Markierung gefunden, Abbruch.";
+			};
+
 			sleep 3;
 			systemChat "Markierung erhalten, Bomber werden instruiert.";
 			[getMarkerPos _marker,markerDir _marker,2] execVM "bombrun.sqf";
@@ -67,7 +72,8 @@ _action = [
 		[player,1] call IRN_fnc_sayRandom; //opz answers long
 
 		_markerName = ("Unterstützung " + selectRandom ["Anastasia","Annika","Galina","Irina","Katina","Katerine","Khristina","Lada","Lelyah"]);		
-		[player,crate_01,false,_markerName] execVM "order_supply.sqf";
+		{[player,crate_01,false,"uwu"] call IRN_fnc_orderSupply} remoteExec ["bis_fnc_call",2,false];
+		//[player,crate_01,false,_markerName] execVM "order_supply.sqf";
 		if (supply_helo_01 getVariable ["RTB",true]) then {
 			[] spawn {
 			waitUntil {
@@ -87,6 +93,34 @@ _action = [
    	}
 ] call ace_interact_menu_fnc_createAction;
 [typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+
+// --------------------------------------------------------- reaper schlag anfordern
+//[drone_01] spawn IRN_fnc_droneCycle;
+//_action = [
+//	"Request reaper",
+//	"Dronenschlag anfordern",
+//	"",
+//	{ 	//action code
+//		[player,0] call IRN_fnc_sayRandom; //player ordering (babble)
+//		[player,2] call IRN_fnc_sayRandom; //player ordering (babble)
+//		[player,0] call IRN_fnc_sayRandom; //player ordering (babble)
+//		[player,1] call IRN_fnc_sayRandom; //opz answers long
+//		diag_log ["ace action params",_this];
+//		_this spawn {
+//			sleep 5;
+//			[_this select 0] execVM "drone_support.sqf";
+//		};
+//  	}, 
+//	{
+//		true //[player, "itemmap"] call BIS_fnc_hasItem 
+//   	}
+//] call ace_interact_menu_fnc_createAction;
+//[typeOf player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
+
+
+diag_log ["init drone and added action"];
+/*
+//TODO fix non moving groups
 
 // --------------------------------------------------------- Nachhut rufen hinzufügen , braucht karte dafür
 Call_Supportgroupaction = [
@@ -204,23 +238,9 @@ actionTP4 = [
 		true
    	},{},[],[],6,[],{}
 ] call ace_interact_menu_fnc_createAction;
-/*
- * Argument:
- * 0: Action name <STRING>
- * 1: Name of the action shown in the menu <STRING>
- * 2: Icon <STRING>
- * 3: Statement <CODE>
- * 4: Condition <CODE>
- * 5: Insert children code <CODE> (Optional)
- * 6: Action parameters <ANY> (Optional)
- * 7: Position (Position array, Position code or Selection Name) <ARRAY>, <CODE> or <STRING> (Optional)
- * 8: Distance <NUMBER> (Optional)
- * 9: Other parameters [showDisabled,enableInside,canCollapse,runOnHover,doNotCheckLOS] <ARRAY> (Optional)
- * 10: Modifier function <CODE> (Optional)
- */
 
 
-
+//TODO put in foreach loop
 [Flag1314,0,["ACE_MainActions"],actionTP2] call ace_interact_menu_fnc_addActionToObject;
 [Flag1314,0,["ACE_MainActions"],actionTP3] call ace_interact_menu_fnc_addActionToObject;
 [Flag1314,0,["ACE_MainActions"],actionTP4] call ace_interact_menu_fnc_addActionToObject;
@@ -237,18 +257,4 @@ actionTP4 = [
 [Flag2232,0,["ACE_MainActions"],actionTP2] call ace_interact_menu_fnc_addActionToObject;
 [Flag2232,0,["ACE_MainActions"],actionTP3] call ace_interact_menu_fnc_addActionToObject;
 
-/*
-Долина (1314)
-respawn_east_2
-Flag1314
-ставка (HQ)
-respawn_east
-FlagHQ
 
-Михаил (3020)
-respawn_east_3
-Flag3020
-
-холм (2232)
-respawn_east_1
-Flag2232

@@ -3,7 +3,9 @@ enableDynamicSimulationSystem true;
 "Vehicle" setDynamicSimulationDistance 1800;
 "EmptyVehicle" setDynamicSimulationDistance 300;
 "Prop" setDynamicSimulationDistance 300;
-
+[] execVM "irn_library.sqf";
+sleep 3;
+[player] call IRN_fnc_noLoot;
 [] execVM "bon_recruit_units\init.sqf";
 //[] execVM "JWC_CASFS\initCAS.sqf";
 [] execVM "scripts\goon_dust.sqf";
