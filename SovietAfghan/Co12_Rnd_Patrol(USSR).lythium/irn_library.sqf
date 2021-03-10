@@ -136,20 +136,6 @@ IRN_fnc_sayRandom = {
 	};
 	_talker say3D [_sound,50,1,true];
 };
-//create marker [pos,(defualt "")text,(default hd_dot)type]
-IRN_fnc_createMarker = {
-	params ["_pos","_name","_type"];
-	if (isNil "_name") then {
-		_name = "";
-	};
-	if (isNil "_type") then {
-		_type = "hd_dot";
-	};
-	_marker = createMarker [str time + selectRandom ["a","b","c","d","e"],_pos];
-	_marker setMarkerType _type;
-	_marker setMarkerText _name;
-	_marker
-};
 
 IRN_fnc_getDir = {
 	params ["_from","_to"];
@@ -289,7 +275,7 @@ IRN_fnc_orderSupply = {
 	_airport = airport_01;
 	_var = _helo getVariable "RTB";
 	if (isNil "_var") then {
-		[getPos _airport,"heliport"]call IRN_fnc_createMarker;
+		[getPos _airport,"heliport"] call IRN_fnc_marker;
 		diag_log ["heliport marker created"];
 	};
 	//-------------------------------------------------------------------------- !var declaration
@@ -304,7 +290,7 @@ IRN_fnc_orderSupply = {
 
 	_lzObj = [_caller,_precise,_markername] call _getLZ; //will spawn LZ.
 	if ((_helo getVariable ["RTB",true]) && count ropeAttachedObjects _helo == 0) then { //only attach crate, if helo doesnt have one yet and is at base.
-		_crate = [_crate] call IRN_fnc_cloneCrate;
+		_crate = [_crate] call IRN_fnc_cloneContainer;
 		[_helo,_crate] call _prepareHelo; //will attach cargo to helo
 		systemChat "Auftrag erhalten. Helikopter auf dem Weg.";
 	} else {

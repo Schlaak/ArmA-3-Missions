@@ -318,3 +318,7 @@ class CfgSounds
 		titles[] = {};
 	};
 };
+
+class CfgFunctions {
+  #include "IRN\functions\func.hpp"
+};
