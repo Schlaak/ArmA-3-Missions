@@ -18,3 +18,7 @@
 - punish civilian casualties
 - more civilian interaction (ACIM)
 - sound for halt ace action
+
+
+
+playSound "snowstorm";

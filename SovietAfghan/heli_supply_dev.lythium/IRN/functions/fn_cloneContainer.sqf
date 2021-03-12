@@ -12,7 +12,7 @@
 	Returns:
 	clone
 */
-params ["_crate","_clone"];
+params ["_crate","_clone"]; //TODO param selection
 if (isNull _crate) exitWith {
 	["target object is nil."] call BIS_fnc_error;
 };
