@@ -1,11 +1,3 @@
-//clears an object of all inventory items. does not include ace cargo
-
-
-IRN_fnc_test = {
-	params ["_crate"];
-	//diag_log ["crate:",_crate,"all containers",everyContainer _crate,"all backpacks",everyBackpack _crate];
-};
-_auto = createVehicle ["offoradalsg",getPos player];
 
 //params: talker (unit receiving sound), index: 0 = player talking, 1 opz first (long) answer, 2 opz second (short) answer
 IRN_fnc_sayRandom = {

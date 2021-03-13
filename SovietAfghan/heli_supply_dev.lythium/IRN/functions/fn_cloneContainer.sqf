@@ -12,15 +12,18 @@
 	Returns:
 	clone
 */
-params ["_crate","_clone"]; //TODO param selection
+params [
+	["_crate",objNull,[objNull]],
+	["_clone",objNull,[objNull]]
+]; //TODO param selection
 if (isNull _crate) exitWith {
 	["target object is nil."] call BIS_fnc_error;
 };
+
 //crate object clone
-if (isNil "_clone") then {
+if (isNull "_clone") then {
 	_clone = (typeOf _crate) createVehicle (getPos _crate);
-	_clonePos = [getPos _crate,1,30,2] call BIS_fnc_findSafePos;
-	_clone setPos _clonePos;
+	_clone setPos [getPos _crate,1,30,2] call BIS_fnc_findSafePos;
 	[_clone] call IRN_fnc_clearContainer;
 	diag_log "creating new clone container.";
 	//_clone enableSimulationGlobal false;
@@ -30,7 +33,7 @@ _mags = getmagazineCargo _crate;
 _weapons = weaponsItemsCargo _crate;
 _containers = everyContainer _crate; //	
 _backPackItems = backpackCargo _crate;
-
+private ["_items","_mags","_weapons","_containers","_backPackItems"];
 {
 	_arr = _x;
 	_itemTypes = _x select 0;
