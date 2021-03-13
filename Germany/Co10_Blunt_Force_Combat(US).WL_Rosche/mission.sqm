@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=62;
+		nextID=64;
 	};
 	class Camera
 	{
-		pos[]={4821.7368,37.646866,5298.4873};
-		dir[]={0.80837584,-0.56781387,0.15530956};
-		up[]={0.55761606,0.82315689,0.10713222};
-		aside[]={0.18867521,2.5611371e-009,-0.9820407};
+		pos[]={4838.5884,30.389551,5293.5156};
+		dir[]={-0.11021704,-0.51175559,0.85207027};
+		up[]={-0.065652445,0.85911345,0.50753921};
+		aside[]={0.99175835,-1.3812678e-007,0.12828876};
 	};
 };
 binarizationWanted=0;
@@ -33,14 +33,16 @@ addons[]=
 	"cwr3_soldiers_us",
 	"CUP_Weapons_M16",
 	"CUP_Weapons_Ammunition",
+	"cwr3_weapon_config",
 	"A3_Weapons_F",
 	"acre_main",
-	"ace_realisticnames",
 	"A3_Weapons_F_Items",
 	"ace_medical_engine",
 	"ace_medical_treatment",
-	"ace_maptools",
+	"ace_realisticnames",
 	"CUP_Weapons_Grenades",
+	"ace_hearing",
+	"ace_maptools",
 	"cwr3_wrecks",
 	"A3_Structures_F_Oldman_Decals",
 	"A3_Structures_F_System",
@@ -72,7 +74,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=33;
+		items=35;
 		class Item0
 		{
 			className="cwr3_soldiers_us";
@@ -92,24 +94,24 @@ class AddonsMetaData
 		};
 		class Item3
 		{
+			className="cwr3_weapon_config";
+			name="cwr3_weapon_config";
+			author="CWR III Modification";
+			url="http://cwr3.arma2.fr";
+		};
+		class Item4
+		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item4
+		class Item5
 		{
 			className="acre_main";
 			name="ACRE2 - Main";
 			author="ACRE2Team";
 			url="https://github.com/IDI-Systems/acre2";
-		};
-		class Item5
-		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
 		};
 		class Item6
 		{
@@ -127,10 +129,10 @@ class AddonsMetaData
 		};
 		class Item8
 		{
-			className="ace_maptools";
-			name="ACE3 - Map Tools";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 		class Item9
 		{
@@ -139,157 +141,171 @@ class AddonsMetaData
 		};
 		class Item10
 		{
+			className="ace_hearing";
+			name="ACE3 - Hearing";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item11
+		{
+			className="ace_maptools";
+			name="ACE3 - Map Tools";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item12
+		{
 			className="cwr3_wrecks";
 			name="cwr3_wrecks";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item11
+		class Item13
 		{
 			className="A3_Structures_F_Oldman";
 			name="Arma 3 Oldman - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item14
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item15
 		{
 			className="A3_Data_F";
 			name="Arma 3 - Main Configuration";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item16
 		{
 			className="cwr3_vehicle_ah1f";
 			name="cwr3_vehicle_ah1f";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item15
+		class Item17
 		{
 			className="cwr3_vehicle_bmp1";
 			name="cwr3_vehicle_bmp1";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item16
+		class Item18
 		{
 			className="cwr3_vehicle_brdm2";
 			name="cwr3_vehicle_brdm2";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item17
+		class Item19
 		{
 			className="cwr3_vehicle_t72";
 			name="cwr3_vehicle_t72";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item18
+		class Item20
 		{
 			className="cwr3_vehicle_ural";
 			name="cwr3_vehicle_ural";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item19
+		class Item21
 		{
 			className="cwr3_misc";
 			name="cwr3_misc";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item20
+		class Item22
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item23
 		{
 			className="cwr3_vehicle_hmmwv";
 			name="cwr3_vehicle_hmmwv";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item22
+		class Item24
 		{
 			className="cwr3_vehicle_m939";
 			name="cwr3_vehicle_m939";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item23
+		class Item25
 		{
 			className="cwr3_crates";
 			name="cwr3_crates";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item24
+		class Item26
 		{
 			className="cwr3_core";
 			name="cwr3_core";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item25
+		class Item27
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
+		class Item28
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item29
 		{
 			className="cwr3_soldiers_ru";
 			name="cwr3_soldiers_ru";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item28
+		class Item30
 		{
 			className="CUP_Weapons_AK";
 			name="CUP_Weapons_AK";
 		};
-		class Item29
+		class Item31
 		{
 			className="cwr3_static_weapons";
 			name="cwr3_static_weapons";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item30
+		class Item32
 		{
 			className="cwr3_vehicle_m2a2";
 			name="cwr3_vehicle_m2a2";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item31
+		class Item33
 		{
 			className="cwr3_vehicle_m113";
 			name="cwr3_vehicle_m113";
 			author="CWR III Modification";
 			url="http://cwr3.arma2.fr";
 		};
-		class Item32
+		class Item34
 		{
 			className="cwr3_vehicle_bmp2";
 			name="cwr3_vehicle_bmp2";
@@ -305,7 +321,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -391,37 +407,30 @@ class Mission
 									ammoLeft=30;
 								};
 							};
+							class secondaryWeapon
+							{
+								name="cwr3_launch_m72a3";
+							};
 							class uniform
 							{
 								typeName="cwr3_b_uniform_m81_woodland";
 								isBackpack=0;
 								class MagazineCargo
 								{
-									items=2;
+									items=1;
 									class Item0
 									{
 										name="CUP_30Rnd_556x45_Stanag";
 										count=3;
 										ammoLeft=30;
 									};
-									class Item1
-									{
-										name="SmokeShell";
-										count=1;
-										ammoLeft=1;
-									};
 								};
 								class ItemCargo
 								{
-									items=2;
+									items=1;
 									class Item0
 									{
 										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="ACE_MapTools";
 										count=1;
 									};
 								};
@@ -436,20 +445,69 @@ class Mission
 									class Item0
 									{
 										name="CUP_30Rnd_556x45_Stanag";
-										count=4;
+										count=6;
 										ammoLeft=30;
 									};
 									class Item1
 									{
-										name="CUP_HandGrenade_M67";
+										name="SmokeShellBlue";
 										count=2;
 										ammoLeft=1;
 									};
 									class Item2
 									{
-										name="SmokeShell";
-										count=1;
+										name="CUP_HandGrenade_L109A2_HE";
+										count=2;
 										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=9;
+									class Item0
+									{
+										name="ACE_packingBandage";
+										count=10;
+									};
+									class Item1
+									{
+										name="ACE_quikclot";
+										count=5;
+									};
+									class Item2
+									{
+										name="ACE_elasticBandage";
+										count=5;
+									};
+									class Item3
+									{
+										name="ACE_EarPlugs";
+										count=2;
+									};
+									class Item4
+									{
+										name="ACE_MapTools";
+										count=1;
+									};
+									class Item5
+									{
+										name="ACE_morphine";
+										count=4;
+									};
+									class Item6
+									{
+										name="ACE_epinephrine";
+										count=6;
+									};
+									class Item7
+									{
+										name="ACE_salineIV_500";
+										count=3;
+									};
+									class Item8
+									{
+										name="ACE_personalAidKit";
+										count=1;
 									};
 								};
 							};
@@ -521,6 +579,127 @@ class Mission
 						skill=0.44999999;
 						rank="CORPORAL";
 						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_arifle_M16A1E1";
+								class primaryMuzzleMag
+								{
+									name="CUP_30Rnd_556x45_Stanag";
+									ammoLeft=30;
+								};
+							};
+							class secondaryWeapon
+							{
+								name="cwr3_launch_m72a3";
+							};
+							class uniform
+							{
+								typeName="cwr3_b_uniform_m81_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=3;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="cwr3_b_vest_pasgt_alice_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=6;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="SmokeShellBlue";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="CUP_HandGrenade_L109A2_HE";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=9;
+									class Item0
+									{
+										name="ACE_packingBandage";
+										count=10;
+									};
+									class Item1
+									{
+										name="ACE_quikclot";
+										count=5;
+									};
+									class Item2
+									{
+										name="ACE_elasticBandage";
+										count=5;
+									};
+									class Item3
+									{
+										name="ACE_EarPlugs";
+										count=2;
+									};
+									class Item4
+									{
+										name="ACE_MapTools";
+										count=1;
+									};
+									class Item5
+									{
+										name="ACE_morphine";
+										count=4;
+									};
+									class Item6
+									{
+										name="ACE_epinephrine";
+										count=6;
+									};
+									class Item7
+									{
+										name="ACE_salineIV_500";
+										count=3;
+									};
+									class Item8
+									{
+										name="ACE_personalAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="cwr3_b_headgear_pasgt_m81_woodland";
+						};
 					};
 					id=2;
 					type="cwr3_b_soldier_at_carlgustaf";
@@ -539,6 +718,127 @@ class Mission
 					{
 						skill=0.40000001;
 						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_arifle_M16A1E1";
+								class primaryMuzzleMag
+								{
+									name="CUP_30Rnd_556x45_Stanag";
+									ammoLeft=30;
+								};
+							};
+							class secondaryWeapon
+							{
+								name="cwr3_launch_m72a3";
+							};
+							class uniform
+							{
+								typeName="cwr3_b_uniform_m81_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=3;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="cwr3_b_vest_pasgt_alice_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=6;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="SmokeShellBlue";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="CUP_HandGrenade_L109A2_HE";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=9;
+									class Item0
+									{
+										name="ACE_packingBandage";
+										count=10;
+									};
+									class Item1
+									{
+										name="ACE_quikclot";
+										count=5;
+									};
+									class Item2
+									{
+										name="ACE_elasticBandage";
+										count=5;
+									};
+									class Item3
+									{
+										name="ACE_EarPlugs";
+										count=2;
+									};
+									class Item4
+									{
+										name="ACE_MapTools";
+										count=1;
+									};
+									class Item5
+									{
+										name="ACE_morphine";
+										count=4;
+									};
+									class Item6
+									{
+										name="ACE_epinephrine";
+										count=6;
+									};
+									class Item7
+									{
+										name="ACE_salineIV_500";
+										count=3;
+									};
+									class Item8
+									{
+										name="ACE_personalAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="cwr3_b_headgear_pasgt_m81_woodland";
+						};
 					};
 					id=3;
 					type="cwr3_b_soldier_aat_carlgustaf";
@@ -556,7 +856,127 @@ class Mission
 					class Attributes
 					{
 						skill=0.40000001;
-						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_arifle_M16A1E1";
+								class primaryMuzzleMag
+								{
+									name="CUP_30Rnd_556x45_Stanag";
+									ammoLeft=30;
+								};
+							};
+							class secondaryWeapon
+							{
+								name="cwr3_launch_m72a3";
+							};
+							class uniform
+							{
+								typeName="cwr3_b_uniform_m81_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=3;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="cwr3_b_vest_pasgt_alice_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=6;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="SmokeShellBlue";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="CUP_HandGrenade_L109A2_HE";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=9;
+									class Item0
+									{
+										name="ACE_packingBandage";
+										count=10;
+									};
+									class Item1
+									{
+										name="ACE_quikclot";
+										count=5;
+									};
+									class Item2
+									{
+										name="ACE_elasticBandage";
+										count=5;
+									};
+									class Item3
+									{
+										name="ACE_EarPlugs";
+										count=2;
+									};
+									class Item4
+									{
+										name="ACE_MapTools";
+										count=1;
+									};
+									class Item5
+									{
+										name="ACE_morphine";
+										count=4;
+									};
+									class Item6
+									{
+										name="ACE_epinephrine";
+										count=6;
+									};
+									class Item7
+									{
+										name="ACE_salineIV_500";
+										count=3;
+									};
+									class Item8
+									{
+										name="ACE_personalAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="cwr3_b_headgear_pasgt_m81_woodland";
+						};
 					};
 					id=4;
 					type="cwr3_b_soldier";
@@ -575,7 +995,127 @@ class Mission
 					class Attributes
 					{
 						rank="SERGEANT";
-						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_arifle_M16A1E1";
+								class primaryMuzzleMag
+								{
+									name="CUP_30Rnd_556x45_Stanag";
+									ammoLeft=30;
+								};
+							};
+							class secondaryWeapon
+							{
+								name="cwr3_launch_m72a3";
+							};
+							class uniform
+							{
+								typeName="cwr3_b_uniform_m81_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=3;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="cwr3_b_vest_pasgt_alice_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=6;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="SmokeShellBlue";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="CUP_HandGrenade_L109A2_HE";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=9;
+									class Item0
+									{
+										name="ACE_packingBandage";
+										count=10;
+									};
+									class Item1
+									{
+										name="ACE_quikclot";
+										count=5;
+									};
+									class Item2
+									{
+										name="ACE_elasticBandage";
+										count=5;
+									};
+									class Item3
+									{
+										name="ACE_EarPlugs";
+										count=2;
+									};
+									class Item4
+									{
+										name="ACE_MapTools";
+										count=1;
+									};
+									class Item5
+									{
+										name="ACE_morphine";
+										count=4;
+									};
+									class Item6
+									{
+										name="ACE_epinephrine";
+										count=6;
+									};
+									class Item7
+									{
+										name="ACE_salineIV_500";
+										count=3;
+									};
+									class Item8
+									{
+										name="ACE_personalAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="cwr3_b_headgear_pasgt_m81_woodland";
+						};
 					};
 					id=6;
 					type="cwr3_b_soldier_gl";
@@ -594,7 +1134,127 @@ class Mission
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
-						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_arifle_M16A1E1";
+								class primaryMuzzleMag
+								{
+									name="CUP_30Rnd_556x45_Stanag";
+									ammoLeft=30;
+								};
+							};
+							class secondaryWeapon
+							{
+								name="cwr3_launch_m72a3";
+							};
+							class uniform
+							{
+								typeName="cwr3_b_uniform_m81_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=3;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="cwr3_b_vest_pasgt_alice_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=6;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="SmokeShellBlue";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="CUP_HandGrenade_L109A2_HE";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=9;
+									class Item0
+									{
+										name="ACE_packingBandage";
+										count=10;
+									};
+									class Item1
+									{
+										name="ACE_quikclot";
+										count=5;
+									};
+									class Item2
+									{
+										name="ACE_elasticBandage";
+										count=5;
+									};
+									class Item3
+									{
+										name="ACE_EarPlugs";
+										count=2;
+									};
+									class Item4
+									{
+										name="ACE_MapTools";
+										count=1;
+									};
+									class Item5
+									{
+										name="ACE_morphine";
+										count=4;
+									};
+									class Item6
+									{
+										name="ACE_epinephrine";
+										count=6;
+									};
+									class Item7
+									{
+										name="ACE_salineIV_500";
+										count=3;
+									};
+									class Item8
+									{
+										name="ACE_personalAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="cwr3_b_headgear_pasgt_m81_woodland";
+						};
 					};
 					id=7;
 					type="cwr3_b_soldier_ar";
@@ -612,7 +1272,127 @@ class Mission
 					class Attributes
 					{
 						skill=0.40000001;
-						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_arifle_M16A1E1";
+								class primaryMuzzleMag
+								{
+									name="CUP_30Rnd_556x45_Stanag";
+									ammoLeft=30;
+								};
+							};
+							class secondaryWeapon
+							{
+								name="cwr3_launch_m72a3";
+							};
+							class uniform
+							{
+								typeName="cwr3_b_uniform_m81_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=3;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="cwr3_b_vest_pasgt_alice_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=6;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="SmokeShellBlue";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="CUP_HandGrenade_L109A2_HE";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=9;
+									class Item0
+									{
+										name="ACE_packingBandage";
+										count=10;
+									};
+									class Item1
+									{
+										name="ACE_quikclot";
+										count=5;
+									};
+									class Item2
+									{
+										name="ACE_elasticBandage";
+										count=5;
+									};
+									class Item3
+									{
+										name="ACE_EarPlugs";
+										count=2;
+									};
+									class Item4
+									{
+										name="ACE_MapTools";
+										count=1;
+									};
+									class Item5
+									{
+										name="ACE_morphine";
+										count=4;
+									};
+									class Item6
+									{
+										name="ACE_epinephrine";
+										count=6;
+									};
+									class Item7
+									{
+										name="ACE_salineIV_500";
+										count=3;
+									};
+									class Item8
+									{
+										name="ACE_personalAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="cwr3_b_headgear_pasgt_m81_woodland";
+						};
 					};
 					id=9;
 					type="cwr3_b_soldier_medic";
@@ -629,7 +1409,127 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_arifle_M16A1E1";
+								class primaryMuzzleMag
+								{
+									name="CUP_30Rnd_556x45_Stanag";
+									ammoLeft=30;
+								};
+							};
+							class secondaryWeapon
+							{
+								name="cwr3_launch_m72a3";
+							};
+							class uniform
+							{
+								typeName="cwr3_b_uniform_m81_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=3;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="cwr3_b_vest_pasgt_alice_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=6;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="SmokeShellBlue";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="CUP_HandGrenade_L109A2_HE";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=9;
+									class Item0
+									{
+										name="ACE_packingBandage";
+										count=10;
+									};
+									class Item1
+									{
+										name="ACE_quikclot";
+										count=5;
+									};
+									class Item2
+									{
+										name="ACE_elasticBandage";
+										count=5;
+									};
+									class Item3
+									{
+										name="ACE_EarPlugs";
+										count=2;
+									};
+									class Item4
+									{
+										name="ACE_MapTools";
+										count=1;
+									};
+									class Item5
+									{
+										name="ACE_morphine";
+										count=4;
+									};
+									class Item6
+									{
+										name="ACE_epinephrine";
+										count=6;
+									};
+									class Item7
+									{
+										name="ACE_salineIV_500";
+										count=3;
+									};
+									class Item8
+									{
+										name="ACE_personalAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="cwr3_b_headgear_pasgt_m81_woodland";
+						};
 					};
 					id=10;
 					type="cwr3_b_soldier_at_law";
@@ -647,7 +1547,127 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_arifle_M16A1E1";
+								class primaryMuzzleMag
+								{
+									name="CUP_30Rnd_556x45_Stanag";
+									ammoLeft=30;
+								};
+							};
+							class secondaryWeapon
+							{
+								name="cwr3_launch_m72a3";
+							};
+							class uniform
+							{
+								typeName="cwr3_b_uniform_m81_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=3;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="cwr3_b_vest_pasgt_alice_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=6;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="SmokeShellBlue";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="CUP_HandGrenade_L109A2_HE";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=9;
+									class Item0
+									{
+										name="ACE_packingBandage";
+										count=10;
+									};
+									class Item1
+									{
+										name="ACE_quikclot";
+										count=5;
+									};
+									class Item2
+									{
+										name="ACE_elasticBandage";
+										count=5;
+									};
+									class Item3
+									{
+										name="ACE_EarPlugs";
+										count=2;
+									};
+									class Item4
+									{
+										name="ACE_MapTools";
+										count=1;
+									};
+									class Item5
+									{
+										name="ACE_morphine";
+										count=4;
+									};
+									class Item6
+									{
+										name="ACE_epinephrine";
+										count=6;
+									};
+									class Item7
+									{
+										name="ACE_salineIV_500";
+										count=3;
+									};
+									class Item8
+									{
+										name="ACE_personalAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="cwr3_b_headgear_pasgt_m81_woodland";
+						};
 					};
 					id=11;
 					type="cwr3_b_soldier_at_law";
@@ -665,7 +1685,127 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="CUP_arifle_M16A1E1";
+								class primaryMuzzleMag
+								{
+									name="CUP_30Rnd_556x45_Stanag";
+									ammoLeft=30;
+								};
+							};
+							class secondaryWeapon
+							{
+								name="cwr3_launch_m72a3";
+							};
+							class uniform
+							{
+								typeName="cwr3_b_uniform_m81_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=3;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="cwr3_b_vest_pasgt_alice_woodland";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="CUP_30Rnd_556x45_Stanag";
+										count=6;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="SmokeShellBlue";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="CUP_HandGrenade_L109A2_HE";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=9;
+									class Item0
+									{
+										name="ACE_packingBandage";
+										count=10;
+									};
+									class Item1
+									{
+										name="ACE_quikclot";
+										count=5;
+									};
+									class Item2
+									{
+										name="ACE_elasticBandage";
+										count=5;
+									};
+									class Item3
+									{
+										name="ACE_EarPlugs";
+										count=2;
+									};
+									class Item4
+									{
+										name="ACE_MapTools";
+										count=1;
+									};
+									class Item5
+									{
+										name="ACE_morphine";
+										count=4;
+									};
+									class Item6
+									{
+										name="ACE_epinephrine";
+										count=6;
+									};
+									class Item7
+									{
+										name="ACE_salineIV_500";
+										count=3;
+									};
+									class Item8
+									{
+										name="ACE_personalAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="cwr3_b_headgear_pasgt_m81_woodland";
+						};
 					};
 					id=12;
 					type="cwr3_b_soldier_at_law";

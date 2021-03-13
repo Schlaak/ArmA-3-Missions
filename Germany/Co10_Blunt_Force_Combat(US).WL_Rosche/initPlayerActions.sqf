@@ -37,15 +37,15 @@ _action = [
 			//[player,1] call IRN_fnc_sayRandom;
 			[player,"9liner",20] call Schlaak_fnc_Schlaaksay;
 			systemChat "9-Liner durchgabe.";
-			sleep 30;
+		//	sleep 30;
 			systemChat "Markierung erhalten, Bomber werden instruiert.";
-			sleep 10;
+		//	sleep 10;
 			_casconf = selectrandom ["US_Cas_1","US_Cas_2","US_Cas_3","US_Cas_4"];
 			[player,_casconf,20] call Schlaak_fnc_Schlaaksay;
 
-			sleep 10;
-			[getMarkerPos _marker,markerDir _marker,2] execVM "Ir0n\bombrun.sqf";
-			sleep (80+ random 20);
+		//	sleep 10;
+			[[getMarkerPos _marker,markerDir _marker,2], "Ir0n\bombrun.sqf"] remoteExec ["execVM",0,false];
+		//	sleep (80+ random 20);
 			_bombconf = selectrandom ["US_conf_1","US_conf_2","US_conf_3","US_conf_4","US_conf_5","US_conf_6","US_conf_7","US_conf_8"];
 			[player,_bombconf,20] call Schlaak_fnc_Schlaaksay;
 			waitUntil {
