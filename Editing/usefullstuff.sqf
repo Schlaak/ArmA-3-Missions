@@ -299,3 +299,10 @@ waitUntil {sleep 1; {alive _x} count allPlayers == {_x in _helo} count allPlayer
 // besser
 waitUntil {sleep 1; allPlayers findIf {alive _x && !(_x in exfiltrationshelo)} == 0};
 ( {alive _x } count allPlayers ) isEqualTo ( {_x in exfiltrationshel} count allPlayers )
+
+if (isNull _drone) then {
+	if (isNil "irn_reaper_01") exitWith {
+		["given drone is nil and default 'irn_reaper_01' does not exist."] call BIS_fnc_error;
+	};
+	_drone = irn_reaper_01;
+};

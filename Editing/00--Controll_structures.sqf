@@ -1,3 +1,11 @@
+if (isNull _drone) then {
+	if (isNil "irn_reaper_01") exitWith {
+		["given drone is nil and default 'irn_reaper_01' does not exist."] call BIS_fnc_error;
+	};
+	_drone = irn_reaper_01;
+};
+
+
 if (!isServer)  exitwith {};
 
 
