@@ -22,3 +22,7 @@ call compile preprocessFileLineNumbers "ShoterAnimation\init.sqf";
 
 // activate spawn eh
 [] execVM "scripts\spawn_EH.sqf";
+{
+	diag_log ["adding inventory: ",_x];
+	[west,_x] call BIS_fnc_addRespawnInventory;
+} forEach ["RIFLEMAN1","ATHEAVY1","ATASSIST1","AUTORIFLE1","MEDIC1"]; 

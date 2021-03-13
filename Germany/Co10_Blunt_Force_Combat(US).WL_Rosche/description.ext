@@ -75,7 +75,7 @@ respawnDelay = 30; // Default: ?
 respawnTemplates[] = {"MenuInventory", "Tickets","Counter","MenuPosition"};
 class CfgRespawnInventory
 {
-	class cwr3_b_soldier
+	class RIFLEMAN1
 	{
 		displayName = "Rifleman";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
@@ -89,7 +89,7 @@ class CfgRespawnInventory
 		linkedItems[] = {"cwr3_b_vest_pasgt_alice_woodland", "cwr3_b_headgear_pasgt_m81_woodland", "", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "", "", "", "", "", "", "", ""};
 	};
 
-	class cwr3_b_soldier_at_carlgustaf
+	class ATHEAVY1
 	{
 		displayName = "AT Specialist (Carl Gustaf)";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
@@ -103,7 +103,7 @@ class CfgRespawnInventory
 		linkedItems[] = {"cwr3_b_vest_pasgt_alice_woodland", "cwr3_b_headgear_pasgt_m81_woodland", "", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "", "", "", "", "", "", "", ""};
 	};
 
-	class cwr3_b_soldier_aat_carlgustaf
+	class ATASSIST1
 	{
 		displayName = "Asst. AT Specialist (Carl Gustaf)";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
@@ -117,7 +117,7 @@ class CfgRespawnInventory
 		linkedItems[] = {"cwr3_b_vest_pasgt_alice_woodland", "cwr3_b_headgear_pasgt_m81_woodland", "", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "", "", "", "", "", "", "", ""};
 	};
 
-	class cwr3_b_soldier_ar
+	class AUTORIFLE1
 	{
 		displayName = "Automatic Rifleman";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
@@ -131,7 +131,7 @@ class CfgRespawnInventory
 		linkedItems[] = {"cwr3_b_vest_pasgt_alice_woodland", "cwr3_b_headgear_pasgt_m81_woodland", "", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "", "", "", "", "", "", "", ""};
 	};
 
-	class cwr3_b_soldier_medic
+	class MEDIC1
 	{
 	 	 displayName = "Medic";
 	 	 icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
