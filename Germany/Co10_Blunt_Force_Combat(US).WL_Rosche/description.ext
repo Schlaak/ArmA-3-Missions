@@ -35,17 +35,11 @@ class CfgSounds
 	#include "sound\sounds.hpp"
 };
 
-respawn = "BASE";
-respawnButton = 1;
-respawnDelay = 60;
-respawnDialog = 1;
-respawnOnStart = -1;
+
 
 
 reviveMode = 0;
 reviveUnconsciousStateMode = 0;
-respawnTemplatesWest[] = { "Tickets","Counter","MenuPosition" };
-respawnTemplatesEast[] = { "Tickets","Counter","MenuPosition" };
 
 class CfgFunctions {
   #include "furniture\func.hpp"
@@ -71,4 +65,84 @@ class CfgNotifications
 		priority = 3;			// Priority; higher number = more important; tasks in queue are selected by priority
 		difficulty[] = {};		// Required difficulty settings. All listed difficulties has to be enabled
 	};
+};
+
+respawn = "BASE";
+respawnButton = 1;
+respawnDialog = 1;
+respawnOnStart = 1; // Default: 1
+respawnDelay = 30; // Default: ?
+respawnTemplates[] = {"MenuInventory", "Tickets","Counter","MenuPosition"};
+class CfgRespawnInventory
+{
+	class cwr3_b_soldier
+	{
+		displayName = "Rifleman";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Default";
+		show = "true";
+		uniformClass = "cwr3_b_uniform_m81_woodland";
+		backpack = "";
+		weapons[] = {"CUP_arifle_M16A1E1", "cwr3_launch_m72a3", "Throw", "Put"};
+		magazines[] = {"CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "SmokeShellBlue", "SmokeShellBlue", "CUP_HandGrenade_L109A2_HE", "CUP_HandGrenade_L109A2_HE"};
+		items[] = {"FirstAidKit", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_EarPlugs", "ACE_EarPlugs", "ACE_MapTools", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_salineIV_500", "ACE_splint","ACE_splint","ACE_splint","ACE_splint", "ACE_personalAidKit"};
+		linkedItems[] = {"cwr3_b_vest_pasgt_alice_woodland", "cwr3_b_headgear_pasgt_m81_woodland", "", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "", "", "", "", "", "", "", ""};
+	};
+
+	class cwr3_b_soldier_at_carlgustaf
+	{
+		displayName = "AT Specialist (Carl Gustaf)";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Default";
+		show = "true";
+		uniformClass = "cwr3_b_uniform_m81_woodland";
+		backpack = "CUP_B_AlicePack_Bedroll";
+		weapons[] = {"CUP_arifle_M16A1E1", "cwr3_launch_carlgustaf", "Throw", "Put"};
+		magazines[] = {"CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "SmokeShellBlue", "SmokeShellBlue", "CUP_HandGrenade_L109A2_HE", "CUP_HandGrenade_L109A2_HE", "cwr3_carlgustaf_heat_m", "cwr3_carlgustaf_heat_m", "cwr3_carlgustaf_heat_m"};
+		items[] = {"FirstAidKit", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_EarPlugs", "ACE_EarPlugs", "ACE_MapTools", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_salineIV_500", "ACE_splint","ACE_splint","ACE_splint","ACE_splint", "ACE_personalAidKit"};
+		linkedItems[] = {"cwr3_b_vest_pasgt_alice_woodland", "cwr3_b_headgear_pasgt_m81_woodland", "", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "", "", "", "", "", "", "", ""};
+	};
+
+	class cwr3_b_soldier_aat_carlgustaf
+	{
+		displayName = "Asst. AT Specialist (Carl Gustaf)";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Default";
+		show = "true";
+		uniformClass = "cwr3_b_uniform_m81_woodland";
+		backpack = "cwr3_b_backpack_alice";
+		weapons[] = {"CUP_arifle_M16A1E1", "Throw", "Put"};
+		magazines[] = {"CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "SmokeShellBlue", "SmokeShellBlue", "CUP_HandGrenade_L109A2_HE", "CUP_HandGrenade_L109A2_HE"};
+		items[] = {"FirstAidKit", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_EarPlugs", "ACE_EarPlugs", "ACE_MapTools", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_salineIV_500", "ACE_splint","ACE_splint","ACE_splint","ACE_splint", "ACE_personalAidKit"};
+		linkedItems[] = {"cwr3_b_vest_pasgt_alice_woodland", "cwr3_b_headgear_pasgt_m81_woodland", "", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "", "", "", "", "", "", "", ""};
+	};
+
+	class cwr3_b_soldier_ar
+	{
+		displayName = "Automatic Rifleman";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Default";
+		show = "true";
+		uniformClass = "cwr3_b_uniform_m81_woodland";
+		backpack = "CUP_B_AlicePack_Khaki";
+		weapons[] = {"CUP_lmg_M249_E2", "Throw", "Put"};
+		magazines[] = {"SmokeShellBlue", "SmokeShellBlue", "CUP_HandGrenade_L109A2_HE", "CUP_HandGrenade_L109A2_HE", "CUP_100Rnd_TE4_Red_Tracer_556x45_M249", "CUP_200Rnd_TE4_Red_Tracer_556x45_M249_Pouch", "CUP_200Rnd_TE4_Red_Tracer_556x45_M249_Pouch", "CUP_200Rnd_TE4_Red_Tracer_556x45_M249_Pouch", "CUP_200Rnd_TE4_Red_Tracer_556x45_M249_Pouch", "CUP_200Rnd_TE4_Red_Tracer_556x45_M249_Pouch"};
+		items[] = {"FirstAidKit", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_EarPlugs", "ACE_EarPlugs", "ACE_MapTools", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_salineIV_500", "ACE_splint","ACE_splint","ACE_splint","ACE_splint", "ACE_personalAidKit"};
+		linkedItems[] = {"cwr3_b_vest_pasgt_alice_woodland", "cwr3_b_headgear_pasgt_m81_woodland", "", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "", "", "", "", "", "", "", ""};
+	};
+
+	class cwr3_b_soldier_medic
+	{
+	 	 displayName = "Medic";
+	 	 icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+	 	 role = "Default";
+	 	 show = "true";
+	 	 uniformClass = "cwr3_b_uniform_m81_woodland";
+	 	 backpack = "cwr3_b_backpack_alice_medic_empty";
+	 	 weapons[] = {"CUP_arifle_M16A1E1", "Throw", "Put"};
+	 	 magazines[] = {"CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "CUP_30Rnd_556x45_Stanag", "SmokeShellBlue", "SmokeShellBlue", "CUP_HandGrenade_L109A2_HE", "CUP_HandGrenade_L109A2_HE"};
+	 	 items[] = {"FirstAidKit", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_EarPlugs", "ACE_EarPlugs", "ACE_MapTools", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_salineIV_500", "ACE_splint","ACE_splint","ACE_splint","ACE_splint", "ACE_personalAidKit", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_surgicalKit", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_personalAidKit"};
+	 	 linkedItems[] = {"cwr3_b_vest_pasgt_alice_woodland", "cwr3_b_headgear_pasgt_m81_woodland", "", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "", "", "", "", "", "", "", ""};
+	};
+
 };
