@@ -1,0 +1,10 @@
+flee script triggers but units do not move, get just deleted, but probably only if used on pre placed units.
+
+other way around, surrender seems to not work on spawned units.... this shit is ultra weird.
+
+fire functions have been fixed but not yet tested.
+
+
+need to make the vars public to be broadcasted or some shit, can not access them anywhere but server... maybe because defined in init server....
+
+woah, can humans get any more tired?! :(

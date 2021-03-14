@@ -11,7 +11,7 @@ if (! isserver OR (isNull _unit) OR (isNil "Log_Schlaak_Retreat_E") OR (isNil "L
 if (!isNil {_unit getVariable "Schlaak_incap"}) exitWith {};	// Abort function if already called.
 if ( isplayer _unit) exitWith {};								// Abort if player
 
-_random = floor random 6;										// Random 1 to 5
+_random = floor random 13;										// Random 1 to 5
 
 //diag_log str [_random];
 //systemchat str _random;
