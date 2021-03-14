@@ -5,7 +5,17 @@ schlaak_suffersounds = ["ACE_moan_Male01GRE_mid_2","ACE_moan_Male03ENGB_mid_4","
 "ACE_moan_Male07ENG_mid_3","ACE_moan_Male07ENG_mid_4","ACE_moan_Male07ENG_mid_5",
 "ACE_moan_Male08ENG_high_1","ACE_moan_Male08ENG_high_2","ACE_hit_Male04ENG_high_1",
 "ACE_hit_Male04ENG_high_2","ACE_hit_Male04ENG_high_3","ACE_hit_Male04ENG_high_4",
-"ACE_hit_Male04ENG_high_5"]
+"ACE_hit_Male04ENG_high_5","ACE_hit_Male04ENG_low_1","ACE_hit_Male04ENG_low_2",
+"ACE_hit_Male04ENG_low_3","ACE_hit_Male04ENG_low_4","ACE_hit_Male04ENG_low_5",
+"ACE_hit_Male04ENG_mid_1","ACE_hit_Male04ENG_mid_2","ACE_hit_Male04ENG_mid_3",
+"ACE_hit_Male04ENG_mid_4","ACE_hit_Male04ENG_mid_5","ACE_hit_Male04GRE_high_1",
+"ACE_hit_Male04GRE_high_2","ACE_hit_Male04GRE_high_3","ACE_hit_Male04GRE_high_4",
+"ACE_hit_Male04GRE_high_5","ACE_hit_Male07ENG_low_1","ACE_hit_Male07ENG_low_2",
+"ACE_hit_Male07ENG_low_3","ACE_hit_Male07ENG_low_4","ACE_hit_Male07ENG_low_5",
+"ACE_hit_Male07ENG_mid_1","ACE_hit_Male07ENG_mid_2","ACE_hit_Male07ENG_mid_3",
+"ACE_hit_Male07ENG_mid_4","ACE_hit_Male07ENG_mid_5","ACE_hit_Male08ENG_high_1",
+"ACE_hit_Male08ENG_high_2","ACE_hit_Male08ENG_high_3","ACE_hit_Male08ENG_high_4",
+"ACE_hit_Male08ENG_high_5"];
 /*
 schlaak_suffersounds = ["ACE_moan_Male01ENGB_high_1","ACE_moan_Male01ENGB_high_2","ACE_moan_Male01ENGB_high_3",	"ACE_moan_Male01ENGB_high_4","ACE_moan_Male01ENGB_high_5","ACE_moan_Male01ENGB_low_1","ACE_moan_Male01ENGB_low_2",
 		"ACE_moan_Male01ENGB_low_3","ACE_moan_Male01ENGB_low_4","ACE_moan_Male01ENGB_low_5","ACE_moan_Male01ENGB_mid_1","ACE_moan_Male01ENGB_mid_2","ACE_moan_Male01ENGB_mid_3","ACE_moan_Male01ENGB_mid_4","ACE_moan_Male01ENGB_mid_5",

@@ -13,9 +13,10 @@ if (!isserver) exitWith {};
 	sleep 10;
 	
 	{[_x, false] call ACE_captives_fnc_setSurrendered} foreach units (_this select 0);
-	sleep 2;
+    {_x setCaptive true} foreach units (_this select 0);
+	sleep 300;
 	{_x action ["SitDown", _x]} foreach units  (_this select 0);
-	sleep 5;
+	sleep 50;
 	switch (side leader (_this select 0)) do
 {
     case West:

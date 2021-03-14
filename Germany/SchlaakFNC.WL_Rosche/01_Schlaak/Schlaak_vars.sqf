@@ -102,15 +102,16 @@ Schlaak_Units_Captured_I = 0;
 Schlaak_Units_routed_w = 0;		//counts routed units according to side
 Schlaak_Units_routed_E = 0;
 Schlaak_Units_routed_I = 0;
-/*
-Schlaak_dietime = 60 + (random 300);
-Schlaak_bodybagtime = 300 + (random 600);
-Schlaak_bagremovaltime = 300 + (random 300);
-*/
-Schlaak_dietime = 3 + (random 3);
-Schlaak_bodybagtime = 3 + (random 3);
-Schlaak_bagremovaltime = 3 + (random 3);
 
+Schlaak_dietime = 60 + (random 300);		//basic dietime though without any use atm
+Schlaak_bodybagtime = 300 + (random 600);		//time till bodybab
+Schlaak_bagremovaltime = 300 + (random 300);	//time till bodybagremoval
+
+/*
+Schlaak_dietime = 15 + (random 3);
+Schlaak_bodybagtime = 15 + (random 3);
+Schlaak_bagremovaltime = 15 + (random 3);
+*/
 
 diag_log "SCHLAAK_VARS.SQF: Numbers defined";
 systemchat "SCHLAAK_VARS.SQF: Numbers defined";

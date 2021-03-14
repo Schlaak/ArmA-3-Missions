@@ -69,7 +69,11 @@ _unit setVariable ["Schlaak_incap", 0, false];					// unit already affected so g
 		_this select 0 setobjectscale (_scl + 0.05);
 		sleep 20;
 		};
-	 	sleep Schlaak_dietime + Schlaak_bodybagtime + Schlaak_bagremovaltime;
+	 	sleep (Schlaak_dietime) + (Schlaak_bodybagtime) + (Schlaak_bagremovaltime);
+		sleep (Schlaak_dietime) + (Schlaak_bodybagtime) + (Schlaak_bagremovaltime);	//ultra lazy option to get sure blood stays a while....
+		sleep (Schlaak_dietime) + (Schlaak_bodybagtime) + (Schlaak_bagremovaltime);
+		sleep 300;
+		sleep 300;
 		deletevehicle (_this select 0);
 	}
 
@@ -91,73 +95,132 @@ _bodypart = selectrandom ["Head", "Body", "LeftArm", "RightArm", "LeftLeg", "Rig
 _unit disableai "ANIM";
 
 
+_InjuryKind = selectrandom [true,false];
+//systemchat str _InjuryKind;
+
+
+
+
+if (_InjuryKind) then {
+//
+// INJURYKIND TRUE (scream and twitch)
+//
 [_unit] spawn {
 	sleep floor random 15;
 	//_anim = selectRandom ["Acts_CivilInjuredLegs_1","Acts_CivilInjuredHead_1","Acts_CivilInjuredGeneral_1","Acts_CivilInjuredChest_1","Acts_CivilInjuredArms_1"];
 	[(_this select 0), false] call ace_medical_status_fnc_setUnconsciousState;
 	//[(_this select 0), _anim] remoteExec ["switchmove", 0];
 
-
-
-
-	};
-
-
-	_anim = selectRandom ["Acts_CivilInjuredLegs_1","Acts_CivilInjuredHead_1","Acts_CivilInjuredGeneral_1","Acts_CivilInjuredChest_1","Acts_CivilInjuredArms_1"];
-	[(_this select 0), false] call ace_medical_status_fnc_setUnconsciousState;
-	[(_this select 0), _anim] remoteExec ["switchmove", 0];
-
-
-/*		!!! DIS SHIT WILL KILL DA GAME
-while {alive (_unit)} do {
+	while {alive (_this select 0)} do {
+		_moansound = selectrandom schlaak_suffersounds;
+		_anim = selectRandom ["Acts_CivilInjuredLegs_1","Acts_CivilInjuredHead_1","Acts_CivilInjuredGeneral_1","Acts_CivilInjuredChest_1","Acts_CivilInjuredArms_1"];
+		[(_this select 0), _anim] remoteExec ["switchmove", 0];
 		sleep 3;
-		[(_unit),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
+		[(_this select 0),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
 		sleep 5;
-		[(_unit),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
+		[(_this select 0),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
 		sleep 3;
-		[(_unit), _anim] remoteExec ["switchmove", 0];
-	};
-*/
-
-
-
-/*
-while {alive _unit} do {
-waitUntil {lifestate _unit == "INJURED"};
-[_unit] spawn {
-	waitUntil {
-		sleep 3;
-		(!(lifestate (_this select 0) == "INCAPACITATED"))
+		[(_this select 0),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
+		(_this select 0) setdamage (damage (_this select 0) + 0.05);
 		};
-		
-	[(_this select 0), (selectRandom ["Acts_CivilInjuredLegs_1","Acts_CivilInjuredHead_1","Acts_CivilInjuredGeneral_1","Acts_CivilInjuredChest_1","Acts_CivilInjuredArms_1"])] remoteExec ["switchMove", 0];
+
+
 	};
 
-	sleep 3;
-	_moansound = selectrandom schlaak_suffersounds;
-	[(_this select 0),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
-	sleep 5;
-	_moansound = selectrandom schlaak_suffersounds;
-	[(_this select 0),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
-	sleep 5;
-	//[[(_this select 0),""] remoteExec ["switchMove"]];
+
+} else {
+//
+// INJURYKIND FALSE downed...
+//
+[_unit] spawn {
+	sleep floor random 15;
+	//_anim = selectRandom ["Acts_CivilInjuredLegs_1","Acts_CivilInjuredHead_1","Acts_CivilInjuredGeneral_1","Acts_CivilInjuredChest_1","Acts_CivilInjuredArms_1"];
+	[(_this select 0), true] call ace_medical_status_fnc_setUnconsciousState;
+	//[(_this select 0), _anim] remoteExec ["switchmove", 0];
+
+	while {alive (_this select 0)} do {
+		//_moansound = selectrandom schlaak_suffersounds;
+		//_anim = selectRandom ["Acts_CivilInjuredLegs_1","Acts_CivilInjuredHead_1","Acts_CivilInjuredGeneral_1","Acts_CivilInjuredChest_1","Acts_CivilInjuredArms_1"];
+		//[(_this select 0), _anim] remoteExec ["switchmove", 0];
+		sleep 3;
+		//[(_this select 0),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
+		sleep 5;
+		//[(_this select 0),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
+		sleep 3;
+		//[(_this select 0),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
+		(_this select 0) setdamage (damage (_this select 0) + 0.05);
+		[(_this select 0), true] call ace_medical_status_fnc_setUnconsciousState;
+		};
+
+
+	};
+
+
 
 };
 
 
 
 
+//================================================================
+// Corpse cleanup		
+//	TODO: WIP
+//================================================================
 
+//waituntil {! alive _unit};
+[_unit] spawn {
+_unit = _this select 0;
+waitUntil { not alive _unit };
+	
+switch (faction (_this select 0)) do
+	{
+		case "cwr3_faction_usa":
+		{	
 
+			
 
+				
+				//
+				sleep Schlaak_bodybagtime;
+				_testo = ["cwr3_body_us", getposworld (_this select 0), (getDir ((_this select 0))) -90,true] call BIS_fnc_createSimpleObject;
+				_testo setPos [getPos _testo select 0, getPos _testo select 1, 0.3];
+				deleteVehicle (_this select 0);
+				[_testo] spawn {
+					sleep Schlaak_bagremovaltime;
+					deleteVehicle (_this select 0);
 
+					
+				};
+		};
 
+		case "cwr3_faction_rus":
+		{
 
+				sleep Schlaak_bodybagtime;
+				_testo = ["cwr3_body_ru", getposworld (_this select 0), (getDir ((_this select 0))) -90,true] call BIS_fnc_createSimpleObject;
+				_testo setPos [getPos _testo select 0, getPos _testo select 1, 0.3];
+				deleteVehicle (_this select 0);
+				[_testo] spawn {
+					sleep Schlaak_bagremovaltime;
+					deleteVehicle (_this select 0);
+				
 
+			};
+		};
+		default
+		{
 
-/*
-if (isNil {_unit getVariable "Schlaak_incap"}) then {(_this select 0) setVariable ["Schlaak_incap", 0, false];};
-	 
+			
+			sleep Schlaak_bodybagtime;
+			_testo = ["Body", getposworld (_this select 0), (getDir ((_this select 0))) -90,true] call BIS_fnc_createSimpleObject;
+			_testo setPos [getPos _testo select 0, getPos _testo select 1, 0.3];
+			deleteVehicle (_this select 0);
+			[_testo] spawn {
+				sleep Schlaak_bagremovaltime;
+				deleteVehicle (_this select 0);
+	
+				};
+		};
+	};
 
-
-	if (isNil {_unit getVariable "Schlaak_incap"}) exitWith {};
+};
