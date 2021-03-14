@@ -5,5 +5,9 @@ class IRN {
     class marker {};
     class cloneContainer {};
     class clearContainer {};
+    class spawnMissile {};
+    class missileStrike {};
+    class getDir {};
+    class revealTarget {};
   };
 };

@@ -2,7 +2,7 @@
 	Author: IR0NSIGHT
 
 	Description:
-	Will spawn a cup-hellfire missile at defined air unit's position, locking in on either callers laser (if laser was detected at call) or
+	Will spawn a missile at defined air unit's position, locking in on either callers laser (if laser was detected at call) or
 	at red smoke near player, randomly selected if multiple ones. Smoke gets blacklisted after targetted.
 
 	Parameter(s):
@@ -23,6 +23,7 @@ params [
 	["_missileType","CUP_M_AGM_114K_Hellfire_II_AT",["donaudampfschifffahrtsgesellschaft"]]
 ];
 
+
 if (isNull _drone) then {
 	if (isNil "irn_reaper_01") exitWith {
 		["given drone is nil and default 'irn_reaper_01' does not exist."] call BIS_fnc_error;
@@ -40,10 +41,10 @@ if (_drone distance _caller > 3000) exitWith {
 
 _drone setVariable ["irn_droneAmmo",(_ammo - 1),true];
 
-_laser = objNull;
+_target = objNull;
 if (!(isNull (laserTarget _caller))) then {
 	systemChat "Laserziel erkannt";
-	_laser = laserTarget _caller;
+	_target = laserTarget _caller;
 } else {
 	_list = [];
 	waitUntil { //TODO make loop search for laser too
@@ -55,24 +56,9 @@ if (!(isNull (laserTarget _caller))) then {
 	_blackList = _drone getVariable ["smokeBlackList",[]];
 	_blackList pushBack _target;
 	_drone setVariable ["smokeBlackList",_blackList,true];
-	_laser = "LaserTargetC" createVehicle getPos _target;
 	systemChat "Roter Rauch erkannt.";
-	//TODO kill latertarget obj
 };
-
 
 sleep 3;
 systemChat "Rakete los.";
-
-_turret = allTurrets _drone select 0;
-_weapons = _drone weaponsTurret _turret;
-_missilePod = _weapons select 1;
-
-west reportRemoteTarget [_laser, 3600];  
-_laser confirmSensorTarget [west, true];  
-
-_missile = createVehicle [_missileType,(_drone modelToWorld [0,0,-100]),[],0,"CAN_COLLIDE"];
-_dir = [getPosASL _missile,getPosASL player] call IRN_fnc_getDir;
-_missile setVectorDir _dir;
-_missile setVelocity (_dir vectorMultiply 100);
-_missile setMissileTarget _laser;
+[getPos _drone,_target] call IRN_fnc_spawnMissile;

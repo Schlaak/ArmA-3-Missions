@@ -1,7 +1,7 @@
 
 //params: talker (unit receiving sound), index: 0 = player talking, 1 opz first (long) answer, 2 opz second (short) answer
 IRN_fnc_sayRandom = {
-	params ["_talker","_index"];
+	params ["_talker","_index"]; //TODO allow language
 	////diag_log  str [ "sayRandom:",_talker,_index];
 	_sound = nil;
 	switch (_index) do {
@@ -18,26 +18,7 @@ IRN_fnc_sayRandom = {
 	};
 	_talker say3D [_sound,50,1,true];
 };
-//create marker [pos,(defualt "")text,(default hd_dot)type]
-IRN_fnc_createMarker = {
-	params ["_pos","_name","_type"];
-	if (isNil "_name") then {
-		_name = "";
-	};
-	if (isNil "_type") then {
-		_type = "hd_dot";
-	};
-	_marker = createMarker [str time + selectRandom ["a","b","c","d","e"],_pos];
-	_marker setMarkerType _type;
-	_marker setMarkerText _name;
-	_marker
-};
 
-IRN_fnc_getDir = {
-	params ["_from","_to"];
-	_dir = vectorNormalized (_to vectorDiff _from);
-	_dir
-};
 
 //will init a loop for given drone
 IRN_fnc_droneCycle = {
