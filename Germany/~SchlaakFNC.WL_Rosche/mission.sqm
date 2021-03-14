@@ -23,7 +23,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="SchlaakFNC";
+sourceName="~SchlaakFNC";
 addons[]=
 {
 	"cwr3_soldiers_us",

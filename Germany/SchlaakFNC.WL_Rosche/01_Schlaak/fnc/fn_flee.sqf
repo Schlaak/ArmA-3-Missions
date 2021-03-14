@@ -23,7 +23,7 @@ switch (_grpSide) do
 		deleteWaypoint [_gruppe, _i];
 		};
 
-		_retreatWP = _gruppe addWaypoint [(getpos _retreatpoint), 0];
+		_retreatWP = _gruppe addWaypoint [(position _retreatpoint), 0];
 		_retreatWP setWaypointStatements ["true", "Schlaak_Units_routed_w = Schlaak_Units_routed_w + ({ alive _x } count units (group this)); {deletevehicle _x} foreach units group this;"];
 		{_x domove (getpos _retreatpoint) ;} foreach units _gruppe;
 		[leader _gruppe, (getpos  _Retreatpoint), true] spawn lambs_wp_fnc_taskAssault;
@@ -46,14 +46,14 @@ switch (_grpSide) do
 	case independent:
     {
         _Retreatpoint = (selectrandom Schlaak_Retreat_Independent);
-		{_x domove (getpos _retreatpoint) ;} foreach units _gruppe;
+		{_x domove (position _retreatpoint) ;} foreach units _gruppe;
 		hint format ["%1", getpos _retreatpoint];
 		for "_i" from count waypoints _gruppe - 1 to 0 step -1 do
 		{
 		deleteWaypoint [_gruppe, _i];
 		};
 		_gruppe setSpeedMode "FULL";
-		_retreatWP = _gruppe addWaypoint [(getpos _retreatpoint), 0];
+		_retreatWP = _gruppe addWaypoint [(position _retreatpoint), 0];
 		_retreatWP setWaypointStatements ["true", "Schlaak_Units_routed_w = Schlaak_Units_routed_w + ({ alive _x } count units (group this)); {deletevehicle _x} foreach units group this;"];
 		{_x domove (getpos _retreatpoint) ;} foreach units _gruppe;
 		[leader _gruppe, (getpos  _Retreatpoint), true] spawn lambs_wp_fnc_taskAssault;

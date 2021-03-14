@@ -1,3 +1,6 @@
+{_x addMPEventHandler ["MPhit", { [_this select 0] call Schlaak_fnc_incap; }];} foreach allunits; 
+
+
 //=================================
 // SCHLAAK DIPLOMACY
 //=================================
@@ -87,7 +90,7 @@ O_grp_arr_Inf = [O_grpATteam,O_grpATteam,O_grpMGteam,O_grpMGteam,O_grpMGteam,O_g
 diag_log "SCHLAAK_VARS.SQF: Groups defined";
 systemchat "SCHLAAK_VARS.SQF: Groups defined";
 
-
+sleep 3;
 //=================================
 // SCHLAAK NUMBERS
 //=================================
@@ -99,8 +102,19 @@ Schlaak_Units_Captured_I = 0;
 Schlaak_Units_routed_w = 0;		//counts routed units according to side
 Schlaak_Units_routed_E = 0;
 Schlaak_Units_routed_I = 0;
+/*
+Schlaak_dietime = 60 + (random 300);
+Schlaak_bodybagtime = 300 + (random 600);
+Schlaak_bagremovaltime = 300 + (random 300);
+*/
+Schlaak_dietime = 3 + (random 3);
+Schlaak_bodybagtime = 3 + (random 3);
+Schlaak_bagremovaltime = 3 + (random 3);
+
+
 diag_log "SCHLAAK_VARS.SQF: Numbers defined";
 systemchat "SCHLAAK_VARS.SQF: Numbers defined";
+sleep 3;
 //=================================
 // SCHLAAK ARRAYS
 //=================================
@@ -180,68 +194,11 @@ then
 };
 
 
-schlaak_suffersounds = ["ACE_moan_Male01ENGB_high_1","ACE_moan_Male01ENGB_high_2","ACE_moan_Male01ENGB_high_3",	"ACE_moan_Male01ENGB_high_4","ACE_moan_Male01ENGB_high_5","ACE_moan_Male01ENGB_low_1","ACE_moan_Male01ENGB_low_2",
-		"ACE_moan_Male01ENGB_low_3","ACE_moan_Male01ENGB_low_4","ACE_moan_Male01ENGB_low_5","ACE_moan_Male01ENGB_mid_1","ACE_moan_Male01ENGB_mid_2","ACE_moan_Male01ENGB_mid_3","ACE_moan_Male01ENGB_mid_4","ACE_moan_Male01ENGB_mid_5",
-		"ACE_moan_Male01GRE_high_1",	"ACE_moan_Male01GRE_high_2","ACE_moan_Male01GRE_high_3","ACE_moan_Male01GRE_high_4","ACE_moan_Male01GRE_high_5","ACE_moan_Male01GRE_low_1",	"ACE_moan_Male01GRE_low_2",	"ACE_moan_Male01GRE_low_3",	"ACE_moan_Male01GRE_low_4",		"ACE_moan_Male01GRE_low_5",
-		"ACE_moan_Male01GRE_mid_1","ACE_moan_Male01GRE_mid_2","ACE_moan_Male01GRE_mid_3","ACE_moan_Male01GRE_mid_4","ACE_moan_Male01GRE_mid_5","ACE_moan_Male02ENG_high_1",
-		"ACE_moan_Male02ENG_high_2","ACE_moan_Male02ENG_high_3","ACE_moan_Male02ENG_high_4","ACE_moan_Male02ENG_high_5",
-		"ACE_moan_Male02ENG_low_1","ACE_moan_Male02ENG_low_2","ACE_moan_Male02ENG_low_3","ACE_moan_Male02ENG_low_4",
-		"ACE_moan_Male02ENG_low_5","ACE_moan_Male02ENG_mid_1","ACE_moan_Male02ENG_mid_2","ACE_moan_Male02ENG_mid_3",
-		"ACE_moan_Male02ENG_mid_4","ACE_moan_Male02ENG_mid_5","ACE_moan_Male02ENGB_high_1","ACE_moan_Male02ENGB_high_2",
-		"ACE_moan_Male02ENGB_high_3","ACE_moan_Male02ENGB_high_4","ACE_moan_Male02ENGB_high_5","ACE_moan_Male02ENGB_low_1","ACE_moan_Male02ENGB_low_2","ACE_moan_Male02ENGB_low_3","ACE_moan_Male02ENGB_low_4",
-		"ACE_moan_Male02ENGB_low_5","ACE_moan_Male02ENGB_mid_1","ACE_moan_Male02ENGB_mid_2","ACE_moan_Male02ENGB_mid_3","ACE_moan_Male02ENGB_mid_4","ACE_moan_Male02ENGB_mid_5","ACE_moan_Male02GRE_high_1",
-		"ACE_moan_Male02GRE_high_2","ACE_moan_Male02GRE_high_3",	"ACE_moan_Male02GRE_high_4","ACE_moan_Male02GRE_high_5",	"ACE_moan_Male02GRE_low_1",	"ACE_moan_Male02GRE_low_2",
-		"ACE_moan_Male02GRE_low_3","ACE_moan_Male02GRE_low_4",	"ACE_moan_Male02GRE_low_5",	"ACE_moan_Male02GRE_mid_1",	"ACE_moan_Male02GRE_mid_2",	"ACE_moan_Male02GRE_mid_3",
-		"ACE_moan_Male02GRE_mid_4",	"ACE_moan_Male02GRE_mid_5",	"ACE_moan_Male03ENG_high_1",
-		"ACE_moan_Male03ENG_high_2","ACE_moan_Male03ENG_high_3",	"ACE_moan_Male03ENG_high_4","ACE_moan_Male03ENG_high_5",
-		"ACE_moan_Male03ENG_low_1",	"ACE_moan_Male03ENG_low_2",	"ACE_moan_Male03ENG_low_3",	"ACE_moan_Male03ENG_low_4",
-		"ACE_moan_Male03ENG_low_5",	"ACE_moan_Male03ENG_mid_1",	"ACE_moan_Male03ENG_mid_2",	"ACE_moan_Male03ENG_mid_3",
-		"ACE_moan_Male03ENG_mid_4",	"ACE_moan_Male03ENG_mid_5",	"ACE_moan_Male03ENGB_high_1","ACE_moan_Male03ENGB_high_2","ACE_moan_Male03ENGB_high_3",
-		"ACE_moan_Male03ENGB_high_4","ACE_moan_Male03ENGB_high_5",	"ACE_moan_Male03ENGB_low_1","ACE_moan_Male03ENGB_low_2",
-		"ACE_moan_Male03ENGB_low_3","ACE_moan_Male03ENGB_low_4",	"ACE_moan_Male03ENGB_low_5","ACE_moan_Male03ENGB_mid_1",
-		"ACE_moan_Male03ENGB_mid_2","ACE_moan_Male03ENGB_mid_3",	"ACE_moan_Male03ENGB_mid_4","ACE_moan_Male03ENGB_mid_5",
-		"ACE_moan_Male03GRE_high_1",	"ACE_moan_Male03GRE_high_2",	"ACE_moan_Male03GRE_high_3",	"ACE_moan_Male03GRE_high_4",
-		"ACE_moan_Male03GRE_high_5",	"ACE_moan_Male03GRE_low_1",	"ACE_moan_Male03GRE_low_2",
-		"ACE_moan_Male03GRE_low_3",	"ACE_moan_Male03GRE_low_4",		"ACE_moan_Male03GRE_low_5",	"ACE_moan_Male03GRE_mid_1",
-		"ACE_moan_Male03GRE_mid_2",	"ACE_moan_Male03GRE_mid_3",		"ACE_moan_Male03GRE_mid_4",	"ACE_moan_Male03GRE_mid_5",
-		"ACE_moan_Male04ENG_high_1",	"ACE_moan_Male04ENG_high_2",	"ACE_moan_Male04ENG_high_3",
-		"ACE_moan_Male04ENG_high_4",	"ACE_moan_Male04ENG_high_5",	"ACE_moan_Male04ENG_low_1",
-		"ACE_moan_Male04ENG_low_2",	"ACE_moan_Male04ENG_low_3",	"ACE_moan_Male04ENG_low_4",
-		"ACE_moan_Male04ENG_low_5",	"ACE_moan_Male04ENG_mid_1",		"ACE_moan_Male04ENG_mid_2",	"ACE_moan_Male04ENG_mid_3",
-		"ACE_moan_Male04ENG_mid_4",	"ACE_moan_Male04ENG_mid_5",		"ACE_moan_Male04GRE_high_1","ACE_moan_Male04GRE_high_2","ACE_moan_Male04GRE_high_3",		"ACE_moan_Male04GRE_high_4",	"ACE_moan_Male04GRE_high_5",		"ACE_moan_Male04GRE_low_1","ACE_moan_Male04GRE_low_2",		"ACE_moan_Male04GRE_low_3","ACE_moan_Male04GRE_low_4",		"ACE_moan_Male04GRE_low_5","ACE_moan_Male04GRE_mid_1",		"ACE_moan_Male04GRE_mid_2","ACE_moan_Male04GRE_mid_3",		"ACE_moan_Male04GRE_mid_4","ACE_moan_Male04GRE_mid_5",		"ACE_moan_Male05ENG_high_1","ACE_moan_Male05ENG_high_2",		"ACE_moan_Male05ENG_high_3",		"ACE_moan_Male05ENG_high_4",		"ACE_moan_Male05ENG_high_5",		"ACE_moan_Male05ENG_low_1",
-		"ACE_moan_Male05ENG_low_2",		"ACE_moan_Male05ENG_low_3",		"ACE_moan_Male05ENG_low_4",		"ACE_moan_Male05ENG_low_5",
-		"ACE_moan_Male05ENG_mid_1",		"ACE_moan_Male05ENG_mid_2",		"ACE_moan_Male05ENG_mid_3",		"ACE_moan_Male05ENG_mid_4",
-		"ACE_moan_Male05ENG_mid_5",		"ACE_moan_Male05ENGB_high_1","ACE_moan_Male05ENGB_high_2",
-		"ACE_moan_Male05ENGB_high_3","ACE_moan_Male05ENGB_high_4",		"ACE_moan_Male05ENGB_high_5","ACE_moan_Male05ENGB_low_1",
-		"ACE_moan_Male05ENGB_low_2","ACE_moan_Male05ENGB_low_3",		"ACE_moan_Male05ENGB_low_4","ACE_moan_Male05ENGB_low_5",
-		"ACE_moan_Male05ENGB_mid_1","ACE_moan_Male05ENGB_mid_2",		"ACE_moan_Male05ENGB_mid_3","ACE_moan_Male05ENGB_mid_4",
-		"ACE_moan_Male05ENGB_mid_5","ACE_moan_Male05GRE_high_1",		"ACE_moan_Male05GRE_high_2","ACE_moan_Male05GRE_high_3",
-		"ACE_moan_Male05GRE_high_4","ACE_moan_Male05GRE_high_5",		"ACE_moan_Male05GRE_low_1","ACE_moan_Male05GRE_low_2",
-		"ACE_moan_Male05GRE_low_3","ACE_moan_Male05GRE_low_4",		"ACE_moan_Male05GRE_low_5","ACE_moan_Male05GRE_mid_1",
-		"ACE_moan_Male05GRE_mid_2",		"ACE_moan_Male05GRE_mid_3",		"ACE_moan_Male05GRE_mid_4",		"ACE_moan_Male05GRE_mid_5",
-		"ACE_moan_Male06ENG_high_1",		"ACE_moan_Male06ENG_high_2",		"ACE_moan_Male06ENG_high_3",		"ACE_moan_Male06ENG_high_4",
-		"ACE_moan_Male06ENG_high_5",		"ACE_moan_Male06ENG_high_6",
-		"ACE_moan_Male06ENG_high_7",		"ACE_moan_Male06ENG_high_8",		"ACE_moan_Male06ENG_low_1",		"ACE_moan_Male06ENG_low_2",		"ACE_moan_Male06ENG_low_3",		"ACE_moan_Male06ENG_low_4",		"ACE_moan_Male06ENG_low_5",		"ACE_moan_Male06ENG_low_6",		"ACE_moan_Male06ENG_low_7",		"ACE_moan_Male06ENG_low_8",
-		"ACE_moan_Male06ENG_mid_1",		"ACE_moan_Male06ENG_mid_2",		"ACE_moan_Male06ENG_mid_3",		"ACE_moan_Male06ENG_mid_4",
-		"ACE_moan_Male06ENG_mid_5",		"ACE_moan_Male06ENG_mid_6",		"ACE_moan_Male06ENG_mid_7",		"ACE_moan_Male06ENG_mid_8",
-		"ACE_moan_Male06GRE_high_1",		"ACE_moan_Male06GRE_high_2",		"ACE_moan_Male06GRE_high_3",		"ACE_moan_Male06GRE_high_4",
-		"ACE_moan_Male06GRE_high_5",		"ACE_moan_Male06GRE_low_1",		"ACE_moan_Male06GRE_low_2",		"ACE_moan_Male06GRE_low_3",	"ACE_moan_Male06GRE_low_4",		"ACE_moan_Male06GRE_low_5",	"ACE_moan_Male06GRE_mid_1","ACE_moan_Male06GRE_mid_2","ACE_moan_Male06GRE_mid_3","ACE_moan_Male06GRE_mid_4",
-		"ACE_moan_Male06GRE_mid_5","ACE_moan_Male07ENG_high_1","ACE_moan_Male07ENG_high_2","ACE_moan_Male07ENG_high_3",
-		"ACE_moan_Male07ENG_high_4","ACE_moan_Male07ENG_high_5","ACE_moan_Male07ENG_low_1","ACE_moan_Male07ENG_low_2",
-		"ACE_moan_Male07ENG_low_3","ACE_moan_Male07ENG_low_4","ACE_moan_Male07ENG_low_5","ACE_moan_Male07ENG_mid_1",
-		"ACE_moan_Male07ENG_mid_2","ACE_moan_Male07ENG_mid_3","ACE_moan_Male07ENG_mid_4","ACE_moan_Male07ENG_mid_5",
-		"ACE_moan_Male08ENG_high_1","ACE_moan_Male08ENG_high_2","ACE_moan_Male08ENG_high_3","ACE_moan_Male08ENG_high_4",
-		"ACE_moan_Male08ENG_high_5","ACE_moan_Male08ENG_high_6","ACE_moan_Male08ENG_high_7","ACE_moan_Male08ENG_high_8",
-		"ACE_moan_Male08ENG_low_1","ACE_moan_Male08ENG_low_2","ACE_moan_Male08ENG_low_3","ACE_moan_Male08ENG_low_4",
-		"ACE_moan_Male08ENG_low_5","ACE_moan_Male08ENG_low_6","ACE_moan_Male08ENG_low_7","ACE_moan_Male08ENG_low_8",
-		"ACE_moan_Male08ENG_mid_1","ACE_moan_Male08ENG_mid_2","ACE_moan_Male08ENG_mid_3","ACE_moan_Male08ENG_mid_4",
-		"ACE_moan_Male08ENG_mid_5","ACE_moan_Male08ENG_mid_6","ACE_moan_Male08ENG_mid_7","ACE_moan_Male08ENG_mid_8","ACE_moan_Male09ENG_high_1","ACE_moan_Male09ENG_high_2","ACE_moan_Male09ENG_high_3",
-		"ACE_moan_Male09ENG_high_4","ACE_moan_Male09ENG_low_1",	"ACE_moan_Male09ENG_low_2",	"ACE_moan_Male09ENG_low_3",
-		"ACE_moan_Male09ENG_low_4",	"ACE_moan_Male09ENG_low_5",	"ACE_moan_Male09ENG_mid_1",	"ACE_moan_Male09ENG_mid_2",
-		"ACE_moan_Male09ENG_mid_3",	"ACE_moan_Male09ENG_mid_4",	"ACE_moan_Male09ENG_mid_5"];
+
 
 diag_log "SCHLAAK_VARS.SQF: Arrays defined";
 systemchat "SCHLAAK_VARS.SQF: Arrays defined";
+sleep 3;
 //=================================
 // SCHLAAK STRINGS
 //=================================
@@ -252,7 +209,21 @@ systemchat "SCHLAAK_VARS.SQF: Strings defined";
 //=================================
 // SCHLAAK OBJECTS etc
 //=================================
+//sleep 5;
+//{if ((side _x) == west) then {[_x ] call Schlaak_fnc_grpCompromised;}} forEach allUnits;
+//{if ((side _x) == east) then {[_x ] call Schlaak_fnc_grpCompromised;}} forEach allUnits;
+//{if ((side _x) == resistance) then {[_x ] call Schlaak_fnc_grpCompromised;}} forEach allUnits;
+//{[_x ] call Schlaak_fnc_incap;} foreach allunits;
 
+diag_log "SCHLAAK_VARS.SQF: flee and wounds initialized";
+systemchat "SCHLAAK_VARS.SQF: flee and wounds initialized";
+//#include "Schlaak_spawn_EH.sqf";
+
+sleep 3;
+[] execvm "01_Schlaak\schlaak_vars2.sqf";
+
+diag_log "SCHLAAK_VARS.SQF: Schlaak_spawn_EH defined";
+systemchat "SCHLAAK_VARS.SQF: Schlaak_spawn_EH defined";
 
 diag_log "SCHLAAK_VARS.SQF: Objects defined";
 systemchat "SCHLAAK_VARS.SQF: Objects defined";

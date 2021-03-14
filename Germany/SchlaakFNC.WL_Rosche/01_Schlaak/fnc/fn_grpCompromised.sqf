@@ -1,7 +1,8 @@
 params ["_gruppe"]; 
 
 if (!isserver  OR (isNull _gruppe)) exitWith {};
-
+if (!isNil {_gruppe getVariable "Schlaak_grpCompros"}) exitWith {};
+if (isNil {_gruppe getVariable "Schlaak_grpCompros"}) then {_gruppe setVariable ["Schlaak_grpCompros", 0, false];};
 [_gruppe] spawn {
 	sleep 3;
 	_gruppengroesse = count units (_this select 0);
