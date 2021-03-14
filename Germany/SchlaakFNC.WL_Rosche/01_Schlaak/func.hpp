@@ -8,6 +8,8 @@ class Schlaak {
     //class Counterattack {};   //wip
     class surrender {};   //wip
     class flee {};   //wip
+    class grpCompromised {};
+    class incap {};
     //class postprocessing {};  //wip
     //class chatter {};         //wip
     class Push2Arr {};         //wip

@@ -16,7 +16,28 @@ if (!isserver) exitWith {};
 	sleep 2;
 	{_x action ["SitDown", _x]} foreach units  (_this select 0);
 	sleep 5;
-	Schlaak_Units_Captured = Schlaak_Units_Captured + ({ alive _x } count units (_this select 0));
+	switch (side leader (_this select 0)) do
+{
+    case West:
+    {
+        Schlaak_Units_Captured_W = Schlaak_Units_Captured_W + ({ alive _x } count units (_this select 0));
+
+    };
+
+    case East:
+    {
+        Schlaak_Units_Captured_E = Schlaak_Units_Captured_E + ({ alive _x } count units (_this select 0));
+
+    };
+    case Independent:
+    {
+        Schlaak_Units_Captured_I = Schlaak_Units_Captured_I + ({ alive _x } count units (_this select 0));
+
+    };
+
+};
+
+	//Schlaak_Units_Captured_W = Schlaak_Units_Captured_W + ({ alive _x } count units (_this select 0));
 	{deletevehicle _x} foreach units (_this select 0);
 	
 };
