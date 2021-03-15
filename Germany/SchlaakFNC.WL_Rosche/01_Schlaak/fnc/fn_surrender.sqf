@@ -39,6 +39,7 @@ _gruppe setVariable ["lambs_danger_disableGroupAI",true];
 sleep Schlaak_surrenderCapTime; 
 _anim = selectrandom ["Acts_ExecutionVictim_KillTerminal","Acts_AidlPsitMstpSsurWnonDnon03","Acts_AidlPsitMstpSsurWnonDnon04","Acts_AidlPsitMstpSsurWnonDnon05","Acts_ExecutionVictim_Loop"]; 
 {[_x, false] call ACE_captives_fnc_setSurrendered} foreach units (_this select 0);
+{_x setCaptive true} foreach units (_this select 0);
 [(_x), _anim] remoteExec ["switchmove", 0];  
 } foreach units (_this select 0);
        
