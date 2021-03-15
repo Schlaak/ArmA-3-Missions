@@ -7,7 +7,7 @@ edited by ir0nsight
  */
 if (hasInterface) then //check if running machine == player
 {	//NOTE: only running on client from here
-	//hint "offroad running";
+	////hint "offroad running";
 
 	//---------------------check for already running instances------start
 	//private _allowRun = true;
@@ -34,7 +34,7 @@ if (hasInterface) then //check if running machine == player
 		true, 	//isglobal (same setting for everyone)
 		{
 			if (!isNil "offroad_debug" && offroad_debug ) then {
-				hint ("offroad_enable changed to " + str _this);
+				//hint ("offroad_enable changed to " + str _this);
 			}
 
 		}, //execute on change
@@ -50,7 +50,7 @@ if (hasInterface) then //check if running machine == player
 		true, 	//isglobal (same setting for everyone)
 		{
 			if (!isNil "offroad_debug" && offroad_debug ) then {
-				hint ("offroad_enable changed to " + str _this);
+				//hint ("offroad_enable changed to " + str _this);
 			}
 		}, //execute on change
 		false //requires restart
@@ -65,7 +65,7 @@ if (hasInterface) then //check if running machine == player
 		true, 	//isglobal (same setting for everyone)
 		{
 			if (!isNil "offroad_debug" && offroad_debug ) then {
-				hint ("offroad_enable changed to " + str _this);
+				//hint ("offroad_enable changed to " + str _this);
 			}
 		}, //execute on change
 		false //requires restart
@@ -101,12 +101,12 @@ if (hasInterface) then //check if running machine == player
 					addCamShake [_camshakepower, 8, _camshakefreq];
 				//	addCamShake [10, 2, 10];	//no matter duration, lasts max ~2 seconds
 					if (offroad_debug) then {
-						hint ("off road: " + str round _camshakepower + "|" + str round _coeff + " on: " + surfaceType getpos player);
+						//hint ("off road: " + str round _camshakepower + "|" + str round _coeff + " on: " + surfaceType getpos player);
 					};
 				} else {
 					resetCamShake;
 					if (offroad_debug) then {
-						hint ("on road: " + surfaceType getpos player);
+						//hint ("on road: " + surfaceType getpos player);
 					};
 				}
 			} else {
@@ -114,7 +114,7 @@ if (hasInterface) then //check if running machine == player
 			};
 			_i = _i + 1;
 			if (offroad_debug && (_i mod 10) == 0 ) then {
-				hint ("offroad at iteration: " + str _i);
+				//hint ("offroad at iteration: " + str _i);
 			};
 			sleep 1;
 		}; //LOOP END

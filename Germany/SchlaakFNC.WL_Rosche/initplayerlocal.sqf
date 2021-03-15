@@ -1,5 +1,6 @@
 [] execVM "01_Schlaak\antioffroad.sqf";
-
+offroad_debug = false;
+[] execVM "01_Schlaak\burn.sqf";
 
 
 //[] execVM "02_cripts\amb_combat_sound.sqf";

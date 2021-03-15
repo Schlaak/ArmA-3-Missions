@@ -1,5 +1,5 @@
-{_x addMPEventHandler ["MPhit", { [_this select 0] call Schlaak_fnc_incap; }];} foreach allunits; 
-
+{_x addMPEventHandler ["MPhit", { [_this select 0] call Schlaak_fnc_incap; }];} foreach allunits;
+offroad_debug = false;
 
 //=================================
 // SCHLAAK DIPLOMACY
@@ -20,7 +20,7 @@ switch (Schlaak_Playerside) do
     {
 		if (Schlaak_Afghanmode == true) then
 		{
-			
+
 			//Mechanized
 			O_grpMech1 = (configfile >> "CfgGroups" >> "indep" >> "CUP_I_TK_GUE" >> "Motorized" >> "CUP_I_TK_GUE_MotorizedPatrol");
 			O_grpMech2 = (configfile >> "CfgGroups" >> "indep" >> "CUP_I_TK_GUE" >> "Mechanized" >> "CUP_I_TK_GUE_MechanizedGroup");
@@ -48,7 +48,7 @@ switch (Schlaak_Playerside) do
 			O_grpmot1 = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Motorized" >> "cwr3_b_motorized_squad");
 			O_grpmot2 = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Motorized" >> "cwr3_b_motorized_section_at");
 			O_grpmot3 = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Motorized" >> "cwr3_b_motorized_patrol");
-			
+
 			// infantry
 			O_grpATteam = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Infantry" >> "cwr3_b_at_team");
 			O_grpFTeam = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Infantry" >> "cwr3_b_fire_team");
@@ -103,6 +103,9 @@ Schlaak_Units_routed_w = 0;		//counts routed units according to side
 Schlaak_Units_routed_E = 0;
 Schlaak_Units_routed_I = 0;
 
+Schlaak_surrenderTime = 120 + (random 300);
+Schlaak_surrenderCapTime = 120 + (random 60);
+
 Schlaak_dietime = 60 + (random 300);		//basic dietime though without any use atm
 Schlaak_bodybagtime = 300 + (random 600);		//time till bodybab
 Schlaak_bagremovaltime = 300 + (random 300);	//time till bodybagremoval
@@ -120,41 +123,41 @@ sleep 3;
 // SCHLAAK ARRAYS
 //=================================
 
-Schlaak_PoI_1 = [];					//Points Of Interest 1 - 
-Schlaak_PoI_2 = [];					//Points Of Interest 2 - 
-Schlaak_PoI_3 = [];					//Points Of Interest 3 - 
-if 
-	(not isNil "Log_Schlaak_PoI_1") 
-then 
+Schlaak_PoI_1 = [];					//Points Of Interest 1 -
+Schlaak_PoI_2 = [];					//Points Of Interest 2 -
+Schlaak_PoI_3 = [];					//Points Of Interest 3 -
+if
+	(not isNil "Log_Schlaak_PoI_1")
+then
 	{[Log_Schlaak_PoI_1, Schlaak_PoI_1] call Schlaak_fnc_Push2Arr;};
-if 
-	(not isNil "Log_Schlaak_PoI_2") 
-then 
+if
+	(not isNil "Log_Schlaak_PoI_2")
+then
 	{[Log_Schlaak_PoI_2, Schlaak_PoI_2] call Schlaak_fnc_Push2Arr;};
-if 
-	(not isNil "Log_Schlaak_PoI_3") 
-then 
+if
+	(not isNil "Log_Schlaak_PoI_3")
+then
 	{[Log_Schlaak_PoI_3, Schlaak_PoI_3] call Schlaak_fnc_Push2Arr;};
 
 
 Schlaak_Retreat_East = [];			//surrenderflee locations for East
 Schlaak_Retreat_West = [];			//surrenderflee locations for West
 Schlaak_Retreat_Independent = [];	//surrenderflee locations for RES
-if 
-	(not isNil "Log_Schlaak_Retreat_E") 
-then 
+if
+	(not isNil "Log_Schlaak_Retreat_E")
+then
 {
 	[Log_Schlaak_Retreat_E, Schlaak_Retreat_East] call Schlaak_fnc_Push2Arr;
 };
-if 
-	(not isNil "Log_Schlaak_Retreat_W") 
-then 
+if
+	(not isNil "Log_Schlaak_Retreat_W")
+then
 {
 	[Log_Schlaak_Retreat_W, Schlaak_Retreat_West] call Schlaak_fnc_Push2Arr;
 };
-if 
-	(not isNil "Log_Schlaak_Retreat_I") 
-then 
+if
+	(not isNil "Log_Schlaak_Retreat_I")
+then
 {
 	[Log_Schlaak_Retreat_I, Schlaak_Retreat_Independent] call Schlaak_fnc_Push2Arr;
 };
@@ -162,23 +165,23 @@ then
 Schlaak_Brand1 = [];				//objekte mit mittlerem Feuer
 Schlaak_Brand2 = [];				//objekte mit großem Feuer
 Schlaak_Smoke = [];					//objekte mit Rauch
-if 
-	(not isNil "Log_Schlaak_Brand1") 
-then 
+if
+	(not isNil "Log_Schlaak_Brand1")
+then
 {
-	[Log_Schlaak_Brand1, Schlaak_Brand1] call Schlaak_fnc_Push2Arr; 
+	[Log_Schlaak_Brand1, Schlaak_Brand1] call Schlaak_fnc_Push2Arr;
 	{[_x , true , false , 0] call Schlaak_fnc_fireeffects} foreach Schlaak_Brand1;
 };
-if 
-	(not isNil "Log_Schlaak_Brand2") 
-then 
+if
+	(not isNil "Log_Schlaak_Brand2")
+then
 {
-	[Log_Schlaak_Brand2, Schlaak_Brand2] call Schlaak_fnc_Push2Arr; 
+	[Log_Schlaak_Brand2, Schlaak_Brand2] call Schlaak_fnc_Push2Arr;
 	{[_x , true , false , 0] call Schlaak_fnc_fireeffects2} foreach Schlaak_Brand2;
 };
-if 
-	(not isNil "Log_Schlaak_Smoke") 
-then 
+if
+	(not isNil "Log_Schlaak_Smoke")
+then
 {
 	[Log_Schlaak_Smoke, Schlaak_Smoke] call Schlaak_fnc_Push2Arr;
 	{[_x , false , false , 0] call Schlaak_fnc_fireeffects} foreach Schlaak_Smoke;
@@ -186,12 +189,12 @@ then
 
 
 Schlaak_Garrison = [];
-if 
-	(not isNil "Log_Schlaak_Garrison") 
-then 
+if
+	(not isNil "Log_Schlaak_Garrison")
+then
 {
-	[Log_Schlaak_Garrison, Schlaak_Garrison] call Schlaak_fnc_Push2Arr; 
-	
+	[Log_Schlaak_Garrison, Schlaak_Garrison] call Schlaak_fnc_Push2Arr;
+
 };
 
 
@@ -229,6 +232,37 @@ systemchat "SCHLAAK_VARS.SQF: Schlaak_spawn_EH defined";
 diag_log "SCHLAAK_VARS.SQF: Objects defined";
 systemchat "SCHLAAK_VARS.SQF: Objects defined";
 
+
+publicVariable "Schlaak_Playerside";
+publicVariable "Schlaak_Hostiles";
+publicVariable "Schlaak_Afghanmode";
+publicVariable "O_grp_arr_Mech";
+publicVariable "O_grp_arr_Inf";
+publicVariable "Schlaak_Grp_defeated";
+publicVariable "Schlaak_Units_Captured_W";
+publicVariable "Schlaak_Units_Captured_E";
+publicVariable "Schlaak_Units_Captured_I";
+publicVariable "Schlaak_Units_routed_w";
+publicVariable "Schlaak_Units_routed_E";
+publicVariable "Schlaak_Units_routed_I";
+publicVariable "Schlaak_dietime";
+publicVariable "Schlaak_bodybagtime";
+publicVariable "Schlaak_bagremovaltime";
+publicVariable "Schlaak_PoI_1";
+publicVariable "Schlaak_PoI_2";
+publicVariable "Schlaak_PoI_3";
+publicVariable "Schlaak_Retreat_East";
+publicVariable "Schlaak_Retreat_West";
+publicVariable "Schlaak_Retreat_Independent";
+publicVariable "Schlaak_Brand1";
+publicVariable "Schlaak_Brand2";
+publicVariable "Schlaak_Smoke";
+publicVariable "Schlaak_Garrison";
+publicVariable "Schlaak_surrenderTime"; 
+publicVariable "Schlaak_surrenderCapTime";
+
+diag_log "SCHLAAK_VARS.SQF: Vars broadcasted";
+systemchat "SCHLAAK_VARS.SQF: Vars broadcasted";
 /*
 O_grpBMP1 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp1");
 O_grpBMP2 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp2");

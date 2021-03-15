@@ -1,7 +1,7 @@
 // [_x , false , false , 0] call Schlaak_fnc_fireeffects
 	params ["_OBJ","_Type","_dieOut","_burntime"];
 
-	if (!isserver)  exitwith {};
+	if (isDedicated)  exitwith {};
 //private ["_OBJ","_Type","_dieOut"];
 
 

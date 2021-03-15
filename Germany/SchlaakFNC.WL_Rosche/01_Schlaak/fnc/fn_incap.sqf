@@ -3,6 +3,11 @@
 
 params ["_unit"]; 
 if (! isserver OR (isNull _unit) OR (isNil "Log_Schlaak_Retreat_E") OR (isNil "Log_Schlaak_Retreat_W")) exitWith {};
+if !( (vehicle _unit) iskindof "man") exitwith {
+	//systemchat str _unit;
+	//systemchat "this unit can not be inCap ed. cause of vehicle.";
+	//systemchat str vehicle _unit;
+};
 /* 
 //================================================================
 // Exitfunctions
@@ -61,11 +66,42 @@ _unit setVariable ["Schlaak_incap", 0, false];					// unit already affected so g
 	_splat setpos getpos _unit;
 	_splatdirection = getDir (_this select 0);
 	_splat setDir _splatdirection;
-	[(_this select 0),_splat] spawn {sleep 1; (_this select 1) setpos (getpos (_this select 0));  (_this select 1) setDir getDir (_this select 0)};
+
+
+
+//fixme
+//sometimes blood floats.... so maybe something like 
+/*
+    _obj setPos [getPos _obj select 0, getPos _obj select 1, 0.1];
+*/
+
+
+	[(_this select 0),_splat] spawn {sleep 1; 
+	(_this select 1) setpos 
+
+
+
+		//(getpos (_this select 0))		//worked.
+		
+		
+		[(getPos (_this select 0)) select 0, (getPos (_this select 0)) select 1, 0.05]		//letz see if shit works.
+		;  
+		(_this select 1) setDir getDir (_this select 0)};
+	
+
+
+
+
+	//[(_this select 0), _splat] call BIS_fnc_attachToRelative;	//should not be used unless u want stiff corpses...
+	
+	//[(_x), _anim] remoteExec ["setobjectscale", 0]; 
 	_splat setobjectscale 0.05;
+	[(_splat), 0.05] remoteExec ["setobjectscale", 0]; 
+	
 	[_splat] spawn {
 		for "_i" from 1 to (3 + (random 9)) do {
 		_scl = getobjectscale (_this select 0);
+		[(_this select 0), (_scl + 0.05)] remoteExec ["setobjectscale", 0];
 		_this select 0 setobjectscale (_scl + 0.05);
 		sleep 20;
 		};

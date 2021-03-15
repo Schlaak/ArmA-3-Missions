@@ -7,4 +7,13 @@ fire functions have been fixed but not yet tested.
 
 need to make the vars public to be broadcasted or some shit, can not access them anywhere but server... maybe because defined in init server....
 
+inCap should work
+
 woah, can humans get any more tired?! :(
+
+
+    =========================
+
+
+still same bugs
+fire fixed. has to be executed on every client
