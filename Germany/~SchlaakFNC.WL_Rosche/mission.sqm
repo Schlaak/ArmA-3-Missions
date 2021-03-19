@@ -21,13 +21,13 @@ class EditorData
 	class Camera
 	{
 		pos[]={11871.982,53.21302,2851.7078};
-		dir[]={-1.2363449e-007,-0.70710683,0.70710683};
-		up[]={-1.2363449e-007,0.70710671,0.70710683};
-		aside[]={1,0,1.7484557e-007};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
-sourceName="SchlaakFNC";
+sourceName="~SchlaakFNC";
 addons[]=
 {
 	"cwr3_soldiers_us",

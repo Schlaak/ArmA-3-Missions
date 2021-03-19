@@ -263,6 +263,8 @@ publicVariable "Schlaak_surrenderCapTime";
 
 diag_log "SCHLAAK_VARS.SQF: Vars broadcasted";
 systemchat "SCHLAAK_VARS.SQF: Vars broadcasted";
+sleep 2;
+[] execVM "01_Schlaak\Missionscripts\PoI1.sqf";	
 /*
 O_grpBMP1 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp1");
 O_grpBMP2 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp2");
