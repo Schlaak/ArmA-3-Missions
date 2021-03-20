@@ -6,6 +6,7 @@
 #include "00_description\06_Notifications.hpp"
 #include "00_description\07_Respawn.hpp"
 #include "00_description\08_RespawnInventory.hpp"
+#include "00_description\09_missionparams.hpp"
 
 
 

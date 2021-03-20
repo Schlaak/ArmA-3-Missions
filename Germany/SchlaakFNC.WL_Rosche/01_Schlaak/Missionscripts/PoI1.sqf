@@ -23,9 +23,13 @@ _compUsed = _comp;
 _Schlaak_PoI_used = _PoIArray;
 //"LocationFOB_F" countType (entities [[], ["Logic"], true]);
 
-_mindist = 5;
-_maxdist = 50;
-_objdist = 5;
+//_mindist = 5;
+//_maxdist = 50;
+//_objdist = 5;
+_mindist = (paramsArray select 11);
+_maxdist = (paramsArray select 12);
+_objdist = (paramsArray select 13);
+
 //===============================
 // Exitconditions
 //===============================

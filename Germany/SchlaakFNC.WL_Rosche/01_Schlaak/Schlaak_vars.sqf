@@ -4,9 +4,9 @@ offroad_debug = false;
 //=================================
 // SCHLAAK DIPLOMACY
 //=================================
-Schlaak_Playerside = west;		//define playerside
-Schlaak_Hostiles = East;		//define oposing forces
-Schlaak_Afghanmode = false;		//is it in Afghanistan?
+//Schlaak_Playerside = west;		//define playerside
+//Schlaak_Hostiles = East;		//define oposing forces
+//Schlaak_Afghanmode = false;		//is it in Afghanistan?
 
 
 diag_log "SCHLAAK_VARS.SQF: Diplomacy defined";
@@ -14,11 +14,13 @@ systemchat "SCHLAAK_VARS.SQF: Diplomacy defined";
 //=================================
 // SCHLAAK GROUPS
 //=================================
-switch (Schlaak_Playerside) do
+//switch (Schlaak_Playerside) do
+
+switch ((paramsArray select 1)) do	//playerside
 {
-    case east:
+    case 0:	//0 east
     {
-		if (Schlaak_Afghanmode == true) then
+		if ((paramsArray select 3) == 1) then	//afghanmode ON
 		{
 
 			//Mechanized
@@ -59,7 +61,7 @@ switch (Schlaak_Playerside) do
 
     };
 
-    case west:
+    case 1: //1
     {
         O_grpMech1 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp1");
 		O_grpMech2 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp2");
@@ -75,7 +77,7 @@ switch (Schlaak_Playerside) do
 		O_grpSupportteam = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Infantry" >> "cwr3_o_support_team");
 
     };
-    case independent:
+    case 2: //independent
     {
         //TODO
 
@@ -103,12 +105,12 @@ Schlaak_Units_routed_w = 0;		//counts routed units according to side
 Schlaak_Units_routed_E = 0;
 Schlaak_Units_routed_I = 0;
 
-Schlaak_surrenderTime = 120 + (random 300);
-Schlaak_surrenderCapTime = 120 + (random 60);
+//Schlaak_surrenderTime = 120 + (random 300);
+//Schlaak_surrenderCapTime = 120 + (random 60);
 
-Schlaak_dietime = 60 + (random 300);		//basic dietime though without any use atm
-Schlaak_bodybagtime = 300 + (random 600);		//time till bodybab
-Schlaak_bagremovaltime = 300 + (random 300);	//time till bodybagremoval
+//Schlaak_dietime = 60 + (random 300);		//basic dietime though without any use atm
+//Schlaak_bodybagtime = 300 + (random 600);		//time till bodybab
+//Schlaak_bagremovaltime = 300 + (random 300);	//time till bodybagremoval
 
 /*
 Schlaak_dietime = 15 + (random 3);
@@ -233,9 +235,9 @@ diag_log "SCHLAAK_VARS.SQF: Objects defined";
 systemchat "SCHLAAK_VARS.SQF: Objects defined";
 
 
-publicVariable "Schlaak_Playerside";
-publicVariable "Schlaak_Hostiles";
-publicVariable "Schlaak_Afghanmode";
+//publicVariable "Schlaak_Playerside";
+//publicVariable "Schlaak_Hostiles";
+//publicVariable "Schlaak_Afghanmode";
 publicVariable "O_grp_arr_Mech";
 publicVariable "O_grp_arr_Inf";
 publicVariable "Schlaak_Grp_defeated";
@@ -245,9 +247,9 @@ publicVariable "Schlaak_Units_Captured_I";
 publicVariable "Schlaak_Units_routed_w";
 publicVariable "Schlaak_Units_routed_E";
 publicVariable "Schlaak_Units_routed_I";
-publicVariable "Schlaak_dietime";
-publicVariable "Schlaak_bodybagtime";
-publicVariable "Schlaak_bagremovaltime";
+//publicVariable "Schlaak_dietime";
+//publicVariable "Schlaak_bodybagtime";
+//publicVariable "Schlaak_bagremovaltime";
 publicVariable "Schlaak_PoI_1";
 publicVariable "Schlaak_PoI_2";
 publicVariable "Schlaak_PoI_3";
@@ -258,8 +260,8 @@ publicVariable "Schlaak_Brand1";
 publicVariable "Schlaak_Brand2";
 publicVariable "Schlaak_Smoke";
 publicVariable "Schlaak_Garrison";
-publicVariable "Schlaak_surrenderTime"; 
-publicVariable "Schlaak_surrenderCapTime";
+//publicVariable "Schlaak_surrenderTime"; 
+//publicVariable "Schlaak_surrenderCapTime";
 
 diag_log "SCHLAAK_VARS.SQF: Vars broadcasted";
 systemchat "SCHLAAK_VARS.SQF: Vars broadcasted";

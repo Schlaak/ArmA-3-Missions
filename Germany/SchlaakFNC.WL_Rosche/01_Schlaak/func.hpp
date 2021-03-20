@@ -13,6 +13,6 @@ class Schlaak {
     //class postprocessing {};//wip
     //class chatter {};       //wip
     class Push2Arr {};        //1
-    class attachsynchedObj {}; //wont work... just do it in the editor. use gamelogics or smthng.
+    class attachsynchedObj {}; //0.5
     };
 };

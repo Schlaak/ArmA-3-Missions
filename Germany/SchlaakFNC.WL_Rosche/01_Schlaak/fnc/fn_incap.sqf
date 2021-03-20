@@ -2,6 +2,9 @@
 
 
 params ["_unit"]; 
+if ((paramsArray select 8) == 0) exitwith {};	//allow wounded?
+
+
 if (! isserver OR (isNull _unit) OR (isNil "Log_Schlaak_Retreat_E") OR (isNil "Log_Schlaak_Retreat_W")) exitWith {};
 if !( (vehicle _unit) iskindof "man") exitwith {
 	//systemchat str _unit;
@@ -105,9 +108,9 @@ _unit setVariable ["Schlaak_incap", 0, false];					// unit already affected so g
 		_this select 0 setobjectscale (_scl + 0.05);
 		sleep 20;
 		};
-	 	sleep (Schlaak_dietime) + (Schlaak_bodybagtime) + (Schlaak_bagremovaltime);
-		sleep (Schlaak_dietime) + (Schlaak_bodybagtime) + (Schlaak_bagremovaltime);	//ultra lazy option to get sure blood stays a while....
-		sleep (Schlaak_dietime) + (Schlaak_bodybagtime) + (Schlaak_bagremovaltime);
+	 	sleep (paramsArray select 3) + (paramsArray select 4) + (paramsArray select 5);
+		sleep (paramsArray select 3) + (paramsArray select 4) + (paramsArray select 5);	//ultra lazy option to get sure blood stays a while....
+		sleep (paramsArray select 3) + (paramsArray select 4) + (paramsArray select 5);
 		sleep 300;
 		sleep 300;
 		deletevehicle (_this select 0);
@@ -217,12 +220,12 @@ switch (faction (_this select 0)) do
 
 				
 				//
-				sleep Schlaak_bodybagtime;
+				sleep (paramsArray select 4);
 				_testo = ["cwr3_body_us", getposworld (_this select 0), (getDir ((_this select 0))) -90,true] call BIS_fnc_createSimpleObject;
 				_testo setPos [getPos _testo select 0, getPos _testo select 1, 0.3];
 				deleteVehicle (_this select 0);
 				[_testo] spawn {
-					sleep Schlaak_bagremovaltime;
+					sleep (paramsArray select 5);
 					deleteVehicle (_this select 0);
 
 					
@@ -232,12 +235,12 @@ switch (faction (_this select 0)) do
 		case "cwr3_faction_rus":
 		{
 
-				sleep Schlaak_bodybagtime;
+				sleep (paramsArray select 4);
 				_testo = ["cwr3_body_ru", getposworld (_this select 0), (getDir ((_this select 0))) -90,true] call BIS_fnc_createSimpleObject;
 				_testo setPos [getPos _testo select 0, getPos _testo select 1, 0.3];
 				deleteVehicle (_this select 0);
 				[_testo] spawn {
-					sleep Schlaak_bagremovaltime;
+					sleep (paramsArray select 5);
 					deleteVehicle (_this select 0);
 				
 
@@ -247,12 +250,12 @@ switch (faction (_this select 0)) do
 		{
 
 			
-			sleep Schlaak_bodybagtime;
+			sleep (paramsArray select 4);
 			_testo = ["Body", getposworld (_this select 0), (getDir ((_this select 0))) -90,true] call BIS_fnc_createSimpleObject;
 			_testo setPos [getPos _testo select 0, getPos _testo select 1, 0.3];
 			deleteVehicle (_this select 0);
 			[_testo] spawn {
-				sleep Schlaak_bagremovaltime;
+				sleep (paramsArray select 5);
 				deleteVehicle (_this select 0);
 	
 				};

@@ -5,14 +5,15 @@ function should work properly now...
 
 although Schlaak units routed_E etc gets not broadcastet or smthng....
 */
+if ((paramsArray select 7) == 0) exitwith {}; //allow retreat?
 
 {removeallweapons _x} foreach units _gruppeF;
 _pos = selectrandom ["middle","up","down","auto"];
 {_x setunitpos _pos} foreach units _gruppeF;
 _grpSide = side leader _gruppeF;
 
-systemchat "fleescript:";
-systemchat str leader _gruppeF;
+//systemchat "fleescript:";
+//systemchat str leader _gruppeF;
 
 switch (_grpSide) do
 {
@@ -20,7 +21,7 @@ switch (_grpSide) do
     {
         _Retreatpoint = (selectrandom Schlaak_Retreat_West);
 		{_x domove (getpos _retreatpoint) ;} foreach units _gruppeF;
-		hint format ["%1", getpos _retreatpoint];
+		//hint format ["%1", getpos _retreatpoint];
 		_gruppeF setSpeedMode "FULL";
 
 		for "_i" from count waypoints _gruppeF - 1 to 0 step -1 do
@@ -39,7 +40,7 @@ switch (_grpSide) do
     {
         _Retreatpoint = (selectrandom Schlaak_Retreat_East);
 		{_x domove (getpos _retreatpoint) ;} foreach units _gruppeF;
-		hint format ["%1", getpos _retreatpoint];
+		//hint format ["%1", getpos _retreatpoint];
 		for "_i" from count waypoints _gruppeF - 1 to 0 step -1 do
 		{
 		deleteWaypoint [_gruppeF, _i];
@@ -54,7 +55,7 @@ switch (_grpSide) do
     {
         _Retreatpoint = (selectrandom Schlaak_Retreat_Independent);
 		{_x domove (position _retreatpoint) ;} foreach units _gruppeF;
-		hint format ["%1", getpos _retreatpoint];
+		//hint format ["%1", getpos _retreatpoint];
 		for "_i" from count waypoints _gruppeF - 1 to 0 step -1 do
 		{
 		deleteWaypoint [_gruppeF, _i];

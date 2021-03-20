@@ -12,6 +12,8 @@ which looks awfully weird given their animation.
 
 
 //fixme.... lot of stuff dont workaround here.... just deletion and var push
+if ((paramsArray select 6) == 0) exitwith {}; //allow surrender?
+
 {removeallweapons _x} foreach units _gruppe;
 {removeallitems _x} foreach units _gruppe;
 _gruppe setVariable ["lambs_danger_disableGroupAI",true];       
@@ -27,7 +29,7 @@ _gruppe setVariable ["lambs_danger_disableGroupAI",true];
 
 
 
-	sleep Schlaak_surrenderTime;
+	sleep (paramsArray select 10);
 	{removeheadgear _x} foreach units (_this select 0);
     {removevest _x} foreach units (_this select 0);
 	//{[_x, false] call ACE_captives_fnc_setSurrendered} foreach units (_this select 0);
@@ -36,7 +38,7 @@ _gruppe setVariable ["lambs_danger_disableGroupAI",true];
 	
 {
 [(_x)] spawn  
-sleep Schlaak_surrenderCapTime; 
+sleep (paramsArray select 11); 
 _anim = selectrandom ["Acts_ExecutionVictim_KillTerminal","Acts_AidlPsitMstpSsurWnonDnon03","Acts_AidlPsitMstpSsurWnonDnon04","Acts_AidlPsitMstpSsurWnonDnon05","Acts_ExecutionVictim_Loop"]; 
 {[_x, false] call ACE_captives_fnc_setSurrendered} foreach units (_this select 0);
 {_x setCaptive true} foreach units (_this select 0);
