@@ -3,9 +3,10 @@ class Schlaak {
     file = "01_Schlaak\fnc";
     class FireEffects {};     //done
     class FireEffects2 {};    //done
-    class say {};             //wip
-	  //class garrison {};      //wip
-    //class Counterattack {}; //wip
+    class say {};             //done
+	  class garrison {};      //wip test needed
+    class Counterattack {}; //wip test needed
+    class combatModeVehicle {}; //test needed
     class surrender {};       //1
     class flee {};            //1
     class grpCompromised {};  //1

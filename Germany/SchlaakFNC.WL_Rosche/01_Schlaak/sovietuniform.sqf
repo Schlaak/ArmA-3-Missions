@@ -1,4 +1,4 @@
-diag_log ["sovietuniform.sqf called with", _this];
+//diag_log ["sovietuniform.sqf called with", _this];
 if (!isserver) exitWith {
 	diag_log ["not server"];
 };

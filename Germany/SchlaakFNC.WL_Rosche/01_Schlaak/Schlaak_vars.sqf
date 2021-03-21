@@ -7,8 +7,27 @@ offroad_debug = false;
 //Schlaak_Playerside = west;		//define playerside
 //Schlaak_Hostiles = East;		//define oposing forces
 //Schlaak_Afghanmode = false;		//is it in Afghanistan?
+switch (paramsArray select 1) do
+{
+    case 0:
+    {
+        Schlaak_Hostiles = east;
 
+    };
 
+    case 1:
+    {
+        Schlaak_Hostiles = west;
+
+    };
+    case 2:
+    {
+         Schlaak_Hostiles = independent;
+
+    };
+
+};
+publicVariable "Schlaak_Hostiles";
 diag_log "SCHLAAK_VARS.SQF: Diplomacy defined";
 systemchat "SCHLAAK_VARS.SQF: Diplomacy defined";
 //=================================
@@ -18,7 +37,7 @@ systemchat "SCHLAAK_VARS.SQF: Diplomacy defined";
 
 switch ((paramsArray select 1)) do	//playerside
 {
-    case 0:	//0 east
+    case 1:	//0 east
     {
 		if ((paramsArray select 3) == 1) then	//afghanmode ON
 		{
@@ -61,7 +80,7 @@ switch ((paramsArray select 1)) do	//playerside
 
     };
 
-    case 1: //1
+    case 0: //1
     {
         O_grpMech1 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp1");
 		O_grpMech2 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp2");
@@ -267,6 +286,9 @@ diag_log "SCHLAAK_VARS.SQF: Vars broadcasted";
 systemchat "SCHLAAK_VARS.SQF: Vars broadcasted";
 sleep 2;
 [] execVM "01_Schlaak\Missionscripts\PoI1.sqf";	
+sleep 5;
+[] execVM "01_Schlaak\Missionscripts\Garrison.sqf";	
+
 /*
 O_grpBMP1 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp1");
 O_grpBMP2 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp2");
