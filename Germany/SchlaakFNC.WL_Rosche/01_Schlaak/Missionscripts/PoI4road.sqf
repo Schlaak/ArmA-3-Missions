@@ -1,5 +1,5 @@
 /*
-[] execVM "01_Schlaak\Missionscripts\PoI1.sqf";
+[] execVM "01_Schlaak\Missionscripts\PoI4road.sqf";
 
 */
 
@@ -9,8 +9,8 @@ if (!isserver) exitwith {};	//only on server
 //===============================
 // Defining all the stuff.
 //===============================
-_TypePoi = "LocationResupplyPoint_F";	//define logic type for PoI´s
-_PoIArray = Schlaak_PoI_3;
+_TypePoi = "LocationOutpost_F";	//define logic type for PoI´s
+_PoIArray = Schlaak_PoI_4;
 
 
 _anzahl = count _PoIArray;
@@ -34,7 +34,7 @@ if (_anzahlComp == 0) exitwith {};
 //===============================
 // call my fnc to attach synchedOBJ of logic to the logic.
 //===============================
-{[_x,false,false,false] call SCHLAAK_fnc_attachsynchedObj} foreach (_comp);
+{[_x,true,true,true] call SCHLAAK_fnc_attachsynchedObj} foreach (_comp);
 
 
 
@@ -51,9 +51,8 @@ for [{_i = count _compUsed}, {_i <= (count _compUsed)}, {_i=_i-1}] do	//for the 
 	};
 
 	if (count _compUsed <= 0) exitWith {
-		systemchat "PoI3: all comps moved!!!";	//all compositions placed? exit with! should be the normal exit!.
-		sleep 3;	
-		[] execVM "01_Schlaak\Missionscripts\PoI4road.sqf";			
+		systemchat "PoI4: all comps moved!!!";	//all compositions placed? exit with! should be the normal exit!.
+		sleep 3;			
 		};
 
 
@@ -66,18 +65,27 @@ for [{_i = count _compUsed}, {_i <= (count _compUsed)}, {_i=_i-1}] do	//for the 
 
 
 	_pos = getpos _Helperobj;		// get the anchor pos for where the composition will be moved.
-	_finalpos = [_pos, _mindist, _maxdist, _objdist, 0, 0.3, 0] call BIS_fnc_findSafePos;	// get final pos
+	_finalpos1 = [_pos, _mindist, _maxdist, _objdist, 0, 0.3, 0] call BIS_fnc_findSafePos;	// get final pos
 
+
+	_finalpos = [ _finalpos1, 1200] call BIS_fnc_nearestRoad;
 
 	if (isNil "_finalpos") then 	//debug if no savepos is found.
 	{
-		systemchat "POI3:get safe spawnpos failed!";
+		systemchat "POI4:get safe spawnpos failed!";
 	};
-	_CompObj setpos ( _finalpos);		// finaly move the shit
 
+
+	_road = roadAt _finalpos;
+	_info = getRoadInfo _road;
+	_dir = (_info select 6) getDir (_info select 7);
+
+
+	_CompObj setpos (getpos _finalpos);		// finaly move the shit
+	_CompObj setdir _dir;
 
 	sleep 1;	
-	systemchat "PoI3: Moving!";	
+	systemchat "PoI4: Moving!";	
 	//systemchat format ["POI3: moved %1 to %2", getpos _Helperobj, _finalpos];	//report what has been moved.
 };
 /*

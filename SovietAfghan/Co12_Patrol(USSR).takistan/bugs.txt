@@ -1,6 +1,0 @@
-flaggen.... gebäude sind nicht kaputt
-holdaction ist x mal da und funktioniert nicht
-ausrüstung
-
-
-alles andere funzt gut

@@ -4,8 +4,8 @@ class Schlaak {
     class FireEffects {};     //done
     class FireEffects2 {};    //done
     class say {};             //done
-	  class garrison {};      //wip test needed
-    class Counterattack {}; //wip test needed
+	  class garrison {};        // test needed
+    class Counterattack {};   // test needed
     class combatModeVehicle {}; //test needed
     class surrender {};       //1
     class flee {};            //1
@@ -15,5 +15,7 @@ class Schlaak {
     //class chatter {};       //wip
     class Push2Arr {};        //1
     class attachsynchedObj {}; //0.5
+    class markArea {};        //wip
+    class killed {};
     };
 };

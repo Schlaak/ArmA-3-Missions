@@ -306,3 +306,7 @@ if (isNull _drone) then {
 	};
 	_drone = irn_reaper_01;
 };
+
+
+//get current map texture
+this setObjectTextureGlobal [0, getText (configFile >> "CfgWorlds" >> worldName >> "pictureMap")];

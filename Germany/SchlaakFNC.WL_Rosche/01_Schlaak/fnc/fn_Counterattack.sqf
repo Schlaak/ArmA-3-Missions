@@ -3,6 +3,7 @@
 //     _nObject = getPos player nearestObject "StreetLamp"; 
 
 //[_pos1,_direction,_distance,_waves,_grpType,_wpDistance] call Schlaak_fnc_Counterattack;
+//[getpos player,90,1500,2,O_grpMech1,250] call Schlaak_fnc_Counterattack;
 params ["_pos1","_direction","_distance","_waves","_grpType", "_wpDistance"]; 
 
 if (!isserver) exitWith {};
@@ -32,8 +33,9 @@ for "_i" from 0 to _waves do {
 	// find the position for the Waypoint
 	_WPpos = [_pos1, _WPdistance ,_direction] call BIS_fnc_relPos;
 
+	_troops = selectrandom _grpType;
 	//spawn the group
-	_EnemyGroup = [[((_safepos select 0) + random 10),((_safepos select 1) + random 10),0], _troopsside, _grpType] call BIS_fnc_spawnGroup;
+	_EnemyGroup = [[((_safepos select 0) + random 10),((_safepos select 1) + random 10),0], _troopsside, _troops] call BIS_fnc_spawnGroup;
 
 	[_enemyGroup,_WPpos] spawn {
 		sleep 3;

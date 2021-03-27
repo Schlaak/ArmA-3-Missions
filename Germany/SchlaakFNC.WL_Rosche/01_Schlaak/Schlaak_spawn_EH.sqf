@@ -4,6 +4,11 @@
 /*
 TODO WIP
 */
+{_x addMPEventHandler ["MPhit", { [_this select 0] call Schlaak_fnc_incap; }];} foreach allunits;
+{_x addMPEventHandler ["MPKilled", { [_this select 0] call Schlaak_fnc_Killed; }];} foreach allunits;
+{[_x] execvm  "01_schlaak\setAIskill.sqf";} foreach allunits;
+
+
 diag_log ["SCHLAAK_SPAWN_EH.SQF: Initialized"];
 systemchat "SCHLAAK_SPAWN_EH.SQF: Initialized";
 ["Man", "init", {
@@ -12,7 +17,8 @@ systemchat "SCHLAAK_SPAWN_EH.SQF: Initialized";
 	_dude = _this select 0;
 
 	_dude addMPEventHandler ["MPhit", { [_this select 0] call Schlaak_fnc_incap; }];
-
+	_dude addMPEventHandler ["MPKilled", { [_this select 0] call Schlaak_fnc_killed; }];
+	[_dude] execvm  "01_schlaak\setAIskill.sqf";
 	switch (side _dude) do
 	{
 		case West: 

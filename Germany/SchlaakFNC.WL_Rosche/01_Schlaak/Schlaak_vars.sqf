@@ -1,4 +1,4 @@
-{_x addMPEventHandler ["MPhit", { [_this select 0] call Schlaak_fnc_incap; }];} foreach allunits;
+
 offroad_debug = false;
 
 //=================================
@@ -147,6 +147,7 @@ sleep 3;
 Schlaak_PoI_1 = [];					//Points Of Interest 1 -
 Schlaak_PoI_2 = [];					//Points Of Interest 2 -
 Schlaak_PoI_3 = [];					//Points Of Interest 3 -
+Schlaak_PoI_4 = [];					//Points Of Interest 4roads -
 if
 	(not isNil "Log_Schlaak_PoI_1")
 then
@@ -159,6 +160,10 @@ if
 	(not isNil "Log_Schlaak_PoI_3")
 then
 	{[Log_Schlaak_PoI_3, Schlaak_PoI_3] call Schlaak_fnc_Push2Arr;};
+	if
+	(not isNil "Log_Schlaak_PoI_4")
+then
+	{[Log_Schlaak_PoI_4, Schlaak_PoI_4] call Schlaak_fnc_Push2Arr;};
 
 
 Schlaak_Retreat_East = [];			//surrenderflee locations for East
@@ -272,6 +277,7 @@ publicVariable "Schlaak_Units_routed_I";
 publicVariable "Schlaak_PoI_1";
 publicVariable "Schlaak_PoI_2";
 publicVariable "Schlaak_PoI_3";
+publicVariable "Schlaak_PoI_4";
 publicVariable "Schlaak_Retreat_East";
 publicVariable "Schlaak_Retreat_West";
 publicVariable "Schlaak_Retreat_Independent";

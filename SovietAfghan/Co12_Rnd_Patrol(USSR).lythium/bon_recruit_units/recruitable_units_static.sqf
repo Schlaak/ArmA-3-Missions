@@ -1,1 +1,0 @@
-bon_recruit_recruitableunits = ["cwr3_o_soldier_backpack","cwr3_o_soldier"];

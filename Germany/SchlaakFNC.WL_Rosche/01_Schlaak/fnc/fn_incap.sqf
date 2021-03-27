@@ -5,7 +5,7 @@ params ["_unit"];
 if ((paramsArray select 8) == 0) exitwith {};	//allow wounded?
 
 
-if (! isserver OR (isNull _unit) OR (isNil "Log_Schlaak_Retreat_E") OR (isNil "Log_Schlaak_Retreat_W")) exitWith {};
+//if (! isserver OR (isNull _unit) OR (isNil "Log_Schlaak_Retreat_E") OR (isNil "Log_Schlaak_Retreat_W")) exitWith {};
 if !( (vehicle _unit) iskindof "man") exitwith {
 	//systemchat str _unit;
 	//systemchat "this unit can not be inCap ed. cause of vehicle.";
@@ -19,7 +19,7 @@ if !( (vehicle _unit) iskindof "man") exitwith {
 if (!isNil {_unit getVariable "Schlaak_incap"}) exitWith {};	// Abort function if already called.
 if ( isplayer _unit) exitWith {};								// Abort if player
 
-_random = floor random 13;										// Random 1 to 5
+_random = floor random 10;										// Random 1 to 5
 
 //diag_log str [_random];
 //systemchat str _random;
@@ -69,7 +69,7 @@ _unit setVariable ["Schlaak_incap", 0, false];					// unit already affected so g
 	_splat setpos getpos _unit;
 	_splatdirection = getDir (_this select 0);
 	_splat setDir _splatdirection;
-
+	[_splat, 0.2] remoteExec ["setobjectscale", 0]; 
 
 
 //fixme
@@ -90,7 +90,7 @@ _unit setVariable ["Schlaak_incap", 0, false];					// unit already affected so g
 		[(getPos (_this select 0)) select 0, (getPos (_this select 0)) select 1, 0.05]		//letz see if shit works.
 		;  
 		(_this select 1) setDir getDir (_this select 0)};
-	
+		[(_this select 1), 0.5] remoteExec ["setobjectscale", 0]; 
 
 
 
@@ -98,15 +98,17 @@ _unit setVariable ["Schlaak_incap", 0, false];					// unit already affected so g
 	//[(_this select 0), _splat] call BIS_fnc_attachToRelative;	//should not be used unless u want stiff corpses...
 	
 	//[(_x), _anim] remoteExec ["setobjectscale", 0]; 
-	_splat setobjectscale 0.05;
-	[(_splat), 0.05] remoteExec ["setobjectscale", 0]; 
+	_splat setobjectscale 0.5;
+	
 	
 	[_splat] spawn {
+		[((_this select 0)), 0.5] remoteExec ["setobjectscale", 0]; 
 		for "_i" from 1 to (3 + (random 9)) do {
 		_scl = getobjectscale (_this select 0);
-		[(_this select 0), (_scl + 0.05)] remoteExec ["setobjectscale", 0];
-		_this select 0 setobjectscale (_scl + 0.05);
-		sleep 20;
+		sleep 10;
+		[(_this select 0), (_scl*1.05)] remoteExec ["setobjectscale", 0];
+		_this select 0 setobjectscale (_scl*1.05);
+		sleep 10;
 		};
 	 	sleep (paramsArray select 3) + (paramsArray select 4) + (paramsArray select 5);
 		sleep (paramsArray select 3) + (paramsArray select 4) + (paramsArray select 5);	//ultra lazy option to get sure blood stays a while....
@@ -114,7 +116,7 @@ _unit setVariable ["Schlaak_incap", 0, false];					// unit already affected so g
 		sleep 300;
 		sleep 300;
 		deletevehicle (_this select 0);
-	}
+	};
 
 
 };
@@ -150,9 +152,11 @@ if (_InjuryKind) then {
 	[(_this select 0), false] call ace_medical_status_fnc_setUnconsciousState;
 	//[(_this select 0), _anim] remoteExec ["switchmove", 0];
 
+
+	_anim = selectRandom ["Acts_CivilInjuredLegs_1","Acts_CivilInjuredHead_1","Acts_CivilInjuredGeneral_1","Acts_CivilInjuredChest_1","Acts_CivilInjuredArms_1"];
 	while {alive (_this select 0)} do {
 		_moansound = selectrandom schlaak_suffersounds;
-		_anim = selectRandom ["Acts_CivilInjuredLegs_1","Acts_CivilInjuredHead_1","Acts_CivilInjuredGeneral_1","Acts_CivilInjuredChest_1","Acts_CivilInjuredArms_1"];
+		
 		[(_this select 0), _anim] remoteExec ["switchmove", 0];
 		sleep 3;
 		[(_this select 0),_moansound, (10+ (random 20)) ] call Schlaak_fnc_say;
