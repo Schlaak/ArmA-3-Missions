@@ -1,1 +1,0 @@
-execvm "scripts\defineTroops.sqf";
