@@ -12,7 +12,7 @@ _route6mrks = [];
 _route7mrks = [];
 _route8mrks = [];
 _route9mrks = [];
-_routeAllmrks = [_route1mrks,_route2mrks,_route3mrks,_route4mrks,_route5mrks,_route6mrks,_route7mrks,_route8mrks,_route9mrks];
+_routeAllmrks = [_route1mrks,_route2mrks,_route3mrks,_route4mrks,_route5mrks,_route6mrks];//_route7mrks,_route8mrks,_route9mrks];
 //================================
 // PUSH MARKERS TO routXmrk-ARRAYS
 //================================
@@ -61,42 +61,43 @@ for "X" from 0 to 4 do {
 //================================
 // SET MARKER ALPHA
 //================================
-_routeFinal = _route1mrks; // TODO: still hardcoded... improve!
-
 
 //_routeAllmrks
 _routeAllPOIs = [Schlaak_PoI_4,Schlaak_PoI_3,Schlaak_PoI_2,Schlaak_PoI_1];
 
-for "i" from 0 to 3 do {
 
 
-
-
+//_routeFinal = _route1mrks; // TODO: still hardcoded... improve!
+_routeFinal = selectrandom _routeAllmrks;
 {_x setmarkeralpha 1} forEach _routeFinal;
 
 
+//================================
+// Main loop for all pois
+//================================
+for "i" from 0 to  floor (count _routeFinal) do {
 _PoIArray = _routeAllPOIs select i;	//PoI array.... 
 
-sleep 1;
+
+sleep 0.5;
 systemchat "========================";
 systemchat str _PoIArray;
 systemchat "========================";
-sleep 3;
-//================================
-// DO MOVE ALL OBJECTS (THE COMPOSITION OBJ) NEAR THE ROUTE. SO THAT PoI1.sqf CAN WORK
-//================================
+sleep 0.5;
 
 							//TODO: need to unhardcode it!
 _anzahl = count _PoIArray;	// count. used as number of loops to do.
 
-systemchat str _PoIArray;
 
 _routeFinal2 = _routeFinal;	// copy of route final to be able to reset it within the loop below.
 
 systemchat "Route.sqf: premoving!";
 systemchat str _anzahl;
-_helper = selectrandom _PoIArray;
+//_helper = selectrandom _PoIArray;
 
+//================================
+// SECONDARY LOOP
+//================================
 for "_y" from 0 to _anzahl do {
 	
 	
@@ -118,7 +119,10 @@ for "_y" from 0 to _anzahl do {
 
 };
 
-
+systemChat "================";
+systemChat "Route.sqf: Done";
+systemChat "================";
+[] execVM "01_Schlaak\Missionscripts\PoI1.sqf";	
 
 
 

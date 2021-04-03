@@ -73,7 +73,7 @@ for [{_i = count _compUsed}, {_i <= (count _compUsed)}, {_i=_i-1}] do	//for the 
 		systemchat "POI2:get safe spawnpos failed!";
 	};
 	_CompObj setpos ( _finalpos);		// finaly move the shit
-
+	_CompObj setVectorUp surfaceNormal position _finalpos;
 
 	sleep 1;		
 	systemchat "PoI2: Moving!";	

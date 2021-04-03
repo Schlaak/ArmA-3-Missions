@@ -49,7 +49,7 @@ switch (_grpSide) do
 		_retreatWP = _gruppeF addWaypoint [(getpos _retreatpoint), 0];
 		_retreatWP setWaypointStatements ["true", "Schlaak_Units_routed_w = Schlaak_Units_routed_w + ({ alive _x } count units (group this)); {deletevehicle _x} foreach units group this; publicVariable 'Schlaak_units_routed_W';"];
 		{_x domove (getpos _retreatpoint) ;} foreach units _gruppeF;
-		[leader _gruppeF, (getpos  _Retreatpoint), true] spawn lambs_wp_fnc_taskAssault;
+		[leader _gruppeF, (getpos  _Retreatpoint), false] spawn lambs_wp_fnc_taskAssault;
     };
 	case independent:
     {
@@ -64,7 +64,7 @@ switch (_grpSide) do
 		_retreatWP = _gruppeF addWaypoint [(position _retreatpoint), 0];
 		_retreatWP setWaypointStatements ["true", "Schlaak_Units_routed_w = Schlaak_Units_routed_w + ({ alive _x } count units (group this)); {deletevehicle _x} foreach units group this; publicVariable 'Schlaak_units_routed_I';"];
 		{_x domove (getpos _retreatpoint) ;} foreach units _gruppeF;
-		[leader _gruppeF, (getpos  _Retreatpoint), true] spawn lambs_wp_fnc_taskAssault;
+		[leader _gruppeF, (getpos  _Retreatpoint), false] spawn lambs_wp_fnc_taskAssault;
     };
 };
 

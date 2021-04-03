@@ -34,7 +34,12 @@ if (_anzahlComp == 0) exitwith {};
 //===============================
 // call my fnc to attach synchedOBJ of logic to the logic.
 //===============================
-{[_x,true,true,true] call SCHLAAK_fnc_attachsynchedObj} foreach (_comp);
+//parameters:
+//_object 	= the object all the synched objects shall be rel.attached to
+//_Sim		= enable simulation?
+//_dynsim		= enable dynamic simulation?
+//_DAM		= can these objects take damage?
+{[_x,false,false,false] call SCHLAAK_fnc_attachsynchedObj} foreach (_comp);
 
 
 
@@ -52,7 +57,8 @@ for [{_i = count _compUsed}, {_i <= (count _compUsed)}, {_i=_i-1}] do	//for the 
 
 	if (count _compUsed <= 0) exitWith {
 		systemchat "PoI4: all comps moved!!!";	//all compositions placed? exit with! should be the normal exit!.
-		sleep 3;			
+		sleep 3;
+		[] execvm "01_Schlaak\Missionscripts\SpawnHostiles.sqf";			
 		};
 
 
@@ -85,10 +91,13 @@ for [{_i = count _compUsed}, {_i <= (count _compUsed)}, {_i=_i-1}] do	//for the 
 	_CompObj setdir _dir;
 	_CompObj setVectorUp surfaceNormal position _finalpos;
 
-	sleep 1;	
+	sleep 0.2;	
 	systemchat "PoI4: Moving!";	
 	//systemchat format ["POI3: moved %1 to %2", getpos _Helperobj, _finalpos];	//report what has been moved.
 };
+
+
+
 /*
 _array = [1,2,3,4];	
 _element = selectRandom _array;

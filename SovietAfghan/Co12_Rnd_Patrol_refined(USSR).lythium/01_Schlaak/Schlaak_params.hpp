@@ -4,7 +4,7 @@
 		title = "Playerside";
 		texts[] = {"East","West","Independent"};
 		values[] = {east, west, independent};
-		default = east;
+		default = 0;
 	};
 	//(paramsArray select 1);
 	class Schlaak_Hostiles
@@ -12,7 +12,7 @@
 		title = "Hostile side";
 		texts[] = {"East","West", "Independent"};
 		values[] = {East, West ,Independent};
-		default = Independent;
+		default = 2;
 	};
 	//(paramsArray select 2);
 	class Schlaak_Afghanmode
@@ -20,7 +20,7 @@
 		title = "Afghanmode";
 		texts[] = {"YES","NO"};
 		values[] = {true, false};
-		default = true;
+		default = 0;
 	};
 	//(paramsArray select 3);
 	class Schlaak_dietime
@@ -28,7 +28,7 @@
 		title = "Basic dietime (currently useless)";
 		texts[] = {"5 min","7 min","10 min", "15 min", "20 min"};
 		values[] = {300, 420, 600, 900, 1200};
-		default = 300;
+		default = 600;
 	};
 	//(paramsArray select 4);
 	class Schlaak_bodybagtime
@@ -36,7 +36,7 @@
 		title = "BodybagTime";
 		texts[] = {"5 min","7 min","10 min", "15 min", "20 min"};
 		values[] = {300, 420, 600, 900, 1200};
-		default = 300;
+		default = 600;
 	};
 	//(paramsArray select 5);
 	class Schlaak_bagremovaltime
@@ -44,7 +44,7 @@
 		title = "BodybagRemovealTime";
 		texts[] = {"5 min","7 min","10 min", "15 min", "20 min"};
 		values[] = {300, 420, 600, 900, 1200};
-		default = 300;
+		default = 600;
 	};
 	//(paramsArray select 6);
 	class Schlaak_allowSurrender
@@ -52,7 +52,7 @@
 		title = "allow Surrender";
 		texts[] = {"yes", "no"};
 		values[] = {true, false};
-		default = true;
+		default = 1;
 	};
 	//(paramsArray select 7);
 	class Schlaak_allowRetreat
@@ -164,7 +164,7 @@
 		title = "PoI3 object distance";
 		texts[] = {"light blueish afghan","light redish afghan","light yellow-blueish afghan","allrounder"};
 		values[] = {0,1,2,3};
-		default = 0;
+		default = 1;
 	};
 	//(paramsArray select 21);
 	class Schlaak_Snow

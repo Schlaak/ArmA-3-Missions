@@ -34,6 +34,11 @@ if (_anzahlComp == 0) exitwith {};
 //===============================
 // call my fnc to attach synchedOBJ of logic to the logic.
 //===============================
+//parameters:
+//_object 	= the object all the synched objects shall be rel.attached to
+//_Sim		= enable simulation?
+//_dynsim		= enable dynamic simulation?
+//_DAM		= can these objects take damage?
 {[_x,false,false,false] call SCHLAAK_fnc_attachsynchedObj} foreach (_comp);
 
 
@@ -74,9 +79,9 @@ for [{_i = count _compUsed}, {_i <= (count _compUsed)}, {_i=_i-1}] do	//for the 
 		systemchat "POI3:get safe spawnpos failed!";
 	};
 	_CompObj setpos ( _finalpos);		// finaly move the shit
+	_CompObj setVectorUp surfaceNormal _finalpos;
 
-
-	sleep 1;	
+	sleep 0.2;	
 	systemchat "PoI3: Moving!";	
 	//systemchat format ["POI3: moved %1 to %2", getpos _Helperobj, _finalpos];	//report what has been moved.
 };

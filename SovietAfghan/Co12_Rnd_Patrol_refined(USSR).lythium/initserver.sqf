@@ -1,6 +1,10 @@
 #include "01_Schlaak\Schlaak_vars.sqf";
 #include "01_Schlaak\Schlaak_spawn_EH.sqf";
 
+
+
+[] execvm "01_Schlaak\Missionscripts\ambienteflyby.sqf";
+
 //3rd party winter scripts by GF
 if ((paramsArray select 21) == 1 ) then {
 	[] execVM "02_scripts\GF_Breath\GF_Breath.sqf";

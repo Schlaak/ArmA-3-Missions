@@ -19,6 +19,11 @@ systemchat "SCHLAAK_SPAWN_EH.SQF: Initialized";
 	_dude addMPEventHandler ["MPhit", { [_this select 0] call Schlaak_fnc_incap; }];
 	_dude addMPEventHandler ["MPKilled", { [_this select 0] call Schlaak_fnc_killed; }];
 	[_dude] execvm  "01_schlaak\setAIskill.sqf";
+
+	removeAllItems _dude;
+	removeAllAssignedItems _dude;
+	removeGoggles _dude;
+
 	switch (side _dude) do
 	{
 		case West: 
@@ -69,12 +74,12 @@ systemchat "SCHLAAK_SPAWN_EH.SQF: Initialized";
 		};
 		case "CUP_I_TK_GUE":		//dushman
 		{
-			//STATEMENT;
+			[_dude] execvm "01_schlaak\dushman.sqf";
 
 		};
 		case "CUP_C_TK":			//Afgh.Civs
 		{
-			//STATEMENT;
+			//[_dude] execvm "01_schlaak\dushman.sqf";
 
 		};
 	};

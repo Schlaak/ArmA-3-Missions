@@ -35,11 +35,11 @@ systemchat "SCHLAAK_VARS.SQF: Diplomacy defined";
 //=================================
 //switch (Schlaak_Playerside) do
 
-switch ((paramsArray select 1)) do	//playerside
+switch ((paramsArray select 0)) do	//playerside
 {
-    case 1:	//0 east
+    case 0:	//0 east
     {
-		if ((paramsArray select 3) == 1) then	//afghanmode ON
+		if ((paramsArray select 2) == 0) then	//afghanmode ON
 		{
 
 			//Mechanized
@@ -80,7 +80,7 @@ switch ((paramsArray select 1)) do	//playerside
 
     };
 
-    case 0: //1
+    case 1: //1 West
     {
         O_grpMech1 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp1");
 		O_grpMech2 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp2");
@@ -293,8 +293,7 @@ systemchat "SCHLAAK_VARS.SQF: Vars broadcasted";
 sleep 2;
 
 [] execVM "01_Schlaak\Missionscripts\Route.sqf";
-sleep 90;
-[] execVM "01_Schlaak\Missionscripts\PoI1.sqf";	
+
 sleep 5;
 [] execVM "01_Schlaak\Missionscripts\Garrison.sqf";	
 

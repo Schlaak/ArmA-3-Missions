@@ -60,7 +60,7 @@ _unit setVariable ["Schlaak_dead", 0, false];
 [_unit] spawn {
 	_unit = _this select 0;
 	sleep (paramsArray select 4);
-	_testo = ["Body", getposworld (_this select 0), (getDir ((_this select 0))) -90,true] call BIS_fnc_createSimpleObject;
+	_testo = ["Land_HumanSkeleton_F", getposworld (_this select 0), (getDir ((_this select 0))) -90,true] call BIS_fnc_createSimpleObject;
 	_testo setPos [getPos _testo select 0, getPos _testo select 1, 0.3];
 	deleteVehicle (_this select 0);
 	[_testo] spawn {

@@ -83,6 +83,7 @@ for [{_i = count _compUsed}, {_i <= (count _compUsed)}, {_i=_i-1}] do	//for the 
 
 	_CompObj setpos (getpos _finalpos);		// finaly move the shit
 	_CompObj setdir _dir;
+	_CompObj setVectorUp surfaceNormal position _finalpos;
 
 	sleep 1;	
 	systemchat "PoI4: Moving!";	
