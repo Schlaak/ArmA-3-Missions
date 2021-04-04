@@ -1,4 +1,10 @@
-
+//TODO
+/*
+CLEANUP!
+look at this
+https://forums.bohemia.net/forums/topic/194844-creating-and-deleting-moduleeffectsfire_f/
+IMPLEMENT IT!
+*/
 params ["_vehicle","_case"];
 
 
@@ -9,15 +15,17 @@ params ["_vehicle","_case"];
 	_veh = _this select 0;
 	_dmg = _this select 2;
 	_overalldamage = (damage _veh) + _dmg;
-	if (_overalldamage > 0.95) then
+	_veh setdamage ((damage _veh) + (_dmg * 0.15));
+	if (_overalldamage > 0.75) then
 		{ 
-		_veh setDamage 0.9;
-		}else
-		{
-		_veh setDamage _overalldamage;
+		_veh setDamage 0.75;
+		//_veh setDamage _overalldamage;
 		_veh setfuel 0;
 		_veh setvehicleammo 0;
 		_veh allowdamage false;
+		}else
+		{
+
 		};
 	}
 	];
@@ -25,12 +33,15 @@ params ["_vehicle","_case"];
 waitUntil {sleep 1; damage _vehicle >= 0.75 };
 _vehicle allowdamage false;
 systemchat "vehicle cannot be damaged;";
-sleep 3;
-
-//if ( (damage _vehicle) >= 0.75) then {
-{_x action ["Eject", _vehicle];} foreach (fullCrew _vehicle);
-{_x action ["Eject", _vehicle];} foreach (fullCrew _vehicle);
 _vehicle setVehicleLock "LOCKED";
+//if ( (damage _vehicle) >= 0.75) then {
+//{_x action ["Eject", _vehicle]} foreach (fullCrew _vehicle);
+//{_x action ["Eject", _vehicle]} foreach (fullCrew _vehicle);
+{[_x]	spawn {sleep floor random [3,4,15] + 1;  unassignVehicle (_this select 0) ; sleep 0.1;_dudesBurn = [ (_this select 0), [0,0,1], floor random 9 + 3, random [.05,.01,.015], .03 ] execvm "02_scripts\JBOY\JBOY_createFire.sqf";}} foreach crew _vehicle;
+{_x setdamage (random [0.4,0.7,1])} foreach crew _vehicle;
+
+//{ unassignVehicle _x } forEach fullcrew _vehicle;
+
 clearMagazineCargoGlobal _vehicle;
 clearItemCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
@@ -45,7 +56,9 @@ _vehicle setvehicleammo 0;
 systemchat "vehicle is crap!";
 sleep 3;
 
-_random = floor random 6;										// Random 1 to 5
+{_dudesBurn = [ _x, [0,0,1], .01, .01, .03 ] execvm "02_scripts\JBOY\JBOY_createFire.sqf";} foreach crew _vehicle;
+
+_random = floor random 8;										// Random 1 to 5
 
 //diag_log str [_random];
 systemchat str _random;
@@ -106,15 +119,36 @@ switch (_case) do
 		sleep 80;
 		[_vehicle , true , true , 600] spawn Schlaak_fnc_fireeffects;
     };
-
+    case 7:
+    {
+		systemchat "coockoff engine fire";
+        sleep 5;
+		_vehicle call ace_cookoff_fnc_engineFire;
+		sleep 80;
+		[_vehicle , true , true , 600] spawn Schlaak_fnc_fireeffects;
+    };
+	case 8:
+    {	
+		sleep 15;
+		[_vehicle] call ace_cookoff_fnc_cookOffBox;
+		sleep 15;
+		[_vehicle] call ace_cookoff_fnc_cookOffBox;
+		sleep 80;
+		[_vehicle] call ace_cookoff_fnc_cookOffBox;
+		[_vehicle , true , true , 600] spawn Schlaak_fnc_fireeffects;
+		sleep 15;
+		_vehicle setdamage 1;
+    };
 };
 
 
 _rndmsplat = selectRandom ["Land_Decal_ScorchMark_01_large_F","Land_Decal_ScorchMark_01_small_F"];
 sleep 20;
 _splat = [_rndmsplat, getpos _vehicle, (getDir (_vehicle)) -(random 90),true] call BIS_fnc_createSimpleObject;
+mower = ["Land_ClutterCutter_large_F", getpos _vehicle, (getDir (_vehicle)) -(random 90),true] call BIS_fnc_createSimpleObject;
 //_splat = _rndmsplat createVehicle (getposatl (_this select 0));
 _splat setpos getpos _vehicle;
+mower setpos getpos _vehicle;
 //_splatdirection = getDir _vehicle;
 //_splat setDir _splatdirection;
 _splat setVectorUp surfaceNormal position _splat;

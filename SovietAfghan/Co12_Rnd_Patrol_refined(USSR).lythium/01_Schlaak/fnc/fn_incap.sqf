@@ -109,6 +109,7 @@ _unit setVariable ["Schlaak_incap", 0, false];					// unit already affected so g
 		_scl = getobjectscale (_this select 0);
 		sleep 10;
 		[(_this select 0), (_scl*1.05)] remoteExec ["setobjectscale", 0];
+		(_this select 0) setVectorUp surfaceNormal position (_this select 0);
 		_this select 0 setobjectscale (_scl*1.05);
 		sleep 10;
 		};

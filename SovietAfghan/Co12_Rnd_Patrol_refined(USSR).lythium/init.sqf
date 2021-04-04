@@ -8,8 +8,13 @@ enableDynamicSimulationSystem true;
 
 offroad_debug = false;
 
-//3rd Party snow script
-
+//3rd Party JBOY scripts
+JBOY_createFire = compile (preprocessFileLineNumbers "02_scripts\JBOY\JBOY_createFire.sqf");
+JBOY_scream = compile (preprocessFileLineNumbers "02_scripts\JBOY\JBOY_scream.sqf");
+JBOY_moduleEffectsFire = compile (preprocessFileLineNumbers "02_scripts\JBOY\JBOY_moduleEffectsFire.sqf");
+PV_createFire = compile preprocessFileLineNumbers "02_scripts\JBOY\PV_createFire.sqf";
+SET_GLOBALVAR = compile preprocessFileLineNumbers "02_scripts\JBOY\SET_GLOBALVAR.sqf";
+PV_switchmove = compile preprocessFileLineNumbers "02_scripts\JBOY\PV_switchmove.sqf";
 
 
 
@@ -36,4 +41,4 @@ offroad_debug = false;
 {
 	diag_log ["adding inventory: ",_x];
 	[west,_x] call BIS_fnc_addRespawnInventory;
-} forEach ["RIFLEMAN1","ATHEAVY1","ATASSIST1","AUTORIFLE1","MEDIC1"]; 
+} forEach ["RIFLEMAN1","ATHEAVY1","ATASSIST1","AUTORIFLE1","MEDIC1"];

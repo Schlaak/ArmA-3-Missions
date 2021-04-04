@@ -43,6 +43,7 @@ _unit setVariable ["Schlaak_dead", 0, false];
 		_scl = getobjectscale (_this select 0);
 		[(_this select 0), (_scl*1.05)] remoteExec ["setobjectscale", 0];
 		_this select 0 setobjectscale (_scl*1.05);
+		(_this select 0) setVectorUp surfaceNormal position (_this select 0);
 		sleep 20;
 		};
 	 	sleep (paramsArray select 3) + (paramsArray select 4) + (paramsArray select 5);
