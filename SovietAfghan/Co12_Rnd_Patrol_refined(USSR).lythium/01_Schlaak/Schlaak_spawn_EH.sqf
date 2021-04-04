@@ -7,6 +7,10 @@ TODO WIP
 {_x addMPEventHandler ["MPhit", { [_this select 0] call Schlaak_fnc_incap; }];} foreach allunits;
 {_x addMPEventHandler ["MPKilled", { [_this select 0] call Schlaak_fnc_Killed; }];} foreach allunits;
 {[_x] execvm  "01_schlaak\setAIskill.sqf";} foreach allunits;
+{ if ((faction _x) == "cwr3_faction_rus") then {[_x] execvm "01_schlaak\sovietuniform.sqf";}} foreach allunits;
+
+_allTanks = entities "Tank";
+{[_x,floor random 6] spawn Schlaak_fnc_vehicledamage;} foreach _allTanks;
 
 
 diag_log ["SCHLAAK_SPAWN_EH.SQF: Initialized"];
@@ -23,6 +27,7 @@ systemchat "SCHLAAK_SPAWN_EH.SQF: Initialized";
 	removeAllItems _dude;
 	removeAllAssignedItems _dude;
 	removeGoggles _dude;
+
 
 	switch (side _dude) do
 	{
@@ -87,6 +92,12 @@ systemchat "SCHLAAK_SPAWN_EH.SQF: Initialized";
 
 	}] call CBA_fnc_addClassEventHandler;
 	
+
+
+
+["Tank", "init", {
+	[_this select 0,floor random 6] spawn Schlaak_fnc_vehicledamage;
+	}] call CBA_fnc_addClassEventHandler;
 /*
 ["Man", "MPHit", {
 	_dude = this select 0;

@@ -83,6 +83,7 @@ for "_i" from 0 to _amountEnemyGroups do {
 			[_x] execvm "01_ir0nsight\stalkerFSM.sqf";
 		}
 	} forEach units _thisGroup;
+	_thisGroup enableDynamicSimulation true;
 	sleep 2;
 };
 sleep 2;

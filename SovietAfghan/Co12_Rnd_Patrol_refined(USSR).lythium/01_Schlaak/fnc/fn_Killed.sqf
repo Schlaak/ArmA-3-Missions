@@ -27,11 +27,12 @@ _unit setVariable ["Schlaak_dead", 0, false];
 	_splat setpos getpos _unit;
 	_splatdirection = getDir (_this select 0);
 	_splat setDir _splatdirection;
-	_splat setVectorUp surfaceNormal position _unit;
+	_splat setVectorUp surfaceNormal position _splat;
 	[(_this select 0),_splat] spawn {sleep 1; 
 	(_this select 1) setpos 
-	[(getPos (_this select 0)) select 0, (getPos (_this select 0)) select 1, 0.05];		//letz see if shit works.
+	[(getPos (_this select 0)) select 0, (getPos (_this select 0)) select 1, 0];		//letz see if shit works.
 	(_this select 1) setDir getDir (_this select 0)};
+	(_this select 1) setVectorUp surfaceNormal position (_this select 1);
 
 	_splat setobjectscale 0.02;
 	[(_splat), 0.5] remoteExec ["setobjectscale", 0]; 

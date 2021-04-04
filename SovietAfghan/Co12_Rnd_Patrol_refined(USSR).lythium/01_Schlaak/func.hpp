@@ -17,5 +17,6 @@ class Schlaak {
     class attachsynchedObj {}; //0.5
     class markArea {};        //wip
     class killed {};
+    class vehicledamage {};
     };
 };
