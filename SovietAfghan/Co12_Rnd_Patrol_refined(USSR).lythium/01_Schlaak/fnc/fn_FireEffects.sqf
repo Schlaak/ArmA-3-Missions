@@ -60,10 +60,18 @@
 		case false:
 		{
 			// SMOKE
+			_ps = "#particlesource" createVehiclelocal getpos _OBJ;
+			_ps setParticleCircle [0, [0, 0, 0]];
+			_ps setParticleRandom [0, [0, 0, 0], [0.33, 0.33, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
+			_ps setParticleParams [["\A3\data_f\ParticleEffects\Universal\Universal_02", 8, 0, 1], "", "Billboard", 1, (10+random 25), [0, 0, 0.5], [0, 0, 2.9], 1, 1.275, 1, 0.066, [4, 5, 10, 10], [[0.01, 0.01, 0.01, 0.33], [0.4, 0.4, 0.4, 0.33], [0.2, 0.2, 0, 0]], [0, 1], 1, 0, "", "", _obj];
+			_ps setDropInterval 0.5;
+/*
 			_ps setParticleCircle [0, [0, 0, 0]];
 			_ps setParticleRandom [0, [0.25, 0.25, 0], [0.2, 0.2, 0], 0, 0.25, [0, 0, 0, 0.1], 0, 0];
 			_ps setParticleParams [["\A3\data_f\ParticleEffects\Universal\Universal_02", 8, 1, 8], "", "Billboard", 1, (15+random 25), [0, 0, 0], [0, 0, 1.5], 0, 10, 7.9, 0.066, [1, 3, 6], [[0.01, 0.01, 0.01, 1], [0.25, 0.25, 0.25, 0.5], [0.5, 0.5, 0.5, 0]], [0.125], 1, 0, "", "", _OBJ];
 			_ps setDropInterval 0.05;
+*/
+
 			if (_dieOut) then
 			{
 				sleep (_burntime + (_burntime/8));

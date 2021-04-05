@@ -75,8 +75,8 @@ _routeFinal = selectrandom _routeAllmrks;
 //================================
 // Main loop for all pois
 //================================
-for "i" from 0 to  floor (count _routeFinal) do {
-_PoIArray = _routeAllPOIs select i;	//PoI array.... 
+for "_i" from 0 to  floor (count _routeFinal) do {
+_PoIArray = _routeAllPOIs select _i;	//PoI array.... 
 
 
 sleep 0.5;
@@ -84,10 +84,12 @@ systemchat "========================";
 systemchat str _PoIArray;
 systemchat "========================";
 sleep 0.5;
-
+//if (! isNil "_PoIArray") then {
 							//TODO: need to unhardcode it!
 _anzahl = count _PoIArray;	// count. used as number of loops to do.
-
+//} else {
+//	_anzahl = 1;
+//};
 
 _routeFinal2 = _routeFinal;	// copy of route final to be able to reset it within the loop below.
 

@@ -27,7 +27,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="Co12_Rnd_Patrol_refined(USSR)";
+sourceName="~Co12_Rnd_Patrol_refined(USSR)";
 addons[]=
 {
 	"A3_Modules_F",
