@@ -1,0 +1,16 @@
+#include "00_description\01_header.hpp"
+#include "00_description\02_options.hpp"
+#include "00_description\03_Sounds.hpp"
+#include "00_description\04_functions.hpp"
+#include "00_description\05_PreInitEventHandlers.hpp"
+#include "00_description\06_Notifications.hpp"
+#include "00_description\07_Respawn.hpp"
+#include "00_description\08_RespawnInventory.hpp"
+#include "00_description\09_missionparams.hpp"
+#include "00_description\10_3rdparty.hpp"
+
+
+
+
+
+

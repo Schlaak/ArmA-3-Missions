@@ -298,7 +298,14 @@ count (units (group this)) <= 3
 waitUntil {sleep 1; {alive _x} count allPlayers == {_x in _helo} count allPlayers};
 // besser
 waitUntil {sleep 1; allPlayers findIf {alive _x && !(_x in exfiltrationshelo)} == 0};
+
+
 ( {alive _x } count allPlayers ) isEqualTo ( {_x in exfiltrationshel} count allPlayers )
+
+
+
+
+
 
 if (isNull _drone) then {
 	if (isNil "irn_reaper_01") exitWith {

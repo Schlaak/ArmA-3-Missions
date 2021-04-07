@@ -18,3 +18,5 @@ sleep 0.5;
 {
 	_dude addItemToUniform _x
 } foreach _items;
+sleep 30;
+if (true) exitwith {};

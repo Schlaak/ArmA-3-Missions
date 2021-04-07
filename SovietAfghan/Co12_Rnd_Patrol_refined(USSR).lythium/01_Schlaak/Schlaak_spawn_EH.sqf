@@ -4,13 +4,21 @@
 /*
 TODO WIP
 */
+if !(isServer) exitwith {};
 {_x addMPEventHandler ["MPhit", { [_this select 0] call Schlaak_fnc_incap; }];} foreach allunits;
 {_x addMPEventHandler ["MPKilled", { [_this select 0] call Schlaak_fnc_Killed; }];} foreach allunits;
 {[_x] execvm  "01_schlaak\setAIskill.sqf";} foreach allunits;
 { if ((faction _x) == "cwr3_faction_rus") then {[_x] execvm "01_schlaak\sovietuniform.sqf";}} foreach allunits;
 
+
+/*
 _allTanks = entities "Tank";
 {[_x,floor random 6] spawn Schlaak_fnc_vehicledamage;} foreach _allTanks;
+
+Dont need this here right now... dunno something´s causeing massive framedrops.
+*/
+
+
 
 
 diag_log ["SCHLAAK_SPAWN_EH.SQF: Initialized"];
@@ -96,8 +104,17 @@ systemchat "SCHLAAK_SPAWN_EH.SQF: Initialized";
 
 
 ["Tank", "init", {
+
+
 	[_this select 0,floor random 6] spawn Schlaak_fnc_vehicledamage;
+	// temporary removed from the mission. not needed and may cause fps drop. dunno
+
+
 	}] call CBA_fnc_addClassEventHandler;
+
+
+sleep 30;
+if (true) exitwith {};
 /*
 ["Man", "MPHit", {
 	_dude = this select 0;
