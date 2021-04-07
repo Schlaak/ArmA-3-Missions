@@ -296,6 +296,7 @@ sleep 2;
 
 sleep 5;
 [] execVM "01_Schlaak\Missionscripts\Garrison.sqf";	
+/*
 sleep 30;
 if (true) exitwith {};
 /*

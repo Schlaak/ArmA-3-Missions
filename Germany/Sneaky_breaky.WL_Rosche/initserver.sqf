@@ -14,6 +14,10 @@ if ((paramsArray select 21) == 1 ) then {
 
 [east, 10] call BIS_fnc_respawnTickets;
 0 setfog 0;
+
+skiptime -12;
+
+
 sleep 30;
 if (true) exitwith {};
 //forceWeatherChange;
