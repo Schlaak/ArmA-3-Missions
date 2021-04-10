@@ -36,37 +36,38 @@ switch (rank _dude) do
     {
         _hat = selectRandom ["cwr3_o_beret_vdv"];
 		// VMF cwr3_o_beret_vmf
+      _vest = "CUP_V_RUS_6B3_1";
     };
 
     case "LIEUTENANT":
     {
         _hat = selectRandom ["cwr3_o_ushanka"];
-
+        _vest = "CUP_V_RUS_6B3_1";
     };
 
     case "CAPTAIN":
     {
         _hat = selectRandom ["cwr3_o_headgear_officer_cap_field"];
-
+        _vest = "CUP_V_RUS_6B3_1";
     };
 
     case "MAJOR":
     {
         _hat = selectRandom ["cwr3_o_headgear_officer_cap_field"];
-
+        _vest = "CUP_V_RUS_6B3_1";
     };
 	default
     {
         _hat = selectRandom ["cwr3_o_headgear_ssh68_net","cwr3_o_headgear_ssh68_cover","cwr3_o_headgear_ssh68_cover_klmk","cwr3_o_headgear_ssh68_camo",
 		"cwr3_o_headgear_ssh68_camo","cwr3_o_headgear_ssh68","CUP_H_RUS_SSH68_olive","CUP_H_RUS_SSH68_cover_vsr93","CUP_H_RUS_SSH68_cover_berezka","CUP_H_RUS_SSH68_green"];
-		
+
     };
 
 };
 
 
 _uniform = selectRandom ["cwr3_o_uniform_m1982_ttsko","cwr3_o_uniform_m1982_ttsko","cwr3_o_uniform_m1982_rolled_ttsko"];
-_vest = selectrandom ["CUP_V_RUS_6B3_Flora_1","cwr3_o_vest_6b2_chicom_ak74","cwr3_o_vest_6b2_ak74","cwr3_o_vest_6b2_chicom_ak74","cwr3_o_vest_harness_ak74","cwr3_o_vest_harness_ak74","cwr3_o_vest_harness_ak74","cwr3_o_vest_chicom_beltkit_ak74","cwr3_o_vest_chicom_beltkit_light_ak74"];
+_vest = selectrandom ["cwr3_o_vest_6b2_chicom_ak74","cwr3_o_vest_6b2_ak74","cwr3_o_vest_6b2_chicom_ak74","cwr3_o_vest_harness_ak74","cwr3_o_vest_harness_ak74","cwr3_o_vest_harness_ak74","cwr3_o_vest_chicom_beltkit_ak74","cwr3_o_vest_chicom_beltkit_light_ak74"];
 //_hat = selectrandom ["cwr3_o_headgear_ssh68","cwr3_o_headgear_ssh68_camo","cwr3_o_headgear_ssh68_cover_klmk","cwr3_o_headgear_ssh68_cover","cwr3_o_headgear_ssh68_net","CUP_H_RUS_SSH68_cover_vsr93","CUP_H_RUS_SSH68_cover_vsr98",
 //"CUP_H_RUS_SSH68_cover_vsr84_dubok","CUP_H_RUS_SSH68_olive","CUP_H_RUS_SSH68_green","CUP_H_RUS_SSH68_cover_berezka"];
 //===================================
@@ -77,7 +78,7 @@ _vest = selectrandom ["CUP_V_RUS_6B3_Flora_1","cwr3_o_vest_6b2_chicom_ak74","cwr
 switch (typeOf _dude) do  {
     case "cwr3_o_soldier":      //Rifleman
     {
-        _vest = "CUP_V_RUS_6B3_Flora_1";
+      _vest = selectrandom ["cwr3_o_vest_6b2_chicom_ak74","cwr3_o_vest_6b2_ak74","cwr3_o_vest_6b2_chicom_ak74","cwr3_o_vest_harness_ak74","cwr3_o_vest_harness_ak74","cwr3_o_vest_harness_ak74","cwr3_o_vest_chicom_beltkit_ak74","cwr3_o_vest_chicom_beltkit_light_ak74"];
     };
     case "cwr3_o_soldier_amg":      //MG AMG
     {
@@ -93,15 +94,15 @@ switch (typeOf _dude) do  {
     };
     case "cwr3_o_officer":      //OFFICER
     {
-		_vest = "CUP_V_RUS_6B3_Flora_4";
+		_vest = "CUP_V_RUS_6B3_1";
     };
     case "cwr3_o_soldier_sl":      //OFFICER SL
     {
-		_vest = "CUP_V_RUS_6B3_Flora_4";
+		_vest = "CUP_V_RUS_6B3_1";
     };
     case "cwr3_o_officer_night":      //OFFICER Night
     {	
-		_vest = "CUP_V_RUS_6B3_Flora_4";
+		_vest = "CUP_V_RUS_6B3_1";
     };
     case "cwr3_o_soldier_crew":      //CREW
     {
