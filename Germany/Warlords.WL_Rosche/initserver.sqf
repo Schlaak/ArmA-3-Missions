@@ -14,6 +14,43 @@ if ((paramsArray select 21) == 1 ) then {
 
 [east, 10] call BIS_fnc_respawnTickets;
 [west, 10] call BIS_fnc_respawnTickets;
+
+_lead = 2;
+_AT = 2;
+_MG = 2;
+_Med = 2;
+
+
+[west,"B_CWR_AMG",-1,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_M47",_AT,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_ATcarl",_AT,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_AA",-1,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_ar",_MG,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_crew",-1,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_MG",_MG,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_medic",_Med,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_ATlaw",_AT,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_SL",_lead,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_TL",_lead,-1] call BIS_fnc_addRespawnInventory;
+[west,"B_CWR_Rifleman",-1,-1] call BIS_fnc_addRespawnInventory;
+
+[east,"O_CWR_TL",_lead,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_SL",_lead,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_ATrpg18",-1,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_RMbckpck",-1,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_RM",-1,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_Medic",_Med,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_DMR",-1,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_MG",_MG,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_crew",-1,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_crewAPC",-1,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_strela",-1,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_igla",-1,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_RPG7",_AT,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_AT4",_AT,-1] call BIS_fnc_addRespawnInventory;
+[east,"O_CWR_AR",_MG,-1] call BIS_fnc_addRespawnInventory;
+
+//[east, "WEST1"] call BIS_fnc_addRespawnInventory;
 0 setfog 0;
 
 //skiptime -12;

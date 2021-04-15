@@ -14,6 +14,8 @@ Unit variables
 The enhanced behaviours of the mod are easily toggled. The unit FSM may be dynamically deactivated during play. The individual AI handles such things as entering buildings, the reaction state to combat, panicking and various other core LAMBS Danger FSM features.
 */
 this setVariable ["lambs_danger_disableAI",true];
+
+this setVariable ["lambs_danger_dangerRadio",true];
 /*
 Formation variable
 

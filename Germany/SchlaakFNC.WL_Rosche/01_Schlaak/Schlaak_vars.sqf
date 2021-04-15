@@ -35,11 +35,23 @@ systemchat "SCHLAAK_VARS.SQF: Diplomacy defined";
 //=================================
 //switch (Schlaak_Playerside) do
 
-switch ((paramsArray select 1)) do	//playerside
+switch ((paramsArray select 0)) do	//playerside
 {
-    case 1:	//0 east
+    case 0:	//0 east
     {
-		if ((paramsArray select 3) == 1) then	//afghanmode ON
+		B_grpMech1 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp1");
+		B_grpMech2 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp2");
+		B_grpMech3 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_btr");
+		B_grpMech4 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_mtlb");
+		//motorized
+		B_grpmot1 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Motorized" >> "cwr3_o_motorized_section");
+		// infantry
+		B_grpATteam = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Infantry" >> "cwr3_o_at_team");
+		B_grpFTeam = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Infantry" >> "cwr3_o_fire_team");
+		B_grpMGteam = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Infantry" >> "cwr3_o_mg_team");
+		B_grpRFsqd = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Infantry" >> "cwr3_o_rifle_squad");
+		B_grpSupportteam = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Infantry" >> "cwr3_o_support_team");
+		if ((paramsArray select 2) == 0) then	//afghanmode ON
 		{
 
 			//Mechanized
@@ -80,7 +92,7 @@ switch ((paramsArray select 1)) do	//playerside
 
     };
 
-    case 0: //1
+    case 1: //1 West
     {
         O_grpMech1 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp1");
 		O_grpMech2 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp2");
@@ -95,6 +107,23 @@ switch ((paramsArray select 1)) do	//playerside
 		O_grpRFsqd = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Infantry" >> "cwr3_o_rifle_squad");
 		O_grpSupportteam = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Infantry" >> "cwr3_o_support_team");
 
+		//Mechanized
+		B_grpMech1 = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Mechanized" >> "cwr3_b_mechanized_infantry_m2a2");
+		B_grpMech2 = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Mechanized" >> "cwr3_i_mechanized_infantry_m113");
+		B_grpMech3 = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Mechanized" >> "cwr3_i_mechanized_infantry_m113");
+		B_grpMech4 = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Mechanized" >> "cwr3_b_mechanized_infantry_m2a2");
+
+		//motorized
+		B_grpmot1 = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Motorized" >> "cwr3_b_motorized_squad");
+		B_grpmot2 = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Motorized" >> "cwr3_b_motorized_section_at");
+		B_grpmot3 = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Motorized" >> "cwr3_b_motorized_patrol");
+
+		// infantry
+		B_grpATteam = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Infantry" >> "cwr3_b_at_team");
+		B_grpFTeam = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Infantry" >> "cwr3_b_fire_team");
+		B_grpMGteam = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Infantry" >> "cwr3_b_mg_team");
+		B_grpRFsqd = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Infantry" >> "cwr3_b_rifle_squad");
+		B_grpSupportteam = (configfile >> "CfgGroups" >> "WEST" >> "CWR3_USA" >> "Infantry" >> "cwr3_b_support_team");
     };
     case 2: //independent
     {
@@ -106,7 +135,11 @@ switch ((paramsArray select 1)) do	//playerside
 //Arrays to select random from
 O_grp_arr_Mech = [O_grpMech1,O_grpMech2,O_grpMech3,O_grpMech4];
 O_grp_arr_Inf = [O_grpATteam,O_grpATteam,O_grpMGteam,O_grpMGteam,O_grpMGteam,O_grpMGteam,O_grpATteam,O_grpFTeam,O_grpFTeam,O_grpFTeam,O_grpFTeam,O_grpFTeam,O_grpFTeam,O_grpRFsqd,O_grpRFsqd,O_grpSupportteam];
+B_grp_arr_Mech = [B_grpMech1,B_grpMech2,B_grpMech3,B_grpMech4];
+B_grp_arr_Inf = [B_grpATteam,B_grpATteam,B_grpMGteam,B_grpMGteam,B_grpMGteam,B_grpMGteam,B_grpATteam,B_grpFTeam,B_grpFTeam,B_grpFTeam,B_grpFTeam,B_grpFTeam,B_grpFTeam,B_grpRFsqd,B_grpRFsqd,B_grpSupportteam];
 
+
+Schlaak_spawn_waves = true;
 
 diag_log "SCHLAAK_VARS.SQF: Groups defined";
 systemchat "SCHLAAK_VARS.SQF: Groups defined";
@@ -264,6 +297,9 @@ systemchat "SCHLAAK_VARS.SQF: Objects defined";
 //publicVariable "Schlaak_Afghanmode";
 publicVariable "O_grp_arr_Mech";
 publicVariable "O_grp_arr_Inf";
+publicVariable "B_grp_arr_Mech";
+publicVariable "B_grp_arr_Inf";
+publicVariable "Schlaak_spawn_waves";
 publicVariable "Schlaak_Grp_defeated";
 publicVariable "Schlaak_Units_Captured_W";
 publicVariable "Schlaak_Units_Captured_E";
@@ -291,10 +327,16 @@ publicVariable "Schlaak_Garrison";
 diag_log "SCHLAAK_VARS.SQF: Vars broadcasted";
 systemchat "SCHLAAK_VARS.SQF: Vars broadcasted";
 sleep 2;
-[] execVM "01_Schlaak\Missionscripts\PoI1.sqf";	
+
+//[] execVM "01_Schlaak\Missionscripts\Route.sqf";
+
+[] execVM "01_Schlaak\Missionscripts\PoI1.sqf";
+
 sleep 5;
 [] execVM "01_Schlaak\Missionscripts\Garrison.sqf";	
-
+/*
+sleep 30;
+if (true) exitwith {};
 /*
 O_grpBMP1 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp1");
 O_grpBMP2 = (configfile >> "CfgGroups" >> "East" >> "CWR3_RUS" >> "Mechanized" >> "cwr3_o_mechanized_infantry_bmp2");

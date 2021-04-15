@@ -22,7 +22,7 @@ _anzahl = count (units _gruppe);	//count groupsize
 _lebende = { alive _x } count units _gruppe; 
 
 
-
+systemchat str _gruppe;
 
 waitUntil {_lebende < 5};	//wait until group is size or below size of threshold
 hint "surrenderflee: squadmorale broken!";
