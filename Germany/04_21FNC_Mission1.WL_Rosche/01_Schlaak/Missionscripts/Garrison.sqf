@@ -4,7 +4,7 @@ sleep 15;
 } foreach Schlaak_Garrison;
 */
 
-{[_x , O_grp_arr_Inf,1,1+(floor random 3)] 
+{[_x , O_grp_arr_Inf,1,1+(floor random 1)] 
 spawn Schlaak_fnc_garrison} 
 foreach (Schlaak_Garrison);
 sleep 5;

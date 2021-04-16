@@ -1,4 +1,4 @@
-sleep 45;
+sleep 90;
 [
  [
   [format ["%1", text nearestLocation [position player, ""]],"<t align = 'right' shadow = '1' size = '1.2' font='EtelkaMonospaceProBold' color='#00FF00'>%1</t><br/>",15],

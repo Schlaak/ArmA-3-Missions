@@ -27,14 +27,18 @@ systemchat "SCHLAAK_SPAWN_EH.SQF: Initialized";
 	//systemChat str _this;
 	//diag_log ["spawn EH fired with ",_this,"at",time];
 	_dude = _this select 0;
+	
+
 
 	_dude addMPEventHandler ["MPhit", { [_this select 0] call Schlaak_fnc_incap; }];
 	_dude addMPEventHandler ["MPKilled", { [_this select 0] call Schlaak_fnc_killed; }];
 	[_dude] execvm  "01_schlaak\setAIskill.sqf";
-
+	if !(isplayer _dude ) then {	
 	removeAllItems _dude;
 	removeAllAssignedItems _dude;
 	removeGoggles _dude;
+	
+
 
 
 	switch (side _dude) do
@@ -97,7 +101,7 @@ systemchat "SCHLAAK_SPAWN_EH.SQF: Initialized";
 
 		};
 	};
-
+	};
 
 	}] call CBA_fnc_addClassEventHandler;
 

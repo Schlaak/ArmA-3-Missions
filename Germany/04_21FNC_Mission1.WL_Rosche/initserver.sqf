@@ -84,6 +84,9 @@ sleep 3;
 _battle = [east,getmarkerpos (selectrandom ["SovietSpawn_0","SovietSpawn_1","SovietSpawn_2"]),O_grp_arr_Tank] spawn Schlaak_fnc_attackwave;
 systemchat "=============";
 systemchat "endless battle spawned - KHORNE is proud of you!";
+
+
+[] execVM "01_Schlaak\Missionscripts\Artypos.sqf";
 if (true) exitwith {
 
 };
