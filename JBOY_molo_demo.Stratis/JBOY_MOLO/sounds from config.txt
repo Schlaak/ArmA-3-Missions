@@ -1,0 +1,6 @@
+configfile >> "CfgSounds" >> "Sheep_Danger"
+
+sound[] = {"A3\Missions_F_EPA\data\sounds\WoundedGuyC_04",0.891251,1,80};
+sound[] = {"A3\Sounds_F\ambient\animals\scared_animal1",0.316228,1};
+
+playsound3d ["A3\sounds_f\characters\footsteps\gravel_walk_1.wss",player];

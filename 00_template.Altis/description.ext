@@ -1,0 +1,236 @@
+#include "01_description\cfgOrbat.hpp"
+
+class CfgFunctions {
+  #include "02_scripts\furniture\func.hpp"
+};
+class Extended_PreInit_EventHandlers {
+    class tinter_furniture_pre_init {
+        init = "call compile preprocessFileLineNumbers '02_scripts\furniture\XEH_preInit.sqf'";
+    };
+};
+
+class CfgWorlds
+{
+	class Any // or specific world name
+	{
+		author = "Schlaak ohne Ir0nsight... leider";
+		description = "AAF Spathi Einheit";
+		pictureMap = "world.jpg";
+		pictureShot = "world.jpg";
+		loadingTexts[] = {"AAF Spathi Einheiten sind teil der Expeditionsstreitkräfte der AAF.",
+		"Sabotage. Aufklärung. Sicherung. Gefangennahmen, das ganze Repertoire",
+		"Der Konflikt auf Altis verhärtet sich zunehmend",
+		"Die AAF ist eine kleine Streitmacht und wir unterstützen wo wir können...",
+		"Die Mittel sind immer knapp...",
+		"Alles am Arsch mann",
+		"Sicherheit geht vor!"
+
+		};
+	};
+};
+
+
+
+
+disabledAI = 1;
+debriefing = 1;
+briefing = 1;
+saving = 0;
+enableDebugConsole = 1;
+
+corpseManagerMode = 1;
+corpseRemovalMinTime = 60;					// seconds. Default: 10
+corpseLimit = 25; 								// Default: 15
+corpseRemovalMaxTime = 3600; 					// seconds. Default: 3600
+
+wreckManagerMode = 1;
+wreckLimit = 15;
+wreckRemovalMinTime = 600;
+wreckRemovalMaxTime = 1800;
+minPlayerDistance = 50;
+
+///cba_settings_hasSettingsFile = 1;
+
+allowProfileGlasses = 0;
+
+
+reviveMode = 0;
+reviveUnconsciousStateMode = 0;
+
+//disableChannels[] = { 0,1,2, 3,4 };
+class CfgSFX
+{
+	class SongSnd
+	{
+		sound0[] = {"03_sound\song.ogg", db-5, 1.0, 120, 0.2, 400, 400, 400};  // path to addon sound
+		sound1[] = {"03_sound\leglock.ogg", db-5, 1.0, 120, 0.2, 120, 120, 120};
+
+		sounds[] = {sound0,sound1};
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+	};
+
+};
+
+class CfgVehicles
+{
+	class SFXSongSnd // class name to be used with createSoundSource
+	{
+		sound = "SongSnd"; // reference to CfgSFX class
+	};
+};
+
+class CfgSounds
+{
+	sounds[] = {};
+	class Song2
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "get_low";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = { "03_sound\song2.ogg", 1, 1, 100 };
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = { 1, "*bitch ass rap music*" };
+	};
+
+	class leglock
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "leglock";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = { "03_sound\leglock.ogg", 1, 1, 100 };
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = { 1, "*big juice overflow cloud-rap music*" };
+	};
+
+	class Megaphone1
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "Megaphone1";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = { "03_sound\Megaphone1.ogg", 1, 1, 100 };
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = { 6, "*Hier sprechen AAF offizielle. Sie befinden sich in einer aktiven Kampfzone. Jeder bewaffnete widerstand wird mit tödlicher Gewalt bekämpft. Legen Sie Ihre waffen nieder und leisten Sie unseren Anweisungen gefolge. Zu ihrer eigenen Sicherheit.*" };
+	};
+	class Megaphone2
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "Megaphone2";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = { "03_sound\Megaphone2.ogg", 1, 1, 100 };
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = { 3, "*Generische Durchsage und Beleidigungen an Zivilbevölkerung und Feind*" };
+	};
+	class Zipup
+	{
+		name = "zipup";
+		sound[] = { "03_sound\zipup.ogg", 80, 1, 100 };
+		titles[] = {  };
+	};
+	class Talk1
+	{
+		name = "Talk1";
+		sound[] = { "03_sound\Talkc1.ogg", 30, 1, 100 };
+		titles[] = {  };
+	};
+	class Talk2
+	{
+		name = "Talkc2";
+		sound[] = { "03_sound\Talkc2.ogg", 30, 1, 100 };
+		titles[] = {  };
+	};
+	class Talk3
+	{
+		name = "Talk3";
+		sound[] = { "03_sound\Talk3.ogg", 30, 1, 100 };
+		titles[] = {  };
+	};
+	class loudspeaker
+	{
+		name = "loudspeaker";
+		sound[] = { "03_sound\loudspeaker.ogg", 30, 1, 100 };
+		titles[] = { "*Legt die Waffen weg oder wir knallen Euch alle über den Haufen, Ihr Hunde*" };
+	};
+};
+
+
+class CfgRadio
+{
+	sounds[] = {};
+	class Radio1
+	{
+		// display name
+		name	= "RadioTransmission1";
+
+		// filename, volume, pitch
+		sound[]	= { "03_sound\n2.ogg", db - 100, 1.0 };
+
+		// radio caption
+		title	= "";
+	};
+	class Radio2
+	{
+		// display name
+		name	= "RadioTransmission2";
+
+		// filename, volume, pitch
+		sound[]	= { "03_sound\n3.ogg", db - 100, 1.0 };
+
+		// radio caption
+		title	= "";
+	};
+	class Radio3
+	{
+		// display name
+		name	= "RadioTransmission3";
+
+		// filename, volume, pitch
+		sound[]	= { "03_sound\n4.ogg", db - 100, 1.0 };
+
+		// radio caption
+		title	= "";
+	};
+};
+
+class CfgDebriefingSections
+{
+	class bPoints
+	{
+		title = "KIA:";
+		variable = "BLU_P";
+	};
+	class oPoints
+	{
+		title = "Festgeset:";
+		variable = "Schlaak_Captured";	//Missionnamespace variable
+	};
+};
+
+
+class CfgDebriefing
+{
+	// Used when all players die in MP
+	class endDeath
+	{
+		title = "Zu viele gefallene.";
+		description = "Die Gruppe wurde getötet.";
+		picture = "KIA";
+	};
+	class End1
+	{
+		title = "Einsatz abgeschlossen";
+		subtitle = "";
+		description = "Einsatz erfolgreich abgeschlossen.";
+		pictureBackground = "";
+		picture = "r_inf";
+		pictureColor[] = { 0.0, 0.3, 0.6, 1 };
+	};
+};
+

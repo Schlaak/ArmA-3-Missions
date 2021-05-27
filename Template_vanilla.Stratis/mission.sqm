@@ -1,0 +1,812 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
+	class ItemIDProvider
+	{
+		nextID=26;
+	};
+	class Camera
+	{
+		pos[]={2597.3911,67.204498,623.37415};
+		dir[]={0.13288508,-0.33204469,0.93385655};
+		up[]={0.046777789,0.94326359,0.32873324};
+		aside[]={0.99002701,0,-0.14087798};
+	};
+};
+binarizationWanted=0;
+sourceName="Template_vanilla";
+addons[]=
+{
+	"A3_Characters_F",
+	"A3_Modules_F_Intel",
+	"A3_Weapons_F_Ammoboxes"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=3;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=11411914;
+class ScenarioData
+{
+	author="Шлаак [L917]";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=16;
+		class Item0
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2602.897,63.848526,627.15302};
+						angles[]={0,0.41641808,0};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						init="call{black0 = group this;}";
+						isPlayer=1;
+					};
+					id=1;
+					type="I_Soldier_TL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male05GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=0;
+		};
+		class Item1
+		{
+			dataType="Trigger";
+			position[]={2605.7371,63.825455,637.97998};
+			class Attributes
+			{
+				text="Text";
+				condition="call{this}";
+				onActivation="call{[] execvm ""Schlaak\feed\introText.sqf""}";
+				sizeA=0;
+				sizeB=0;
+				repeatable=1;
+				activationBy="ALPHA";
+			};
+			id=2;
+			type="EmptyDetector";
+		};
+		class Item2
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2600.6199,63.83255,637.12738};
+				angles[]={6.255693,0,0.0024897563};
+			};
+			name="playergroup";
+			id=3;
+			type="ModuleHQ_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleHQ_F_Identity";
+					expression="_this setVariable ['Identity',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleHQ_F_Callsign";
+					expression="_this setVariable ['Callsign',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="STR_A3_CfgHQIdentities_IND_0";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleHQ_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleHQ_F_CallsignCustom";
+					expression="_this setVariable ['CallsignCustom',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Gorgon";
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item3
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2606.8811,63.81324,640.82697};
+						angles[]={0,3.2568543,0};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="dude";
+					};
+					id=5;
+					type="I_Soldier_TL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male05GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=4;
+		};
+		class Item4
+		{
+			dataType="Trigger";
+			position[]={2607.021,63.810127,637.26001};
+			class Attributes
+			{
+				text="talk";
+				condition="call{this}";
+				onActivation="call{ line1 = [""Dude"", ""Hey, hast du ein paar Zigaretten?"", dude]; " \n " " \n "[[line1],""DIRECT"",0.12,true] remoteexec [""fn_simpleConv"", (allPlayers select {((_x distance dude) <= 15)})]}";
+				sizeA=0;
+				sizeB=0;
+				activationBy="BRAVO";
+			};
+			id=6;
+			type="EmptyDetector";
+			atlOffset=-3.8146973e-006;
+		};
+		class Item5
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2604.72,63.8549,629.21301};
+						angles[]={0,3.9025736,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="call{ " \n "this addaction[""<img size='4'  image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsdown_ca.paa' />"",""02_scripts\grab.sqf"",nil,0,true,true,"""",""((_target distance _this) <2) && alive _target && ((lifeState _target) == 'HEALTHY') ""];" \n "" \n "this addaction [""<img size='4'  image='\a3\missions_f_oldman\data\img\holdactions\holdAction_talk_ca.paa' />"", " \n " " \n """ " \n "_line1 = [ name (_this select 1), 'yo imma fuck you up', _this select 1];   " \n "_line2 = [name (_this select 0), 'oh no',  _this select 0];  " \n " " \n "[[_line1,_line2],'DIRECT',0.15,true] remoteexec ['fn_simpleConv', (allPlayers select {((_x distance dude) <= 15)})]; " \n " " \n "(_this select 0) removeaction (_this select 2); " \n """, " \n "[_caller,_target,_actionId],0,true,true,"""", " \n """((_target distance _this) <2) && alive _target && ((lifeState _target) == 'HEALTHY') ""];}";
+					};
+					id=8;
+					type="C_man_w_worker_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=7;
+		};
+		class Item6
+		{
+			dataType="Trigger";
+			position[]={2607.022,63.800362,640.43201};
+			class Attributes
+			{
+				text="talk";
+				condition="call{this && alive dude}";
+				onActivation="call{" \n "_line1 = [""Dude"", ""Hey, hast du ein paar Zigaretten?"", dude]; " \n " " \n "[[_line1],""DIRECT"",0.12,true] remoteexec [""fn_simpleConv"", (allPlayers select {((_x distance dude) <= 15)})];}";
+				sizeA=5;
+				sizeB=5;
+				sizeC=5;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+			};
+			id=9;
+			type="EmptyDetector";
+		};
+		class Item7
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2597.929,63.793861,637.07898};
+				angles[]={6.2556963,0,0.0024958209};
+			};
+			name="TOC";
+			id=11;
+			type="ModuleHQ_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleHQ_F_Identity";
+					expression="_this setVariable ['Identity',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleHQ_F_Callsign";
+					expression="_this setVariable ['Callsign',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="STR_A3_CfgHQIdentities_IND_0";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleHQ_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleHQ_F_CallsignCustom";
+					expression="_this setVariable ['CallsignCustom',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Hekate";
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item8
+		{
+			dataType="Trigger";
+			position[]={2608.762,63.791382,637.91101};
+			class Attributes
+			{
+				text="talk";
+				condition="call{this}";
+				onActivation="call{ line1 = [""Dude"", ""Hey, hast du ein paar Zigaretten?"", dude]; " \n " " \n "[[line1],""DIRECT"",0.12,true] remoteexec [""fn_simpleConv"", (allPlayers select {((_x distance dude) <= 15)})]}";
+				sizeA=0;
+				sizeB=0;
+				activationBy="JULIET";
+			};
+			id=12;
+			type="EmptyDetector";
+		};
+		class Item9
+		{
+			dataType="Trigger";
+			position[]={2605.1958,63.824032,634.43799};
+			class Attributes
+			{
+				text="talk";
+				condition="call{this}";
+				onActivation="call{ line1 = [""Dude"", ""Hey, hast du ein paar Zigaretten?"", dude]; " \n " " \n "[[line1],""DIRECT"",0.12,true] remoteexec [""fn_simpleConv"", (allPlayers select {((_x distance dude) <= 15)})]}";
+				sizeA=0;
+				sizeB=0;
+				activationBy="INDIA";
+			};
+			id=13;
+			type="EmptyDetector";
+		};
+		class Item10
+		{
+			dataType="Trigger";
+			position[]={2603.7229,63.806671,634.94598};
+			class Attributes
+			{
+				text="Endmission";
+				condition="call{this}";
+				onActivation="call{[] execvm ""Schlaak\feed\endmission.sqf""}";
+				sizeA=0;
+				sizeB=0;
+				repeatable=1;
+				activationBy="DELTA";
+			};
+			id=14;
+			type="EmptyDetector";
+		};
+		class Item11
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2604.76,63.953136,625.18097};
+						angles[]={0,0.41641808,0};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						init="call{h = [this] spawn { " \n " sleep 1; " \n "  " \n " disableSerialization; " \n " _display = findDisplay 46; " \n " _control = _display ctrlCreate [ ""RscStructuredText"", 999 ]; " \n "   " \n " [ ""text"", ""onEachFrame"", { " \n "  _unit = _this select 0; " \n "  " \n "   " \n "  _display = findDisplay 46; " \n "  _control = _display displayCtrl 999; " \n "   " \n "  _name = ( name _unit ) splitString "" ""; " \n "   " \n "  _control ctrlSetStructuredText parseText format[ ""<t align='center'>%1<br />%2</t>"", _name select 0,  _name select 1 ]; " \n " " \n "  _w = ( ctrlPosition _control  ) select 2; " \n "  _h = ( ctrlPosition _control  ) select 3; " \n "   " \n "  _pos2D = worldToScreen ( ( getPosVisual _unit ) vectorAdd [ 0, 0, 2 ] ); " \n "  " \n "  if ( count _pos2D > 0 ) then { " \n "    " \n "   _control ctrlSetPosition [ " \n "    (_pos2D select 0) - _w/2, " \n "    (_pos2D select 1) - _h/2, " \n "    0.1, " \n "    0.1 " \n "   ]; " \n "  " \n "   _control ctrlSetFade 0; " \n "   _control ctrlCommit 0; " \n "  }else{ " \n "   _control ctrlSetFade 1; " \n "   _control ctrlCommit 0; " \n "  }; " \n "  " \n " }, _this ] call BIS_fnc_addStackedEventHandler; " \n " " \n "};}";
+						isPlayable=1;
+					};
+					id=16;
+					type="I_Soldier_TL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male05GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=15;
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2607.7573,64.19606,626.05408};
+				angles[]={0.032498032,4.6647587,0.024993116};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{  h = [this] spawn {  " \n " sleep 1;  " \n "   " \n " disableSerialization;  " \n " _display = findDisplay 46;  " \n " _control = _display ctrlCreate [ ""RscStructuredText"", 999 ];  " \n "    " \n " [ ""text"", ""onEachFrame"", {  " \n "  _unit = _this select 0;  " \n "   " \n "    " \n "  _display = findDisplay 46;  " \n "  _control = _display displayCtrl 999;  " \n "    " \n "  _name = ""AAF Waffen"" splitString "" "";  " \n "    " \n "  _control ctrlSetStructuredText parseText format[ ""<t align='center'>%1<br />%2</t>"", _name select 0,  _name select 1 ];  " \n "  " \n "  _w = ( ctrlPosition _control  ) select 2;  " \n "  _h = ( ctrlPosition _control  ) select 3;  " \n "    " \n "  _pos2D = worldToScreen ( ( getPosVisual _unit ) vectorAdd [ 0, 0, 0.5 ] );  " \n "   " \n "  if ( count _pos2D > 0 ) then {  " \n "     " \n "   _control ctrlSetPosition [  " \n "    (_pos2D select 0) - _w/2,  " \n "    (_pos2D select 1) - _h/2,  " \n "    0.1,  " \n "    0.1  " \n "   ];  " \n "   " \n "   _control ctrlSetFade 0;  " \n "   _control ctrlCommit 0;  " \n "  }else{  " \n "   _control ctrlSetFade 1;  " \n "   _control ctrlCommit 0;  " \n "  };  " \n "   " \n " }, _this ] call BIS_fnc_addStackedEventHandler;  " \n "  " \n "};}";
+			};
+			id=19;
+			type="Box_IND_Wps_F";
+		};
+		class Item13
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2603.3501,63.8083,630.72101};
+						angles[]={0,3.2351596,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="call{this addaction [""<img size='4'  image='\a3\missions_f_oldman\data\img\holdactions\holdAction_talk_ca.paa' />"", " \n " " \n """ " \n "_line1 = [ name (_this select 1), 'yo imma fuck you up', _this select 1];   " \n "_line2 = [name (_this select 0), 'oh no',  _this select 0];  " \n " " \n "[[_line1,_line2],'DIRECT',0.15,true] remoteexec ['fn_simpleConv', (allPlayers select {((_x distance dude) <= 15)})]; " \n " " \n "(_this select 0) removeaction (_this select 2); " \n """, " \n "[_caller,_target,_actionId],0,true,true,"""", " \n """((_target distance _this) <2) && alive _target && ((lifeState _target) == 'HEALTHY') ""];}";
+					};
+					id=21;
+					type="C_man_w_worker_F";
+					atlOffset=-3.8146973e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=20;
+			atlOffset=-3.8146973e-006;
+		};
+		class Item14
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2616.3645,64.082626,631.11511};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=23;
+					type="O_G_Survivor_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=22;
+		};
+		class Item15
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2594.7153,63.900402,641.9212};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=25;
+					type="B_Survivor_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=24;
+		};
+	};
+};

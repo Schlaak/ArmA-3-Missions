@@ -1,0 +1,28 @@
+class CfgSounds
+{
+	sounds[] = {fxGlassBreak2,scream,scream2,burn};
+	class fxGlassBreak2
+	{
+		name = "fxGlassBreak2";
+		sound[] = {"\Sound\fxGlassBreak2.ogg", db+0, 1.0};
+		titles[] = {0,""};
+	};
+	class scream
+	{
+		name = "scream";
+		sound[] = {"\Sound\scream.ogg", db+0, 1.0};
+		titles[] = {0,""};
+	};
+	class scream2
+	{
+		name = "scream2";
+		sound[] = {"\Sound\scream2.ogg", db+0, 1.0};
+		titles[] = {0,""};
+	};
+	class burn
+	{
+		name = "burn";
+		sound[] = {"\Sound\burn.ogg", db+0, 1.0};
+		titles[] = {0,""};
+	};
+};
