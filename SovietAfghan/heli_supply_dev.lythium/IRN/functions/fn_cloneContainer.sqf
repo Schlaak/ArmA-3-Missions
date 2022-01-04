@@ -28,12 +28,13 @@ if (isNull "_clone") then {
 	diag_log "creating new clone container.";
 	//_clone enableSimulationGlobal false;
 };
+private ["_items","_mags","_weapons","_containers","_backPackItems"];
 _items = getitemCargo _crate;
 _mags = getmagazineCargo _crate;
 _weapons = weaponsItemsCargo _crate;
 _containers = everyContainer _crate; //	
 _backPackItems = backpackCargo _crate;
-private ["_items","_mags","_weapons","_containers","_backPackItems"];
+diag_log["backpack items: ",_backPackItems];
 {
 	_arr = _x;
 	_itemTypes = _x select 0;

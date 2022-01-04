@@ -1,9 +1,4 @@
-//[_dude, false] execvm "scripts\US.sqf";
-//heavy loadout
-//[_dude, true] execvm "scripts\US.sqf";
-//[_dude, true] execvm "scripts\US.sqf";
-//[_dude] execvm "scripts\dushman.sqf";
-diag_log ["dushmaan.sqf called with", _this];
+//diag_log ["dushmaan.sqf called with", _this];
 if (!isserver) exitWith {
 	diag_log ["not server"];
 };

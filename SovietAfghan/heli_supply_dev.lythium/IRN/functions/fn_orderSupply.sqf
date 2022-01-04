@@ -2,23 +2,22 @@
 	Author: IR0NSIGHT
 
 	Description:
-	Will clear a container with all its inventory
+	Will order the specified helicopter to airlift the given supply crate to a selfchosen LZ near given pos.
 
 	Parameter(s):
 		0 :
-			OBJECT - 
+			OBJECT - caller (for position)
 		1 :
-			OBJECT - container to clear of vanilla inventory
+			OBJECT - container to be transported (must be airliftable)
 		2 :
-			OBJECT - container to clear of vanilla inventory
+			BOOLEAN - directly to caller (true) or nearby safe LZ (false)
 		3 :
-			OBJECT - container to clear of vanilla inventory
-		4 :
-			OBJECT - container to clear of vanilla inventory									
+			STRING - name to use for marking the LZ
+
 	Returns:
 	none
 */
-
+//TODO replace caller with position of _caller
 params["_caller","_crate","_precise","_markername"];
 
 if (!isServer) exitWith {
@@ -98,8 +97,8 @@ _orderHeloToLZ = {
 };
 
 //-------------------------------------------------------------------------- !method declaration, var declaration
-_helo = supply_helo_01;
-_airport = airport_01;
+_helo = supply_helo_01;	//TODO make into function parameter
+_airport = airport_01; //TODO make into function parameter
 _var = _helo getVariable "RTB";
 if (isNil "_var") then {
 	[getPos _airport,"heliport"]call IRN_fnc_marker;
@@ -125,3 +124,5 @@ if ((_helo getVariable ["RTB",true]) && count ropeAttachedObjects _helo == 0) th
 [_helo,_lzObj,_airport] call _orderHeloToLZ;
 _helo setVariable ["RTB",false,true]; //mark as busy
 //systemChat "marking as RTB: false";
+
+

@@ -1,0 +1,3 @@
+class CfgFunctions {
+  #include "basic\basic_func.hpp"
+};
